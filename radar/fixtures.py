@@ -66,6 +66,34 @@ def hn_json(now: datetime) -> bytes:
     return json.dumps({"hits": hits, "nbHits": len(hits)}).encode()
 
 
+def arxiv_rss(now: datetime) -> bytes:
+    """Same shape as rss.arxiv.org: two on-topic announcements and one that the phrase filter drops."""
+    day = now.strftime("%a, %d %b %Y 00:00:00 -0500")
+    items = [
+        ("9999.10001", "[sample] Prompt injection through tool output in coding agents", "new",
+         "We show prompt injection through tool output can redirect coding agents."),
+        ("9999.10002", "[sample] Detecting evaluation awareness with probes", "cross",
+         "We study evaluation awareness in frontier models using linear probes."),
+        ("9999.10003", "[sample] Faster sparse matrix kernels", "new", "We speed up sparse kernels."),
+    ]
+    body = "".join(f"""
+  <item>
+    <title>{t}</title>
+    <link>https://arxiv.org/abs/{i}</link>
+    <description>arXiv:{i}v1 Announce Type: {kind}
+Abstract: {a}</description>
+    <guid isPermaLink="false">oai:arXiv.org:{i}v1</guid>
+    <category>cs.CR</category>
+    <pubDate>{day}</pubDate>
+    <arxiv:announce_type>{kind}</arxiv:announce_type>
+    <dc:creator>Sample Author, Another Author</dc:creator>
+  </item>""" for i, t, kind, a in items)
+    return f"""<?xml version="1.0" encoding="UTF-8"?>
+<rss xmlns:arxiv="http://arxiv.org/schemas/atom" xmlns:dc="http://purl.org/dc/elements/1.1/" version="2.0">
+<channel><title>cs.CR updates on arXiv.org</title>{body}
+</channel></rss>""".encode()
+
+
 def fixture_fetch(url: str, now: datetime | None = None) -> bytes:
     now = now or datetime.now(timezone.utc)
     if "arxiv.org" in url:

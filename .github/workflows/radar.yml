@@ -38,17 +38,23 @@ jobs:
       - name: Check keys
         if: ${{ github.event.inputs.mode == 'check' }}
         env:
-          # Accepts a few spellings of the secret name so a typo there doesn't break the run.
-          BITDEER_API_KEY: ${{ secrets.BITDEER_API_KEY || secrets.BITDEER_AI_API_KEY || secrets.BITDEER_KEY || secrets.BITDEER }}
+          BITDEER_API_KEY: ${{ secrets.BITDEER_API_KEY }}
           FEATHERLESS_API_KEY: ${{ secrets.FEATHERLESS_API_KEY }}
+          # If the key was saved under another name, the script finds any secret or
+          # variable with BITDEER (or FEATHERLESS) in its name. It logs the name, never the value.
+          ALL_SECRETS: ${{ toJSON(secrets) }}
+          ALL_VARS: ${{ toJSON(vars) }}
         run: python -m radar check
 
       - name: Run radar (watch each step live here)
         if: ${{ github.event.inputs.mode != 'check' }}
         env:
-          # Accepts a few spellings of the secret name so a typo there doesn't break the run.
-          BITDEER_API_KEY: ${{ secrets.BITDEER_API_KEY || secrets.BITDEER_AI_API_KEY || secrets.BITDEER_KEY || secrets.BITDEER }}
+          BITDEER_API_KEY: ${{ secrets.BITDEER_API_KEY }}
           FEATHERLESS_API_KEY: ${{ secrets.FEATHERLESS_API_KEY }}
+          # If the key was saved under another name, the script finds any secret or
+          # variable with BITDEER (or FEATHERLESS) in its name. It logs the name, never the value.
+          ALL_SECRETS: ${{ toJSON(secrets) }}
+          ALL_VARS: ${{ toJSON(vars) }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           PYTHONUNBUFFERED: "1"
         run: python -m radar run

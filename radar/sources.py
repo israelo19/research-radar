@@ -7,6 +7,7 @@ import urllib.request
 import xml.etree.ElementTree as ET
 from dataclasses import asdict, dataclass, field
 from datetime import datetime, timezone
+from email.utils import parsedate_to_datetime
 from typing import Callable
 
 ATOM = "{http://www.w3.org/2005/Atom}"
@@ -15,10 +16,22 @@ UA = {"User-Agent": "research-radar/1.0 (personal reading list)"}
 Fetch = Callable[[str], bytes]
 
 
-def http_get(url: str, timeout: float = 30) -> bytes:
-    req = urllib.request.Request(url, headers=UA)
-    with urllib.request.urlopen(req, timeout=timeout) as resp:
-        return resp.read()
+def http_get(url: str, timeout: float = 30, tries: int = 3) -> bytes:
+    """GET with polite retries. arXiv rate-limits shared cloud IPs and answers 429 or 503."""
+    import time
+    import urllib.error
+    for attempt in range(tries):
+        req = urllib.request.Request(url, headers=UA)
+        try:
+            with urllib.request.urlopen(req, timeout=timeout) as resp:
+                return resp.read()
+        except urllib.error.HTTPError as e:
+            if e.code not in (429, 503) or attempt == tries - 1:
+                raise
+            wait = e.headers.get("Retry-After") if e.headers else None
+            delay = min(int(wait), 60) if wait and wait.isdigit() else 10 * (attempt + 1)
+            time.sleep(delay)
+    raise RuntimeError("unreachable")
 
 
 @dataclass
@@ -111,3 +124,45 @@ def parse_time(value: str) -> datetime:
     if not value:
         return datetime.min.replace(tzinfo=timezone.utc)
     return datetime.fromisoformat(value.replace("Z", "+00:00"))
+
+
+def arxiv_rss_url(categories: list[str]) -> str:
+    return "https://rss.arxiv.org/rss/" + "+".join(categories)
+
+
+def parse_arxiv_rss(xml_bytes: bytes, phrases: list[str]) -> list[Item]:
+    """Today's arXiv announcements from the RSS feed, kept only if they mention one of the phrases."""
+    root = ET.fromstring(xml_bytes)
+    ns = {"dc": "http://purl.org/dc/elements/1.1/", "arxiv": "http://arxiv.org/schemas/atom"}
+    wanted = [p.lower() for p in phrases]
+    items = []
+    for it in root.iter("item"):
+        if (it.findtext("arxiv:announce_type", default="new", namespaces=ns) or "new").strip() not in ("new", "cross"):
+            continue
+        link = (it.findtext("link") or "").strip()
+        short = link.rsplit("/abs/", 1)[-1]
+        if not short:
+            continue
+        title = " ".join((it.findtext("title") or "").split())
+        desc = " ".join((it.findtext("description") or "").split())
+        abstract = desc.split("Abstract:", 1)[1].strip() if "Abstract:" in desc else desc
+        text = f"{title} {abstract}".lower()
+        if not any(w in text for w in wanted):
+            continue
+        try:
+            published = parsedate_to_datetime(it.findtext("pubDate") or "").astimezone(timezone.utc).isoformat()
+        except (TypeError, ValueError):
+            published = datetime.now(timezone.utc).isoformat()
+        creators = it.findtext("dc:creator", default="", namespaces=ns)
+        items.append(Item(
+            id=f"arxiv:{short}",
+            source="arxiv",
+            title=title,
+            url=f"https://arxiv.org/abs/{short}",
+            published=published,
+            summary=abstract,
+            authors=[a.strip() for a in creators.split(",") if a.strip()],
+            extra={"categories": [c.text for c in it.findall("category") if c.text], "pdf": f"https://arxiv.org/pdf/{short}",
+                   "via": "rss"},
+        ))
+    return items

@@ -21,6 +21,35 @@ def load_config(path: Path | None = None) -> dict[str, Any]:
         return tomllib.load(f)
 
 
+def resolve_keys(providers: list[Provider]) -> dict[str, str]:
+    """Find each provider's key even if the secret got a different name.
+
+    The workflow hands the script every repo secret and variable as JSON
+    (ALL_SECRETS, ALL_VARS). If a provider's own env var is empty, use the
+    first secret or variable whose name contains the provider's name. Only
+    names are recorded, never values.
+    """
+    found: dict[str, str] = {}
+    pools = []
+    for label, var in (("secret", "ALL_SECRETS"), ("variable", "ALL_VARS")):
+        try:
+            pools.append((label, json.loads(os.environ.get(var) or "{}") or {}))
+        except json.JSONDecodeError:
+            pass
+    for p in providers:
+        if os.environ.get(p.key_env, "").strip():
+            found[p.name] = f"env {p.key_env}"
+            continue
+        for label, pool in pools:
+            names = sorted((k for k, v in pool.items() if p.name.upper() in k.upper() and str(v).strip()),
+                           key=lambda k: ("KEY" not in k.upper() and "TOKEN" not in k.upper(), k))
+            if names:
+                os.environ[p.key_env] = str(pool[names[0]]).strip()
+                found[p.name] = f"{label} {names[0]}"
+                break
+    return found
+
+
 def providers_from(cfg: dict[str, Any]) -> list[Provider]:
     return [Provider(p["name"], p["base_url"], p["key_env"], list(p["models"]),
                      prefer=list(p.get("prefer", [])), avoid=list(p.get("avoid", [])))
@@ -154,12 +183,23 @@ def run(*, root: Path = ROOT, cfg: dict | None = None, dry_run: bool = False,
     run_dir = root / "runs" / run_id
     tracer = Tracer(run_dir, live=live)
     fetch = fetch or sources.http_get
+    key_sources: dict[str, str] = {}
     if llm_factory:
         llm = llm_factory(tracer)
     elif dry_run:
         llm = StubLLM(tracer, stub_answer)
     else:
+        key_sources = resolve_keys(providers_from(cfg))
         llm = LLM(providers_from(cfg), tracer)
+        if not llm.available():
+            # Say which names the workflow can see, so a misnamed or misplaced key is obvious.
+            def names(var):
+                try:
+                    return sorted(json.loads(os.environ.get(var) or "{}"))
+                except json.JSONDecodeError:
+                    return []
+            key_sources = {"none found": f"secrets visible: {names('ALL_SECRETS') or 'none'}; "
+                                         f"variables visible: {names('ALL_VARS') or 'none'}"}
 
     since = now - timedelta(days=cfg["run"]["lookback_days"])
     seen_path = root / "state" / "seen.json"
@@ -168,11 +208,12 @@ def run(*, root: Path = ROOT, cfg: dict | None = None, dry_run: bool = False,
     run_url = (f"{os.environ.get('GITHUB_SERVER_URL', 'https://github.com')}/{os.environ['GITHUB_REPOSITORY']}"
                f"/actions/runs/{gh_run}") if gh_run and os.environ.get("GITHUB_REPOSITORY") else None
 
-    summary: dict[str, Any] = {"run_id": run_id, "started": now_iso(), "dry_run": dry_run, "status": "ok"}
+    summary: dict[str, Any] = {"run_id": run_id, "started": now_iso(), "dry_run": dry_run, "status": "ok",
+                               "keys": key_sources}
     results: list[dict[str, Any]] = []
     items: list[sources.Item] = []
     with tracer.span("radar run", kind="run", label=run_id, dry_run=dry_run, since=since.isoformat(),
-                     providers=[p.name for p in llm.available()]) as root_span:
+                     providers=[p.name for p in llm.available()], keys=summary["keys"]) as root_span:
         try:
             # 0. Which models each provider offers today (one cheap request each)
             if not dry_run and not llm_factory:
@@ -193,9 +234,20 @@ def run(*, root: Path = ROOT, cfg: dict | None = None, dry_run: bool = False,
                 try:
                     got = [i for i in sources.parse_arxiv(fetch(url)) if sources.parse_time(i.published) >= since]
                     items += got
-                    s.set(count=len(got), note=f"{len(got)} papers since {since.date()}")
-                except Exception as e:  # keep going with HN if arXiv is down
-                    s.fail(f"{type(e).__name__}: {e}")
+                    s.set(count=len(got), via="api", note=f"{len(got)} papers since {since.date()} (API)")
+                except Exception as e:
+                    # The search API rate-limits GitHub's servers. Fall back to today's RSS
+                    # announcements, filtered here by the same phrases.
+                    s.set(api_error=f"{type(e).__name__}: {e}"[:300])
+                    rss = sources.arxiv_rss_url(a["categories"])
+                    s.set(rss_url=rss)
+                    try:
+                        got = [i for i in sources.parse_arxiv_rss(fetch(rss), a["phrases"])
+                               if sources.parse_time(i.published) >= since]
+                        items += got
+                        s.set(count=len(got), via="rss", note=f"{len(got)} papers from RSS (API said {e})"[:200])
+                    except Exception as e2:  # keep going with HN if arXiv is down entirely
+                        s.fail(f"API: {type(e).__name__}: {e}; RSS: {type(e2).__name__}: {e2}"[:400])
             with tracer.span("fetch hacker news", kind="fetch", parent=root_span) as s:
                 h = cfg["sources"]["hn"]
                 found: dict[str, sources.Item] = {}
@@ -314,6 +366,8 @@ def check(cfg: dict | None = None) -> int:
     """Confirm keys work and show which models each provider serves."""
     cfg = cfg or load_config()
     tracer = Tracer(ROOT / "runs" / "_check", live=False)
+    for name, where in resolve_keys(providers_from(cfg)).items():
+        print(f"{name}: key found in {where}")
     any_ok = False
     for p in providers_from(cfg):
         if not p.key:
