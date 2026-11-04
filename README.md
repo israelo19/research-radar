@@ -40,11 +40,15 @@ The key has to be a **repository secret** named exactly `BITDEERAI_API_KEY`: Set
 | Today's reading list | The issue it opens, the run's summary page, or `digests/YYYY-MM-DD.md` |
 | Raw traces | `runs/<run id>/trace.jsonl`, one JSON object per step |
 
+## Changing how it judges
+
+The instructions the model reads are in **`prompt.md`**. Open it on GitHub, click the pencil icon, edit, and click "Commit changes". The next morning's run uses your version. To try it right away, use **Run workflow**. Only items it hasn't screened yet get judged with the new wording.
+
 ## Changing what it looks for
 
-Everything is in `config.toml`:
+The rest is in `config.toml`:
 
-- `[[threads]]` are my research threads. The model sorts each item into one of them.
+- `[[threads]]` are my research threads. The model sorts each item into one of them, and they're filled into `prompt.md` where it says `{threads}`.
 - `[sources.arxiv] phrases` and `[sources.hn] queries` decide what gets pulled in before any model sees it.
 - `max_items` caps model calls per run, so a busy day can't burn through credits. Items past the cap wait for the next run.
 - `concurrency` is how many model calls run at once. Keep it at 2 unless your plan allows more.

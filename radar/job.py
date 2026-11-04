@@ -34,15 +34,31 @@ def providers_from(cfg: dict[str, Any]) -> list[Provider]:
 
 # ---------------------------------------------------------------- prompts
 
-def system_prompt(cfg: dict[str, Any]) -> str:
+DEFAULT_PROMPT = (
+    "You screen new papers and posts for an undergraduate security researcher in an AI security lab. "
+    "He reads the original sources himself, so your job is to point, not to explain the paper for him.\n\n"
+    "His research threads:\n{threads}\n\n"
+    "Rules: use only the text you are given. If something isn't stated, don't guess. "
+    "Reply with one JSON object and nothing else."
+)
+
+
+def load_prompt(root: Path = ROOT) -> str:
+    """The editable part of the prompt: everything after the first '---' line in prompt.md."""
+    path = root / "prompt.md"
+    if not path.exists():
+        return DEFAULT_PROMPT
+    text = path.read_text(encoding="utf-8")
+    parts = text.split("\n---\n", 1)
+    body = (parts[1] if len(parts) == 2 else text).strip()
+    if "{threads}" not in body:  # never drop the threads, even if the placeholder got deleted
+        body += "\n\nHis research threads:\n{threads}"
+    return body
+
+
+def system_prompt(cfg: dict[str, Any], root: Path = ROOT) -> str:
     threads = "\n".join(f'- "{t["id"]}" ({t["label"]}): {t["about"]}' for t in cfg["threads"])
-    return (
-        "You screen new papers and posts for an undergraduate security researcher in an AI security lab. "
-        "He reads the original sources himself, so your job is to point, not to explain the paper for him.\n\n"
-        f"His research threads:\n{threads}\n\n"
-        "Rules: use only the text you are given. If something isn't stated, don't guess. "
-        "Reply with one JSON object and nothing else."
-    )
+    return load_prompt(root).replace("{threads}", threads)
 
 
 def item_prompt(item: sources.Item, thread_ids: list[str]) -> str:

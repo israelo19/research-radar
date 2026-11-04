@@ -52,6 +52,20 @@ class ParsingTests(unittest.TestCase):
             extract_json("no json here")
 
 
+class PromptTests(TempRoot):
+    def test_prompt_comes_from_prompt_md(self):
+        text = job.system_prompt(self.cfg)
+        self.assertIn("How to score", text)
+        self.assertIn('"mcp-security"', text)            # threads were filled in
+        self.assertNotIn("Edit it freely", text)         # the notes above the line are not sent
+
+    def test_missing_placeholder_still_includes_threads(self):
+        (self.root / "prompt.md").write_text("notes\n---\nJust be helpful.")
+        text = job.system_prompt(self.cfg, root=self.root)
+        self.assertTrue(text.startswith("Just be helpful."))
+        self.assertIn('"ai-worms"', text)
+
+
 class PipelineTests(TempRoot):
     def test_dry_run_end_to_end(self):
         out = io.StringIO()
