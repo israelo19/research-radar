@@ -1,0 +1,492 @@
+[
+  {
+    "item": {
+      "id": "arxiv:2611.04879",
+      "source": "arxiv",
+      "title": "ScamWorld: An Interactive Environment for Evaluating Web Agents Against Online Fraud",
+      "url": "https://arxiv.org/abs/2611.04879",
+      "published": "2026-11-03T13:31:11Z",
+      "summary": "Web agents increasingly browse, shop, and manage accounts on behalf of their users. Prior work has shown that they can be misled by adversarial content, including prompt injections and deceptive interfaces. Beyond such attacks, agents operating on the open web also encounter online fraud designed to deceive humans, including fraudulent online stores, fake investment platforms, and advance-fee schemes. How web agents respond to such fraud during task execution remains underexplored, in part because scam websites are short-lived, making systematic evaluation difficult. To address this gap, we introduce ScamWorld, an interactive environment that reconstructs reported scam websites across diverse scenarios, fraud mechanisms, and languages. Each reconstructed website reproduces documented fraud mechanisms, making relevant signs of fraud observable before the agent's final action and enabling controlled, repeatable evaluation. Through an extensive study of web agents powered by six frontier LLMs, we find that baseline deception rates range from 11% to 35% across models. Agents proceed more readily with payments than with requests for credentials or wallet information. A closer analysis of agent trajectories shows that some agents acknowledge suspicious conditions yet proceed, at times treating the user's instructions as authorisation to accept additional terms imposed by the website. ScamWorld provides a reusable testbed for systematically evaluating and stress-testing web agents against real-world online fraud.",
+      "authors": [
+        "Yutao Wu",
+        "Xiao Liu",
+        "Ming Wen",
+        "Hanxun Huang",
+        "Jun Wang",
+        "Xingjun Ma"
+      ],
+      "extra": {
+        "categories": [
+          "cs.AI"
+        ],
+        "pdf": "https://arxiv.org/pdf/2611.04879"
+      }
+    },
+    "relevant": true,
+    "thread": "mcp-security",
+    "score": 6,
+    "summary": "ScamWorld is an interactive benchmark that reconstructs real scam websites to test whether LLM-powered web agents can detect fraud and avoid payments or credential disclosures. It reports that frontier-model agents are deceived at rates from 11% to 35%, especially when asked to make payments.",
+    "why": "It studies deceptive web content and prompt-injection-like manipulation reaching agents through browser/tool outputs, which is adjacent to agent tool security.",
+    "question": "Are the agents' failures mainly due to prompt-injection susceptibility, weak action policies, or over-trusting user instructions as authorization for risky actions?",
+    "attempts": 1
+  },
+  {
+    "item": {
+      "id": "arxiv:2611.03634",
+      "source": "arxiv",
+      "title": "WebHarbor: Docking Real Websites for Evolving GUI Agent Environments",
+      "url": "https://arxiv.org/abs/2611.03634",
+      "published": "2026-11-02T18:57:36Z",
+      "summary": "GUI web agents require realistic and interactive environments that remain stable during both evaluation and training. Live website evaluation suffers from changing content, access restrictions, and limited coverage of authenticated workflows, while existing synthetic environments for training often lack functional depth and visual fidelity. We propose WebHarbor, a suite of 153 executable and dockerized website environments that faithfully reconstruct the visual interfaces, content, and functional workflows of real-world web services under deterministic control. We build WebHarbor through task-driven human-agent collaboration, where environments evolve as new tasks expand their functional scope, coding agents implement the required changes, and human contributors audit visual fidelity, functional correctness, and task validity. The resulting suite comprises 3,518 tasks spanning multi-step and post-authentication workflows, where existing works often fail to cover. Beyond reliable evaluation, WebHarbor provides high-fidelity synthetic web environments for cost-efficient reinforcement learning (RL). We demonstrate that a Qwen 4B-level GUI agent trained with RL in WebHarbor generalizes to unseen tasks and performs competitively with leading open-source GUI web agents across four benchmarks. The code and data are publicly available at https://github.com/aiming-lab/WebHarbor.",
+      "authors": [
+        "Zhaoyang Wang",
+        "Qianhui Wu",
+        "Boyu Gou",
+        "Demi Wang",
+        "Jiacheng Zhang",
+        "Peichun Hua",
+        "Qize Li",
+        "Shi Qiu",
+        "Yifan Jiang",
+        "Yifan Zhang",
+        "Zexu Jin",
+        "Baolin Peng",
+        "Bolin Shen",
+        "Chetan Bansal",
+        "Dehan Kong",
+        "Deren Lei",
+        "Dongshen Peng",
+        "Fengqing Jiang",
+        "Hao Cheng",
+        "Haoqing Wang",
+        "Jiaming Shan",
+        "Jicheng Wang",
+        "Jingguang Zhou",
+        "Jixuan He",
+        "Kaide Zeng",
+        "Kangyu Zhu",
+        "Lama Moukheiber",
+        "Mufan Qiu",
+        "Peng Xia",
+        "Qihan Sun",
+        "Qingwei Lin",
+        "Qiushi Sun",
+        "Ruichen Zhang",
+        "Shuqing Luo",
+        "Si Qin",
+        "Sicheng Fan",
+        "Tao Xiong",
+        "Wenlin Yao",
+        "Xinyu Zhang",
+        "Xinyue Zeng",
+        "Xuanrui Li",
+        "Xuchao Zhang",
+        "Yian Wang",
+        "Yichao Liu",
+        "Yiming Liang",
+        "Yiyang Zhou",
+        "Yizhu Jiao",
+        "Yuetai Li",
+        "Yurun Chen",
+        "Yuxuan Zhang",
+        "Zheyuan Yang",
+        "Zhiyuan Yao",
+        "Zhongyang Li",
+        "Zihao Li",
+        "Zili Wang",
+        "Jianfeng Gao",
+        "Huaxiu Yao"
+      ],
+      "extra": {
+        "categories": [
+          "cs.AI",
+          "cs.CL",
+          "cs.LG"
+        ],
+        "pdf": "https://arxiv.org/pdf/2611.03634"
+      }
+    },
+    "relevant": false,
+    "thread": "none",
+    "score": 2,
+    "summary": "WebHarbor is a suite of 153 dockerized, real-website-like environments and 3,518 tasks for evaluating and reinforcement-learning GUI web agents. It focuses on stable, high-fidelity web environments rather than security behavior.",
+    "why": "",
+    "question": "",
+    "attempts": 1
+  },
+  {
+    "item": {
+      "id": "hn:50367125",
+      "source": "hn",
+      "title": "AMD expects to outsell Intel in Q4 for the first time in history",
+      "url": "https://www.tomshardware.com/pc-components/cpus/amd-expects-to-outsell-intel-in-q4-for-the-first-time-in-history-usd17b-guidance-would-exceed-intels-projections",
+      "published": "2026-11-04T15:38:34Z",
+      "summary": "",
+      "authors": [
+        "rbanffy"
+      ],
+      "extra": {
+        "points": 238,
+        "comments": 75,
+        "discussion": "https://news.ycombinator.com/item?id=50367125"
+      }
+    },
+    "relevant": false,
+    "thread": "none",
+    "score": 0,
+    "summary": "AMD expects to outsell Intel in Q4 for the first time in history. The story is based only on the title and link, which point to a Tom's Hardware report about AMD's guidance exceeding Intel's projections.",
+    "why": "",
+    "question": "",
+    "attempts": 1
+  },
+  {
+    "item": {
+      "id": "hn:50364561",
+      "source": "hn",
+      "title": "A map of 5000+ midterm ads",
+      "url": "https://admap.org/",
+      "published": "2026-11-04T12:18:35Z",
+      "summary": "",
+      "authors": [
+        "Eden09"
+      ],
+      "extra": {
+        "points": 65,
+        "comments": 24,
+        "discussion": "https://news.ycombinator.com/item?id=50364561"
+      }
+    },
+    "relevant": false,
+    "thread": "none",
+    "score": 0,
+    "summary": "It is a map or visualization of more than 5,000 midterm election ads. The title does not indicate a connection to AI security, agents, or evaluation awareness.",
+    "why": "",
+    "question": "",
+    "attempts": 1
+  },
+  {
+    "item": {
+      "id": "hn:50366117",
+      "source": "hn",
+      "title": "Ask HN: What's your current AI agentic setup?",
+      "url": "https://news.ycombinator.com/item?id=50366117",
+      "published": "2026-11-04T14:37:22Z",
+      "summary": "",
+      "authors": [
+        "eggbrain"
+      ],
+      "extra": {
+        "points": 58,
+        "comments": 67,
+        "discussion": "https://news.ycombinator.com/item?id=50366117"
+      }
+    },
+    "relevant": false,
+    "thread": "none",
+    "score": 2,
+    "summary": "An HN discussion asking people to describe their current AI agentic setups.",
+    "why": "",
+    "question": "",
+    "attempts": 1
+  },
+  {
+    "item": {
+      "id": "hn:50366929",
+      "source": "hn",
+      "title": "Show HN: I built a tool that prices a prebuilt PC part by part",
+      "url": "https://pcdealcheck.com/",
+      "published": "2026-11-04T15:25:33Z",
+      "summary": "",
+      "authors": [
+        "adlep"
+      ],
+      "extra": {
+        "points": 46,
+        "comments": 22,
+        "discussion": "https://news.ycombinator.com/item?id=50366929"
+      }
+    },
+    "relevant": false,
+    "thread": "none",
+    "score": 0,
+    "summary": "A tool that prices a prebuilt PC part by part.",
+    "why": "",
+    "question": "",
+    "attempts": 1
+  },
+  {
+    "item": {
+      "id": "hn:50366811",
+      "source": "hn",
+      "title": "Show HN: Codemap – one-page interactive map of any Go repository",
+      "url": "https://github.com/peterretief/codemap",
+      "published": "2026-11-04T15:18:24Z",
+      "summary": "",
+      "authors": [
+        "peter_retief"
+      ],
+      "extra": {
+        "points": 29,
+        "comments": 14,
+        "discussion": "https://news.ycombinator.com/item?id=50366811"
+      }
+    },
+    "relevant": false,
+    "thread": "none",
+    "score": 0,
+    "summary": "A tool that creates a one-page interactive map of any Go repository.",
+    "why": "",
+    "question": "",
+    "attempts": 1
+  },
+  {
+    "item": {
+      "id": "hn:50367004",
+      "source": "hn",
+      "title": "Letting users trust their own MCP clients, without opening a phishing hole",
+      "url": "https://streamvessel.com/blog/mcp-trusted-redirect-uris",
+      "published": "2026-11-04T15:30:57Z",
+      "summary": "",
+      "authors": [
+        "isalexlog"
+      ],
+      "extra": {
+        "points": 24,
+        "comments": 2,
+        "discussion": "https://news.ycombinator.com/item?id=50367004"
+      }
+    },
+    "relevant": true,
+    "thread": "mcp-security",
+    "score": 8,
+    "summary": "A blog post about letting users trust their own MCP clients without creating a phishing hole, likely involving trusted redirect URIs.",
+    "why": "It directly concerns MCP client trust and phishing risks in the MCP ecosystem.",
+    "question": "How does the trusted redirect URI design prevent an attacker from spoofing or registering a malicious MCP client?",
+    "attempts": 1
+  },
+  {
+    "item": {
+      "id": "hn:50368804",
+      "source": "hn",
+      "title": "Launch HN: Kino AI (YC S23) – AI media manager and video editor",
+      "url": "https://news.ycombinator.com/item?id=50368804",
+      "published": "2026-11-04T17:31:53Z",
+      "summary": "",
+      "authors": [
+        "lukeigel"
+      ],
+      "extra": {
+        "points": 15,
+        "comments": 12,
+        "discussion": "https://news.ycombinator.com/item?id=50368804"
+      }
+    },
+    "relevant": false,
+    "thread": "none",
+    "score": 0,
+    "summary": "A Hacker News launch post for Kino AI, described as an AI media manager and video editor. The available title does not indicate a security focus.",
+    "why": "",
+    "question": "",
+    "attempts": 1
+  },
+  {
+    "item": {
+      "id": "hn:50362698",
+      "source": "hn",
+      "title": "Ask HN: How to Keep the Edge as an Engineer?",
+      "url": "https://news.ycombinator.com/item?id=50362698",
+      "published": "2026-11-04T08:16:29Z",
+      "summary": "",
+      "authors": [
+        "spacebuffer"
+      ],
+      "extra": {
+        "points": 8,
+        "comments": 3,
+        "discussion": "https://news.ycombinator.com/item?id=50362698"
+      }
+    },
+    "relevant": false,
+    "thread": "none",
+    "score": 0,
+    "summary": "A Hacker News discussion asking how engineers can maintain a competitive edge. The available title does not indicate a focus on AI security, agents, MCP, or evaluation awareness.",
+    "why": "",
+    "question": "",
+    "attempts": 1
+  },
+  {
+    "item": {
+      "id": "hn:50362588",
+      "source": "hn",
+      "title": "You'll need nerves of steel to work with AI agents",
+      "url": "https://orchidfiles.com/youll-need-nerves-of-steel-to-work-with-ai-agents/",
+      "published": "2026-11-04T07:58:08Z",
+      "summary": "",
+      "authors": [
+        "theorchid"
+      ],
+      "extra": {
+        "points": 8,
+        "comments": 1,
+        "discussion": "https://news.ycombinator.com/item?id=50362588"
+      }
+    },
+    "relevant": false,
+    "thread": "none",
+    "score": 2,
+    "summary": "A Hacker News story titled 'You'll need nerves of steel to work with AI agents.' Based only on the title, it appears to be about the stress or difficulty of working with AI agents.",
+    "why": "",
+    "question": "",
+    "attempts": 1
+  },
+  {
+    "item": {
+      "id": "hn:50364483",
+      "source": "hn",
+      "title": "Show HN: 13M opinions on 48k products extracted from Reddit and HN",
+      "url": "https://www.trustmebro.reviews/",
+      "published": "2026-11-04T12:09:11Z",
+      "summary": "",
+      "authors": [
+        "davidzweig"
+      ],
+      "extra": {
+        "points": 7,
+        "comments": 7,
+        "discussion": "https://news.ycombinator.com/item?id=50364483"
+      }
+    },
+    "relevant": false,
+    "thread": "none",
+    "score": 0,
+    "summary": "A Show HN post about a site that extracts 13 million opinions on 48,000 products from Reddit and Hacker News. It appears to be a product review aggregation project.",
+    "why": "",
+    "question": "",
+    "attempts": 1
+  },
+  {
+    "item": {
+      "id": "hn:50366425",
+      "source": "hn",
+      "title": "Show HN: AI Gude – my feeds as a daily podcast, revived with AI",
+      "url": "https://github.com/alex0ptr/aigude",
+      "published": "2026-11-04T14:57:16Z",
+      "summary": "",
+      "authors": [
+        "alex0ptr"
+      ],
+      "extra": {
+        "points": 7,
+        "comments": 0,
+        "discussion": "https://news.ycombinator.com/item?id=50366425"
+      }
+    },
+    "relevant": false,
+    "thread": "none",
+    "score": 0,
+    "summary": "A Show HN project that turns the user's feeds into a daily podcast using AI. It appears to be a personal productivity or media-generation tool.",
+    "why": "",
+    "question": "",
+    "attempts": 1
+  },
+  {
+    "item": {
+      "id": "hn:50369098",
+      "source": "hn",
+      "title": "512GB Mac Studio",
+      "url": "https://www.apple.com/shop/buy-mac/mac-studio/m5-ultra-chip-36-core-cpu-80-core-gpu-512gb-memory-1tb-storage",
+      "published": "2026-11-04T17:51:52Z",
+      "summary": "",
+      "authors": [
+        "immutlex"
+      ],
+      "extra": {
+        "points": 5,
+        "comments": 6,
+        "discussion": "https://news.ycombinator.com/item?id=50369098"
+      }
+    },
+    "relevant": false,
+    "thread": "none",
+    "score": 0,
+    "summary": "It is a Hacker News story linking to an Apple Mac Studio purchase page. The title says it is a 512GB Mac Studio.",
+    "why": "",
+    "question": "",
+    "attempts": 1
+  },
+  {
+    "item": {
+      "id": "hn:50368160",
+      "source": "hn",
+      "title": "What is your biggest concern when building an MCP server?",
+      "url": "https://news.ycombinator.com/item?id=50368160",
+      "published": "2026-11-04T16:41:46Z",
+      "summary": "",
+      "authors": [
+        "guardiansamurai"
+      ],
+      "extra": {
+        "points": 5,
+        "comments": 2,
+        "discussion": "https://news.ycombinator.com/item?id=50368160"
+      }
+    },
+    "relevant": true,
+    "thread": "mcp-security",
+    "score": 5,
+    "summary": "A Hacker News discussion asking what concerns people most when building an MCP server.",
+    "why": "It may surface practitioner concerns about MCP server security, tool misuse, or supply-chain risks.",
+    "question": "Which specific MCP server risks are practitioners flagging, such as tool poisoning, over-privileged access, or rug pulls?",
+    "attempts": 1
+  },
+  {
+    "item": {
+      "id": "hn:50365513",
+      "source": "hn",
+      "title": "MCP vs. API vs. CLI: How should AI agents connect to your app?",
+      "url": "https://wasp.sh/blog/2026/11/03/mcp-vs-api-vs-cli-connect-ai-agents-to-your-app",
+      "published": "2026-11-04T13:51:48Z",
+      "summary": "",
+      "authors": [
+        "viborcip"
+      ],
+      "extra": {
+        "points": 5,
+        "comments": 3,
+        "discussion": "https://news.ycombinator.com/item?id=50365513"
+      }
+    },
+    "relevant": true,
+    "thread": "mcp-security",
+    "score": 4,
+    "summary": "A blog post comparing MCP, APIs, and CLIs as options for connecting AI agents to an application.",
+    "why": "It touches MCP as an agent connection protocol, which is adjacent to MCP and tool security, but the title does not state a security focus.",
+    "question": "Does the article discuss security implications of MCP versus API/CLI, such as tool permissions, prompt injection, or supply-chain risks?",
+    "attempts": 1
+  },
+  {
+    "item": {
+      "id": "hn:50363807",
+      "source": "hn",
+      "title": "Encore – a simple way to build on AWS and GCP",
+      "url": "https://encore.dev",
+      "published": "2026-11-04T10:55:41Z",
+      "summary": "",
+      "authors": [
+        "yolocomba"
+      ],
+      "extra": {
+        "points": 5,
+        "comments": 0,
+        "discussion": "https://news.ycombinator.com/item?id=50363807"
+      }
+    },
+    "relevant": false,
+    "thread": "none",
+    "score": 0,
+    "summary": "Encore is described as a simple way to build on AWS and GCP.",
+    "why": "",
+    "question": "",
+    "attempts": 1
+  }
+]
