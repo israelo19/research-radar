@@ -3,7 +3,7 @@
 [run]
 lookback_days = 2      # how far back to look for new papers and posts
 max_items = 40         # most model calls per run, so a busy day can't burn your credits
-concurrency = 2        # parallel model calls. Featherless plans cap concurrent requests.
+concurrency = 2        # parallel model calls. Raise it only if your plan allows more at once.
 read_threshold = 7     # score (0-10) an item needs to land in "Read today"
 issue_threshold = 6    # open a GitHub issue (phone notification) if anything scores this high
 seen_ttl_days = 60     # forget items after this long
