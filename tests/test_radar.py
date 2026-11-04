@@ -114,6 +114,23 @@ class PipelineTests(TempRoot):
         seen = json.loads((self.root / "state" / "seen.json").read_text())
         self.assertNotIn("arxiv:9999.00003", seen)
 
+    def test_retry_that_succeeds_is_not_counted_as_failed(self):
+        calls = {}
+        def thinker(tracer):
+            def answer(messages):
+                key = job.item_text(messages)
+                calls[key] = calls.get(key, 0) + 1
+                if "worm" in key.lower() and calls[key] == 1:
+                    return ""  # reasoning used the whole budget, no answer
+                return job.stub_answer(messages)
+            return StubLLM(tracer, answer)
+        s = job.run(root=self.root, cfg=self.cfg, fetch=fetch_at_now, llm_factory=thinker, now=NOW,
+                    live=False, open_issue=False)
+        self.assertEqual(s["failed"], 0)
+        self.assertEqual(s["relevant"], 4)
+        seen = json.loads((self.root / "state" / "seen.json").read_text())
+        self.assertIn("arxiv:9999.00003", seen)
+
     def test_source_outage_still_produces_a_run(self):
         def half_down(url):
             if "arxiv" in url:

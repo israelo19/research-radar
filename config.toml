@@ -20,7 +20,7 @@ seen_ttl_days = 60     # forget items after this long
 name = "bitdeer"
 base_url = "https://api-inference.bitdeer.ai/v1"
 key_env = "BITDEER_API_KEY"
-models = ["Qwen/Qwen3.5-397B-A17B", "deepseek-ai/DeepSeek-V4-Pro"]
+models = ["Qwen/Qwen3.8-27B", "deepseek-ai/DeepSeek-V4.1-Flash-1017", "zai-org/GLM-5.3-Flash"]
 prefer = ["Qwen3", "DeepSeek-V", "Qwen", "Llama", "GLM", "gemma", "Mistral"]
 avoid = ["embed", "rerank", "whisper", "tts", "vision", "-VL", "image", "flux", "-R1", "guard"]
 

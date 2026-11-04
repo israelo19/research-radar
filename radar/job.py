@@ -23,7 +23,7 @@ def load_config(path: Path | None = None) -> dict[str, Any]:
 
 def resolve_keys(providers: list[Provider]) -> dict[str, str]:
     """Which providers have a key, and where it came from (the name only, never the value)."""
-    return {p.name: f"secret {p.key_env}" for p in providers if p.key}
+    return {p.name: f"key set ({p.key_env})" for p in providers if p.key}
 
 
 def providers_from(cfg: dict[str, Any]) -> list[Provider]:
@@ -89,12 +89,16 @@ def triage_one(llm: LLM, cfg: dict, item: sources.Item, parent, idx: int, total:
                 {"role": "user", "content": item_prompt(item, thread_ids)}]
     label = f"[{idx}/{total}] {item.id} {item.title[:70]}"
     result: dict[str, Any] = {"item": item.to_dict()}
-    for attempt in range(2):
+    # Reasoning models (like Qwen3.8 on Bitdeer) think before answering, and a long
+    # think can use up the whole budget with no answer left. The retry gets more room.
+    budgets = [3000, 6000]
+    for attempt, budget in enumerate(budgets):
         try:
-            raw = llm.chat(messages, name="triage", parent=parent, label=label)
+            raw = llm.chat(messages, name="triage", parent=parent, label=label, max_tokens=budget)
             verdict = extract_json(raw)
             score = int(verdict.get("score", 0))
             thread = verdict.get("thread") if verdict.get("thread") in thread_ids else "none"
+            result.pop("error", None)  # an earlier attempt may have failed; this one didn't
             result.update(
                 relevant=bool(verdict.get("relevant")) and thread != "none",
                 thread=thread,
@@ -102,6 +106,7 @@ def triage_one(llm: LLM, cfg: dict, item: sources.Item, parent, idx: int, total:
                 summary=str(verdict.get("summary", "")).strip(),
                 why=str(verdict.get("why", "")).strip(),
                 question=str(verdict.get("question", "")).strip(),
+                attempts=attempt + 1,
             )
             return result
         except LLMError as e:
@@ -109,7 +114,9 @@ def triage_one(llm: LLM, cfg: dict, item: sources.Item, parent, idx: int, total:
             return result
         except (ValueError, TypeError, json.JSONDecodeError) as e:
             result.update(error=f"unparseable reply: {e}")
-            messages = messages + [{"role": "user", "content": "That wasn't valid JSON. Reply with only the JSON object."}]
+            if raw.strip():  # it answered, just not in JSON
+                messages = messages + [{"role": "assistant", "content": raw},
+                                       {"role": "user", "content": "That wasn't valid JSON. Reply with only the JSON object."}]
     return result
 
 
