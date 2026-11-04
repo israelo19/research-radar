@@ -168,9 +168,9 @@ def run(*, root: Path = ROOT, cfg: dict | None = None, dry_run: bool = False,
         key_sources = resolve_keys(providers_from(cfg))
         llm = LLM(providers_from(cfg), tracer)
         if not llm.available():
-            key_sources = {"none found": "No secret named " + " or ".join(p.key_env for p in providers_from(cfg))
-                           + " reached the run. Add it under Settings, Secrets and variables, Actions, "
-                             "Repository secrets."}
+            key_sources = {"none found": "No Bitdeer key reached the run. The workflow reads the repo secret "
+                                         "BITDEERAI_API_KEY (or BITDEER_API_KEY) from Settings, Secrets and "
+                                         "variables, Actions, Repository secrets."}
 
     since = now - timedelta(days=cfg["run"]["lookback_days"])
     seen_path = root / "state" / "seen.json"

@@ -6,7 +6,7 @@ Every step is traced. I can watch a run live in the Actions log, and afterwards 
 
 ## Set up
 
-1. **Add the Bitdeer key** in this repo: Settings → Secrets and variables → Actions → New repository secret. Name it `BITDEER_API_KEY` and paste the key.
+1. **Add the Bitdeer key** in this repo: Settings → Secrets and variables → Actions → New repository secret. Name it `BITDEERAI_API_KEY` and paste the key.
 2. **That's it.** The workflow runs by itself every day at 6:23 AM Eastern, and also right after any change to the code or `config.toml`.
 
 Featherless is set up as a backup but stays off unless you add a `FEATHERLESS_API_KEY` secret, so those credits stay free for other projects.
@@ -29,7 +29,7 @@ Settings → Pages → under "Build and deployment", set Source to **Deploy from
 
 ### If a run says no key reached it
 
-The key has to be a **repository secret** named exactly `BITDEER_API_KEY`: Settings → Secrets and variables → Actions → **Secrets** tab → **Repository secrets** → New repository secret. A key saved under Environment secrets, Codespaces or Dependabot never reaches this workflow.
+The key has to be a **repository secret** named exactly `BITDEERAI_API_KEY`: Settings → Secrets and variables → Actions → **Secrets** tab → **Repository secrets** → New repository secret. A key saved under Environment secrets, Codespaces or Dependabot never reaches this workflow.
 
 ## Where to look
 

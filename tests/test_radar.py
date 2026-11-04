@@ -150,7 +150,7 @@ class PipelineTests(TempRoot):
         s = job.run(root=self.root, cfg=self.cfg, fetch=fetch_at_now, now=NOW, live=False, open_issue=False)
         self.assertEqual(s["status"], "error")
         self.assertIn("API key", s["error"])
-        self.assertIn("BITDEER_API_KEY", s["keys"]["none found"])
+        self.assertIn("BITDEERAI_API_KEY", s["keys"]["none found"])
 
 
 class FakeProvider(BaseHTTPRequestHandler):
