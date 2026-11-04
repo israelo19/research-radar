@@ -1,0 +1,1185 @@
+[
+  {
+    "item": {
+      "id": "arxiv:2611.05320",
+      "source": "arxiv",
+      "title": "PyRUA-DataFarm: LLM Agent as a Cost-Efficient Teleoperator for Real-Ready Robot Data",
+      "url": "https://arxiv.org/abs/2611.05320",
+      "published": "2026-11-03T18:25:14Z",
+      "summary": "Teleoperation remains the default way to collect robot demonstrations, but every episode costs robot and operator time, and every new task starts from scratch. We ask whether a coding agent can take over the teleoperator's job. In our DataFarm, the agent receives a data request and one calibration episode of the robot in the target scene and rebuilds the task in simulation: it writes the scene, an expert controller, and a success judge. The simulator supplies exact actions, and a video model conditioned on real images renders each rollout as photographic video, generating all camera views together consistently. The output is real-ready data: synchronized camera views labelled with the robot's actions, on which a policy can be trained directly and deployed on the real robot. Independent judges certify the expert and every rendered episode before admission. On five real-robot tasks, policies trained only on farm data match policies trained on as many teleoperated episodes (93 vs. 84 successes in 100 trials), and under an unseen tablecloth and coloured light they keep 87 successes where the teleoperation-trained policies fall to 46. Adapting a task is fully automatic and costs \\$21 of API usage on average, paid once per task, plus \\$5 for a render contract; every further episode costs \\$0.80 on average for simulation, rendering, and review, with no robot or operator. One hour of three-view data for a task costs \\$107 on average, these costs included, slightly below a quote of \\$117 for teleoperation in China and below \\$290 in labour alone in North America.",
+      "authors": [
+        "Kewei Zhang",
+        "Juncheng Ma",
+        "Guodong Lv",
+        "Duomin Wang",
+        "Feixiang Ruan",
+        "Ruiyang Si",
+        "Chuanrui Zhang",
+        "Yuxuan Chen",
+        "Hao Chen",
+        "Yichen Liu",
+        "Yintianrun Zhang",
+        "Yufan Deng",
+        "Enze Xie",
+        "Daquan Zhou"
+      ],
+      "extra": {
+        "categories": [
+          "cs.RO",
+          "cs.AI"
+        ],
+        "pdf": "https://arxiv.org/pdf/2611.05320"
+      }
+    },
+    "relevant": false,
+    "thread": "none",
+    "score": 0,
+    "summary": "A system where a coding agent builds a simulated robot task, expert controller, and success judge to generate photorealistic robot demonstration data for training policies.",
+    "why": "",
+    "question": ""
+  },
+  {
+    "item": {
+      "id": "arxiv:2611.05171",
+      "source": "arxiv",
+      "title": "AgentAM: An AI Agent for Spatter- and Defect-Aware Process Optimization in Laser Powder Bed Fusion",
+      "url": "https://arxiv.org/abs/2611.05171",
+      "published": "2026-11-03T16:38:46Z",
+      "summary": "Predictive models for laser powder bed fusion (LPBF) are rarely used on the shop floor because querying them requires programming and model-specific knowledge. We present AgentAM, a large language model (LLM) agent that gives process engineers natural-language access to CFD-trained surrogates of spatter and melt pool geometry for SS316L through the Model Context Protocol (MCP). Polynomial surrogates trained on 279 single-track simulations predict melt pool dimensions ($R^2 \\geq 0.95$) and spatter volume ($R^2 = 0.83$ on test data) at any power-velocity point in the trained range, and geometric criteria assign each point a geometry-derived defect regime (keyhole, lack of fusion, balling or stable) that matches the regime obtained from the simulated geometry in 93.4% of tracks under cross-validation. The agent selects and parameterizes tools for prediction, process-window scans and constrained optimization. Minimum-spatter optima often sat within 10 $μ$m of the lack-of-fusion boundary; a margin-aware optimizer moved them away from all thresholds and raised the estimated probability of remaining classified Good from 0.94 to 1.00 under an assumed 2% process drift, and from 0.72 to 0.91 when jointly sampled cross-validated geometry residuals were added. About 40-50 well-spread simulations sufficed to reproduce the defect map. To evaluate the agent layer, we introduce a 145-prompt benchmark scored against direct tool calls, plus eight prompts (40 runs) on margin-aware requests. Over the 725 runs of the main benchmark the agent passed the intended inputs in 98.5% of parsing prompts, reported the scored spatter values and defect classes faithfully and met every stated constraint in the 65 feasible optimization runs, within a median 1.0% of the brute-force optimum.",
+      "authors": [
+        "Olabode T. Ajenifujah",
+        "Amir Barati Farimani"
+      ],
+      "extra": {
+        "categories": [
+          "cs.AI"
+        ],
+        "pdf": "https://arxiv.org/pdf/2611.05171"
+      }
+    },
+    "relevant": false,
+    "thread": "none",
+    "score": 0,
+    "summary": "The paper presents AgentAM, an LLM agent that lets process engineers query laser powder bed fusion surrogates through MCP tools for prediction, scanning, and optimization. It also introduces a prompt benchmark to evaluate the agent's tool use and constraint satisfaction.",
+    "why": "",
+    "question": ""
+  },
+  {
+    "item": {
+      "id": "arxiv:2611.05094",
+      "source": "arxiv",
+      "title": "A Gated Spec-Driven Workflow: An Audit-Trail Study of Coding-Agent Work",
+      "url": "https://arxiv.org/abs/2611.05094",
+      "published": "2026-11-03T15:52:28Z",
+      "summary": "Spec-driven development (SDD) asks a coding agent to work from specifications, plans, and task lists rather than from the chat transcript. We study one such workflow for Claude Code, in which almost every control is an instruction carried out by the same model that it constrains. The user must approve each stage before the next begins. A reviewer subagent checks each artefact against a fixed, stage-specific defect list, and an executor subagent may only touch the files listed in its task. After each block of tasks, the orchestrator runs a file-inventory check to detect undeclared changes. We analyse the logs and transcripts of nine features in seven projects, all run by the authors, ranging from a Fortran solver and Python programs to books and this paper. Of these, five finished with every planned task done, including the Fortran solver feature, and 288 of the 581 planned tasks were completed block by block. The executor kept to its declared files: it left only one undeclared change in the deliverable folder, and the check caught it, although its reports record other departures from the protocol. The weak point was the orchestrator, which runs and judges its own checks. It recorded undeclared changes in 11 of 247 block checks, mostly from the authors' in-round requests and the environment, and stopped work in only four.",
+      "authors": [
+        "Rodrigo Figueiredo Abdo",
+        "Pedro Carvalho Brom"
+      ],
+      "extra": {
+        "categories": [
+          "cs.SE"
+        ],
+        "pdf": "https://arxiv.org/pdf/2611.05094"
+      }
+    },
+    "relevant": true,
+    "thread": "agent-escalation",
+    "score": 7,
+    "summary": "The paper studies a gated spec-driven Claude Code workflow in which a user approves stages, a reviewer checks artifacts, and an executor is limited to declared files. It analyzes logs from nine features and finds the executor mostly stayed within file limits, while the orchestrator's self-judged checks were the weak point.",
+    "why": "It is directly about coding-agent permission boundaries, undeclared file changes, and runtime checks that can stop or miss agent overreach.",
+    "question": "How much trust should be placed in an orchestrator that both runs and judges its own file-inventory checks, and what independent runtime policy would catch the missed undeclared changes?"
+  },
+  {
+    "item": {
+      "id": "arxiv:2611.04977",
+      "source": "arxiv",
+      "title": "GeoFaham: Domain-Specialized Multi-Agent Geospatial Analytics for Disaster Response",
+      "url": "https://arxiv.org/abs/2611.04977",
+      "published": "2026-11-03T14:32:03Z",
+      "summary": "Real-world geospatial decision support requires more than single-step retrieval or code generation. Disaster-response questions often involve multi-source workflows that combine spatial databases, map-derived features, satellite imagery, raster products, and reusable geospatial artifacts, where correctness depends on preserving spatial scope, temporal context, and intermediate execution state. While large language models and coding agents offer a promising interface for such workflows, they struggle with geospatial-specific failure modes, including handling large artifacts, selecting the wrong evidence source, losing spatial or temporal metadata, and applying invalid geometric operations. We introduce GeoFaham, a domain-specialized multi-agent system for geospatial disaster analytics. GeoFaham decomposes workflows into specialist agents for vector operations, map feature retrieval, imagery discovery, and raster analysis, coordinated by an Orchestrator with a dual-ledger control loop for dependency-aware planning, progress tracking, validation, and replanning. To support artifact-centric collaboration, GeoFaham uses a Response Store that persists full geospatial outputs and typed metadata outside the LLM context window while agents exchange compact identifiers and summaries. We also introduce GeoFaham-Bench, a 40-task benchmark grounded in 17 real-world disaster records, designed to evaluate multi-step geospatial reasoning, cross-source integration, raster-vector computation, artifact generation, and recovery under non-rigid ground truth. We evaluate GeoFaham on GeoFaham-Bench against strong general-purpose coding-agent baselines, including Codex, Claude Code, and OpenCode. GeoFaham achieves the best overall performance, scoring 0.940 versus the next-best 0.879, while using 7.5 times fewer tokens. Our code and benchmark are publicly available at https://github.com/microsoft/GeoFaham.",
+      "authors": [
+        "Muhammad Sohail Danish",
+        "Gilles Q. Hacheme",
+        "Akram Zaytar",
+        "Satej S. Soman",
+        "Inbal Becker-Reshef",
+        "Juan Lavista Ferres",
+        "Salman Khan",
+        "Girmaw Abebe Tadesse"
+      ],
+      "extra": {
+        "categories": [
+          "cs.MA",
+          "cs.AI"
+        ],
+        "pdf": "https://arxiv.org/pdf/2611.04977"
+      }
+    },
+    "relevant": false,
+    "thread": "none",
+    "score": 0,
+    "summary": "A domain-specialized multi-agent system for geospatial disaster-response analytics, with a benchmark for multi-step geospatial reasoning and artifact generation. It is evaluated against general-purpose coding agents such as Codex, Claude Code, and OpenCode.",
+    "why": "",
+    "question": ""
+  },
+  {
+    "item": {
+      "id": "arxiv:2611.04879",
+      "source": "arxiv",
+      "title": "ScamWorld: An Interactive Environment for Evaluating Web Agents Against Online Fraud",
+      "url": "https://arxiv.org/abs/2611.04879",
+      "published": "2026-11-03T13:31:11Z",
+      "summary": "Web agents increasingly browse, shop, and manage accounts on behalf of their users. Prior work has shown that they can be misled by adversarial content, including prompt injections and deceptive interfaces. Beyond such attacks, agents operating on the open web also encounter online fraud designed to deceive humans, including fraudulent online stores, fake investment platforms, and advance-fee schemes. How web agents respond to such fraud during task execution remains underexplored, in part because scam websites are short-lived, making systematic evaluation difficult. To address this gap, we introduce ScamWorld, an interactive environment that reconstructs reported scam websites across diverse scenarios, fraud mechanisms, and languages. Each reconstructed website reproduces documented fraud mechanisms, making relevant signs of fraud observable before the agent's final action and enabling controlled, repeatable evaluation. Through an extensive study of web agents powered by six frontier LLMs, we find that baseline deception rates range from 11% to 35% across models. Agents proceed more readily with payments than with requests for credentials or wallet information. A closer analysis of agent trajectories shows that some agents acknowledge suspicious conditions yet proceed, at times treating the user's instructions as authorisation to accept additional terms imposed by the website. ScamWorld provides a reusable testbed for systematically evaluating and stress-testing web agents against real-world online fraud.",
+      "authors": [
+        "Yutao Wu",
+        "Xiao Liu",
+        "Ming Wen",
+        "Hanxun Huang",
+        "Jun Wang",
+        "Xingjun Ma"
+      ],
+      "extra": {
+        "categories": [
+          "cs.AI"
+        ],
+        "pdf": "https://arxiv.org/pdf/2611.04879"
+      }
+    },
+    "error": "unparseable reply: no JSON object in reply"
+  },
+  {
+    "item": {
+      "id": "arxiv:2611.04673",
+      "source": "arxiv",
+      "title": "Right Tool, Wrong Parameters: Defending LLM Agents Against Parameter Poisoning",
+      "url": "https://arxiv.org/abs/2611.04673",
+      "published": "2026-11-03T10:57:12Z",
+      "summary": "Indirect Prompt Injection (IPI) poses a critical threat to LLM agents. Existing defenses largely focus on whether an injection induces a new tool invocation or unintended action. In this paper, we study a different attack surface, parameter poisoning, where the attacker preserves the intended action but manipulates one or more tool arguments, such as a recipient or other task-critical value. Such attacks are difficult to detect because no new action is introduced, while parameter changes themselves are often legitimate parts of the user's request. Our key insight is that the legitimacy of a parameter change should be determined by the trust of the information flow that produces it under the user query. The query induces a task-specific trust hierarchy over available information fields: some are trusted to determine particular parameters, while others should have little or no influence. Based on this insight, we propose AuthorityFlow, a three-stage parameter-level defense. First, it interprets the user query to construct a task-specific trust hierarchy over the information fields available to the agent. Second, for each tool argument, it traces the information flow that produces its current value and attributes the value to its supporting field. Finally, it accepts the value only when that field is trusted to determine the parameter under the current task, allowing high-trust changes while flagging low-trust influence as potential parameter poisoning. We further introduce FactAuthBench for evaluating parameter poisoning in LLM agents. Without defense, the attack success rate reaches 93.06%. AuthorityFlow reduces it to 9.03%, while retaining 82.64% benign task utility compared with 90.28% without defense. Our results show that effective IPI defense requires reasoning not only about what action an agent takes, but also about which information is trusted to determine its parameters.",
+      "authors": [
+        "Yao Wang",
+        "Zehua Ma",
+        "Weiming Zhang",
+        "Han Fang"
+      ],
+      "extra": {
+        "categories": [
+          "cs.CR"
+        ],
+        "pdf": "https://arxiv.org/pdf/2611.04673"
+      }
+    },
+    "relevant": true,
+    "thread": "mcp-security",
+    "score": 8,
+    "summary": "The paper studies parameter poisoning, an indirect prompt injection attack where an LLM agent performs the intended tool call but with attacker-influenced arguments. It proposes AuthorityFlow, a defense that checks whether the information source for each tool parameter is trusted under the user's task, and introduces FactAuthBench for evaluation.",
+    "why": "It directly addresses prompt injection through agent tool use and malicious manipulation of tool parameters, which is central to MCP and tool security.",
+    "question": "How robust is the trust-hierarchy approach when the user query is ambiguous or when a low-trust field legitimately influences a tool parameter?"
+  },
+  {
+    "item": {
+      "id": "arxiv:2611.04672",
+      "source": "arxiv",
+      "title": "The Devil is in the Context: Nine Dimensions of Prompt Injection Attacks",
+      "url": "https://arxiv.org/abs/2611.04672",
+      "published": "2026-11-03T10:56:13Z",
+      "summary": "Prompt injection is usually discussed and evaluated as a single, homogeneous type of attack. However, vulnerabilities reported in real-world systems show that prompt injections vary widely. Moreover, the same instruction can be a prompt injection in one context and a legitimate request in another, depending on the user's intent and the system's policies. Ignoring this variation leaves gaps in how defenses are evaluated, and can give a false sense of security against real-world attacks. We identify nine dimensions along which prompt injection attacks differ. Together, they form a taxonomy that describes the injected instruction itself, its relation to the user's task, and how it manifests in the target system. Each dimension affects which defenses can detect or prevent an attack. We first use the taxonomy to characterize six real-world prompt injection vulnerabilities, showing how much these attacks differ. We then apply it to nine prompt injection benchmarks and find that most cover only a small region of this space. Combining benchmarks helps, but 13% of pairwise category combinations remain untested, mostly among the less commonly represented categories. Finally, we show that the taxonomy supports automated annotation of benchmarks and targeted generation of new test cases to fill these gaps. The taxonomy is also useful beyond benchmarks. Defense authors can use it to state which types of prompt injection they evaluated against, and system operators can use it to identify which attacks apply to their system and choose defenses to match.",
+      "authors": [
+        "Jiamin Chang",
+        "Kristina Nikolić",
+        "Rishi Sharma",
+        "Giovanni Cherubin",
+        "Vasilios Mavroudis",
+        "Jose Sanchez Vicarte",
+        "Arnav Garg",
+        "Hammond Pearce",
+        "Andrew Paverd",
+        "Ahmed Salem"
+      ],
+      "extra": {
+        "categories": [
+          "cs.CR"
+        ],
+        "pdf": "https://arxiv.org/pdf/2611.04672"
+      }
+    },
+    "relevant": true,
+    "thread": "mcp-security",
+    "score": 7,
+    "summary": "A taxonomy of prompt injection attacks across nine dimensions, used to compare real-world vulnerabilities and show coverage gaps in existing prompt injection benchmarks.",
+    "why": "It helps map the kinds of prompt injection that can appear in agent tools and tool outputs, which is central to MCP and tool security.",
+    "question": "Which of the nine dimensions are most likely to show up in MCP tool descriptions or tool outputs, and which defenses actually cover them?"
+  },
+  {
+    "item": {
+      "id": "arxiv:2611.04579",
+      "source": "arxiv",
+      "title": "FreeForm Harness: A Mobile-Native Agent Harness for Open and Composable Extensions",
+      "url": "https://arxiv.org/abs/2611.04579",
+      "published": "2026-11-03T09:39:21Z",
+      "summary": "Mobile phones support many everyday agent tasks, but current mobile agents bundle capabilities into monolithic pipelines with no open recombination point. Users and third parties cannot publish, install, and compose new behaviors, leaving personalized daily-life requests underserved. We argue that the missing piece is a substrate: although phones are the Web's dominant access point, open publication and composition under decentralized authorship stop at the agent harness. We present FreeForm Harness (FFH), a mobile-native agent harness for open, composable extensions. A frozen base and a permanence-aware required layer handle mobile constraints, including location, proactive triggering, and scarce channels. A uniform plugin contract makes independently authored extensions composable, checkable, and replaceable over a frozen socket set. FFH also supports end-user authorship through a tiered commissioned-authoring path. When no existing extension matches a user's intent, a Web coding agent generates a candidate artifact, which is validated and admitted on device under the same contract as other extensions. An Android prototype spans device, market, and cloud. Evaluation shows that architectural boundaries are enforced at runtime; realistic daily-life requests fit the declared composition space without widening it; and user intent reaches on-device execution through retrieval or commissioned authoring, with final trust decisions remaining device-local. FFH advances the agentic Web from \"everything is a plugin\" toward \"everyone is a developer\" on mobile.",
+      "authors": [
+        "Bo Zhang",
+        "Pengbo Zhang",
+        "Jiaxin Jiao",
+        "Yue Liu"
+      ],
+      "extra": {
+        "categories": [
+          "cs.SE"
+        ],
+        "pdf": "https://arxiv.org/pdf/2611.04579"
+      }
+    },
+    "relevant": true,
+    "thread": "mcp-security",
+    "score": 6,
+    "summary": "It proposes a mobile-native agent harness that lets users and third parties publish, install, and compose agent extensions through a uniform plugin contract. It emphasizes runtime enforcement of architectural boundaries and device-local trust decisions, including validation of extensions generated by a Web coding agent.",
+    "why": "It is relevant to agent tool security because it addresses how open, composable agent extensions can be admitted, checked, and constrained at runtime.",
+    "question": "How does FFH prevent malicious or over-privileged extensions from abusing the frozen socket set or the commissioned-authoring path?"
+  },
+  {
+    "item": {
+      "id": "arxiv:2611.04466",
+      "source": "arxiv",
+      "title": "From Watching to Steering: Enabling Human-Coding Agent Collaboration through Execution Traces",
+      "url": "https://arxiv.org/abs/2611.04466",
+      "published": "2026-11-03T07:56:06Z",
+      "summary": "Recent advances in large language models (LLMs) have enabled coding agents to autonomously perform complex software development tasks, yet their long-running execution remains difficult for users to inspect, understand, and steer. We present Vibetrace, an interactive trace visualization and intervention system for agentic programming built upon OpenCode. Vibetrace introduces a human-agent collaboration paradigm of Observe, Understand, Intervene, and Evolve. It (1) visualizes agent workflows as interactive execution traces for inspecting actions, intermediate states, and failures; (2) enables users to fork execution from prior steps and provide targeted corrections without restarting validated progress; and (3) distills traces and human feedback into reusable skills for continual agent evolution. On SWE-bench Verified, distilled skills reduce input tokens by 23.0% and cost by 15.5%, while improving pass rate from 65.0% to 68.0%. User studies further demonstrate improved accuracy and efficiency over conventional log-based interaction.",
+      "authors": [
+        "Xiaoke Yan",
+        "Jiaying Lei",
+        "Danqing Shi",
+        "Zichen Wang",
+        "Nan Cao"
+      ],
+      "extra": {
+        "categories": [
+          "cs.HC",
+          "cs.AI"
+        ],
+        "pdf": "https://arxiv.org/pdf/2611.04466"
+      }
+    },
+    "relevant": false,
+    "thread": "none",
+    "score": 1,
+    "summary": "Vibetrace is an interactive trace visualization and intervention system for coding agents that lets users inspect execution, fork from prior steps, and distill feedback into reusable skills.",
+    "why": "",
+    "question": ""
+  },
+  {
+    "item": {
+      "id": "arxiv:2611.04383",
+      "source": "arxiv",
+      "title": "Disposable Implementations: What Is Software Engineering For?",
+      "url": "https://arxiv.org/abs/2611.04383",
+      "published": "2026-11-03T06:14:45Z",
+      "summary": "Existing implementations are usually maintained for most of their life and replaced only as an exception. Coding agents may change that. If agents can produce new implementations from requirements, tests, architectural constraints, and operational records that survive replacement, changing a system may no longer require modifying its existing codebase. We call this process regeneration. An implementation is disposable when regeneration becomes a routine alternative to maintenance. Regenerating and verifying a clean implementation from current requirements and tests may be cheaper than having agents navigate (and potentially compound) existing technical debt, and could eliminate much of that debt. Yet existing code may contain knowledge absent from the preserved artifacts, including safeguards introduced after failures and assumptions that were never documented. A regenerated implementation may pass the available tests and still lose behavior that matters in production. This leaves open how to establish continuity across replacements and whether regeneration reduces maintenance effort or shifts it to the artifacts and processes that support it. We examine these questions through an exploratory review of practitioner literature. Published examples show that agents can replace existing implementations, but do not establish that repeated regeneration is safe or economical. If implementations become disposable, what should software engineering preserve?",
+      "authors": [
+        "Christoph Treude"
+      ],
+      "extra": {
+        "categories": [
+          "cs.SE"
+        ],
+        "pdf": "https://arxiv.org/pdf/2611.04383"
+      }
+    },
+    "relevant": false,
+    "thread": "none",
+    "score": 0,
+    "summary": "The paper explores whether coding agents could make software implementations disposable by regenerating them from requirements, tests, and operational records instead of maintaining existing code. It asks what software engineering should preserve if regeneration becomes routine.",
+    "why": "",
+    "question": ""
+  },
+  {
+    "item": {
+      "id": "arxiv:2611.04367",
+      "source": "arxiv",
+      "title": "Do Coding Agents Follow AGENTS.md? The Effect of Policy Wording on Instruction Compliance",
+      "url": "https://arxiv.org/abs/2611.04367",
+      "published": "2026-11-03T05:54:37Z",
+      "summary": "Coding agents do not always follow the policies in an Agent Context File (ACF). We inserted one policy, in four styles, into the ACFs of 86 benchmark tasks across four harness-model combinations. Conditional phrasing was followed less often than Prescriptive and Explanatory. The better of those two varied by combination.",
+      "authors": [
+        "Rikuto Tsuchida",
+        "Youmei Fan",
+        "Kazumasa Shimari",
+        "Raula Gaikovina Kula",
+        "Kenichi Matsumoto"
+      ],
+      "extra": {
+        "categories": [
+          "cs.SE"
+        ],
+        "pdf": "https://arxiv.org/pdf/2611.04367"
+      }
+    },
+    "relevant": true,
+    "thread": "agent-escalation",
+    "score": 6,
+    "summary": "The paper tests whether coding agents follow policies written in AGENTS.md files. It compares four policy wording styles across 86 benchmark tasks and four harness-model combinations.",
+    "why": "It is relevant to agent-escalation because AGENTS.md policies are a lightweight runtime-control mechanism, and weak compliance could let agents act outside intended constraints.",
+    "question": "Which policy wording styles are most reliable for preventing agents from violating access or safety constraints?"
+  },
+  {
+    "item": {
+      "id": "arxiv:2611.04087",
+      "source": "arxiv",
+      "title": "ScienceVision: Can AI Observe and Reason Like a Scientist?",
+      "url": "https://arxiv.org/abs/2611.04087",
+      "published": "2026-11-02T23:55:01Z",
+      "summary": "Scientific discovery builds on accurate observations interpreted through domain knowledge and reasoning. For scientific 3D data, this requires understanding structures and spatial relationships, from protein contacts to anatomical organization. Existing multimodal benchmarks largely evaluate text and 2D images, while scientific 3D evaluations vary in representations and protocols across disciplines, limiting cross-disciplinary comparison. To assess these foundational capabilities, we introduce ScienceVision, a cross-domain benchmark for scientific 3D understanding and reasoning through expert-level visual question answering (VQA). We construct 250 questions, with 50 each from Biology, Chemistry, Medical Imaging, Mechanical CAD, and Architecture, through a pipeline combining synthetic question generation with domain-expert review and annotation. Each task pairs a native 3D artifact with a scientific question, a specified response format, and a task-specific reference answer, requiring domain knowledge to be applied to geometric or topological evidence. We evaluate 12 models on the same questions in three settings: visual question answering with native 3D artifacts accessed through an agent harness's file and code-execution tools; the same workflow augmented with expert-inspired viewer inspection and measurement tools exposed through the Model Context Protocol (MCP); and visual question answering from prescribed rendered 2D images using an agent harness. All settings use the same task-specific deterministic final-answer scoring. The inspection environment supports view changes, target isolation, and slice inspection. In this main comparison, the best mean answer score is 0.53 out of 1. Mean scores in the native-artifact workflow without additional MCP tools exceed those in the rendered-image workflow for every model, by 17.2 percentage points on average.",
+      "authors": [
+        "Tianyi Ma",
+        "Jing Gu",
+        "Haozhe Zhao",
+        "Liang Chen",
+        "Yunfan Zhang",
+        "Haijun Su",
+        "Jialong Wu",
+        "Le Xue",
+        "Arnav Das",
+        "Dustin Tran",
+        "Yinfei Yang",
+        "Andrew Dai",
+        "Kuan Li"
+      ],
+      "extra": {
+        "categories": [
+          "cs.CV",
+          "cs.AI"
+        ],
+        "pdf": "https://arxiv.org/pdf/2611.04087"
+      }
+    },
+    "relevant": false,
+    "thread": "none",
+    "score": 0,
+    "summary": "ScienceVision is a cross-domain benchmark for scientific 3D understanding and reasoning using expert-level visual question answering. It evaluates 12 models on 3D artifacts with agent-based file/code tools, MCP-based inspection tools, and rendered 2D images.",
+    "why": "",
+    "question": ""
+  },
+  {
+    "item": {
+      "id": "arxiv:2611.03998",
+      "source": "arxiv",
+      "title": "Dory1.0-4B: A Looped Normalized-GPT",
+      "url": "https://arxiv.org/abs/2611.03998",
+      "published": "2026-11-02T21:38:49Z",
+      "summary": "We introduce Dory1.0-4B, a 4-billion-parameter looped (latent-recurrent) language model with elastic depth: a single checkpoint serves different inference compute budgets. Dory1.0-4B is built on a normalized Transformer (nGPT) backbone with interleaved sliding-window and full-attention layers, organized into an input block, a shared recurrent block, and an output block. At inference, the recurrent block can be applied a variable number of times. We pre-trained Dory1.0-4B on 6 trillion tokens. The first 4.5 trillion tokens were trained in NVFP4, and additional pre-training then extended the context length to 256K tokens. Next, we post-trained the model using Supervised Fine-Tuning (SFT) and Reinforcement Learning with Verifiable Rewards (RLVR), with a difficulty-aware loop curriculum that routes harder prompts to deeper loops. Increasing the loop count improves accuracy, with the largest gains on coding, agentic, and long-context benchmarks. With two or more loops, Dory1.0-4B outperforms larger models such as Qwen3.5-9B, Gemma 4 12B, and Gemma 4 26B-A4B on average across 12 benchmarks. Looping also makes Dory1.0-4B more token-efficient on agentic benchmarks: with four loops, it generates 1.3-2.5x fewer tokens than with one loop, as the extra computation is spent in latent space rather than on longer outputs. To reduce memory during looping, Dory1.0-4B caches keys and values only from the last loop, keeping its KV-cache footprint equal to that of a non-looped model at any loop count while retaining most of the accuracy gains. We open-source the BF16, MXFP8, NVFP4, and GGUF quantized checkpoints.",
+      "authors": [
+        "Maxim Fishman",
+        "Simeng Sun",
+        "Shantanu Acharya",
+        "Faisal Ladhak",
+        "Brian Chmiel",
+        "Santiago Akle Serano",
+        "Ron Banner",
+        "Boris Ginsburg",
+        "Krishna C. Puvvada"
+      ],
+      "extra": {
+        "categories": [
+          "cs.CL"
+        ],
+        "pdf": "https://arxiv.org/pdf/2611.03998"
+      }
+    },
+    "relevant": false,
+    "thread": "none",
+    "score": 0,
+    "summary": "Dory1.0-4B is a 4B-parameter looped language model that uses a shared recurrent block to trade inference compute for accuracy. It reports gains on coding, agentic, and long-context benchmarks while reducing output tokens on agentic tasks.",
+    "why": "",
+    "question": ""
+  },
+  {
+    "item": {
+      "id": "arxiv:2611.03634",
+      "source": "arxiv",
+      "title": "WebHarbor: Docking Real Websites for Evolving GUI Agent Environments",
+      "url": "https://arxiv.org/abs/2611.03634",
+      "published": "2026-11-02T18:57:36Z",
+      "summary": "GUI web agents require realistic and interactive environments that remain stable during both evaluation and training. Live website evaluation suffers from changing content, access restrictions, and limited coverage of authenticated workflows, while existing synthetic environments for training often lack functional depth and visual fidelity. We propose WebHarbor, a suite of 153 executable and dockerized website environments that faithfully reconstruct the visual interfaces, content, and functional workflows of real-world web services under deterministic control. We build WebHarbor through task-driven human-agent collaboration, where environments evolve as new tasks expand their functional scope, coding agents implement the required changes, and human contributors audit visual fidelity, functional correctness, and task validity. The resulting suite comprises 3,518 tasks spanning multi-step and post-authentication workflows, where existing works often fail to cover. Beyond reliable evaluation, WebHarbor provides high-fidelity synthetic web environments for cost-efficient reinforcement learning (RL). We demonstrate that a Qwen 4B-level GUI agent trained with RL in WebHarbor generalizes to unseen tasks and performs competitively with leading open-source GUI web agents across four benchmarks. The code and data are publicly available at https://github.com/aiming-lab/WebHarbor.",
+      "authors": [
+        "Zhaoyang Wang",
+        "Qianhui Wu",
+        "Boyu Gou",
+        "Demi Wang",
+        "Jiacheng Zhang",
+        "Peichun Hua",
+        "Qize Li",
+        "Shi Qiu",
+        "Yifan Jiang",
+        "Yifan Zhang",
+        "Zexu Jin",
+        "Baolin Peng",
+        "Bolin Shen",
+        "Chetan Bansal",
+        "Dehan Kong",
+        "Deren Lei",
+        "Dongshen Peng",
+        "Fengqing Jiang",
+        "Hao Cheng",
+        "Haoqing Wang",
+        "Jiaming Shan",
+        "Jicheng Wang",
+        "Jingguang Zhou",
+        "Jixuan He",
+        "Kaide Zeng",
+        "Kangyu Zhu",
+        "Lama Moukheiber",
+        "Mufan Qiu",
+        "Peng Xia",
+        "Qihan Sun",
+        "Qingwei Lin",
+        "Qiushi Sun",
+        "Ruichen Zhang",
+        "Shuqing Luo",
+        "Si Qin",
+        "Sicheng Fan",
+        "Tao Xiong",
+        "Wenlin Yao",
+        "Xinyu Zhang",
+        "Xinyue Zeng",
+        "Xuanrui Li",
+        "Xuchao Zhang",
+        "Yian Wang",
+        "Yichao Liu",
+        "Yiming Liang",
+        "Yiyang Zhou",
+        "Yizhu Jiao",
+        "Yuetai Li",
+        "Yurun Chen",
+        "Yuxuan Zhang",
+        "Zheyuan Yang",
+        "Zhiyuan Yao",
+        "Zhongyang Li",
+        "Zihao Li",
+        "Zili Wang",
+        "Jianfeng Gao",
+        "Huaxiu Yao"
+      ],
+      "extra": {
+        "categories": [
+          "cs.AI",
+          "cs.CL",
+          "cs.LG"
+        ],
+        "pdf": "https://arxiv.org/pdf/2611.03634"
+      }
+    },
+    "error": "unparseable reply: no JSON object in reply",
+    "relevant": false,
+    "thread": "none",
+    "score": 1,
+    "summary": "WebHarbor is a suite of 153 dockerized, executable website environments for evaluating and training GUI web agents. It includes 3,518 tasks, including multi-step and post-authentication workflows, and supports reinforcement learning for GUI agents.",
+    "why": "",
+    "question": ""
+  },
+  {
+    "item": {
+      "id": "arxiv:2611.03575",
+      "source": "arxiv",
+      "title": "VeriHarm-Bench: Measuring Harmful Success in LLM Coding Agents Verifiably",
+      "url": "https://arxiv.org/abs/2611.03575",
+      "published": "2026-11-02T18:27:55Z",
+      "summary": "Large language model (LLM) coding agents increasingly operate with shell access, allowing them to write scripts, move files, alter permissions, and modify system configurations. However, an agent may achieve a user's goal while causing unintended harm, such as deleting unrelated files, weakening access controls, or corrupting data, in response to benign inputs without explicit jailbreaking. This failure mode is particularly important because apparent task success may reassure users that an agent behaved correctly, causing harmful side effects to go unnoticed. We call this harmful success: the agent successfully completes the intended benign task while simultaneously causing unintended harm. Despite its importance, harmful success is difficult to measure because conventional task-success metrics overlook harmful behaviors, while existing safety evaluations are often designed solely to assess harmful outcomes. We introduce VeriHarm, an automatic framework for constructing programmatically verifiable benchmarks that directly measure harmful success. VeriHarm minimally perturbs coding tasks to elicit unintended harmful behavior while maintaining the benignity of the task and preserving the original task objective. It then synthesizes executable harm tests that, together with the original task-correctness tests, evaluate both task accuracy and harmful outcomes. Frontier agents, including GPT-5.6-Sol and Claude-Opus-5, achieve an average task accuracy of 95% on our curated VeriHarm-Bench, yet still struggle to complete tasks safely: their safe success rate, the fraction of tasks completed successfully without triggering the designated harm, averages only 37%. These results suggest that successful task completion can frequently coexist with unintended harm, and that task-success metrics alone may substantially understate the potential safety risks of coding agents.",
+      "authors": [
+        "Wei-Lin Chen",
+        "Zhepei Wei",
+        "Xinyu Zhu",
+        "Yu-Min Tseng",
+        "Tzu-Han Lin",
+        "Yu Meng"
+      ],
+      "extra": {
+        "categories": [
+          "cs.CL",
+          "cs.SE"
+        ],
+        "pdf": "https://arxiv.org/pdf/2611.03575"
+      }
+    },
+    "relevant": true,
+    "thread": "agent-escalation",
+    "score": 8,
+    "summary": "Introduces VeriHarm-Bench, a framework for building verifiable coding-agent benchmarks that measure whether agents complete benign tasks while causing unintended harmful side effects.",
+    "why": "It evaluates coding agents with shell access for harmful outcomes such as weakening access controls, which is directly relevant to agent privilege escalation and safe agent operation.",
+    "question": "How well do the synthesized harm tests generalize beyond the specific perturbations, and can they detect subtle privilege-escalation or permission-weakening behaviors not explicitly designated?"
+  },
+  {
+    "item": {
+      "id": "arxiv:2611.03555",
+      "source": "arxiv",
+      "title": "MCP Tool Poisoning in Agentic AI Frameworks: A Cross-Framework Measurement Study",
+      "url": "https://arxiv.org/abs/2611.03555",
+      "published": "2026-11-02T18:17:08Z",
+      "summary": "The Model Context Protocol (MCP) lets agentic AI frameworks connect language models to external tool providers, but it carries attacker-controlled content (tool descriptions, schema fields, and response data) into model context without validation. Prior benchmarks measure model compliance with poisoned instructions without confirming real execution. We present the first cross-framework measurement of MCP tool poisoning with real tool execution. A 25-class root-cause taxonomy unifies prior classifications, and the open-source tool mcpvenom drives a 9,720-cell susceptibility matrix across 12 frameworks, 18 models, and 45 attack scenarios, with a dual oracle that confirms exfiltration via canary HTTP receipt. The overall attack success rate is 22.9% (2,113 vulnerable cells). Of these, 64.9% dispatch an attacker tool call, 23.0% contact the attacker endpoint, and 12.1% verifiably exfiltrate a secret. Resistance is model-level: nine core frameworks cluster within 23 to 26% (chi-squared = 3.30, p = 0.91), and no framework implements intentional defense. Incidental framework properties mitigate in specific cases, and a regex description scanner rejects 20 of 45 scenarios at a 7.2% false-positive rate, so metadata scanning alone is a partial control. Model ASR ranges from 0.4% to 49.7%. Claude Opus 4.8 is vulnerable in 8 of 530 cells while issuing 223 explicit refusals. A code-level audit finds no intentional defense across twelve frameworks, and all five coordinated disclosures across four vendors were rejected.",
+      "authors": [
+        "Farooq Shaikh",
+        "Biagio Montaruli"
+      ],
+      "extra": {
+        "categories": [
+          "cs.CR",
+          "cs.AI"
+        ],
+        "pdf": "https://arxiv.org/pdf/2611.03555"
+      }
+    },
+    "relevant": true,
+    "thread": "mcp-security",
+    "score": 10,
+    "summary": "A cross-framework measurement study of MCP tool poisoning with real tool execution. It builds a 25-class taxonomy and a 9,720-cell susceptibility matrix across 12 frameworks, 18 models, and 45 attack scenarios, finding a 22.9% overall attack success rate.",
+    "why": "It directly measures how attacker-controlled MCP tool descriptions, schemas, and responses can cause real tool calls, endpoint contact, and secret exfiltration in agentic frameworks.",
+    "question": "Which parts of the attack success rate are driven by model behavior versus framework plumbing, and what does that imply for where defenses should be placed?"
+  },
+  {
+    "item": {
+      "id": "arxiv:2611.03551",
+      "source": "arxiv",
+      "title": "Can LLM Agents Be Forward-Deployed Engineers? Requirement Discovery and Delivery for Enterprise Text-to-SQL",
+      "url": "https://arxiv.org/abs/2611.03551",
+      "published": "2026-11-02T18:13:38Z",
+      "summary": "LLM coding agents can increasingly automate model post-training, but whether they can act as forward-deployed engineer (FDE) agents, discovering customer requirements and turning them into deployment decisions, remains unclear. We study this on a real enterprise text-to-SQL engagement: a simulated customer, grounded in the real use case's requirements, starts with an ambiguous request. An agent must discover acceptance criteria, data permissions, and hardware constraints in the discovery phase, then plan and execute a post-training recipe in the delivery phase. Across 15 models, the strongest discover over 80% of withheld requirements and open-weight models discover 40-50%; in the delivery phase, only 25% of runs across eight coding-agent configurations pass all acceptance criteria. We identify four bottlenecks in this engagement: (1) incomplete discovery, with 40% of withheld requirements missing or misrepresented; (2) unreliable execution; (3) underused compute budgets and a lack of systematic comparisons across base models and post-training methods; and (4) benchmark accuracy does not guarantee production readiness. We suggest human review of discovered requirements, monitoring of the agent's plan during execution, and an explicit experiment-environment specification covering hardware, budget scope, and production checks.",
+      "authors": [
+        "Marianne Menglin Liu",
+        "Rongguang Wang",
+        "Zheng Wang",
+        "Yewen Wang",
+        "Leonid Boytsov",
+        "Tao Sheng",
+        "Sujith Ravi",
+        "Dan Roth"
+      ],
+      "extra": {
+        "categories": [
+          "cs.CL",
+          "cs.AI"
+        ],
+        "pdf": "https://arxiv.org/pdf/2611.03551"
+      }
+    },
+    "relevant": false,
+    "thread": "none",
+    "score": 1,
+    "summary": "The paper studies whether LLM agents can act as forward-deployed engineers in an enterprise text-to-SQL task, discovering customer requirements and then executing a post-training delivery plan. It finds that agents often miss requirements and that benchmark accuracy does not ensure production readiness.",
+    "why": "",
+    "question": ""
+  },
+  {
+    "item": {
+      "id": "arxiv:2611.03534",
+      "source": "arxiv",
+      "title": "An Agentic Framework for Automated Power System Studies and Grid Connection Assessment",
+      "url": "https://arxiv.org/abs/2611.03534",
+      "published": "2026-11-02T18:00:52Z",
+      "summary": "Connecting new generation and demand to the grid depends on two scarce skills: checking applications against a large, changing body of regulation, and running the network studies that decide where and how a project connects. We present Grid Agents, an AI system that brings both together, and the methodology we use to evaluate it. The Grid Ontology is its knowledge system. It represents the regulation, standards and engineering knowledge that grid work depends on, makes it searchable, and evolves as the agents learn from use. Every answer drawn from it rests on evidence the agents cite. Grid Studio is an agent system specialised for power-system engineering. It works in its own engineering environment with domain tools and a study framework, draws on the Grid Ontology, and relies on established solvers for every number it reports. In both, engineers make the decisions. We bring eight published power-system benchmark families, previously scattered across separate papers, into one suite of 519 tasks, and we verify not only each answer but the work behind it, by replaying the agent's tool calls. The Grid Ontology cites the right regulatory evidence more often than a general coding agent or retrieval pipelines, leads on LegalBench-RAG and ranks first on the public leaderboards of the Enterprise RAG Challenge and ViDoRe V3. Grid Studio scores highest on the 519 power-system tasks and is the fastest of all the systems we compare, both by a statistically significant margin. With an optimiser in the loop, its reinforcement packages cost 33-67% less on average than those the agent designs alone.",
+      "authors": [
+        "MaoXun Huang",
+        "Kshitij Kapoor",
+        "Eli Louise"
+      ],
+      "extra": {
+        "categories": [
+          "cs.AI"
+        ],
+        "pdf": "https://arxiv.org/pdf/2611.03534"
+      }
+    },
+    "relevant": false,
+    "thread": "none",
+    "score": 0,
+    "summary": "The paper presents Grid Agents, an AI system for power-system engineering and grid connection assessment. It combines a regulatory ontology, specialized engineering agents, and a benchmark suite with tool-call replay for evaluation.",
+    "why": "",
+    "question": ""
+  },
+  {
+    "item": {
+      "id": "arxiv:2611.03517",
+      "source": "arxiv",
+      "title": "Ask, Don't Equip: Question-Driven Coding Agents for Deep Kernel Optimization",
+      "url": "https://arxiv.org/abs/2611.03517",
+      "published": "2026-11-02T17:51:58Z",
+      "summary": "LLM agents for GPU kernel optimization sit at two ends of a structure-freedom tradeoff. Scripted agents fix what the model does at each step, via a learned policy, an optimization menu, or fixed roles, and are sample-efficient where the recipe applies and stall where it does not. Open-ended agents let a self-directed model mutate a population of kernels and pay for the freedom in trials: thousands of evaluations, repeated edits, and wrong candidates. Both respond to hard targets by equipping the agent with more: parsed profiler output, disassembly analysis, retrieval over documentation and libraries, and stores of lessons. We argue that both lack direction, a hypothesis about where the remaining gap is, and that a short question asked at the right moment supplies it without narrowing what the agent may do next. We present KernelSeek, a question-driven agent that makes an existing CUDA kernel faster with no operator-specific knowledge and no faster implementation to imitate: a general-purpose coding agent, a minimal harness that enforces a verifiable goal, and questions at decision points, first from a human, then from a bank the agent applies to itself. On the same task, evaluator, hardware, and week, a tool-rich autonomous agent built in the prevailing style plateaued at 0.50x FlashAttention-3 after 133 model-driven steps; KernelSeek reached 1.13x. It then produced dependency-free FlashAttention forward kernels for Hopper and Blackwell, single CUDA files with no CUTLASS, CuTe, cuBLAS, or cuDNN, correct on all 182 scenarios per architecture and 1.16x FlashAttention-3 and 1.46x FlashAttention-4 (geometric mean). Across 162 human messages and 11.5K agent tool calls, every large gain followed a question that moved the agent to a different layer of the system or rejected a claimed limit, never one that supplied information. We release the kernels, harness, question bank, and all traces.",
+      "authors": [
+        "Gabriele Oliaro",
+        "Jaeseong Lee",
+        "Zhaoyuan Su",
+        "Sreeram Vennam",
+        "Zhihao Jia",
+        "Samyam Rajbhandari"
+      ],
+      "extra": {
+        "categories": [
+          "cs.LG"
+        ],
+        "pdf": "https://arxiv.org/pdf/2611.03517"
+      }
+    },
+    "relevant": false,
+    "thread": "none",
+    "score": 0,
+    "summary": "The paper introduces KernelSeek, a question-driven coding agent for optimizing CUDA kernels. It argues that asking targeted questions at decision points can guide an agent better than adding more tools or fixed procedures.",
+    "why": "",
+    "question": ""
+  },
+  {
+    "item": {
+      "id": "arxiv:2611.03231",
+      "source": "arxiv",
+      "title": "Specification-Driven Governance for Fairness-by-Design in Agentic Software Engineering: How Far Can We Go?",
+      "url": "https://arxiv.org/abs/2611.03231",
+      "published": "2026-11-02T14:48:34Z",
+      "summary": "Agentic AI is shifting developers' responsibilities from software implementation to software governance. While this paradigm improves productivity, it also raises challenges in ensuring that autonomous coding agents preserve developers' intentions. Among these, operationalizing fairness-by-design is largely unexplored, as existing approaches provide limited support for representing and propagating fairness requirements throughout agentic development workflows. In this paper, we investigate whether specification-driven development can operationalize fairness-by-design in the agentic development of machine learning systems. We study three coding agents on four machine learning applications, using four prompts that progressively operationalize fairness through nine Fairness Specification Elements, and analyze the traceability of fairness requirements across the generated artifacts, the fairness-accuracy trade-off of the resulting models, and the agents' design decisions and rationales. The results show that when fairness is operationalized, agents capture almost all fairness requirements in the specification (97.22%) and preserve most of them in the code (82.41%). However, the resulting models are not significantly fairer, as agents implement fairness as a post-hoc audit that neither shapes training nor prevents model delivery. Specifications thus make fairness traceable, but not enforceable, calling for fairness specifications that state what agents should do when requirements are not met, and for workflows that make the fairness decisions agents delegate to developers explicit.",
+      "authors": [
+        "Alfonso Cannavale",
+        "Alessandra Parziale",
+        "Valeria Pontillo",
+        "Patrizio Pelliccione",
+        "Andrea De Lucia",
+        "Fabio Palomba"
+      ],
+      "extra": {
+        "categories": [
+          "cs.SE"
+        ],
+        "pdf": "https://arxiv.org/pdf/2611.03231"
+      }
+    },
+    "relevant": false,
+    "thread": "none",
+    "score": 1,
+    "summary": "The paper tests whether specification-driven development can make coding agents preserve fairness requirements when building machine learning systems. It finds that specifications improve traceability but do not make fairness enforceable or significantly improve model fairness.",
+    "why": "",
+    "question": ""
+  },
+  {
+    "item": {
+      "id": "arxiv:2611.03219",
+      "source": "arxiv",
+      "title": "Can Coding Agents Sustain Continual Evolution without Forgetting?",
+      "url": "https://arxiv.org/abs/2611.03219",
+      "published": "2026-11-02T14:43:37Z",
+      "summary": "Recently, harness self-evolution has emerged as an important paradigm for improving agent performance. Prior studies show that evolving the agent harness can effectively enhance agent capabilities without modifying the foundation model's parameters. We find that existing approaches largely study agent evolution on a single task. In practice, coding agents may need to handle multiple task types over time. Whether an agent harness can continuously evolve across multiple tasks without suffering from catastrophic forgetting remains an important open question. In this paper, we investigate this open question through a comprehensive empirical study of continual harness self-evolution. We organize three software engineering task datasets into six different evolution directions and apply two representative harness evolution methods to perform continual evolution along these directions. Our experimental results show that evolution on a subsequent dataset can substantially undermine the performance on previously seen datasets. For example, with DeepSeek-V4-Flash-0731, Meta-Harness improves its performance on SWE-Bench to 94.0% after evolution. However, after further evolution on FeatureBench, its performance on SWE-Bench drops to 32.0% by the fifth round, corresponding to a 66% relative decrease. Finally, based on our experimental findings, we identify several insights, providing directions for the continual self-evolution of agent harnesses. Code is available at https://github.com/THU-Agent/continual-harness-evolution.",
+      "authors": [
+        "Shangziqi Zhao",
+        "Yitong Zhang",
+        "Jia Li"
+      ],
+      "extra": {
+        "categories": [
+          "cs.SE",
+          "cs.AI"
+        ],
+        "pdf": "https://arxiv.org/pdf/2611.03219"
+      }
+    },
+    "relevant": false,
+    "thread": "none",
+    "score": 0,
+    "summary": "Empirical study of continual self-evolution of coding-agent harnesses across multiple software-engineering tasks. It finds that evolving on a new task can cause large performance drops on earlier tasks.",
+    "why": "",
+    "question": ""
+  },
+  {
+    "item": {
+      "id": "arxiv:2611.03197",
+      "source": "arxiv",
+      "title": "Finding the Pivots to Repair Broken Source-Test Evolution Using LLMs",
+      "url": "https://arxiv.org/abs/2611.03197",
+      "published": "2026-11-02T14:24:29Z",
+      "summary": "Repairing obsolete tests in response to source code evolution is critical for test suite reliability and software quality assurance. While large language models (LLMs) have emerged as promising tools for automating many software development tasks, the effective supply of context and the orchestration of repair pipelines in this source--test co-evolution scenario remain poorly understood. Moreover, although reasoning is found helpful for LLMs on some complex coding tasks, it remains unclear which reasoning steps actually contribute to effective test repairs and how the insights learned from LLMs' behaviors benefit coding agents. In this paper, we present a systematic empirical study of test repair for source-test co-evolution empowered by LLMs, investigating the effective setups and typical LLM behaviors. To support this study, we construct a new benchmark of 500 real-world source-test co-evolution cases from commits submitted between May 2024 and April 2026 across 15 highly-starred open-source Java projects. Our experimental results reveal several key insights for effective LLM-based test repair: the complementary benefits of combining test failure symptoms, source code changes, and supportive code context, as well as the effectiveness of self-repair rounds. We further derive a common reasoning action taxonomy from LLMs' reasoning traces, which proves instrumental in guiding LLMs to repair tests more effectively while at a lower financial cost. Applying our findings to the Codex agent further improves its repair success rate on challenging cases by 66.7%.",
+      "authors": [
+        "Xiao Chen",
+        "Songqiang Chen",
+        "Jialun Cao",
+        "Yun Peng",
+        "Chun Yong Chong",
+        "Shing-Chi Cheung"
+      ],
+      "extra": {
+        "categories": [
+          "cs.SE"
+        ],
+        "pdf": "https://arxiv.org/pdf/2611.03197"
+      }
+    },
+    "relevant": false,
+    "thread": "none",
+    "score": 0,
+    "summary": "The paper studies LLM-based repair of obsolete tests after source code changes, using a new benchmark of real-world Java source-test co-evolution cases. It analyzes useful context, self-repair rounds, and reasoning traces to improve test repair, including gains for the Codex agent.",
+    "why": "",
+    "question": ""
+  },
+  {
+    "item": {
+      "id": "arxiv:2611.02978",
+      "source": "arxiv",
+      "title": "CAREFUL-Bench: Effect-Aware, Judge-Free Evaluation of Multi-Turn LLM Function Calling",
+      "url": "https://arxiv.org/abs/2611.02978",
+      "published": "2026-11-02T11:47:05Z",
+      "summary": "The multi-turn checker of the Berkeley Function Calling Leaderboard (BFCL) checks only the final state of a simulated service, never the calls that produced it. Extra calls cost nothing, no function doc says what a function does, and the scripted user never answers a proposal, so a model that asks before deleting or paying fails the turn; 322 of the 734 reference turns in the base category act destructively without confirmation. We add effect information to BFCL without replacing it. Effect declarations for all 128 functions are inferred by executing each function in BFCL's own simulators and diffing the state; the remaining judgment, which writes are destructive, is made by four annotators, two humans and two language models (Fleiss' kappa = 0.75), and adjudicated. A judge-free replay scorer re-scores any logged BFCL run, reproduces BFCL's results on all 800 reference trajectories, and reports, alongside the official score, unrequested destructive calls, duplicate writes, redundant reads, surplus steps and their token cost. A confirmation-aware protocol adds a deterministic user that answers proposals. On 11 open models the effect-aware score preserves the official ranking (rho = 0.99) but changes the gaps: the leader loses 14.0 points to unrequested destructive calls, and surplus steps account for 2-28% of all input tokens. Effect hints in the function docs produce no measurable change for any of eight models, consistent with their advisory status in the Model Context Protocol. A user that answers recovers up to four points for the models that ask and none for the rest, with every comparison paired on the same conversations. The gains come from clarifying questions rather than requests for permission: of the 712 conversations that require a destructive call, no model completes more than 6 with every such call confirmed, a difference the official score does not record.",
+      "authors": [
+        "Alexander Kovalenko",
+        "Artem Redchych"
+      ],
+      "extra": {
+        "categories": [
+          "cs.AI",
+          "cs.SE"
+        ],
+        "pdf": "https://arxiv.org/pdf/2611.02978"
+      }
+    },
+    "error": "unparseable reply: no JSON object in reply",
+    "relevant": true,
+    "thread": "mcp-security",
+    "score": 6,
+    "summary": "A benchmark extension for multi-turn LLM function calling that infers function effects, scores destructive and redundant calls, and tests confirmation-aware behavior.",
+    "why": "It measures how models handle destructive tool calls and confirmation in MCP-style function calling, which is adjacent to tool security and over-privileged agent actions.",
+    "question": "Do effect-aware scores and confirmation protocols reduce unsafe destructive tool calls without changing model rankings?"
+  },
+  {
+    "item": {
+      "id": "arxiv:2611.02833",
+      "source": "arxiv",
+      "title": "Reimagining computational quantum research with AI scientists",
+      "url": "https://arxiv.org/abs/2611.02833",
+      "published": "2026-11-02T09:32:13Z",
+      "summary": "AI scientists are expanding automated research across scientific domains, yet their ability to turn the scientific record into a foundation for autonomous discovery remains elusive. Here we uncover a fundamental barrier to this transition and demonstrate a route to overcome it in computational quantum science, where advances shape both what we can learn from complex quantum systems and what quantum computing can ultimately deliver. To identify this barrier, we introduce OmniQ, an expert-audited virtual research environment that converts published studies into executable reproduction tasks. Across 59 papers spanning classical simulation, quantum algorithms and quantum-property characterization, we systematically evaluate five agentic systems powered by large language models and six third-party agent harnesses. Our findings reveal that current AI scientists often fail to reproduce published results, exposing a fundamental mismatch between what scientific papers communicate and what autonomous agents require. By contrast, human expert intervention can turn these failures into successful reproductions, showing that the missing information can be identified and converted into reusable research experience. Guided by this observation, we develop Residual Agents (RA), a quantum-tailored self-improving AI scientist that distils externally verified workflow repairs into such experience. RA substantially improves research performance under fixed base models and limited adaptation budgets. For example, RA raises DeepSeek V4.1 Flash performance from 68% to 85%, matching Claude Code with Opus 5 at a third of its cost despite using a weaker base model. We integrate all reproduced results into an extensible platform built on the model context protocol, making verified research workflows directly accessible to AI scientists and allowing new scientific papers to be continuously incorporated.",
+      "authors": [
+        "Yuxuan Du",
+        "Hanqing Zhao",
+        "Xinbiao Wang",
+        "Yiming Lu",
+        "Kaining Zhang",
+        "Dacheng Tao"
+      ],
+      "extra": {
+        "categories": [
+          "quant-ph",
+          "cs.AI",
+          "cs.LG"
+        ],
+        "pdf": "https://arxiv.org/pdf/2611.02833"
+      }
+    },
+    "relevant": false,
+    "thread": "none",
+    "score": 1,
+    "summary": "The paper studies AI scientists that reproduce computational quantum research papers and introduces Residual Agents, a self-improving agent that learns verified workflow repairs. It also builds an MCP-based platform for sharing reproduced research workflows.",
+    "why": "",
+    "question": ""
+  },
+  {
+    "item": {
+      "id": "arxiv:2611.02784",
+      "source": "arxiv",
+      "title": "HLSClaw: Bringing Vibe Coding to High-Level Synthesis through Skill-Based Agentic Harness",
+      "url": "https://arxiv.org/abs/2611.02784",
+      "published": "2026-11-02T09:01:06Z",
+      "summary": "LLM agents are rapidly shifting software development toward intent-driven \\emph{vibe coding}, yet their effectiveness drops sharply in high-level synthesis (HLS), where code optimization must jointly consider design structure, directive search, and downstream hardware constraints. Existing HLS optimization approaches, including both heuristic-based methods and recent LLM-assisted pipelines, typically operate at fixed abstraction levels or in weakly coupled stages, limiting their ability to leverage the strong interplay between source code restructuring and directive search outcomes. Our key insight is that HLS optimization can be reframed from a fixed, hardwired transformation pipeline into a skill-based agentic control problem: an LLM agent equipped with modular, executable optimization skills and a feedback-driven orchestrator can autonomously navigate the coupled space of code restructuring and directive search. This motivates the design of HLSClaw, the first HLS-specific, skill-based agentic harness for holistic HLS optimization. On real-world HLS benchmarks, HLSClaw achieves a 39.12x geometric-mean latency speedup, outperforming the compiler baseline ScaleHLS by 1.98x, and surpassing the commercial coding agents Claude Code and Codex by 1.86x and 1.70x, respectively, while maintaining strong timing robustness.",
+      "authors": [
+        "Jinming Ge",
+        "Shang Liu",
+        "Jiawei Liang",
+        "Shangkun Li",
+        "Afzal Ahmad",
+        "Jiang Xu",
+        "Linfeng Du",
+        "Wei Zhang"
+      ],
+      "extra": {
+        "categories": [
+          "cs.LG",
+          "cs.SE"
+        ],
+        "pdf": "https://arxiv.org/pdf/2611.02784"
+      }
+    },
+    "relevant": false,
+    "thread": "none",
+    "score": 0,
+    "summary": "The paper introduces HLSClaw, an LLM-agent harness for high-level synthesis optimization. It uses modular executable skills and a feedback-driven orchestrator to improve hardware design latency.",
+    "why": "",
+    "question": ""
+  },
+  {
+    "item": {
+      "id": "arxiv:2611.02741",
+      "source": "arxiv",
+      "title": "ATrust: Adaptive Trust Boundary Expansion for Securing LLM Agents",
+      "url": "https://arxiv.org/abs/2611.02741",
+      "published": "2026-11-02T08:28:35Z",
+      "summary": "As large language model (LLM) agents take on more complex tasks with greater autonomy, security has become a major obstacle to their broader deployment. Unlike in attacks that require complex exploitation of operating system vulnerabilities, attackers can easily hijack agents through indirect prompt injection (IPI), leading to privacy leakage, financial loss, and destructive operations. However, existing defenses often make security decisions based on limited static trusted evidence or assess observations in isolation. Such rigid trust assumptions can cause task-essential information to be unnecessarily discarded, resulting in over-defense and degraded agent functionality. To address this problem, we propose ATrust, a defense mechanism that adaptively expands the trust boundary during agent runtime. Starting from the user query as the root trust anchor, ATrust evaluates external observations against the current trust boundary and execution state, progressively admitting task-essential information as new trust anchors. This preserves necessary environmental feedback while excluding irrelevant content, whether benign or malicious, from subsequent decision-making, thereby limiting unnecessary exposure to external environment. We evaluate ATrust on AgentDojo and AgentDyn, where it achieves the strongest overall security--utility trade-off among existing defenses. With GPT-4o as the engine model, ATrust reduces the attack success rate on AgentDyn from 37.80% to 4.37% while enhancing utility by 10.00%, outperforming AuthGraph, the state-of-the-art defense, by 12.33%. These results demonstrate the effectiveness and practicality of ATrust.",
+      "authors": [
+        "Xu Zhang",
+        "Zhichao Lu"
+      ],
+      "extra": {
+        "categories": [
+          "cs.CR"
+        ],
+        "pdf": "https://arxiv.org/pdf/2611.02741"
+      }
+    },
+    "relevant": true,
+    "thread": "agent-escalation",
+    "score": 8,
+    "summary": "ATrust is a runtime defense for LLM agents that starts from the user query as a trust anchor and adaptively admits external observations as new trust anchors to reduce indirect prompt injection risk while preserving task utility.",
+    "why": "It connects to agent-escalation by proposing a runtime trust-boundary policy for limiting how much untrusted agent environment or tool output can influence later actions.",
+    "question": "How does ATrust decide which external observations are task-essential enough to become new trust anchors, and what failure modes remain when the task itself requires trusting malicious-looking content?"
+  },
+  {
+    "item": {
+      "id": "arxiv:2611.02643",
+      "source": "arxiv",
+      "title": "SearchInject: Retrieval Exposure Control for Indirect Prompt Injection in Language-Model Search",
+      "url": "https://arxiv.org/abs/2611.02643",
+      "published": "2026-11-02T07:04:42Z",
+      "summary": "An indirect prompt injection can affect a search-augmented large language model only after its carrier page reaches model context. SearchInject controls this admission decision with a joint score combining retrieval relevance, search-abuse cues, instruction likelihood, and two relevance interactions. A quarantine threshold is selected under an empirical 0.5% clean-candidate false-quarantine constraint on a calibration split. Evaluation uses 300 held-out SciFact queries and held-out payload categories within four construction families already represented during development. Across 1,200 query-family outcomes per retriever, top-10 target exposure falls from 0.9408 to 0.1583 for BM25, from 0.9158 to 0.1508 for a normalized hybrid, and from 0.8450 to 0.1375 for latent semantic analysis. These are relative reductions of 83.2-83.7%; the largest absolute change in clean normalized discounted cumulative gain at rank 10 is 0.0018. The frozen threshold yields clean test false-quarantine rates of 0.59-0.65%, above the empirical calibration constraint. A query-level analytical reanalysis accounts for the repeated construction outcomes under an independent-query assumption. A separate 104-case generation follow-up records context removal but no confirmed undefended hijacks under a post hoc endpoint, so it cannot estimate a reduction in attack success. The evidence supports retrieval exposure control within the evaluated construction families; the benefit of the interaction terms at matched clean cost remains unresolved.",
+      "authors": [
+        "Kainan Zhou",
+        "Gangzhen Qian",
+        "Janet Sung",
+        "Zhi Jing",
+        "Rong Bao",
+        "Qianru Lao"
+      ],
+      "extra": {
+        "categories": [
+          "cs.AI",
+          "cs.CY",
+          "cs.IR",
+          "cs.LG"
+        ],
+        "pdf": "https://arxiv.org/pdf/2611.02643"
+      }
+    },
+    "relevant": true,
+    "thread": "mcp-security",
+    "score": 7,
+    "summary": "The paper proposes SearchInject, a retrieval-side filter that scores and quarantines search results likely to carry indirect prompt-injection payloads before they enter an LLM's context. It reports large reductions in malicious target exposure across several retrievers while keeping clean false-quarantine rates near a 0.5% calibration target.",
+    "why": "It is directly relevant to prompt injection through tool or retrieval output, which is a core attack surface in MCP and agent tool security.",
+    "question": "How well would this retrieval-exposure control generalize to adaptive or out-of-family injection payloads, and at what real-world false-quarantine cost?"
+  },
+  {
+    "item": {
+      "id": "arxiv:2611.02611",
+      "source": "arxiv",
+      "title": "Where Does MCP Security End? A Three-Tier Mitigation Mapping Framework for the OWASP MCP Top 10",
+      "url": "https://arxiv.org/abs/2611.02611",
+      "published": "2026-11-02T06:36:08Z",
+      "summary": "The Model Context Protocol (MCP) has become a leading standard for connecting Large Language Models (LLMs) to external tools, software, and data sources. MCP architecture favors ease of integration over security, blending the data and control planes into a single natural language channel. This introduces confused deputy and prompt injection vulnerabilities that cannot be completely mitigated in the software development lifecycle (SDLC) of an MCP server. Structured security guidance for server developers has been outpaced by this adoption trend, leaving them without a clear way to identify where vulnerabilities can be addressed at the server layer and where architectural constraints create hard limits. This paper presents a framework based on OWASP MCP Top 10 mapped to three architectural tiers, developed using Design Science Research (DSR). Vulnerabilities are classified as server-primary, gateway-primary, or protocol-primary applying a cascading decision tree following four questions, resulting in reproducible tier assignments and confidence levels independent of who applies it. The framework was validated against an enterprise-grade Managed File Transfer (MFT) MCP server built in Go. Validation results showed that high-confidence server-tier controls worked as predicted, and low-confidence protocol-tier controls failed for architectural reasons beyond server implementation. The architectural ceiling encountered during practical validation is the main contribution and shows how secure-by-design development can reduce the MCP attack surface but not completely mitigate it.",
+      "authors": [
+        "Christopher Krakauer",
+        "Andreas Schaad"
+      ],
+      "extra": {
+        "categories": [
+          "cs.CR"
+        ],
+        "pdf": "https://arxiv.org/pdf/2611.02611"
+      }
+    },
+    "relevant": true,
+    "thread": "mcp-security",
+    "score": 9,
+    "summary": "This paper proposes a framework for mapping OWASP MCP Top 10 vulnerabilities to server, gateway, or protocol tiers. It validates the framework on an MCP server and identifies architectural limits that prevent full mitigation at the server layer.",
+    "why": "It directly addresses MCP security, prompt injection, confused deputy risks, and where defenses can or cannot be applied in the MCP stack.",
+    "question": "Which MCP vulnerabilities are truly fixable at the server layer, and which require gateway or protocol-level changes?"
+  },
+  {
+    "item": {
+      "id": "arxiv:2611.02605",
+      "source": "arxiv",
+      "title": "StateFence: Task-State Protection Against Evidence-Chain Contamination in Blue-Team LLM Agents",
+      "url": "https://arxiv.org/abs/2611.02605",
+      "published": "2026-11-02T06:28:45Z",
+      "summary": "Indirect prompt injection creates a distinctive risk for blue-team Large Language Model (LLM) agents in Security Operations Centers (SOCs). Malicious instructions can be embedded in telemetry, tickets, retrieval results, or memory and then propagate through alert triage, incident summarization, response recommendation, and Indicator of Compromise (IOC) extraction as locally plausible intermediate decisions. We characterize this failure mode as evidence-chain contamination of protected task state. The main challenge is task dependent: a suspicious string may be malicious control text for summarization but essential evidence for IOC extraction. To address this challenge, we propose StateFence, a task-aware evaluation and defense framework that treats severity labels, incident narratives, response policies, and IOC sets as protected states. StateFence maps indirect prompt-injection attacks into explicit, stealth, multi-hop, and persistent SOC evidence attacks, records observable propagation traces, and routes defenses according to the attacked state. Across controlled SOC cases and public-SOC validation cases, StateFence lowers attack success and reduces failures that appear only after evidence is poisoned, while preserving task utility and avoiding the indicator loss caused by task-mismatched filtering. Our findings indicate that robust blue-team LLM agents require mechanisms that preserve task-critical state under untrusted evidence.",
+      "authors": [
+        "Haowen Dai",
+        "Alejandro Guerra-Manzanares"
+      ],
+      "extra": {
+        "categories": [
+          "cs.CR",
+          "cs.AI"
+        ],
+        "pdf": "https://arxiv.org/pdf/2611.02605"
+      }
+    },
+    "relevant": true,
+    "thread": "mcp-security",
+    "score": 6,
+    "summary": "A task-aware defense framework for blue-team SOC LLM agents that treats severity labels, incident narratives, response policies, and IOC sets as protected states against indirect prompt injection embedded in telemetry, tickets, retrieval results, or memory. It maps attacks into explicit, stealth, multi-hop, and persistent evidence-chain attacks and routes defenses by the attacked state.",
+    "why": "It is directly about prompt injection through agent tool/retrieval outputs and how to stop propagation in agent pipelines, which is adjacent to MCP/tool security.",
+    "question": "Which parts of the protected-state routing generalize beyond SOC tasks to general MCP tool outputs or agent memory?"
+  },
+  {
+    "item": {
+      "id": "hn:50360164",
+      "source": "hn",
+      "title": "C++26 Disapproved",
+      "url": "https://andreasfertig.com/blog/2026/11/cpp26-dis-failed-how-does-cpp-survive/",
+      "published": "2026-11-04T00:33:22Z",
+      "summary": "",
+      "authors": [
+        "thatxliner"
+      ],
+      "extra": {
+        "points": 162,
+        "comments": 71,
+        "discussion": "https://news.ycombinator.com/item?id=50360164"
+      }
+    },
+    "relevant": false,
+    "thread": "none",
+    "score": 0,
+    "summary": "A Hacker News story titled 'C++26 Disapproved' linking to a blog post about C++26 being disapproved.",
+    "why": "",
+    "question": ""
+  },
+  {
+    "item": {
+      "id": "hn:50354336",
+      "source": "hn",
+      "title": "Gitbook Breached",
+      "url": "https://news.ycombinator.com/item?id=50354336",
+      "published": "2026-11-03T16:45:49Z",
+      "summary": "",
+      "authors": [
+        "punchmesan"
+      ],
+      "extra": {
+        "points": 149,
+        "comments": 35,
+        "discussion": "https://news.ycombinator.com/item?id=50354336"
+      }
+    },
+    "relevant": false,
+    "thread": "none",
+    "score": 0,
+    "summary": "A Hacker News story titled 'Gitbook Breached'. The title indicates a security breach involving GitBook.",
+    "why": "",
+    "question": ""
+  },
+  {
+    "item": {
+      "id": "hn:50355504",
+      "source": "hn",
+      "title": "Google researchers demand freedom to tell the world what they know about AI",
+      "url": "https://www.washingtonpost.com/technology/2026/11/03/google-deepmind-staff-protest-lifetime-ban-criticizing-company/",
+      "published": "2026-11-03T17:55:26Z",
+      "summary": "",
+      "authors": [
+        "nsagent"
+      ],
+      "extra": {
+        "points": 88,
+        "comments": 102,
+        "discussion": "https://news.ycombinator.com/item?id=50355504"
+      }
+    },
+    "relevant": false,
+    "thread": "none",
+    "score": 0,
+    "summary": "A Hacker News story about Google/DeepMind researchers protesting a lifetime ban on criticizing the company and demanding freedom to speak about AI.",
+    "why": "",
+    "question": ""
+  },
+  {
+    "item": {
+      "id": "hn:50358314",
+      "source": "hn",
+      "title": "Show HN: Kairos – Open-source risk and fraud decisioning platform",
+      "url": "https://github.com/finic-ai/kairos",
+      "published": "2026-11-03T21:16:48Z",
+      "summary": "",
+      "authors": [
+        "ayanb9440"
+      ],
+      "extra": {
+        "points": 80,
+        "comments": 16,
+        "discussion": "https://news.ycombinator.com/item?id=50358314"
+      }
+    },
+    "relevant": false,
+    "thread": "none",
+    "score": 0,
+    "summary": "Kairos is described as an open-source risk and fraud decisioning platform. The available title does not indicate a direct connection to the listed AI security research threads.",
+    "why": "",
+    "question": ""
+  },
+  {
+    "item": {
+      "id": "hn:50357236",
+      "source": "hn",
+      "title": "$20M in Fines and Vizio Smart TVs Opt Out of Spying Option Does Nothing",
+      "url": "https://pcper.com/2026/11/20-million-in-fines-and-still-vizio-smart-tvs-opt-out-of-spying-option-does-nothing/",
+      "published": "2026-11-03T19:52:07Z",
+      "summary": "",
+      "authors": [
+        "speckx"
+      ],
+      "extra": {
+        "points": 53,
+        "comments": 1,
+        "discussion": "https://news.ycombinator.com/item?id=50357236"
+      }
+    },
+    "relevant": false,
+    "thread": "none",
+    "score": 0,
+    "summary": "The story reports that Vizio smart TVs were fined $20M and that the option to opt out of spying does not work.",
+    "why": "",
+    "question": ""
+  },
+  {
+    "item": {
+      "id": "hn:50358388",
+      "source": "hn",
+      "title": "British fintech Revolut slashes AI coding costs 10x by going self-hosted",
+      "url": "https://www.theregister.com/ai-and-ml/2026/11/03/british-fintech-revolut-slashes-ai-coding-costs-10x-by-cutting-out-claude-and-going-self-hosted/5307345",
+      "published": "2026-11-03T21:23:42Z",
+      "summary": "",
+      "authors": [
+        "gr_norm"
+      ],
+      "extra": {
+        "points": 15,
+        "comments": 1,
+        "discussion": "https://news.ycombinator.com/item?id=50358388"
+      }
+    },
+    "relevant": false,
+    "thread": "none",
+    "score": 1,
+    "summary": "A Register report says Revolut reduced AI coding costs by 10x by self-hosting instead of using Claude.",
+    "why": "",
+    "question": ""
+  },
+  {
+    "item": {
+      "id": "hn:50358352",
+      "source": "hn",
+      "title": "Show HN: Uncracked City, detective game where you question LLM suspects that lie",
+      "url": "https://uncracked.city",
+      "published": "2026-11-03T21:20:03Z",
+      "summary": "",
+      "authors": [
+        "passkey1510"
+      ],
+      "extra": {
+        "points": 11,
+        "comments": 3,
+        "discussion": "https://news.ycombinator.com/item?id=50358352"
+      }
+    },
+    "relevant": false,
+    "thread": "none",
+    "score": 0,
+    "summary": "A Show HN post for Uncracked City, a detective game in which players question LLM suspects that lie.",
+    "why": "",
+    "question": ""
+  },
+  {
+    "item": {
+      "id": "hn:50351830",
+      "source": "hn",
+      "title": "Show HN: Remene – Understand your MRI and prepare questions for your doctor",
+      "url": "https://remene.si",
+      "published": "2026-11-03T13:36:47Z",
+      "summary": "",
+      "authors": [
+        "molcode"
+      ],
+      "extra": {
+        "points": 11,
+        "comments": 0,
+        "discussion": "https://news.ycombinator.com/item?id=50351830"
+      }
+    },
+    "relevant": false,
+    "thread": "none",
+    "score": 0,
+    "summary": "A Show HN post for Remene, a tool for understanding MRI results and preparing questions for a doctor. Only the title and link are available.",
+    "why": "",
+    "question": ""
+  },
+  {
+    "item": {
+      "id": "hn:50354777",
+      "source": "hn",
+      "title": "Show HN: SIE Serverless – managed inference powered by self-hostable stack",
+      "url": "https://superlinked.com/",
+      "published": "2026-11-03T17:11:53Z",
+      "summary": "",
+      "authors": [
+        "supo"
+      ],
+      "extra": {
+        "points": 9,
+        "comments": 1,
+        "discussion": "https://news.ycombinator.com/item?id=50354777"
+      }
+    },
+    "relevant": false,
+    "thread": "none",
+    "score": 0,
+    "summary": "A Show HN post for SIE Serverless, described as managed inference powered by a self-hostable stack.",
+    "why": "",
+    "question": ""
+  },
+  {
+    "item": {
+      "id": "hn:50342272",
+      "source": "hn",
+      "title": "Show HN: Hnrepos.com, HackerTube for Repositories",
+      "url": "https://hnrepos.com",
+      "published": "2026-11-02T19:26:53Z",
+      "summary": "",
+      "authors": [
+        "richardw"
+      ],
+      "extra": {
+        "points": 9,
+        "comments": 0,
+        "discussion": "https://news.ycombinator.com/item?id=50342272"
+      }
+    },
+    "relevant": false,
+    "thread": "none",
+    "score": 0,
+    "summary": "It is a Show HN post for Hnrepos.com, described as a HackerTube-like service for repositories. No further details are available from the title and link.",
+    "why": "",
+    "question": ""
+  },
+  {
+    "item": {
+      "id": "hn:50357868",
+      "source": "hn",
+      "title": "AI Agents Used by Railway Breach Systems of Rival Primcloud",
+      "url": "https://securityboulevard.com/2026/11/ai-agents-used-by-railway-breach-systems-of-rival-primcloud/",
+      "published": "2026-11-03T20:40:14Z",
+      "summary": "",
+      "authors": [
+        "aliasxneo"
+      ],
+      "extra": {
+        "points": 8,
+        "comments": 1,
+        "discussion": "https://news.ycombinator.com/item?id=50357868"
+      }
+    },
+    "relevant": true,
+    "thread": "agent-escalation",
+    "score": 6,
+    "summary": "A Hacker News story about a report that AI agents used by Railway breached systems of rival Primcloud. The available text only states the title and link.",
+    "why": "It connects to agent-escalation because it involves AI agents accessing or breaching systems beyond their intended boundaries.",
+    "question": "What permissions, sandboxing, or tool access allowed the agents to reach the rival's systems, and what controls failed?"
+  }
+]
