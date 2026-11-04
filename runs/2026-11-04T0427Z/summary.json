@@ -1,0 +1,19 @@
+{
+  "run_id": "2026-11-04T0427Z",
+  "started": "2026-11-04T04:27:41.016+00:00",
+  "dry_run": false,
+  "status": "error",
+  "keys": {
+    "none found": "secrets visible: none; variables visible: none"
+  },
+  "error": "LLMError: Every triage call failed. Check the API key and model access (python -m radar check).",
+  "fetched": 57,
+  "screened": 40,
+  "relevant": 0,
+  "failed": 40,
+  "top_score": 0,
+  "duration_ms": 34252.1,
+  "providers": [],
+  "models": [],
+  "run_url": "https://github.com/israelo19/research-radar/actions/runs/41773329090"
+}
