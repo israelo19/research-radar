@@ -38,14 +38,14 @@ jobs:
       - name: Check keys
         if: ${{ github.event.inputs.mode == 'check' }}
         env:
-          BITDEER_API_KEY: ${{ secrets.BITDEER_API_KEY }}
+          BITDEER_API_KEY: ${{ secrets.BITDEER_API_KEY || vars.BITDEER_API_KEY }}
           FEATHERLESS_API_KEY: ${{ secrets.FEATHERLESS_API_KEY }}
         run: python -m radar check
 
       - name: Run radar (watch each step live here)
         if: ${{ github.event.inputs.mode != 'check' }}
         env:
-          BITDEER_API_KEY: ${{ secrets.BITDEER_API_KEY }}
+          BITDEER_API_KEY: ${{ secrets.BITDEER_API_KEY || vars.BITDEER_API_KEY }}
           FEATHERLESS_API_KEY: ${{ secrets.FEATHERLESS_API_KEY }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           PYTHONUNBUFFERED: "1"

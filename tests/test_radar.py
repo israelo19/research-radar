@@ -127,18 +127,6 @@ class PipelineTests(TempRoot):
         arx = [x for x in spans if x["name"] == "fetch arxiv"][0]
         self.assertEqual(arx["status"], "error")
 
-    def test_key_found_under_another_secret_name(self):
-        os.environ.pop("BITDEER_API_KEY", None)
-        os.environ["ALL_SECRETS"] = json.dumps({"github_token": "x", "BITDEER_AI": "sk-test"})
-        try:
-            found = job.resolve_keys(job.providers_from(self.cfg))
-            self.assertEqual(found["bitdeer"], "secret BITDEER_AI")
-            self.assertEqual(os.environ["BITDEER_API_KEY"], "sk-test")
-            self.assertNotIn("featherless", found)
-        finally:
-            os.environ.pop("ALL_SECRETS", None)
-            os.environ.pop("BITDEER_API_KEY", None)
-
     def test_arxiv_rate_limit_falls_back_to_rss(self):
         from radar.fixtures import arxiv_rss
         def fetch(url):
@@ -159,12 +147,10 @@ class PipelineTests(TempRoot):
     def test_no_keys_fails_loudly(self):
         for p in self.cfg["providers"]:
             os.environ.pop(p["key_env"], None)
-        os.environ["ALL_SECRETS"] = json.dumps({"github_token": "x", "SOMETHING_ELSE": "y"})
-        self.addCleanup(os.environ.pop, "ALL_SECRETS", None)
         s = job.run(root=self.root, cfg=self.cfg, fetch=fetch_at_now, now=NOW, live=False, open_issue=False)
         self.assertEqual(s["status"], "error")
         self.assertIn("API key", s["error"])
-        self.assertIn("SOMETHING_ELSE", s["keys"]["none found"])
+        self.assertIn("BITDEER_API_KEY", s["keys"]["none found"])
 
 
 class FakeProvider(BaseHTTPRequestHandler):

@@ -23,6 +23,10 @@ To get the reading list on your phone, install the GitHub app and turn on notifi
 
 The **Run workflow** button only shows up once `.github/workflows/radar.yml` is on the `main` branch.
 
+### If a run says no key reached it
+
+The key has to be a **repository secret** named exactly `BITDEER_API_KEY`: Settings → Secrets and variables → Actions → **Secrets** tab → **Repository secrets** → New repository secret. A key saved under Environment secrets, Codespaces or Dependabot never reaches this workflow.
+
 ## Where to look
 
 | What | Where |

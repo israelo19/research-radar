@@ -22,32 +22,8 @@ def load_config(path: Path | None = None) -> dict[str, Any]:
 
 
 def resolve_keys(providers: list[Provider]) -> dict[str, str]:
-    """Find each provider's key even if the secret got a different name.
-
-    The workflow hands the script every repo secret and variable as JSON
-    (ALL_SECRETS, ALL_VARS). If a provider's own env var is empty, use the
-    first secret or variable whose name contains the provider's name. Only
-    names are recorded, never values.
-    """
-    found: dict[str, str] = {}
-    pools = []
-    for label, var in (("secret", "ALL_SECRETS"), ("variable", "ALL_VARS")):
-        try:
-            pools.append((label, json.loads(os.environ.get(var) or "{}") or {}))
-        except json.JSONDecodeError:
-            pass
-    for p in providers:
-        if os.environ.get(p.key_env, "").strip():
-            found[p.name] = f"env {p.key_env}"
-            continue
-        for label, pool in pools:
-            names = sorted((k for k, v in pool.items() if p.name.upper() in k.upper() and str(v).strip()),
-                           key=lambda k: ("KEY" not in k.upper() and "TOKEN" not in k.upper(), k))
-            if names:
-                os.environ[p.key_env] = str(pool[names[0]]).strip()
-                found[p.name] = f"{label} {names[0]}"
-                break
-    return found
+    """Which providers have a key, and where it came from (the name only, never the value)."""
+    return {p.name: f"secret {p.key_env}" for p in providers if p.key}
 
 
 def providers_from(cfg: dict[str, Any]) -> list[Provider]:
@@ -192,14 +168,9 @@ def run(*, root: Path = ROOT, cfg: dict | None = None, dry_run: bool = False,
         key_sources = resolve_keys(providers_from(cfg))
         llm = LLM(providers_from(cfg), tracer)
         if not llm.available():
-            # Say which names the workflow can see, so a misnamed or misplaced key is obvious.
-            def names(var):
-                try:
-                    return sorted(json.loads(os.environ.get(var) or "{}"))
-                except json.JSONDecodeError:
-                    return []
-            key_sources = {"none found": f"secrets visible: {names('ALL_SECRETS') or 'none'}; "
-                                         f"variables visible: {names('ALL_VARS') or 'none'}"}
+            key_sources = {"none found": "No secret named " + " or ".join(p.key_env for p in providers_from(cfg))
+                           + " reached the run. Add it under Settings, Secrets and variables, Actions, "
+                             "Repository secrets."}
 
     since = now - timedelta(days=cfg["run"]["lookback_days"])
     seen_path = root / "state" / "seen.json"
