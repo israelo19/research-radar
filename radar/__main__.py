@@ -14,7 +14,7 @@ def main(argv: list[str] | None = None) -> int:
     r.add_argument("--dry-run", action="store_true", help="use built-in sample data and a stub model, no network")
     r.add_argument("--no-issue", action="store_true", help="don't open a GitHub issue")
     sub.add_parser("check", help="test your API keys and see which models answer")
-    sub.add_parser("view", help="rebuild site/index.html from saved runs")
+    sub.add_parser("view", help="rebuild docs/index.html from saved runs")
     args = p.parse_args(argv)
 
     if args.cmd == "check":

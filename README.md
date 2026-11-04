@@ -23,6 +23,10 @@ To get the reading list on your phone, install the GitHub app and turn on notifi
 
 The **Run workflow** button only shows up once `.github/workflows/radar.yml` is on the `main` branch.
 
+### Turn on the viewer link (once)
+
+Settings → Pages → under "Build and deployment", set Source to **Deploy from a branch**, Branch to **main** and the folder to **/docs**, then Save. A minute later the viewer is live at https://israelo19.github.io/research-radar/ and updates after every run.
+
 ### If a run says no key reached it
 
 The key has to be a **repository secret** named exactly `BITDEER_API_KEY`: Settings → Secrets and variables → Actions → **Secrets** tab → **Repository secrets** → New repository secret. A key saved under Environment secrets, Codespaces or Dependabot never reaches this workflow.
@@ -32,7 +36,7 @@ The key has to be a **repository secret** named exactly `BITDEER_API_KEY`: Setti
 | What | Where |
 |---|---|
 | Watch a run as it happens | Actions → the running job → "Run radar" step. Each step prints when it starts and finishes. |
-| Click into every step | `site/index.html`. Pull the repo and open it, or download the `trace-viewer` artifact from the run. If GitHub Pages is on for this repo, serve it from `/site`. |
+| Click into every step | **https://israelo19.github.io/research-radar/** once Pages is on (below). Or open `docs/index.html` from the repo, or download the `trace-viewer` artifact from a run. |
 | Today's reading list | The issue it opens, the run's summary page, or `digests/YYYY-MM-DD.md` |
 | Raw traces | `runs/<run id>/trace.jsonl`, one JSON object per step |
 
@@ -63,5 +67,5 @@ New jobs can reuse `Tracer` and `LLM` the same way `job.py` does, and every mode
 ```bash
 python -m unittest -v           # pipeline on sample data, plus failover against a fake provider
 python -m radar run --dry-run   # full run on [sample] data with a stub model, written to .dry/
-open .dry/site/index.html
+open .dry/docs/index.html
 ```

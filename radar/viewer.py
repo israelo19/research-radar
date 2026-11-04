@@ -1,4 +1,4 @@
-"""Builds site/index.html: one self-contained page with recent runs baked in.
+"""Builds docs/index.html (served by GitHub Pages if it is on): one self-contained page with recent runs baked in.
 
 Open it straight from disk, from the Actions artifact, or from GitHub Pages.
 """
@@ -23,7 +23,7 @@ def build(root: Path, keep: int = 14) -> Path:
         bundle.append({"summary": summary, "trace": trace, "items": items})
     data = json.dumps({"runs": bundle}, ensure_ascii=False).replace("</", "<\\/")
     html = TEMPLATE.read_text(encoding="utf-8").replace("__RADAR_DATA__", data)
-    out = root / "site" / "index.html"
+    out = root / "docs" / "index.html"
     out.parent.mkdir(parents=True, exist_ok=True)
     out.write_text(html, encoding="utf-8")
     return out

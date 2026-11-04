@@ -56,7 +56,7 @@ jobs:
         run: |
           git config user.name "Israel Ogwu"
           git config user.email "izzymax192@gmail.com"
-          git add runs digests state site
+          git add runs digests state docs
           if git diff --cached --quiet; then echo "nothing to save"; exit 0; fi
           git commit -m "radar: run $(date -u +%Y-%m-%dT%H%MZ)"
           git pull --rebase --autostash
@@ -67,5 +67,5 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: trace-viewer
-          path: site/index.html
+          path: docs/index.html
           if-no-files-found: ignore
