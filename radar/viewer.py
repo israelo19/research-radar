@@ -21,7 +21,13 @@ def build(root: Path, keep: int = 14) -> Path:
         trace = load_trace(run_dir / "trace.jsonl") if (run_dir / "trace.jsonl").exists() else []
         items = json.loads((run_dir / "items.json").read_text()) if (run_dir / "items.json").exists() else []
         bundle.append({"summary": summary, "trace": trace, "items": items})
-    data = json.dumps({"runs": bundle}, ensure_ascii=False).replace("</", "<\\/")
+    threads = {}
+    cfg_path = Path(__file__).resolve().parent.parent / "config.toml"
+    if cfg_path.exists():
+        import tomllib
+        with open(cfg_path, "rb") as f:
+            threads = {t["id"]: t["label"] for t in tomllib.load(f).get("threads", [])}
+    data = json.dumps({"runs": bundle, "threads": threads}, ensure_ascii=False).replace("</", "<\\/")
     html = TEMPLATE.read_text(encoding="utf-8").replace("__RADAR_DATA__", data)
     out = root / "docs" / "index.html"
     out.parent.mkdir(parents=True, exist_ok=True)
