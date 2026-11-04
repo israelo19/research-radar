@@ -1,0 +1,75 @@
+# Research radar settings. The schedule itself lives in .github/workflows/radar.yml.
+
+[run]
+lookback_days = 2      # how far back to look for new papers and posts
+max_items = 40         # most model calls per run, so a busy day can't burn your credits
+concurrency = 2        # parallel model calls. Featherless plans cap concurrent requests.
+read_threshold = 7     # score (0-10) an item needs to land in "Read today"
+issue_threshold = 6    # open a GitHub issue (phone notification) if anything scores this high
+seen_ttl_days = 60     # forget items after this long
+
+# Providers are tried in order. A provider is skipped when its key isn't set.
+# Bitdeer does the daily screening. Featherless only gets used if you add
+# FEATHERLESS_API_KEY, so those credits stay free for other projects.
+#
+# Within a provider, `models` are tried in order. If none of them work, the radar
+# asks the provider for its model list and tries ids containing the `prefer`
+# words, in that order, skipping anything matching `avoid`. Each run records
+# the provider's full model list in its trace.
+[[providers]]
+name = "bitdeer"
+base_url = "https://api-inference.bitdeer.ai/v1"
+key_env = "BITDEER_API_KEY"
+models = ["Qwen/Qwen3.5-397B-A17B", "deepseek-ai/DeepSeek-V4-Pro"]
+prefer = ["Qwen3", "DeepSeek-V", "Qwen", "Llama", "GLM", "gemma", "Mistral"]
+avoid = ["embed", "rerank", "whisper", "tts", "vision", "-VL", "image", "flux", "-R1", "guard"]
+
+[[providers]]
+name = "featherless"
+base_url = "https://api.featherless.ai/v1"
+key_env = "FEATHERLESS_API_KEY"
+models = ["Qwen/Qwen3-32B", "Qwen/Qwen3-14B", "Qwen/Qwen3-8B"]
+
+# The research threads the model sorts things into. Kept general on purpose:
+# this file is public if the repo is.
+[[threads]]
+id = "eval-awareness"
+label = "Eval awareness"
+about = "Whether models can tell they are being tested: evaluation awareness, test awareness, sandbagging, benchmark contamination, and models behaving differently on benchmarks than in real use."
+
+[[threads]]
+id = "mcp-security"
+label = "MCP and tool security"
+about = "Security of the Model Context Protocol and agent tools: tool poisoning, malicious tool descriptions, prompt injection through tool output, rug pulls, over-privileged servers, and malicious intermediaries in the agent supply chain."
+
+[[threads]]
+id = "ai-worms"
+label = "AI worms"
+about = "Self-propagating attacks across LLM agents and AI applications: AI worms, prompt infections between agents, self-replicating prompts, and how such attacks are detected or stopped."
+
+[[threads]]
+id = "agent-escalation"
+label = "Agent privilege escalation"
+about = "Coding agents and computer-use agents gaining more access than intended: permission prompts, sandbox escapes, exploit benchmarks run by agents, and defenses like sandboxing and runtime policy."
+
+[sources.arxiv]
+categories = ["cs.CR", "cs.AI", "cs.LG", "cs.SE", "cs.CL", "cs.MA"]
+phrases = [
+  "model context protocol",
+  "tool poisoning",
+  "prompt injection",
+  "evaluation awareness",
+  "test awareness",
+  "sandbagging",
+  "AI worm",
+  "self-replicating",
+  "self-propagating",
+  "agent security",
+  "coding agent",
+  "agentic security",
+]
+max_results = 100
+
+[sources.hn]
+queries = ["MCP", "model context protocol", "prompt injection", "AI worm", "Claude Code security", "agent security", "eval awareness"]
+min_points = 5

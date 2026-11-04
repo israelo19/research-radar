@@ -1,0 +1,203 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Research Radar</title>
+<style>
+:root {
+  --bg: #f6f5f1; --panel: #ffffff; --ink: #1d1c1a; --muted: #6b6860; --line: #e3e0d8;
+  --accent: #b4532a; --ok: #2f7d4f; --err: #b3261e; --dry: #7a5cc0; --bar: #d9c7b8; --bar-llm: #c9774f;
+  --chip: #efece5; --code: #f1efe9; --sel: #fbf1ea;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #151412; --panel: #1d1c19; --ink: #ecebe6; --muted: #9c988e; --line: #2e2c28;
+    --accent: #e08a5c; --ok: #5fbf86; --err: #f2766b; --dry: #ad93f0; --bar: #4a4038; --bar-llm: #b9653f;
+    --chip: #26241f; --code: #23211d; --sel: #2a211b;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #151412; --panel: #1d1c19; --ink: #ecebe6; --muted: #9c988e; --line: #2e2c28;
+  --accent: #e08a5c; --ok: #5fbf86; --err: #f2766b; --dry: #ad93f0; --bar: #4a4038; --bar-llm: #b9653f;
+  --chip: #26241f; --code: #23211d; --sel: #2a211b;
+}
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--bg); color: var(--ink);
+  font: 14px/1.5 ui-sans-serif, -apple-system, "Segoe UI", Inter, Roboto, sans-serif; }
+header { display: flex; align-items: baseline; gap: 12px; padding: 18px 20px 10px; flex-wrap: wrap; }
+header h1 { font-size: 19px; margin: 0; letter-spacing: -0.01em; }
+header .sub { color: var(--muted); font-size: 13px; }
+.layout { display: grid; grid-template-columns: 260px 1fr; gap: 16px; padding: 0 20px 24px; }
+@media (max-width: 820px) { .layout { grid-template-columns: 1fr; padding: 0 16px 24px; } header { padding: 16px; } }
+.panel { background: var(--panel); border: 1px solid var(--line); border-radius: 10px; }
+.runs { padding: 6px; max-height: calc(100vh - 90px); overflow: auto; }
+@media (max-width: 820px) { .runs { max-height: 220px; } }
+.run { padding: 9px 10px; border-radius: 7px; cursor: pointer; border: 1px solid transparent; }
+.run:hover { background: var(--chip); }
+.run.sel { background: var(--sel); border-color: var(--line); }
+.run .when { font-weight: 600; font-size: 13px; }
+.run .meta { color: var(--muted); font-size: 12px; }
+.pill { display: inline-block; font-size: 11px; font-weight: 600; padding: 1px 7px; border-radius: 99px;
+  background: var(--chip); color: var(--muted); margin-left: 6px; vertical-align: 1px; }
+.pill.ok { color: var(--ok); } .pill.error { color: var(--err); } .pill.dry { color: var(--dry); }
+.main { min-width: 0; }
+.tabs { display: flex; gap: 4px; padding: 8px; border-bottom: 1px solid var(--line); flex-wrap: wrap; align-items: center; }
+.tab { border: 0; background: none; color: var(--muted); padding: 6px 10px; border-radius: 6px; cursor: pointer; font: inherit; font-weight: 600; }
+.tab.on { background: var(--chip); color: var(--ink); }
+.stats { margin-left: auto; color: var(--muted); font-size: 12px; padding-right: 6px; }
+.view { padding: 12px; }
+.empty { color: var(--muted); padding: 28px; text-align: center; }
+/* reading list */
+.card { padding: 12px 14px; border: 1px solid var(--line); border-radius: 9px; margin-bottom: 10px; }
+.card h3 { margin: 0 0 4px; font-size: 15px; line-height: 1.35; }
+.card h3 a { color: var(--ink); text-decoration: none; } .card h3 a:hover { text-decoration: underline; }
+.card .row { color: var(--muted); font-size: 12px; margin-bottom: 6px; display: flex; gap: 8px; flex-wrap: wrap; align-items: center; }
+.score { font-weight: 700; color: var(--accent); }
+.card p { margin: 4px 0; }
+.card .q { color: var(--muted); font-style: italic; }
+.toggle { color: var(--muted); font-size: 12px; display: flex; gap: 6px; align-items: center; margin: 2px 0 10px; }
+/* trace */
+.trace { display: grid; grid-template-columns: minmax(0, 1fr); }
+.span { display: grid; grid-template-columns: minmax(0, 1.3fr) minmax(90px, 1fr) 62px; gap: 10px; align-items: center;
+  padding: 5px 8px; border-radius: 6px; cursor: pointer; }
+.span:hover { background: var(--chip); }
+.span.sel { background: var(--sel); }
+.span .nm { white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.span .nm b { font-weight: 600; }
+.span .nm .lbl { color: var(--muted); }
+.kind { font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: .04em; color: var(--muted);
+  border: 1px solid var(--line); border-radius: 4px; padding: 0 4px; margin-right: 6px; }
+.kind.llm { color: var(--accent); border-color: var(--accent); }
+.track { position: relative; height: 10px; background: var(--chip); border-radius: 3px; }
+.bar { position: absolute; top: 0; height: 10px; border-radius: 3px; background: var(--bar); min-width: 2px; }
+.bar.llm { background: var(--bar-llm); } .bar.error { background: var(--err); }
+.dur { text-align: right; color: var(--muted); font-variant-numeric: tabular-nums; font-size: 12px; }
+.err { color: var(--err); }
+.detail { margin-top: 12px; border-top: 1px solid var(--line); padding-top: 12px; }
+.detail h4 { margin: 14px 0 6px; font-size: 12px; text-transform: uppercase; letter-spacing: .05em; color: var(--muted); }
+.kv { display: grid; grid-template-columns: 120px 1fr; gap: 3px 12px; font-size: 13px; }
+.kv div:nth-child(odd) { color: var(--muted); }
+pre { background: var(--code); border: 1px solid var(--line); border-radius: 7px; padding: 10px; margin: 0;
+  white-space: pre-wrap; word-break: break-word; font: 12px/1.45 ui-monospace, SFMono-Regular, Menlo, monospace; max-height: 340px; overflow: auto; }
+.msg { margin-bottom: 8px; } .msg .role { font-size: 11px; font-weight: 700; color: var(--muted); margin-bottom: 3px; text-transform: uppercase; }
+table.att { border-collapse: collapse; font-size: 12px; width: 100%; }
+table.att td, table.att th { border-bottom: 1px solid var(--line); padding: 4px 6px; text-align: left; vertical-align: top; }
+a { color: var(--accent); }
+</style>
+</head>
+<body>
+<header>
+  <h1>Research radar</h1>
+  <span class="sub" id="sub"></span>
+</header>
+<div class="layout">
+  <nav class="panel runs" id="runs" aria-label="Runs"></nav>
+  <main class="panel main">
+    <div class="tabs">
+      <button class="tab on" data-tab="list">Reading list</button>
+      <button class="tab" data-tab="trace">Trace</button>
+      <span class="stats" id="stats"></span>
+    </div>
+    <div class="view" id="view"></div>
+  </main>
+</div>
+<script type="application/json" id="data">__RADAR_DATA__</script>
+<script>
+const DATA = JSON.parse(document.getElementById('data').textContent);
+const runs = DATA.runs || [];
+let cur = 0, tab = 'list', selSpan = null, showAll = false;
+const $ = (s, el = document) => el.querySelector(s);
+const esc = s => String(s ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const fmtDur = ms => ms == null ? '…' : ms < 1000 ? `${Math.round(ms)}ms` : `${(ms/1000).toFixed(ms < 10000 ? 1 : 0)}s`;
+const when = id => { const iso = id.slice(0,10) + 'T' + id.slice(11,13) + ':' + id.slice(13,15) + ':00Z';
+  const d = new Date(iso); return isNaN(d) ? id : d.toLocaleString(undefined, {weekday:'short', month:'short', day:'numeric', hour:'numeric', minute:'2-digit'}); };
+const threadLabel = { 'eval-awareness':'Eval awareness', 'mcp-security':'MCP and tool security', 'ai-worms':'AI worms', 'agent-escalation':'Agent privilege escalation' };
+
+function renderRuns() {
+  const nav = $('#runs');
+  if (!runs.length) { nav.innerHTML = '<div class="empty">No runs yet.</div>'; return; }
+  nav.innerHTML = runs.map((r, i) => {
+    const s = r.summary; const st = s.status === 'error' ? 'error' : s.dry_run ? 'dry' : 'ok';
+    const label = st === 'dry' ? 'dry run' : st;
+    const meta = s.status === 'error' ? esc((s.error || '').slice(0, 70))
+      : `${s.screened ?? 0} screened · ${s.relevant ?? 0} relevant · ${fmtDur(s.duration_ms)}`;
+    return `<div class="run ${i === cur ? 'sel' : ''}" data-i="${i}"><div class="when">${esc(when(s.run_id))}<span class="pill ${st}">${label}</span></div><div class="meta">${meta}</div></div>`;
+  }).join('');
+  nav.querySelectorAll('.run').forEach(el => el.onclick = () => { cur = +el.dataset.i; selSpan = null; render(); });
+}
+
+function renderList(run) {
+  const items = (run.items || []).slice().sort((a, b) => (b.score || 0) - (a.score || 0));
+  const shown = showAll ? items : items.filter(r => r.relevant);
+  const toggle = `<label class="toggle"><input type="checkbox" id="all" ${showAll ? 'checked' : ''}> Show everything that was screened (${items.length})</label>`;
+  if (!shown.length) return toggle + `<div class="empty">${run.summary.status === 'error' ? 'This run failed. Open the Trace tab to see where.' : 'Nothing matched your threads in this run.'}</div>`;
+  return toggle + shown.map(r => {
+    const it = r.item; const src = it.source === 'arxiv' ? 'arXiv' : `HN · ${it.extra?.points ?? 0} pts`;
+    const disc = it.source === 'hn' && it.extra?.discussion ? ` · <a href="${esc(it.extra.discussion)}" target="_blank" rel="noopener">discussion</a>` : '';
+    return `<div class="card"><h3><a href="${esc(it.url)}" target="_blank" rel="noopener">${esc(it.title)}</a></h3>
+      <div class="row">${r.error ? `<span class="err">failed: ${esc(r.error.slice(0,90))}</span>` : `<span class="score">${r.score}/10</span><span>${esc(threadLabel[r.thread] || r.thread)}</span>`}<span>${src}${disc}</span></div>
+      ${r.summary ? `<p>${esc(r.summary)}</p>` : ''}${r.why ? `<p><b>Why it matters:</b> ${esc(r.why)}</p>` : ''}${r.question ? `<p class="q">Read it asking: ${esc(r.question)}</p>` : ''}</div>`;
+  }).join('');
+}
+
+function tree(trace) {
+  const byParent = {}; trace.forEach(s => (byParent[s.parent || '_'] ||= []).push(s));
+  Object.values(byParent).forEach(a => a.sort((x, y) => x.start.localeCompare(y.start)));
+  const out = []; const walk = (pid, d) => (byParent[pid] || []).forEach(s => { out.push([s, d]); walk(s.id, d + 1); });
+  walk('_', 0); return out;
+}
+
+function renderTrace(run) {
+  const rows = tree(run.trace || []);
+  if (!rows.length) return '<div class="empty">No trace recorded.</div>';
+  const t0 = Math.min(...rows.map(([s]) => Date.parse(s.start)));
+  const total = Math.max(1, ...rows.map(([s]) => Date.parse(s.start) - t0 + (s.duration_ms || 0)));
+  const html = rows.map(([s, d]) => {
+    const left = (Date.parse(s.start) - t0) / total * 100, width = Math.max(0.4, (s.duration_ms || 0) / total * 100);
+    const label = s.attrs?.label ? ` <span class="lbl">${esc(s.attrs.label)}</span>` : '';
+    const note = s.status === 'error' ? ` <span class="err">failed</span>` : '';
+    return `<div class="span ${selSpan === s.id ? 'sel' : ''}" data-id="${s.id}">
+      <div class="nm" style="padding-left:${d * 16}px"><span class="kind ${s.kind}">${esc(s.kind)}</span><b>${esc(s.name)}</b>${label}${note}</div>
+      <div class="track"><div class="bar ${s.kind} ${s.status === 'error' ? 'error' : ''}" style="left:${left}%;width:${width}%"></div></div>
+      <div class="dur">${fmtDur(s.duration_ms)}</div></div>`;
+  }).join('');
+  const sel = rows.find(([s]) => s.id === selSpan);
+  return `<div class="trace">${html}</div>${sel ? renderDetail(sel[0]) : '<div class="detail" style="color:var(--muted)">Click any row to see exactly what happened in that step. Model calls show the full prompt and the full reply.</div>'}`;
+}
+
+function renderDetail(s) {
+  const a = s.attrs || {};
+  const kv = [['Step', s.name], ['Status', s.status + (s.error ? ` (${s.error})` : '')], ['Started', new Date(s.start).toLocaleString()], ['Took', fmtDur(s.duration_ms)]];
+  if (a.provider) kv.push(['Provider', a.provider], ['Model', a.model]);
+  if (a.usage && Object.keys(a.usage).length) kv.push(['Tokens', `${a.usage.prompt_tokens ?? '?'} in · ${a.usage.completion_tokens ?? '?'} out`]);
+  ['count', 'fetched', 'new', 'screening', 'url', 'path'].forEach(k => a[k] != null && kv.push([k, a[k]]));
+  let html = `<div class="detail"><div class="kv">${kv.map(([k, v]) => `<div>${esc(k)}</div><div>${/^https?:/.test(String(v)) ? `<a href="${esc(v)}" target="_blank" rel="noopener">${esc(v)}</a>` : esc(v)}</div>`).join('')}</div>`;
+  if (a.attempts?.length) html += `<h4>Attempts</h4><table class="att"><tr><th>Provider</th><th>Model</th><th>Result</th><th>Time</th></tr>${a.attempts.map(t => `<tr><td>${esc(t.provider)}</td><td>${esc(t.model)}</td><td class="${t.status === 'ok' ? '' : 'err'}">${esc(t.status)}${t.error ? ' · ' + esc(t.error.slice(0, 160)) : ''}</td><td>${fmtDur(t.ms)}</td></tr>`).join('')}</table>`;
+  if (a.messages) html += `<h4>Prompt</h4>${a.messages.map(m => `<div class="msg"><div class="role">${esc(m.role)}</div><pre>${esc(m.content)}</pre></div>`).join('')}`;
+  if (a.response != null) html += `<h4>Reply</h4><pre>${esc(a.response)}</pre>`;
+  if (a.urls) html += `<h4>Requests</h4><pre>${esc(a.urls.join('\n'))}</pre>`;
+  if (a.partial_error) html += `<h4>Partial error</h4><pre class="err">${esc(a.partial_error)}</pre>`;
+  if (a.digest) html += `<h4>Digest written</h4><pre>${esc(a.digest)}</pre>`;
+  return html + '</div>';
+}
+
+function render() {
+  renderRuns();
+  const run = runs[cur];
+  document.querySelectorAll('.tab').forEach(b => b.classList.toggle('on', b.dataset.tab === tab));
+  if (!run) { $('#view').innerHTML = '<div class="empty">No runs yet. The first scheduled run will show up here.</div>'; $('#sub').textContent = ''; return; }
+  const s = run.summary;
+  $('#sub').textContent = `${runs.length} recent run${runs.length === 1 ? '' : 's'} · last ${when(runs[0].summary.run_id)}`;
+  const llmCalls = (run.trace || []).filter(x => x.kind === 'llm');
+  const toks = llmCalls.reduce((n, x) => n + (x.attrs?.usage?.total_tokens || 0), 0);
+  $('#stats').textContent = `${llmCalls.length} model calls${toks ? ' · ' + toks.toLocaleString() + ' tokens' : ''}${s.models?.length ? ' · ' + s.models.join(', ') : ''}`;
+  $('#view').innerHTML = tab === 'list' ? renderList(run) : renderTrace(run);
+  if (tab === 'list') { const cb = $('#all'); if (cb) cb.onchange = () => { showAll = cb.checked; render(); }; }
+  else document.querySelectorAll('.span').forEach(el => el.onclick = () => { selSpan = selSpan === el.dataset.id ? null : el.dataset.id; render(); });
+}
+document.querySelectorAll('.tab').forEach(b => b.onclick = () => { tab = b.dataset.tab; render(); });
+render();
+</script>
+</body>
+</html>
