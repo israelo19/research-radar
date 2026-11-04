@@ -213,8 +213,8 @@
       <p class="name">Research radar</p>
       <p class="tag">New work on my research threads, screened every morning.</p>
 
-      <p class="label">Runs</p>
-      <nav aria-label="Runs"><ul id="runs"></ul></nav>
+      <p class="label">Past days</p>
+      <nav aria-label="Past days"><ul id="runs"></ul></nav>
 
       <ul class="ids">
         <li><a href="https://israelo19.github.io/">israelo19.github.io</a></li>
@@ -228,6 +228,7 @@
       <section id="reading"><h2>Reading list</h2><div id="list"></div></section>
       <section id="trace"><h2>Trace</h2>
         <p class="hint">Every step of the run. Select a model call to see the exact prompt it got and the reply it gave.</p>
+        <p class="hint" id="stats"></p>
         <div id="spans"></div>
       </section>
       <footer>Runs every morning at 6:23 Eastern on GitHub Actions. <a href="https://github.com/israelo19/research-radar/blob/main/prompt.md">Prompt</a> and <a href="https://github.com/israelo19/research-radar/blob/main/config.toml">threads</a> live in the repo.</footer>
@@ -269,9 +270,10 @@
         if (!runs.length) { ul.innerHTML = '<li class="empty">No runs yet.</li>'; return; }
         ul.innerHTML = runs.map(function (r, i) {
           var s = r.summary, d = runDate(s.run_id), bad = s.status === 'error';
-          var n = bad ? 'failed' : (s.relevant || 0) + ' of ' + (s.screened || 0);
+          var k = s.relevant || 0;
+          var n = bad ? 'failed' : k + (k === 1 ? ' paper' : ' papers');
           return '<li><button data-i="' + i + '" class="' + (i === cur ? 'active ' : '') + (bad ? 'failed' : '') + '">' +
-            '<span class="d">' + esc(d.day) + '</span> <span class="n">' + esc(n) + '</span></button></li>';
+            '<span class="d">' + esc(d.day) + '</span> <span class="n">\u00b7 ' + esc(n) + '</span></button></li>';
         }).join('');
         Array.prototype.forEach.call(ul.querySelectorAll('button'), function (b) {
           b.onclick = function () { cur = +b.dataset.i; sel = null; render(); window.scrollTo({ top: 0 }); };
@@ -279,23 +281,33 @@
       }
 
       function renderIntro(run) {
-        var s = run.summary, d = runDate(s.run_id);
-        var calls = (run.trace || []).filter(function (x) { return x.kind === 'llm'; });
-        var toks = calls.reduce(function (n, x) { return n + ((x.attrs && x.attrs.usage && x.attrs.usage.total_tokens) || 0); }, 0);
+        var s = run.summary, d = runDate(s.run_id), k = s.relevant || 0;
         var html = '<p>' + esc(d.long || d.day) + '.</p>';
         if (s.status === 'error') {
-          html += '<p class="err">This run failed: ' + esc(s.error || 'unknown error') + '</p>';
+          html += '<p class="err">This run failed, so there is nothing to read. The trace below shows where it stopped.</p>';
+        } else if (!k) {
+          html += '<p>Nothing new matched my threads.</p>';
         } else {
-          html += '<p>' + (s.relevant || 0) + ' of ' + (s.screened || 0) + ' new papers and posts matched my threads' +
-            (s.failed ? ', and ' + s.failed + ' could not be screened' : '') + '.</p>';
+          html += '<p>' + k + (k === 1 ? ' paper' : ' papers') + ' worth reading.</p>';
         }
+        if (s.status !== 'error' && s.failed) {
+          html += '<p class="meta">' + s.failed + (s.failed === 1 ? ' item' : ' items') + ' could not be screened and will be tried again tomorrow.</p>';
+        }
+        if (s.dry_run) html += '<p class="meta">Dry run with sample data.</p>';
+        document.getElementById('intro').innerHTML = html;
+      }
+
+      function renderStats(run) {
+        var s = run.summary;
+        var calls = (run.trace || []).filter(function (x) { return x.kind === 'llm'; });
+        var toks = calls.reduce(function (n, x) { return n + ((x.attrs && x.attrs.usage && x.attrs.usage.total_tokens) || 0); }, 0);
         var bits = [];
+        if (s.screened != null) bits.push(s.screened + ' items screened');
         if (s.models && s.models.length) bits.push(s.models.join(', ') + (s.providers && s.providers.length ? ' on ' + s.providers.join(', ') : ''));
         if (calls.length) bits.push(calls.length + ' model calls');
         if (toks) bits.push(toks.toLocaleString() + ' tokens');
         bits.push(dur(s.duration_ms));
-        html += '<p class="meta">' + esc(bits.join(' · ')) + (s.dry_run ? ' · dry run with sample data' : '') + '</p>';
-        document.getElementById('intro').innerHTML = html;
+        document.getElementById('stats').textContent = bits.join(' \u00b7 ');
       }
 
       function renderList(run) {
@@ -389,7 +401,7 @@
           document.getElementById('intro').innerHTML = '<p>No runs yet. The first morning run will show up here.</p>';
           return;
         }
-        renderIntro(run); renderList(run); renderTrace(run);
+        renderIntro(run); renderList(run); renderStats(run); renderTrace(run);
       }
       render();
     })();
