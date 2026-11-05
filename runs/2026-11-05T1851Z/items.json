@@ -1,0 +1,687 @@
+[
+  {
+    "item": {
+      "id": "arxiv:2611.06897",
+      "source": "arxiv",
+      "title": "MCP-Eco: A Linked Dataset of MCP Servers, Consumers, and Development Activity",
+      "url": "https://arxiv.org/abs/2611.06897",
+      "published": "2026-11-04T18:47:50Z",
+      "summary": "The Model Context Protocol (MCP) enables LLM agents to access external tools and data. Studying its software ecosystem requires connecting server interfaces, the projects that configure these servers, and their development activity. However, this information is scattered across directories, package registries, configuration files, and repository histories. We present MCP-Eco, a relational dataset that integrates these sources and links consumer configuration declarations to candidate server projects. Its frozen release contains 16,880,899 records across 19 Parquet tables, covering 78,302 candidate server projects, 16,165 candidate consuming repositories, and 9,200 configuration declarations. Of these declarations, 5,975 resolve to 5,138 distinct repository-server pairs. The dataset also includes tool, resource, and prompt descriptions, declared dependencies, and associated development records, including pull requests, reviews, issues, and commits. Provenance fields distinguish directory-reported capabilities from those observed through live probing and document discovery sources and declaration-matching methods. These connections support research on MCP interface design, configuration practices, and repository maintenance, while enabling practitioners to inspect tool schemas and existing integration configurations. The dataset and accompanying analysis scripts are publicly available at https://huggingface.co/datasets/mcp-research-alliance/mcp-ecosystem Demo video: https://www.youtube.com/watch?v=N7TqnNneSfU",
+      "authors": [
+        "Khalid Tounoussi",
+        "Mohammed Sayagh",
+        "Ali Ouni",
+        "Yutaro Kashiwa"
+      ],
+      "extra": {
+        "categories": [
+          "cs.SE"
+        ],
+        "pdf": "https://arxiv.org/pdf/2611.06897"
+      }
+    },
+    "relevant": true,
+    "thread": "mcp-security",
+    "score": 7,
+    "summary": "MCP-Eco is a large relational dataset linking MCP server projects, consumer repositories, configuration declarations, tool/resource/prompt descriptions, and development activity. It includes provenance fields distinguishing directory-reported capabilities from live-probed capabilities.",
+    "why": "It provides ecosystem data that could support research on MCP supply-chain risks such as malicious servers, over-privileged tools, tool-description poisoning, and rug pulls.",
+    "question": "Which provenance and versioning fields would let him detect capability changes, rug pulls, or malicious tool descriptions across server updates?",
+    "attempts": 1
+  },
+  {
+    "item": {
+      "id": "arxiv:2611.06858",
+      "source": "arxiv",
+      "title": "CompressionBench: How can your coding agents compress LLMs?",
+      "url": "https://arxiv.org/abs/2611.06858",
+      "published": "2026-11-04T18:14:50Z",
+      "summary": "Recursive self-improvement requires AI systems to improve the models and infrastructure used by subsequent systems. LLM compression offers a concrete efficiency objective: retain a pretrained model's behavior within a smaller model storage budget. We study whether coding agents can carry out this step autonomously. We formulate compression as a terminal task in which an agent receives a source checkpoint, storage limit, inference environment, and time budget, then constructs compressed weights and executable inference code. The agent controls its algorithm and experiments; perplexity feedback guides search, and independent verification checks the final model. Across six agents and six model--size settings, 29 of 36 submissions pass verification. Selecting the lowest-perplexity agent design per task yields an average 3.4% perplexity increase over BF16 and 77.33% downstream accuracy, compared with 79.56% for BF16. Recorded experiments reveal how agents achieve these outcomes and where improvement breaks down. Agents lower PPL in 21 of 24 revisions at nearly fixed storage; complete-model feedback reverses 17 of 79 prior local rankings; and generation and inference tests expose failures that likelihood alone misses. The results identify representation design, experimental judgment, and capability validation as central to agent-driven model compression, a measurable component of efficiency-oriented self-improvement.",
+      "authors": [
+        "Xinrui Zhong",
+        "Zhifeng Li",
+        "Zhiming Wang",
+        "Yongqi Liu",
+        "Shanglin Yang",
+        "Yang Zhou",
+        "Zikun Li",
+        "Zhuoming Chen",
+        "Beidi Chen"
+      ],
+      "extra": {
+        "categories": [
+          "cs.AI"
+        ],
+        "pdf": "https://arxiv.org/pdf/2611.06858"
+      }
+    },
+    "relevant": false,
+    "thread": "none",
+    "score": 2,
+    "summary": "The paper introduces a benchmark for coding agents to autonomously compress LLMs under storage, time, and inference constraints. It evaluates how well agents can design compression methods, run experiments, and produce verified compressed models.",
+    "why": "",
+    "question": "",
+    "attempts": 1
+  },
+  {
+    "item": {
+      "id": "arxiv:2611.06841",
+      "source": "arxiv",
+      "title": "ServerBench: How can your coding agents design specialized LLM serving systems?",
+      "url": "https://arxiv.org/abs/2611.06841",
+      "published": "2026-11-04T17:59:07Z",
+      "summary": "Large language model (LLM) coding agents develop software through experimentation, offering an opportunity to design the serving systems supporting their own operation. Effective serving requires coordinating implementation and operating decisions under session dependencies, latency constraints, and correctness requirements. We introduce ServerBench, a benchmark for agentic design of complete, specialized LLM serving systems. Agents experiment against a common objective, dollars per dollar: latency-qualified token value per dollar of GPU cost. Stateful replay preserves session dependencies, and independent verification checks the submitted system. Across 11 coding-agent models and three deployments, Claude Sonnet 5.5 achieves 2.97 dollars per dollar on Gemma E4B, $4.87\\times$ the vLLM reference; 22 of 33 runs yield verified systems, and 13 exceed the strongest baseline. Our analysis identifies three findings: high-value designs coordinate capacity improvements with load selection; agents interpret performance feedback through workload-relevant experiments; and reliable delivery requires verification of the execution paths introduced by optimization. Overall, ServerBench supports systematic study of how agents translate service objectives and feedback into effective, verified serving systems for given task specifications.",
+      "authors": [
+        "Xinrui Zhong",
+        "Zhiming Wang",
+        "Yongqi Liu",
+        "Zhaohui Wang",
+        "Shanglin Yang",
+        "Zikun Li",
+        "Zhuoming Chen",
+        "Beidi Chen"
+      ],
+      "extra": {
+        "categories": [
+          "cs.AI"
+        ],
+        "pdf": "https://arxiv.org/pdf/2611.06841"
+      }
+    },
+    "relevant": false,
+    "thread": "none",
+    "score": 2,
+    "summary": "ServerBench is a benchmark for coding agents to design and verify specialized LLM serving systems under latency and cost constraints. It evaluates how agents use performance feedback to build systems that improve token value per GPU dollar.",
+    "why": "",
+    "question": "",
+    "attempts": 1
+  },
+  {
+    "item": {
+      "id": "arxiv:2611.06829",
+      "source": "arxiv",
+      "title": "Enabling AWS Cloud FPGA Development Using High-Level Vitis HLS",
+      "url": "https://arxiv.org/abs/2611.06829",
+      "published": "2026-11-04T17:44:04Z",
+      "summary": "We present a toolchain for development of ML models on AWS EC2 F2 cloud FPGA infrastructure from high-level language, implementing a complete Vitis HLS to HDK bridge to AFI workflow that has been absent from the academic literature despite eight years of AWS FPGA availability. We introduce a four-level methodology (FP32 PyTorch, bit-accurate quantized Python, HLS C-simulation, physical FPGA) to aid in localizing errors, including FPGA-specific circuit errors. Together these tools allow coding agents to effectively implement FPGA designs from user directions, testing and debugging as needed. We document the deployment workflow, timing closure strategies, and practical HLS engineering decisions that proved crucial. We validate using TinyBERT fine-tuned for address Named Entity Recognition, implementing the embedding layer and the first of four encoder layers on the FPGA hardware. Our implementation streams weights from host DRAM, yielding poor performance compared to CPU/GPU implementations; we discuss forward paths.",
+      "authors": [
+        "David Rostcheck"
+      ],
+      "extra": {
+        "categories": [
+          "cs.AR",
+          "cs.AI",
+          "cs.LG"
+        ],
+        "pdf": "https://arxiv.org/pdf/2611.06829"
+      }
+    },
+    "relevant": false,
+    "thread": "none",
+    "score": 0,
+    "summary": "The paper presents a toolchain and methodology for developing ML models on AWS cloud FPGAs using Vitis HLS. It validates the workflow by deploying a TinyBERT NER model on FPGA hardware.",
+    "why": "",
+    "question": "",
+    "attempts": 1
+  },
+  {
+    "item": {
+      "id": "arxiv:2611.06734",
+      "source": "arxiv",
+      "title": "Smartphone-Aided VR Exergames for HIIT: Gamifying Fitness with Real-Time Pose Estimation",
+      "url": "https://arxiv.org/abs/2611.06734",
+      "published": "2026-11-04T16:18:35Z",
+      "summary": "This paper introduces an innovative virtual reality (VR) exergame system designed to gamify High-Intensity Interval Training (HIIT) workouts through 11 predefined combo moves, including squat-punch combinations, bilateral arm strikes, and diagonal stretch combos. Unlike conventional tracking methods that often rely on wearable motion capture suits or limited headset-based sensors, our system uses a standard smartphone camera placed on a tripod to capture full-body movement. This approach offers a cost-effective and scalable alternative, particularly well-suited to the fast, dynamic motions typical of HIIT routines. The smartphone footage is processed in real time using a pose estimation algorithm, with extracted biomechanical data analyzed by a backend server built on the Model Context Protocol (MCP), Anthropic's open standard for connecting AI models to structured data sources and tools, and a GPT-4o large language model. The system generates personalized assessments of form accuracy, movement efficiency, exercise intensity, and potential injury risks, tailored specifically to high-impact, time-sensitive exercises. A within-subject study involving 20 participants (ages 18-25) compared experiences in VR and Non-VR HIIT sessions. Results indicated significantly higher enjoyment (Mean = 3.5 vs 2.8, p = 0.02), improved immersion/focus (Mean = 3.2 vs 2.8, p = 0.03), and increased likelihood to recommend (Mean = 3.2 vs 2.7, p = 0.04) under the VR condition. Confidence to continue did not differ significantly between conditions (p = 0.15), while perceived intensity remained comparable. The MCP system showed strong agreement with expert evaluation (87.5%, N = 10 sessions, one certified trainer), supporting its reliability as a feedback tool.",
+      "authors": [
+        "Abhiram Kothagundu",
+        "Pheelip Pritipal Raipure",
+        "Abhijit Chandrakant Patil",
+        "Himangshu Sarma",
+        "Christian Eichhorn",
+        "David A. Plecher",
+        "Johanna Pirker"
+      ],
+      "extra": {
+        "categories": [
+          "cs.HC",
+          "cs.AI"
+        ],
+        "pdf": "https://arxiv.org/pdf/2611.06734"
+      }
+    },
+    "relevant": true,
+    "thread": "mcp-security",
+    "score": 3,
+    "summary": "A VR exergame system for HIIT that uses smartphone pose estimation and an MCP-based backend with GPT-4o to generate fitness feedback. It reports user-experience results and agreement with expert evaluation.",
+    "why": "It mentions MCP as part of the system architecture, but the paper is not about MCP security, tool poisoning, prompt injection, or agent privilege escalation.",
+    "question": "What MCP tools or data sources are exposed to the LLM, and could their outputs be manipulated to influence the fitness feedback?",
+    "attempts": 1
+  },
+  {
+    "item": {
+      "id": "arxiv:2611.06682",
+      "source": "arxiv",
+      "title": "SecureGARD: Dynamic Ontology-Guided Governance for Secure Tool-Using LLM Agents",
+      "url": "https://arxiv.org/abs/2611.06682",
+      "published": "2026-11-04T15:51:30Z",
+      "summary": "Tool-using large language model (LLM) agents translate model outputs into consequential actions, turning indirect prompt injection into an execution-security problem. Existing defenses constrain tool calls, trajectories, or information flows, but often leave action semantics, state dependencies, and evidence relations implicit, limiting generalization across heterogeneous tools and complicating safe updates. We present \\ours{}, a dynamic ontology-guided governance framework. \\ours{} grounds heterogeneous calls in a shared semantic representation and combines an executable ontology with episode-level task state to derive deterministic ready, waiting, and forbidden decisions. A waiting decision identifies an unmet but recoverable obligation, enabling bounded replanning without expanding the agent's authorization boundary. \\ours{} evolves its ontology offline from verified training executions. An offline LLM proposes instance-independent action--state axioms, which are accepted only if they address ontology errors exposed by training failures, preserve logical consistency and protected entailments, and pass held-out validation before the ontology is frozen. We evaluate \\ours{} on AgentDojo, ASB, and AgentDyn under benign and indirect prompt-injection settings. \\ours{} achieves a 0\\% attack success rate (ASR) across all three benchmarks while improving task utility under attack compared with existing baselines. These results show that explicit semantic governance can strengthen execution security without indiscriminate blocking.",
+      "authors": [
+        "Guoqin Xiong",
+        "Shengtao Wen",
+        "Xiang Chen",
+        "Xinyi Zeng",
+        "Zhaoxin Fan",
+        "Wei Ye",
+        "Xiaofeng Cao",
+        "Sheng-Jun Huang"
+      ],
+      "extra": {
+        "categories": [
+          "cs.LG"
+        ],
+        "pdf": "https://arxiv.org/pdf/2611.06682"
+      }
+    },
+    "relevant": true,
+    "thread": "mcp-security",
+    "score": 9,
+    "summary": "The paper proposes an ontology-guided governance framework for tool-using LLM agents that makes deterministic ready, waiting, and forbidden decisions about tool calls. It reports a 0% attack success rate on AgentDojo, ASB, and AgentDyn under indirect prompt-injection settings while improving task utility under attack.",
+    "why": "It directly addresses prompt injection into tool-using agents and how to constrain tool execution without indiscriminately blocking useful actions.",
+    "question": "How robust is the ontology-based defense against adaptive attacks, tool-description poisoning, or tools and workflows not covered by the verified training executions?",
+    "attempts": 1
+  },
+  {
+    "item": {
+      "id": "arxiv:2611.06585",
+      "source": "arxiv",
+      "title": "Signed, Sealed, Leaked: Trust Beyond Signature for MCP Toolchains",
+      "url": "https://arxiv.org/abs/2611.06585",
+      "published": "2026-11-04T14:40:32Z",
+      "summary": "AI agents rely on third-party tools, such as Model Context Protocol (MCP) servers, whose publishers can be authenticated and whose execution can be restricted by runtime security policies. Yet authenticity does not guarantee benign behaviour: a legitimately signed tool may perform its advertised function while concealing malicious code that leaks confidential information. We demonstrate this trust failure with a signed MCP tool that embeds sensitive data in requests to a policy-allowed destination. Meta's MCPGuard-Dynamic, a state-of-the-art runtime defence, blocks a direct exfiltration attempt in the same run, yet fails to prevent this attack in every trial. We introduce germline execution, which limits information disclosure without inspecting or trusting tool implementations. Each tool invocation runs in ephemeral copies forked from a data-free germline process, each receiving only information authorised for its destination. Even if malicious code executes, what it can disclose is bounded by the data available to its copy. Under explicit assumptions on copy confinement and a data-free germline, we prove sink noninterference for every signed release and, for releases deterministic within our replay model, show that a verified witness establishes a flow violation. Across 153 attack runs, no unauthorised disclosure was detected under germline execution, compared with 5.9-74.5% of runs under baseline defences and an ablation. Invocations served by a single copy completed in 10-49 ms, 2-28x faster than restarting the tool for every invocation, the conventional way to clear state. These results show that data-isolated execution protects agent toolchains against malicious code concealed within authenticated software.",
+      "authors": [
+        "Yichiet Aun",
+        "Mohammed A. Alhartomi",
+        "Jing Jie Tan",
+        "Waqas Nadeem",
+        "Adeb Salh",
+        "Shankar Karuppayah",
+        "Sin Chee Tan"
+      ],
+      "extra": {
+        "categories": [
+          "cs.CR",
+          "cs.AI",
+          "cs.MA"
+        ],
+        "pdf": "https://arxiv.org/pdf/2611.06585"
+      }
+    },
+    "relevant": true,
+    "thread": "mcp-security",
+    "score": 9,
+    "summary": "The paper shows that a signed MCP tool can still leak confidential data by embedding it in requests to an allowed destination, and that a state-of-the-art runtime defense can miss this. It proposes germline execution, which runs each tool invocation in isolated copies with only authorized data, and reports strong empirical and theoretical results.",
+    "why": "It directly addresses malicious behavior in authenticated MCP tools and runtime defenses for agent toolchains.",
+    "question": "How well does germline execution handle tools that need persistent state, cross-invocation coordination, or legitimate side effects?",
+    "attempts": 1
+  },
+  {
+    "item": {
+      "id": "arxiv:2611.06563",
+      "source": "arxiv",
+      "title": "EPISTEME: Trustworthy Coding Agents Through Tool Call Intent",
+      "url": "https://arxiv.org/abs/2611.06563",
+      "published": "2026-11-04T14:26:55Z",
+      "summary": "Coding agents change software through tool calls. Tool calls mutate the local state. For good? For bad? Nobody knows. Agents never say why a tool call is made. We propose the epistemic agent design, in which the harness guarantees that the model declares why a tool call is made. The harness then records what the command actually did and checks the self-reported declaration against these effects. The result is a journal 1) that can guard calls before they run and 2) that supports audits and forensics. For evaluation, we use ImpossibleBench, whose tasks can be passed only by cheating, and demonstrate that forcing the agents to say why results in exposed cheating. Across 49 reward-hacking runs of two open-weight models, the journal exposed 90%.",
+      "authors": [
+        "Sofia Bobadilla",
+        "Carmine Cesarano",
+        "Raphina Liu",
+        "Javier Ron",
+        "Martin Monperrus"
+      ],
+      "extra": {
+        "categories": [
+          "cs.SE"
+        ],
+        "pdf": "https://arxiv.org/pdf/2611.06563"
+      }
+    },
+    "relevant": true,
+    "thread": "agent-escalation",
+    "score": 7,
+    "summary": "A harness for coding agents that forces the model to declare the intent of each tool call, then logs the actual effects and checks the declaration against them. It evaluates on ImpossibleBench, where tasks can only be passed by cheating, and reports that the journal exposed 90% of reward-hacking runs.",
+    "why": "It is a runtime-policy and audit defense for coding-agent tool calls, which fits agent privilege escalation and unsafe tool use.",
+    "question": "How well does intent-versus-effect checking generalize beyond ImpossibleBench-style cheating to real permission escalation or malicious tool calls?",
+    "attempts": 1
+  },
+  {
+    "item": {
+      "id": "arxiv:2611.06506",
+      "source": "arxiv",
+      "title": "Trace2Eval: Contextualized Evaluation of Coding Agents from Real-World Traces",
+      "url": "https://arxiv.org/abs/2611.06506",
+      "published": "2026-11-04T13:36:50Z",
+      "summary": "Coding agents are increasingly used in real-world workflows across diverse domains, motivating evaluation grounded in real user tasks. Existing benchmarks, however, largely rely on static public tasks with reference patches or hidden tests. Next-generation coding-agent benchmarks should therefore move beyond correctness on fixed tasks toward continually renewed evaluation of overall artifact quality in real user workflows. We propose Trace2Eval, a dynamically updatable pipeline that constructs benchmarks from real-world interaction trajectories. Trace2Eval employs a multi-agent reconstruction system to analyze the filtered trajectory, recover the original user query, restore the workspace files to their pre-interaction state, and rebuild a trajectory-equivalent execution environment. A candidate agent then executes the reconstructed query to produce an initial artifact. To evaluate these artifacts, the pipeline iteratively refines human rubrics through inter-annotator alignment, and calibrates judge agents against human assessments using source-code and runtime evidence. Guided by feedback from the Trace2Eval pipeline, models revise their initial artifacts, yielding a mean score gain of 10.05 percentage points across 19 model-harness configurations and a maximum of 19.28 percentage points for DeepSeek-V4-Pro with Claude Code, which supports rubric feedback as actionable guidance for artifact improvement.",
+      "authors": [
+        "Ji Shi",
+        "Lirong Jie",
+        "Lexiao Zou",
+        "Yaoming Zhu",
+        "Yifan Yang",
+        "Xuezhi Cao",
+        "Xunliang Cai",
+        "Miao Zhang"
+      ],
+      "extra": {
+        "categories": [
+          "cs.SE"
+        ],
+        "pdf": "https://arxiv.org/pdf/2611.06506"
+      }
+    },
+    "relevant": false,
+    "thread": "none",
+    "score": 2,
+    "summary": "A pipeline for building dynamic coding-agent benchmarks from real user interaction traces, reconstructing tasks and environments, and evaluating artifacts with human-aligned rubrics and judge agents.",
+    "why": "",
+    "question": "",
+    "attempts": 1
+  },
+  {
+    "item": {
+      "id": "arxiv:2611.06294",
+      "source": "arxiv",
+      "title": "A.S.E 2.0: Understanding How Repository Context Impacts the Security of LLM-Generated Code",
+      "url": "https://arxiv.org/abs/2611.06294",
+      "published": "2026-11-04T10:29:52Z",
+      "summary": "Large language model (LLM) coding assistants and agents construct a repository context before generating code. For security-sensitive code, this context decides whether the model sees the project's safeguards (e.g., authorization checks) or insecure code to imitate. However, context construction is designed almost exclusively for functional correctness, and secure-code benchmarks treat the context as fixed, so how repository context affects the security of generated code remains unclear. We construct CASE-Bench, a benchmark of 145 repository-level tasks from real CVEs in 51 projects. Each task runs in Docker, has functional tests and a proof-of-concept exploit validated in both directions, and is annotated with the repository code that enforces or undermines its security. Using CASE-Bench, we compare 13 context construction methods and six controls with six LLMs, edit single context elements, and analyze coding-agent trajectories. We find that (1) functionality-oriented context raises the functional pass rate by up to 8.2 percentage points (pp) but the secure pass rate by at most 3.7 pp, (2) withholding a safeguard lowers the secure pass rate by up to 8.1 pp, while one inserted insecure exemplar raises correct-but-exploitable code by 6.3 pp, and (3) coding agents observe the relevant safeguard in only 27-36% of trajectories. These findings inform security-aware context construction and secure-code evaluation.",
+      "authors": [
+        "Jiongchi Yu",
+        "Keke Lian",
+        "Junqing Wang",
+        "Zhikang Fan",
+        "Zhaoxuan Li",
+        "Yongheng Huang",
+        "Ziming Zhao",
+        "Dong Zhang"
+      ],
+      "extra": {
+        "categories": [
+          "cs.CR",
+          "cs.AI",
+          "cs.SE"
+        ],
+        "pdf": "https://arxiv.org/pdf/2611.06294"
+      }
+    },
+    "relevant": true,
+    "thread": "agent-escalation",
+    "score": 5,
+    "summary": "A benchmark and study of how repository context construction affects the security of LLM-generated code, using CVE-based tasks, Dockerized exploits, and coding-agent trajectories.",
+    "why": "It touches agent-escalation by examining coding agents, exploit validation, and how context choices can lead to insecure or exploitable generated code.",
+    "question": "Could context manipulation be used to steer coding agents toward generating insecure or exploitable code in real repositories?",
+    "attempts": 1
+  },
+  {
+    "item": {
+      "id": "arxiv:2611.06254",
+      "source": "arxiv",
+      "title": "HarnessFlow: MCTS-Guided Harness Optimization for LLM Agents",
+      "url": "https://arxiv.org/abs/2611.06254",
+      "published": "2026-11-04T10:05:15Z",
+      "summary": "The performance of large language model (LLM) agents depends on both the underlying model and the harness that governs interaction with tools and the environment. Yet harness design remains largely manual, and automating it requires navigating an open-ended search space through costly end-to-end evaluations. We introduce HarnessFlow, a framework for optimizing complete executable harnesses under a limited candidate-evaluation budget, with the model and task environment held fixed. HarnessFlow organizes candidates and their evaluation histories in a refinement tree, using a Monte Carlo Tree Search (MCTS)-based policy to balance exploitation and exploration. A coding agent refines selected harnesses using archived code, execution feedback, and a library of reusable harness mechanisms. With 15 refinement attempts per benchmark, HarnessFlow achieves the highest mean test scores among the compared methods on six benchmarks spanning agentic tasks, coding, and web interaction. The optimized harnesses achieve an average score of 69.48%, outperforming the initial harnesses and Meta-Harness by 10.89 and 3.95 percentage points, respectively, while incurring lower average per-task execution costs than hand-engineered baselines. These results suggest that structured harness search offers a promising route toward automating the design of capable and efficient LLM agents.",
+      "authors": [
+        "Zhi Hong",
+        "Qianlong Wang",
+        "Hongchen Wei",
+        "Aidan Wu",
+        "Daohong Ying",
+        "Mingze Kong",
+        "Bei Liu",
+        "Chong Luo"
+      ],
+      "extra": {
+        "categories": [
+          "cs.AI"
+        ],
+        "pdf": "https://arxiv.org/pdf/2611.06254"
+      }
+    },
+    "relevant": true,
+    "thread": "agent-escalation",
+    "score": 3,
+    "summary": "HarnessFlow uses MCTS and a coding agent to automatically optimize executable LLM-agent harnesses for tool and environment interaction. It reports improved benchmark performance and lower execution cost compared with hand-engineered harnesses.",
+    "why": "It touches the agent harness layer that mediates tool use, which is adjacent to the control surface relevant to agent privilege escalation.",
+    "question": "Could automated harness optimization change or obscure the permission and tool-access boundaries that matter for agent escalation?",
+    "attempts": 1
+  },
+  {
+    "item": {
+      "id": "arxiv:2611.06049",
+      "source": "arxiv",
+      "title": "Reglos: A Self-Evolving Personal Memory Agent with Recursive Self-Improvement",
+      "url": "https://arxiv.org/abs/2611.06049",
+      "published": "2026-11-04T06:56:04Z",
+      "summary": "Personal agents draw on past conversations to tailor their responses to each user. Their memory systems store and update what each user says, and coding agents now also rewrite the harness that turns this memory into the model's context. Such patches risk overfitting, because one tested only on the failures it targets can fix those cases and help nowhere else. We present Reglos, a training-free personal memory agent that tests whether harness changes help beyond the failures they were written to fix. Its self-evolving memory adds to each user's append-only record with every conversation, as new preferences supersede old ones and facts can be forgotten. Its harness improves through recursive self-improvement, in which a coding agent proposes patches from failure traces and a critic from a second model family screens each one for benchmark gaming. After the harness is frozen, a fixed evaluator decides which further patches to accept. With the same backbone behind every system, Reglos outperforms state-of-the-art memory systems such as Mem0, MemOS and EverOS, reaching 61.3% and 84.0% on PersonaMem-v2 and LongMemEval-S with Qwen3.8-27B, and 57.5% and 87.2% with GPT-5.6 Luna.",
+      "authors": [
+        "Sen Yang",
+        "Jiaduo Lin",
+        "Zehong Huang",
+        "Wen Liu"
+      ],
+      "extra": {
+        "categories": [
+          "cs.AI"
+        ],
+        "pdf": "https://arxiv.org/pdf/2611.06049"
+      }
+    },
+    "relevant": true,
+    "thread": "eval-awareness",
+    "score": 4,
+    "summary": "A training-free personal memory agent that uses a coding agent to propose harness patches from failure traces, with a critic and fixed evaluator to limit overfitting. It reports improvements over memory systems on PersonaMem-v2 and LongMemEval-S.",
+    "why": "It touches eval-awareness by explicitly screening self-improvement patches for benchmark gaming and testing whether changes help beyond the failures they were written to fix.",
+    "question": "How robust is the benchmark-gaming screen against patches that exploit the fixed evaluator rather than the original failures?",
+    "attempts": 1
+  },
+  {
+    "item": {
+      "id": "arxiv:2611.06039",
+      "source": "arxiv",
+      "title": "Securing Web Agents with the Compile-Then-Execute Paradigm",
+      "url": "https://arxiv.org/abs/2611.06039",
+      "published": "2026-11-04T06:42:35Z",
+      "summary": "Web agents commonly follow the ReAct paradigm, selecting each action from runtime observations that inherently mix trusted and untrusted content. This design makes their control flow vulnerable to prompt injections embedded in webpages. We introduce Baya, a compile-then-execute web agent designed to prevent prompt-injection-driven control-flow hijacking by design. Before accessing the live website, Baya compiles the user's request into an executable Python program that calls a Trusted Website API. The planning model does not observe live website content; only the compiled program processes it. Untrusted data may determine program values or select among branches defined during compilation, but it cannot redefine the user task or cause the model to synthesize new website operations at runtime. The Trusted Website API gives the compiler a unified view of the website's action space, enabling ahead-of-time planning without the stepwise action discovery required by reactive agents. Our evaluation across 581 valid WebArena Verified tasks shows that Baya achieves 77.8% aggregate utility, outperforming browser-only ReAct (55.1%) and API-enabled ReAct (66.7%). On WASP, a security benchmark for web agents, Baya achieves 0% attack success rate, compared with 16.2% for API-enabled ReAct and 25.5% for browser-only ReAct.",
+      "authors": [
+        "Annabella Chow",
+        "Jinhao Zhu",
+        "Sylvie Venuto",
+        "Abdulaziz Alharbi",
+        "Basel Alomair",
+        "Raluca Popa",
+        "David Wagner",
+        "Julien Piet"
+      ],
+      "extra": {
+        "categories": [
+          "cs.CR"
+        ],
+        "pdf": "https://arxiv.org/pdf/2611.06039"
+      }
+    },
+    "relevant": true,
+    "thread": "agent-escalation",
+    "score": 8,
+    "summary": "Baya is a compile-then-execute web agent that plans a Python program against a trusted website API before observing live webpage content, aiming to prevent prompt-injection-driven control-flow hijacking. It reports strong utility on WebArena Verified and 0% attack success rate on the WASP web-agent security benchmark.",
+    "why": "It is a design-level defense for computer-use/web agents against prompt injection causing unintended actions or access, with benchmark evidence.",
+    "question": "How much does Baya depend on the trusted website API and compile-time action space, and what happens when tasks require dynamic operations that cannot be anticipated before execution?",
+    "attempts": 1
+  },
+  {
+    "item": {
+      "id": "arxiv:2611.05806",
+      "source": "arxiv",
+      "title": "When File Ingestion Misleads Language Models: Measuring and Mitigating Divergences in Office Documents",
+      "url": "https://arxiv.org/abs/2611.05806",
+      "published": "2026-11-04T01:32:31Z",
+      "summary": "Office documents are now routinely uploaded to large language models (LLMs) for processing. However, an LLM does not always see what a human sees, because it typically reads the text that an extractor produces from the document's underlying Office Open XML (OOXML) files. Depending on the implementation, extractors differ in which OOXML parts they read and how they interpret them, so their output can differ from what Office applications display. For example, by slightly shifting the positions of text boxes on a slide, an adversary can swap the order in which the model reads them while the slide looks unchanged. We show that this extraction divergence is an attack surface for LLM applications. In this work, we first measure what an adversary can exploit by analyzing the widely used extractors that LLM applications rely on. By combining static source code analysis with dynamic analysis, we identify 19 OOXML channels where extractors read content a human cannot see and 12 where they drop content a human can. We also find that widely used extractors ignore display formatting and reading order, so even visible content reaches the model in a different form. Building on these findings, we construct five attacks that lead the model to interpret a document differently from a human reviewer, without injecting any instruction. We test the attacks on four major chat assistants (ChatGPT, Claude, Gemini, and Microsoft 365 Copilot) and four coding agents (Codex, Claude Code, Antigravity, and GitHub Copilot CLI), and every one of them is misled by at least one attack. Finally, we propose Prism, a lightweight defense that reconstructs the human view from the OOXML specification before passing the text to the model. Prism also generalizes to unseen attack payloads.",
+      "authors": [
+        "Penghui Li"
+      ],
+      "extra": {
+        "categories": [
+          "cs.CR",
+          "cs.AI"
+        ],
+        "pdf": "https://arxiv.org/pdf/2611.05806"
+      }
+    },
+    "relevant": true,
+    "thread": "mcp-security",
+    "score": 4,
+    "summary": "The paper shows that OOXML document extractors can give LLMs a different view of a document than humans see, and uses this to build attacks that mislead chat assistants and coding agents without prompt injection. It also proposes Prism, a defense that reconstructs the human-visible document before passing it to the model.",
+    "why": "It is adjacent to agent tool security because file/document ingestion is a common agent input channel that can be exploited to change what the model acts on.",
+    "question": "How much of this extraction divergence remains when the document is read by a coding agent's file tool rather than a chat assistant's document parser?",
+    "attempts": 1
+  },
+  {
+    "item": {
+      "id": "arxiv:2611.05797",
+      "source": "arxiv",
+      "title": "DARE: Difficulty Analysis for Repair Enhancement",
+      "url": "https://arxiv.org/abs/2611.05797",
+      "published": "2026-11-04T01:10:04Z",
+      "summary": "LLM-based coding agents are primarily evaluated by their solve rates. However, this metric does not reveal how difficult the solved tasks are or account for differences intask difficulty across benchmarks. Determining the difficulty of individual tasks by repeatedly running multiple agents is costly, while a predicted difficulty score alone provides limited guidance on what support an agent needs. To address these challenges, we propose DARE (Difficulty Analysis for Repair Enhancement), which integrates repair-task difficulty measurement, prediction, feature-group contribution analysis, and task-specific repair support. We define continuous task difficulty as the observed failure rate across multiple coding agents. The DARE difficulty model predicts this difficulty using 151 static features extracted from benchmark artifacts. The framework also analyzes the contributions of seven Repair-Task Feature Groups to identify the characteristics most salient to each task and uses this information to select task-specific agent support. We evaluate DARE on four benchmark partitions comprising 2,594 tasks. The difficulty model's aligned predictions achieve Spearman's $ρ$ = .476-.621 on held-out partitions, and the most salient Feature Groups vary across tasks and benchmarks. Furthermore, coding-agent experiments show improved repair success when support is matched to each task's salient Feature Group. These findings demonstrate that difficulty prediction and interpretation can lead to practical improvements in automated program repair (APR), while also providing a basis for difficulty-stratified agent evaluation, cross-benchmark comparisons, and identifying areas of repair capability that warrant further improvement.",
+      "authors": [
+        "Jikwang Lee",
+        "Seungwook Jung",
+        "Jaechang Nam"
+      ],
+      "extra": {
+        "categories": [
+          "cs.SE",
+          "cs.AI"
+        ],
+        "pdf": "https://arxiv.org/pdf/2611.05797"
+      }
+    },
+    "relevant": false,
+    "thread": "none",
+    "score": 2,
+    "summary": "The paper proposes DARE, a framework for measuring and predicting the difficulty of automated program repair tasks for LLM coding agents. It uses static task features to identify salient repair-task characteristics and select task-specific agent support.",
+    "why": "",
+    "question": "",
+    "attempts": 1
+  },
+  {
+    "item": {
+      "id": "arxiv:2611.05739",
+      "source": "arxiv",
+      "title": "PersonaCodeBench: Evaluating Coding Agents in Persona-driven Human-Interactive Sessions",
+      "url": "https://arxiv.org/abs/2611.05739",
+      "published": "2026-11-03T23:27:20Z",
+      "summary": "Coding agents must deliver correct software while respecting users' expertise, preferences, and working conditions. Existing benchmarks increasingly incorporate interaction, yet personalized requirement fulfillment remains underexplored. We introduce PersonaCodeBench, which turns user characteristics into verifiable obligations in persona-driven multi-turn coding sessions. Our persona pool spans roles, technical abilities, interaction preferences, and practical constraints, yielding task-grounded evolved requirements for implementation, permissions, testing, explanation, and delivery. At runtime, a controller governs user simulator responses and requirement disclosure, using online requirement evaluation to provide feedback and advance the interaction. Requirements emerge progressively, with their content, disclosure conditions, and acceptance criteria fixed before evaluation. A completion verifier and a personalization verifier separately assess native correctness and persona fulfillment. Joint pass requires both adherence to the declared budget and compliance with validity conditions. We evaluate all major frontier agents, establish a comprehensive leaderboard, and conduct detailed experimental analyses to validate effectiveness. PersonaCodeBench supports reproducible evaluation of coding agents' ability to meet explicit, personalized user expectations alongside coding objectives.",
+      "authors": [
+        "Haixin Wang",
+        "Jianheng Hou",
+        "Hongyu Shen",
+        "Wenzhe Fan",
+        "Wei-Chieh Huang",
+        "Qianyu Zhu",
+        "Weichen Li",
+        "Taoran Li",
+        "Yuhang Yao",
+        "Ruohan Wang",
+        "Zhejian Peng",
+        "Wanting Jiang",
+        "Yifan Chen",
+        "Shushu Liang",
+        "Haoming Li",
+        "Defu Cao",
+        "Xu Hu",
+        "Siyang Wu",
+        "Chen Yang",
+        "Haodi Hu",
+        "Haichao Zhang",
+        "Cong Wang",
+        "Zhiyuan Yu",
+        "Weizhi Zhang",
+        "Yifan Wang",
+        "Jintao Huang",
+        "Yizhou Sun",
+        "Yijun Wang",
+        "Yuexing Hao",
+        "Xiaomin Li"
+      ],
+      "extra": {
+        "categories": [
+          "cs.AI"
+        ],
+        "pdf": "https://arxiv.org/pdf/2611.05739"
+      }
+    },
+    "relevant": false,
+    "thread": "none",
+    "score": 2,
+    "summary": "A benchmark for evaluating coding agents in multi-turn, persona-driven sessions, measuring both code correctness and fulfillment of personalized user requirements such as permissions and testing preferences.",
+    "why": "",
+    "question": "",
+    "attempts": 1
+  },
+  {
+    "item": {
+      "id": "arxiv:2611.05609",
+      "source": "arxiv",
+      "title": "On the Generalization Limitation of On-Policy Distillation for Post-RL Consolidation",
+      "url": "https://arxiv.org/abs/2611.05609",
+      "published": "2026-11-03T20:53:26Z",
+      "summary": "Multi-teacher on-policy distillation (MOPD) extends on-policy distillation (OPD) to consolidate capabilities from multiple teachers. Although prior work reports near-perfect in-distribution (IND) distillation performance, we find that this can mask incomplete capability consolidation beyond the supervised distribution. A preliminary study on synthetic reasoning shows that OPD does not fully transfer teachers' generalization capabilities. We then extend this investigation to real-world tasks, evaluating extrapolative and compositional generalization across mathematical reasoning, coding, agent, and long-context capabilities using Qwen3 models. Across extrapolative settings, OPD and MOPD reach 96.04-102.73% of their teachers' IND scores. Yet their out-of-distribution (OOD) scores remain 2.45-16.25% below the base model's. Across three compositional settings, MOPD improves IND performance over the base model, but its performance on composed tasks as OOD remains 18.19-24.34% below that of the best teachers. To understand these gaps, we examine teacher capability and data coverage as two potential bottlenecks. Jointly alleviating these bottlenecks eliminates OOD forgetting in our experiments and suggests the potential for generalization beyond the teacher. (M)OPD also reduces OOD forgetting on average relative to its reinforcement learning (RL) baselines. Analysis of the associated update geometry reveals smaller and more spectrally concentrated updates on average than those of the RL baselines, along with greater shared update structure under MOPD. Motivated by these findings, we propose geometry-based patching and base-preserving replay to improve OOD performance while largely preserving IND performance. Our findings identify a blind spot in capability consolidation via (M)OPD, highlighting the need for algorithms that explicitly support OOD retention and generalization.",
+      "authors": [
+        "Yichen Wang",
+        "Yufa Zhou",
+        "Siqi Zhu",
+        "Haozheng Luo",
+        "Jingzhi Bao",
+        "Zhichao Liu",
+        "Zijun Wei"
+      ],
+      "extra": {
+        "categories": [
+          "cs.LG"
+        ],
+        "pdf": "https://arxiv.org/pdf/2611.05609"
+      }
+    },
+    "relevant": false,
+    "thread": "none",
+    "score": 2,
+    "summary": "This paper studies multi-teacher on-policy distillation for post-RL consolidation and finds that strong in-distribution performance can hide weak out-of-distribution generalization. It evaluates math, coding, agent, and long-context tasks and proposes geometry-based patching and base-preserving replay to reduce OOD forgetting.",
+    "why": "",
+    "question": "",
+    "attempts": 1
+  },
+  {
+    "item": {
+      "id": "hn:50379249",
+      "source": "hn",
+      "title": "MCP Explained",
+      "url": "https://mcp-explained.com/",
+      "published": "2026-11-05T14:08:35Z",
+      "summary": "",
+      "authors": [
+        "rwilinski"
+      ],
+      "extra": {
+        "points": 165,
+        "comments": 87,
+        "discussion": "https://news.ycombinator.com/item?id=50379249"
+      }
+    },
+    "relevant": true,
+    "thread": "mcp-security",
+    "score": 3,
+    "summary": "A Hacker News story titled 'MCP Explained' linking to mcp-explained.com. From the title alone, it appears to be a general explainer about MCP.",
+    "why": "It touches MCP, which is part of his MCP and tool security thread, but the title does not indicate security-specific content.",
+    "question": "Does it cover MCP security risks such as tool poisoning, prompt injection through tool output, or over-privileged servers?",
+    "attempts": 1
+  },
+  {
+    "item": {
+      "id": "hn:50380979",
+      "source": "hn",
+      "title": "The Stacks Project, Formalized in Lean",
+      "url": "https://axiommath.ai/research/the-stacks-project-formalized/",
+      "published": "2026-11-05T16:16:59Z",
+      "summary": "",
+      "authors": [
+        "namanbnsl"
+      ],
+      "extra": {
+        "points": 35,
+        "comments": 6,
+        "discussion": "https://news.ycombinator.com/item?id=50380979"
+      }
+    },
+    "relevant": false,
+    "thread": "none",
+    "score": 0,
+    "summary": "A Hacker News story about formalizing The Stacks Project in Lean.",
+    "why": "",
+    "question": "",
+    "attempts": 1
+  },
+  {
+    "item": {
+      "id": "hn:50381687",
+      "source": "hn",
+      "title": "Launch HN: Rivet (YC W23) – Scale and Orchestrate Agents on S3",
+      "url": "https://github.com/rivet-dev/rivet",
+      "published": "2026-11-05T17:17:42Z",
+      "summary": "",
+      "authors": [
+        "NathanFlurry"
+      ],
+      "extra": {
+        "points": 24,
+        "comments": 16,
+        "discussion": "https://news.ycombinator.com/item?id=50381687"
+      }
+    },
+    "relevant": false,
+    "thread": "none",
+    "score": 2,
+    "summary": "A Hacker News launch post for Rivet, described as a way to scale and orchestrate agents on S3.",
+    "why": "",
+    "question": "",
+    "attempts": 1
+  },
+  {
+    "item": {
+      "id": "hn:50381741",
+      "source": "hn",
+      "title": "Show HN: A C++ Compiler That Is Faster Than GCC and Clang",
+      "url": "https://github.com/vishvananda/cppgm-extended",
+      "published": "2026-11-05T17:22:11Z",
+      "summary": "",
+      "authors": [
+        "vishvananda"
+      ],
+      "extra": {
+        "points": 6,
+        "comments": 2,
+        "discussion": "https://news.ycombinator.com/item?id=50381741"
+      }
+    },
+    "relevant": false,
+    "thread": "none",
+    "score": 0,
+    "summary": "A Hacker News post announcing a C++ compiler claimed to be faster than GCC and Clang.",
+    "why": "",
+    "question": "",
+    "attempts": 1
+  },
+  {
+    "item": {
+      "id": "hn:50377851",
+      "source": "hn",
+      "title": "Show HN: Nico – a two-agent type personal agent on your Mac",
+      "url": "https://nico.app/",
+      "published": "2026-11-05T11:21:00Z",
+      "summary": "",
+      "authors": [
+        "benjushi"
+      ],
+      "extra": {
+        "points": 6,
+        "comments": 1,
+        "discussion": "https://news.ycombinator.com/item?id=50377851"
+      }
+    },
+    "relevant": false,
+    "thread": "none",
+    "score": 2,
+    "summary": "Nico is a personal agent for Mac that uses a two-agent architecture.",
+    "why": "",
+    "question": "",
+    "attempts": 1
+  }
+]
