@@ -1,0 +1,655 @@
+[
+  {
+    "item": {
+      "id": "arxiv:2611.08452",
+      "source": "arxiv",
+      "title": "ReproBridge: Building Reproducibility into ML Research Artifacts",
+      "url": "https://arxiv.org/abs/2611.08452",
+      "published": "2026-11-05T18:45:36Z",
+      "summary": "Reproducing machine learning experiments requires reconstructing procedures from information scattered across papers, released code, and supporting artifacts. For coding agents, reproduction success can therefore depend on their ability to fill in missing details, rather than on the released artifacts alone. We ask whether preserving recovered procedures and decisions improves subsequent independent reproduction. We define a standardized artifact design comprising a refined codebase, environment setup, experiment launchers, and a reproduction guide, and introduce ReproBridge, an agent workflow for constructing these refined reproducible artifacts. ReproBridge-Bench provides 1,029 tasks from 387 experiments across 36 papers, anchored by five human-verified reference scores per task. Agents attempt tasks in fresh sessions with raw code or refined artifacts; a separate Auditor checks execution evidence. Across four evaluated models, refined artifacts raise mean reproduction success from 76.4% to 92.6% and reduce downstream API spending by 19.7% on average. The cross-model success-rate spread narrows from 21.6 to 3.9 percentage points, with all four models achieving mean success rates above 90%. Removing any component reduces success in the ablation study, with the largest losses from code and environment removal. These results suggest that preserving execution knowledge helps even models with lower raw-code success reproduce experiments more reliably and at lower API cost.",
+      "authors": [
+        "Yubo Wang",
+        "Rui Meng",
+        "Jaehyun Nam",
+        "Tomas Pfister",
+        "Jinsung Yoon"
+      ],
+      "extra": {
+        "categories": [
+          "cs.AI"
+        ],
+        "pdf": "https://arxiv.org/pdf/2611.08452"
+      }
+    },
+    "relevant": false,
+    "thread": "none",
+    "score": 2,
+    "summary": "ReproBridge is an agent workflow and benchmark for improving reproducibility of ML research artifacts by coding agents. It evaluates whether refined code, environment setup, launchers, and guides help agents reproduce experiments more reliably.",
+    "why": "",
+    "question": "",
+    "attempts": 1
+  },
+  {
+    "item": {
+      "id": "arxiv:2611.08428",
+      "source": "arxiv",
+      "title": "The Power of Meta Access in the Software of the Future --- Demonstrated on LLM Chat UIs and Chat AI",
+      "url": "https://arxiv.org/abs/2611.08428",
+      "published": "2026-11-05T18:22:24Z",
+      "summary": "Chat remains the default surface for many large language model (LLM) tasks, even as agentic tools such as OpenCode excel at coding and automation. Yet the model sees the current dialogue but not the workspace around it. We explore meta access---giving the assistant a structured, permissioned view of the interface itself and propose a ladder of levels: feature tutoring; metadata, settings, and preference access; retrieval over summaries and messages, confirmed mutation, and full orchestration. Meta access can turn a chat client from many screens into one entry point for finding, navigating, organising, and operating it, while raising risks around grounding, privacy, prompt injection, and trust. General-purpose agentic harnesses are runtimes; because they can change their own settings, meta access becomes reflexive and needs a separate control-plane boundary. We ground this in the Meta Chat prototype of the Chat AI client. It builds bounded context from, e.g., summaries, settings, and relevant messages; links references to conversations, topics, and personas; supports confirmed, reversible changes; offers a browsable tutorial library; and recommends personas as user-started conversations. By exposing application state in structured form, meta access can extend screen readers from widget descriptions to semantic workspace operations. Meta access thus turns chat from a window onto one conversation into a control layer for the whole workspace, extending chat toward agentic capability without surrendering user control. As assistants become embedded in IDEs, dashboards, office suites, and operating systems, AI-era interfaces should expose a structured, permissioned model of their state and capabilities, ideally by opening their existing metamodels through a debugger-like interface.",
+      "authors": [
+        "Julian Kunkel",
+        "Ali Doosthosseini"
+      ],
+      "extra": {
+        "categories": [
+          "cs.AI"
+        ],
+        "pdf": "https://arxiv.org/pdf/2611.08428"
+      }
+    },
+    "relevant": true,
+    "thread": "agent-escalation",
+    "score": 5,
+    "summary": "The paper proposes giving LLM chat assistants structured, permissioned access to the surrounding UI and workspace state, with a ladder from tutoring to full orchestration. It argues this creates reflexive control risks and needs a separate control-plane boundary.",
+    "why": "It is adjacent to agent privilege escalation because it discusses permissioned agent access to application state, self-modifying settings, prompt injection, and runtime control boundaries.",
+    "question": "What concrete permission model or control-plane boundary would stop a chat agent from escalating from reading UI state to mutating settings or executing workspace operations?",
+    "attempts": 1
+  },
+  {
+    "item": {
+      "id": "arxiv:2611.08417",
+      "source": "arxiv",
+      "title": "Benchmarks as Software: Terminal-Bench and the Case for Continuous Benchmarks",
+      "url": "https://arxiv.org/abs/2611.08417",
+      "published": "2026-11-05T18:18:39Z",
+      "summary": "Coding agents are among the most economically consequential deployments of LLMs to date, making reliable evaluation increasingly important. Yet even benchmarks that are carefully validated at release can become stale. As models improve, they can discover valid solutions that existing verifiers reject, while changes to evaluation infrastructure can invalidate assumptions embedded in tasks and tests. We call the resulting accumulation of defects benchmark maintenance debt: a growing gap between benchmark scores and the capabilities they are intended to measure. We introduce a continuous-validation workflow for agentic benchmarks that combines community reports, task artifacts, agent traces, automated oracle checks, and human-gated repairs. We apply this workflow to Terminal-Bench 2.0, a benchmark that underwent extensive human and LM-assisted review and red-teaming before release. Our audit identifies issues in roughly 30% of the benchmark, and we release the resulting repairs as Terminal-Bench 2.1. These repairs change evaluation results: accuracy increased by over 10 percentage points and leaderboard positions move by up to three ranks, even as the overall ranking remains highly correlated (Spearman rho = 0.958). We evaluate how resource allocation shapes benchmark conclusions. We show that fixed wall-clock can materially change agent performance: For example, extending the time limit closes a 20pp harness gap on GPT 5.4 and shrinks a 30 pp gap on GPT 5.4 mini to 5 pp. Benchmark maintenance is therefore not only about repairing task artifacts: resource budgets are part of the measurement specification and must be validated alongside the tasks themselves. More broadly, benchmark maintenance debt is not just accumulated implementation bugs: our results show that as models improve, both evaluation assumptions and resource settings may need to be revalidated.",
+      "authors": [
+        "E. Kelly Buchanan",
+        "Crystal Zhou",
+        "Scott W. Linderman",
+        "Christopher Ré"
+      ],
+      "extra": {
+        "categories": [
+          "cs.AI"
+        ],
+        "pdf": "https://arxiv.org/pdf/2611.08417"
+      }
+    },
+    "relevant": true,
+    "thread": "eval-awareness",
+    "score": 5,
+    "summary": "The paper argues that agentic coding benchmarks accumulate maintenance debt as models and evaluation infrastructure change, and proposes a continuous validation workflow applied to Terminal-Bench. It finds that repairs and resource-budget changes can materially shift accuracy and leaderboard rankings.",
+    "why": "It is adjacent to eval-awareness because it shows benchmark assumptions and evaluation settings can materially change measured agent behavior, even though it does not study whether models know they are being tested.",
+    "question": "Which of the identified benchmark defects or resource-budget effects are likely to be exploited by agents rather than merely reflecting measurement noise?",
+    "attempts": 1
+  },
+  {
+    "item": {
+      "id": "arxiv:2611.08318",
+      "source": "arxiv",
+      "title": "Learning the Task or Learning the Verifier? Rethinking Criteria Exposure in Embodied Self-Improvement",
+      "url": "https://arxiv.org/abs/2611.08318",
+      "published": "2026-11-05T17:14:37Z",
+      "summary": "Self-improving embodied agents are increasingly being developed and compared on robot simulation benchmarks. Several recent works expose the benchmark's success criteria to the learning agent, a practice we call Criteria Exposure (CE). These criteria, originally written to verify policies trained by imitation learning, often demand more than the corresponding language instructions, so a score from such a verifier may not faithfully reflect whether the instructed task was completed, especially for robot-control programs written by an agent. As embodied coding agents report ever higher benchmark scores, a natural question arises: when a coding agent is exposed to the benchmark's criteria, does it generate code that better performs the instructed task, or code that simply overfits to the verification criteria? We conduct controlled experiments with a self-improving agent with and without CE, and find that with CE the agent quickly produces code with a higher success rate under the given criteria, but this advantage disappears when the criteria are changed slightly without departing from the original instructions. More importantly, the skills the agent develops under CE transfer poorly across tasks. We further propose instruction-faithful criteria and show that they better reflect the performance of agent-generated programs.",
+      "authors": [
+        "Wenbo Huang",
+        "Jianxin Bi",
+        "Shunyu Yang",
+        "Ruiyang Si",
+        "Rui Ni",
+        "Qiang Wang",
+        "Shulong Jiang",
+        "Yintianrun Zhang",
+        "Feixiang Ruan",
+        "Kewei Zhang",
+        "Ye Huang",
+        "Shukai Gong",
+        "Daquan Zhou"
+      ],
+      "extra": {
+        "categories": [
+          "cs.AI",
+          "cs.RO"
+        ],
+        "pdf": "https://arxiv.org/pdf/2611.08318"
+      }
+    },
+    "relevant": true,
+    "thread": "eval-awareness",
+    "score": 6,
+    "summary": "The paper studies self-improving embodied coding agents that are exposed to benchmark success criteria and asks whether they learn the instructed task or overfit to the verifier. It finds that criteria exposure improves benchmark scores but leads to poor transfer and fragility when the criteria are slightly changed.",
+    "why": "It connects to eval-awareness by showing agents can optimize exposed evaluation criteria rather than the underlying task, a form of benchmark gaming or verifier overfitting.",
+    "question": "Is criteria exposure a useful proxy for eval-awareness, or is it better understood as reward hacking against a known verifier?",
+    "attempts": 1
+  },
+  {
+    "item": {
+      "id": "arxiv:2611.08116",
+      "source": "arxiv",
+      "title": "Create Your Own Work Stack: Deploying Self-hosted AI and Tooling in a Tech Startup",
+      "url": "https://arxiv.org/abs/2611.08116",
+      "published": "2026-11-05T14:49:11Z",
+      "summary": "Self-hosting AI is often presented as a way to reduce inference costs and increase control, but deployment introduces its own costs. We report our experience deploying a hybrid AI stack at Grayhat Developers, a small software company with an AI-intensive development workflow. Our initial motivation was to counter the growing cost of commercial AI usage: Claude/Codex incurred approximately \\$325 per month, with more than 25.93 billion recorded tokens. We experimented with local open-source models as replacements for commercial coding agents, but after learning that their performance and inference speed were insufficient, we adopted a hybrid approach in which commercial agents remained responsible for complex tasks while local models handled lower-complexity tasks, organizational information retrieval, and synchronization with self-hosted tools including Outline, Plane, and ERPNext. We estimated that approximately 30--40\\% of our commercial AI workload was associated with context transfer, documentation synchronization, task management, and related operational coordination. By moving this work to local models, we estimate that approximately 90\\% of this coordination workload could be handled without commercial inference, corresponding to an estimated 27--36\\% reduction in overall commercial-AI workload or cost-equivalent usage. Our first internal deployment nevertheless failed to achieve adoption because it introduced UX friction. Replacing it with a centrally configured deployment substantially improved feedback and adoption. We conclude that local inference is most useful not as a wholesale replacement for commercial AI, but as part of a hybrid architecture that assigns tasks according to their capability requirements, cost, context demands, and operational sensitivity.",
+      "authors": [
+        "Saad Ahmed Bazaz",
+        "Talha Amjad",
+        "Abdurrehman Subhani",
+        "Sohaib Ahmed Bazaz",
+        "Abdullah Aamir"
+      ],
+      "extra": {
+        "categories": [
+          "cs.AI"
+        ],
+        "pdf": "https://arxiv.org/pdf/2611.08116"
+      }
+    },
+    "relevant": false,
+    "thread": "none",
+    "score": 0,
+    "summary": "The paper reports a startup's experience deploying a hybrid self-hosted AI stack to reduce commercial AI costs. It finds local models are useful for lower-complexity coordination tasks but not as a full replacement for commercial coding agents.",
+    "why": "",
+    "question": "",
+    "attempts": 1
+  },
+  {
+    "item": {
+      "id": "arxiv:2611.07945",
+      "source": "arxiv",
+      "title": "tok: a textual concrete syntax of BPMN and DMN for humans and AI agents",
+      "url": "https://arxiv.org/abs/2611.07945",
+      "published": "2026-11-05T12:42:56Z",
+      "summary": "tok is a plain-text notation for Business Process Model and Notation (BPMN) 2.0.2 process models and Decision Model and Notation (DMN) 1.5 decisions. One engine checks a tok document against both standards, compiles the document to XML with an automatic diagram, and serves language-model applications through the Model Context Protocol. The paper classifies the notation as an alternative concrete syntax of the BPMN and DMN metamodels and reports one study. A tok model takes 2.2 times fewer tokens than the smallest BPMN XML of 893 files exported by 37 tools and 7.7 times fewer than the files as exported. The checker signals 98.2% of 1,411 injected faults, against 85.8% for the XML Schema with bpmnlint. Four language models new to tok write valid tok from a one-page reference for 85.7 to 100% of 87 process descriptions from two datasets and valid BPMN XML for every description, and the strongest model writes tok with 25% and 19% fewer tokens than BPMN XML. As agents with a lean skill and one checker tool, the models write valid tok for 97.6 to 100% of the descriptions, the strongest model spends 21% and 14% fewer tokens on tok than on BPMN XML, and a skill which sends the model to read the reference through a tool costs 1.7 to 2.8 times the tokens of the lean skill. Of 47 event logs simulated from public models, 44 fit their source models, and tok imports every model discovered from the logs.",
+      "authors": [
+        "Marek Deja"
+      ],
+      "extra": {
+        "categories": [
+          "cs.CY",
+          "cs.AI",
+          "cs.SE"
+        ],
+        "pdf": "https://arxiv.org/pdf/2611.07945"
+      }
+    },
+    "relevant": false,
+    "thread": "none",
+    "score": 2,
+    "summary": "The paper introduces tok, a plain-text syntax for BPMN and DMN models, and evaluates its token efficiency, validation, and use by LLM agents via MCP. It reports that models can generate valid tok and BPMN XML, with token savings and fault-detection results.",
+    "why": "",
+    "question": "",
+    "attempts": 1
+  },
+  {
+    "item": {
+      "id": "arxiv:2611.07887",
+      "source": "arxiv",
+      "title": "A Low Similarity Score Does Not Show Independence after Source-Conditioned Repository Rewriting",
+      "url": "https://arxiv.org/abs/2611.07887",
+      "published": "2026-11-05T12:05:50Z",
+      "summary": "Maintainers sometimes cite a low token-similarity score as evidence that an LLM-assisted rewrite of a copyleft project is independent of the original. We test what such a score can support under \\emph{source-conditioned} rewriting: a coding agent keeps the original in its working copy, rewrites the repository, and iterates until a fixed behavioural harness passes, with no human edit to the code. On 69 rewrites of six copyleft Python projects we find that: \\ding{182}~Agent-only rewriting is inexpensive and often yields low scores. Every controlled rewrite passes the harness after repair, usually within half an hour for the initial rewrite. Under a ground-up rearchitecture prompt, most rewrites fall below 25\\% JPlag similarity and still pass the harness. \\ding{183}~A single low score is an unreliable witness. Identical project--agent--prompt configurations produce wide spreads in similarity; run-to-run variation dominates project and agent effects, and in more than a third of configurations the three repeats straddle the threshold. Rewrites retain more of the original's imports and fingerprint facts than unrelated projects do, yet hand-written independent implementations of the same task often retain as much, and neither signal separates the two groups better than chance. Thus a low score on one rewrite is weak evidence of independence: another run of the same agent may score high. Claims based on similarity should report repeated generations, and candidate provenance signals should be checked against same task independent implementations, not only against unrelated projects.",
+      "authors": [
+        "Micheline Bénédicte Moumoula",
+        "Serge Lionel Nikiema",
+        "Tailia Malloy",
+        "Abdoul Kader Kaboré",
+        "Jacques Klein",
+        "Tegawendé F. Bissyande"
+      ],
+      "extra": {
+        "categories": [
+          "cs.SE"
+        ],
+        "pdf": "https://arxiv.org/pdf/2611.07887"
+      }
+    },
+    "relevant": false,
+    "thread": "none",
+    "score": 2,
+    "summary": "The paper tests whether low code-similarity scores from LLM coding agents rewriting copyleft repositories can support claims of independence. It finds that run-to-run variation makes a single low similarity score unreliable evidence.",
+    "why": "",
+    "question": "",
+    "attempts": 1
+  },
+  {
+    "item": {
+      "id": "arxiv:2611.07689",
+      "source": "arxiv",
+      "title": "MCPHallu: Benchmarking Reasoning, Execution, and Memory Hallucinations in MCP Agents",
+      "url": "https://arxiv.org/abs/2611.07689",
+      "published": "2026-11-05T09:14:26Z",
+      "summary": "Large language model agents are increasingly deployed through the Model Context Protocol (MCP), which allows them to discover and invoke tools across multiple servers at runtime. Existing MCP benchmarks primarily measure task completion; where they diagnose failures, they do so after execution rather than building specific reasoning, execution, and memory failure risks into task construction. We introduce MCPHallu, a benchmark for diagnosing hallucination-prone agent failures in MCP environments along three axes: reasoning, execution, and memory. MCPHallu contains 358 tasks across five capability domains and runs on 36 production MCP servers in isolated containers. Each task is designed with a structural trigger that makes one of four subtypes the dominant failure risk: Branch Collapse, Unreachable Goal, Tool Misuse, or Context Forgetting. This design enables subtype-level analysis rather than aggregate task success alone. We evaluate fourteen frontier LLM agents from eight vendors on 5{,}012 trajectories. Current MCP agents remain vulnerable to hallucination-inducing tool environments, achieving an average score of 0.642 on a $[0,1]$ scale (higher is better). Failures concentrate on Unreachable Goal tasks, where the average score drops to 0.458 and 23.2\\% of runs pass, indicating that agents often continue issuing tool calls or claim successful completion rather than recognizing infeasible goals. Subtype rankings diverge sharply: a model's rank shifts by 6.9 of 13 positions on average across subtypes, and Branch Collapse is uncorrelated with Unreachable Goal across models ($r = -0.12$). MCPHallu is released at https://github.com/J1zz/mcp_hallu.",
+      "authors": [
+        "Yizhen Jiang",
+        "Haowei Guo",
+        "Tianyi Bai",
+        "Zengjie Hu",
+        "Lu Ma",
+        "Zhengyang Zhao",
+        "Haoze Sun",
+        "Peng Pei",
+        "Wentao Zhang"
+      ],
+      "extra": {
+        "categories": [
+          "cs.AI"
+        ],
+        "pdf": "https://arxiv.org/pdf/2611.07689"
+      }
+    },
+    "relevant": true,
+    "thread": "mcp-security",
+    "score": 5,
+    "summary": "A benchmark for diagnosing hallucination-prone failures in MCP agents across reasoning, execution, and memory, using 358 tasks on 36 production MCP servers.",
+    "why": "It characterizes MCP agent tool-misuse and failure-to-recognize-infeasible-goal behavior, which is adjacent to tool-security failure modes but not directly about attacks.",
+    "question": "Which of these hallucination subtypes could be amplified by malicious or misleading tool descriptions?",
+    "attempts": 1
+  },
+  {
+    "item": {
+      "id": "arxiv:2611.07640",
+      "source": "arxiv",
+      "title": "Beyond Instruction Override: Benchmarking Indirect Prompt Injection with Task-Tampering Attacks",
+      "url": "https://arxiv.org/abs/2611.07640",
+      "published": "2026-11-05T08:25:27Z",
+      "summary": "Indirect prompt-injection (IPI) benchmarks predominantly test planted instructions that redirect a tool-using agent toward an attacker-chosen task. Yet attacker-controlled content can instead tamper with the outcome of the task already in progress. A buyer's dispute evidence can cite a false refund policy to inflate a refund without changing the task. We define IPI by authority rather than instruction-like wording: planted content constitutes an attack when it attempts to influence a decision that its source is not authorized to determine. We introduce a benchmark that makes this boundary explicit: in each of 90 validated cases across three tool-use environments, the user request specifies the source that resolves the targeted decision. Every attack tampers with a decision required by the benign task rather than replacing that task. Each case has attacks with the same harmful outcome that target up to six parts of the agent's decision making: its objective, decision rules, available actions, expected consequences, reading of observations, or beliefs about the current state. Without a defense, attacks on three of the five other targets (decision rules, available actions, and state) have higher mean success than objective attacks across five LLMs. A detection-and-removal defense reduces objective-targeting attacks to 2.4% success but leaves observation- and state-targeting attacks at 9.5% and 12.1%; this gap persists under detection-optimized rewrites. A tool-policy defense still allows 15.4% attack success, close to 17.0% without a defense, because these attacks generally retain expected tools and manipulate values obtained during execution. Evaluations whose attacks redirect the task or target only the agent's objective can therefore overestimate the coverage of these defenses. Code and data are available at https://github.com/amazon-science/task-tampering-prompt-injection.",
+      "authors": [
+        "Rongting Zhang",
+        "Martin Bertran",
+        "Sandeep Avula",
+        "Chia-Jung Lee",
+        "Vanessa Murdock"
+      ],
+      "extra": {
+        "categories": [
+          "cs.CR",
+          "cs.AI"
+        ],
+        "pdf": "https://arxiv.org/pdf/2611.07640"
+      }
+    },
+    "relevant": true,
+    "thread": "mcp-security",
+    "score": 9,
+    "summary": "A new benchmark for indirect prompt injection in tool-using agents that tests attacks which tamper with an ongoing task's decision rather than replacing the task. It evaluates how well detection/removal and tool-policy defenses handle attacks targeting objectives, rules, actions, observations, and state.",
+    "why": "It directly extends prompt-injection-through-tool-output research by showing that task-tampering attacks can evade defenses that only catch instruction-override attacks.",
+    "question": "Which of these task-tampering targets are most likely to appear in real MCP or tool-server outputs, and which defenses would actually catch them?",
+    "attempts": 1
+  },
+  {
+    "item": {
+      "id": "arxiv:2611.07464",
+      "source": "arxiv",
+      "title": "FINCOSMOS: An Open-World Evaluation Paradigm for Agents in Finance",
+      "url": "https://arxiv.org/abs/2611.07464",
+      "published": "2026-11-05T05:19:44Z",
+      "summary": "Language agents increasingly work for users on the open Web, and finance is where trusting them is hardest. The data must come from the Web, the strategy lives in the user's head, and correctness depends on time, so an agent can fail silently: a strategy the user never asked for, unverified data, or a backtest that uses the future yields a report as convincing as a correct one. Existing benchmarks close the world somewhere, fixing the task, the data, or the timeline, and thereby remove these failures instead of measuring them. We introduce FINCOSMOS, an open-world evaluation paradigm for agents doing financial work. A simulated user holds a hidden strategy sampled from a compositional grammar and reveals it only when asked. The agent receives no data, so it must acquire data from the Web, build its own backtest under a data cutoff, and deliver verifiable results. Grading needs no reference answer. Programs verify point-in-time correctness and recompute every reported metric, the delivered strategy is checked against the hidden specification, and a run is accepted only when the user is satisfied and none of 15 veto checks fails. Across four coding agents and a model without tools in 150 sessions, no session is accepted: every session that the simulated user signed off fails a program check, and agents raise only 54--64\\% of the details they were not told. Human experts attribute 88.33\\% of failures to the agents. With FINCOSMOS feedback, an agent with persistent memory learned all ten tasks.",
+      "authors": [
+        "Yupeng Cao",
+        "Xueqing Peng",
+        "Lingfei Qian",
+        "Haohang Li",
+        "Yangyang Yu",
+        "Anke Xu",
+        "Wenbo Cao",
+        "Yan Wang",
+        "Yuechen Jiang",
+        "Yuyan Wang",
+        "Zhuohan Xie",
+        "Yankai Chen",
+        "Zehan Li",
+        "Jimin Huang",
+        "Xue Liu",
+        "Jian-Yun Nie",
+        "Sophia Ananiadou"
+      ],
+      "extra": {
+        "categories": [
+          "cs.AI",
+          "cs.CL",
+          "q-fin.CP"
+        ],
+        "pdf": "https://arxiv.org/pdf/2611.07464"
+      }
+    },
+    "relevant": true,
+    "thread": "eval-awareness",
+    "score": 3,
+    "summary": "FINCOSMOS is an open-world evaluation paradigm for financial agents in which a simulated user hides a strategy, the agent must acquire web data and build a backtest, and programmatic checks verify point-in-time correctness.",
+    "why": "It is an agent evaluation benchmark, but it is not specifically about models detecting or adapting to being evaluated.",
+    "question": "Could its hidden-user, programmatic-check design reduce benchmark gaming or reveal test-aware behavior?",
+    "attempts": 2
+  },
+  {
+    "item": {
+      "id": "arxiv:2611.07378",
+      "source": "arxiv",
+      "title": "Adversarial Multiplicity: Cherry-Picked Models and the Limits of Disclosure",
+      "url": "https://arxiv.org/abs/2611.07378",
+      "published": "2026-11-05T03:32:12Z",
+      "summary": "Predictive multiplicity -- where similarly accurate models disagree on individual predictions -- can be leveraged to optimize secondary metrics (e.g., fairness) without loss in predictive performance. However, exploiting multiplicity opens the opportunity for motivated parties (or coding agents gaming their objectives) to steer predictions toward their own ends, such as in litigation or consumer disputes with automated decision-making tools. In these adversarial multiplicity settings, we distinguish soft manipulation, where parties optimize over innocuous model choices (e.g., hyperparameter tuning, feature engineering), from hard manipulation, where parties directly perturb model parameters. We find a sufficiently flexible model can be manipulated to reverse any individual prediction with minimal change in predictive performance while passing black-box audits, making hard manipulation viable in most regulatory settings. Soft manipulation has smaller effects but can pass white-box audits requiring full access to code and data. Even aggregate estimates can be manipulated: a model's estimated effect of climate change on wildfires can be fully reversed by hard edits and soft search. We find the Reconcile algorithm typically resolves most disagreements between models, but more often in favor of the manipulator when the opposing model is chosen adversarially compared to at random. We map which manipulations can plausibly pass existing regulations and disclosure policies, and recommend mitigations such as pre-registration, proof of model training, sensitivity analyses, multi-metric evaluations, and committing to versioned public models.",
+      "authors": [
+        "Cassandra C. Chou",
+        "Benjamin Q. Huynh",
+        "Allison Koenecke",
+        "Elizabeth T. Chin"
+      ],
+      "extra": {
+        "categories": [
+          "cs.LG",
+          "stat.AP"
+        ],
+        "pdf": "https://arxiv.org/pdf/2611.07378"
+      }
+    },
+    "relevant": true,
+    "thread": "eval-awareness",
+    "score": 4,
+    "summary": "The paper studies how similarly accurate predictive models can be cherry-picked or manipulated to reverse individual predictions while still passing audits. It distinguishes soft manipulation, such as hyperparameter or feature choices, from hard manipulation of model parameters.",
+    "why": "It connects to eval-awareness by showing how model selection, disclosure, and audit processes can be gamed to hide adversarial behavior.",
+    "question": "How much of this manipulation would survive if the evaluator explicitly accounted for adversarial model selection rather than treating the submitted model as fixed?",
+    "attempts": 1
+  },
+  {
+    "item": {
+      "id": "arxiv:2611.07307",
+      "source": "arxiv",
+      "title": "Take It From Here: Evaluating Coding Agents On Project Takeover",
+      "url": "https://arxiv.org/abs/2611.07307",
+      "published": "2026-11-05T01:45:45Z",
+      "summary": "Coding agents increasingly collaborate on long-term projects. When taking over a project, they need to recover currently applicable requirements from the interaction history and update them in response to new requests. However, most coding benchmarks do not include long interaction histories, and some evaluations that consider history still do not cover the full process from requirement reconstruction to project delivery. We therefore provide agents with the interaction history, current request, and pre-request project environment, ask them to make the requested changes, and assess takeover performance through delivery tests. Across six model-harness configurations and 37 targets eligible for executable validation, the mean complete-delivery rate under Full History is only 4.95%. We then use requirement atoms to independently diagnose a larger set of takeover targets, examining relevant information identification, pre-request state reconstruction, and current request processing. We further supply correct pre-request or target states to examine the remaining difficulties in requirement processing and project modification. The diagnostics show that none of the six configurations produces fully correct post-request requirement states, and a case illustrates omission of previously recovered constraints during updating. With correct target states supplied, the mean complete-delivery rate is 8.11%, with build and regression pass rates of 96.40% and 90.99%, but target-test success remains 9.01%. These results show difficulties in both forming target requirement states and implementing supplied targets in existing projects. Based on these findings, we introduce ReqMemBench, which combines requirement diagnostics with delivery validation to support systematic evaluation of project takeover.",
+      "authors": [
+        "Dingxian Wang",
+        "Zhe Fu",
+        "Jiaqi Deng",
+        "Chao Yin",
+        "Ganesh Prabhu",
+        "Karthik Gomadam Rajagopal",
+        "Darwin Yi",
+        "Huan Huo",
+        "Guandong Xu",
+        "Xianzhi Wang",
+        "Andrew Rabinovich",
+        "Zhao Chen"
+      ],
+      "extra": {
+        "categories": [
+          "cs.SE",
+          "cs.MA"
+        ],
+        "pdf": "https://arxiv.org/pdf/2611.07307"
+      }
+    },
+    "relevant": false,
+    "thread": "none",
+    "score": 2,
+    "summary": "A benchmark and diagnostic study of coding agents taking over long-term software projects from interaction history. It measures how well agents recover requirements, reconstruct project state, and deliver requested changes.",
+    "why": "",
+    "question": "",
+    "attempts": 1
+  },
+  {
+    "item": {
+      "id": "arxiv:2611.07194",
+      "source": "arxiv",
+      "title": "SeVerus: Context-Aware, Gamified Benchmarking for Rust Verification",
+      "url": "https://arxiv.org/abs/2611.07194",
+      "published": "2026-11-04T22:34:57Z",
+      "summary": "Coding agents achieve high success rates on existing benchmarks for Verus, a verifier for Rust programs. These benchmarks typically provide the auxiliary lemmas needed to complete a proof. In practice, however, such lemmas must be discovered and proved. To capture this challenge, we present SEVERUS, a context-aware technique to generate Verus benchmarks that organizes verification tasks into quests, each divided into levelsin a gamified manner. Using the original proof dependencies in verified projects, SEVERUS constructs one quest per verification target and progressively removes proof context to create individual levels. These levels range from the easiest, requiring completing only a single missing lemma, to the hardest, requiring proving the target without any supporting lemmas. An independent checker rejects changes to executable code, weakened specifications, and unsound proof constructs. A noisy binary search estimates the highest level that an agent can solve reliably. Applied to six open-source Verus projects, SEVERUS generates 819 quests comprising 10,095 levels. Experiments with Codex using GPT-6 Sol and GPT-6 Luna, and with Claude Code using Sonnet 4.6, show that success decreases and cost increases as proof context is withdrawn. The strongest agent solves the final level of 52 of 60 sampled quests, yet can only reliably solve 35% of their levels, with failures concentrated in longer quests. Successful GPT-6 Sol proofs rarely reproduce the withheld lemmas, instead, using alternative proof decompositions. By systematically varying proof context, SEVERUS provides a foundation for constructing verification benchmarks that can continue to challenge increasingly capable coding agents.",
+      "authors": [
+        "Álvaro F. Silva",
+        "Martim Afonso",
+        "Nuno Saavedra",
+        "Emily First",
+        "Alexandra Mendes",
+        "João F. Ferreira"
+      ],
+      "extra": {
+        "categories": [
+          "cs.SE",
+          "cs.AI"
+        ],
+        "pdf": "https://arxiv.org/pdf/2611.07194"
+      }
+    },
+    "relevant": false,
+    "thread": "none",
+    "score": 2,
+    "summary": "A benchmarking method for Rust/Verus verification that creates gamified proof tasks by progressively removing auxiliary lemmas and tests coding agents on them.",
+    "why": "",
+    "question": "",
+    "attempts": 1
+  },
+  {
+    "item": {
+      "id": "arxiv:2611.07166",
+      "source": "arxiv",
+      "title": "Multi-step SWE: Can Coding Agents Keep Building on Their Own Code Over Long Horizons?",
+      "url": "https://arxiv.org/abs/2611.07166",
+      "published": "2026-11-04T21:49:40Z",
+      "summary": "Developers rarely give a coding agent a single request: they ask it to build a component and then to extend, upgrade, and optimize it, each time on code the agent itself wrote. Most benchmarks, however, score one task at a time. We introduce Multi-step SWE, a long-horizon benchmark of 69 software engineering tasks, each a chain of 5-15 dependent steps on a single codebase. Every step is a complete, multi-hour engineering request that starts from the code the agent produced in the preceding steps, so early design decisions and errors carry forward. The tasks span four families of engineering work and nine languages, include both from-scratch builds and existing open-source codebases, and ground every step in an existing source of truth that defines both the instruction and its verifier. Across nine frontier models, the strongest model reaches a solve rate of only 18.5%, and 38 of the 69 tasks are not solved by any model. We release Multi-step SWE publicly at https://multistepswe.com.",
+      "authors": [
+        "Xiangkai Zeng",
+        "Zheng Liu",
+        "Zihao Lin"
+      ],
+      "extra": {
+        "categories": [
+          "cs.SE",
+          "cs.AI",
+          "cs.LG"
+        ],
+        "pdf": "https://arxiv.org/pdf/2611.07166"
+      }
+    },
+    "relevant": true,
+    "thread": "agent-escalation",
+    "score": 3,
+    "summary": "A long-horizon software engineering benchmark where coding agents must complete 5-15 dependent steps on a single codebase, building on code they previously wrote. It reports that frontier models solve only a small fraction of the tasks.",
+    "why": "It characterizes coding-agent capability over long horizons, the same agent class that is central to privilege-escalation and sandboxing research.",
+    "question": "Which long-horizon coding failure modes could interact with permission prompts, sandbox boundaries, or unsafe code accumulation in deployed agents?",
+    "attempts": 1
+  },
+  {
+    "item": {
+      "id": "hn:50392499",
+      "source": "hn",
+      "title": "University libraries are being swarmed by AI bots, putting public access at risk",
+      "url": "https://www.cbc.ca/news/world/university-libraries-ai-data-scraping-bots-9.7408287",
+      "published": "2026-11-06T14:13:09Z",
+      "summary": "",
+      "authors": [
+        "blakesterz"
+      ],
+      "extra": {
+        "points": 97,
+        "comments": 47,
+        "discussion": "https://news.ycombinator.com/item?id=50392499"
+      }
+    },
+    "relevant": false,
+    "thread": "none",
+    "score": 2,
+    "summary": "University libraries are being overwhelmed by AI bots, which threatens public access to library resources.",
+    "why": "",
+    "question": "",
+    "attempts": 1
+  },
+  {
+    "item": {
+      "id": "hn:50383963",
+      "source": "hn",
+      "title": "Tencent launches Hy4",
+      "url": "https://www.tencent.com/tencent-launches-hy4-joining-the-ranks-of-the-worlds-leading-open-source-ai-models/",
+      "published": "2026-11-05T20:21:43Z",
+      "summary": "",
+      "authors": [
+        "gmays"
+      ],
+      "extra": {
+        "points": 95,
+        "comments": 4,
+        "discussion": "https://news.ycombinator.com/item?id=50383963"
+      }
+    },
+    "relevant": false,
+    "thread": "none",
+    "score": 0,
+    "summary": "Tencent announces the launch of Hy4, an open-source AI model it says joins the ranks of leading open-source AI models.",
+    "why": "",
+    "question": "",
+    "attempts": 1
+  },
+  {
+    "item": {
+      "id": "hn:50393235",
+      "source": "hn",
+      "title": "Show HN: Agentic Identity Broker, OAuth Delegation for AI Agents",
+      "url": "https://github.com/zalando-incubator/agentic-identity-broker",
+      "published": "2026-11-06T15:07:47Z",
+      "summary": "",
+      "authors": [
+        "jbspeakr"
+      ],
+      "extra": {
+        "points": 14,
+        "comments": 3,
+        "discussion": "https://news.ycombinator.com/item?id=50393235"
+      }
+    },
+    "relevant": true,
+    "thread": "agent-escalation",
+    "score": 5,
+    "summary": "A Show HN project for an agentic identity broker that provides OAuth delegation for AI agents.",
+    "why": "It may be relevant to how agents obtain and delegate permissions, which is central to agent privilege escalation.",
+    "question": "Does the broker limit delegated scopes and prevent agents from escalating beyond the user's intended permissions?",
+    "attempts": 1
+  },
+  {
+    "item": {
+      "id": "hn:50392219",
+      "source": "hn",
+      "title": "Show HN: An open source webbluetooth and NFC browser for iOS",
+      "url": "https://github.com/hito-dev/wand-browser",
+      "published": "2026-11-06T13:45:07Z",
+      "summary": "",
+      "authors": [
+        "hito"
+      ],
+      "extra": {
+        "points": 12,
+        "comments": 0,
+        "discussion": "https://news.ycombinator.com/item?id=50392219"
+      }
+    },
+    "relevant": false,
+    "thread": "none",
+    "score": 0,
+    "summary": "An open source iOS browser that supports Web Bluetooth and NFC.",
+    "why": "",
+    "question": "",
+    "attempts": 1
+  },
+  {
+    "item": {
+      "id": "hn:50389967",
+      "source": "hn",
+      "title": "Computer game Worms went from classroom to classic",
+      "url": "https://www.bbc.co.uk/news/articles/cmp8gd6l03g3o",
+      "published": "2026-11-06T09:10:55Z",
+      "summary": "",
+      "authors": [
+        "JonoW"
+      ],
+      "extra": {
+        "points": 9,
+        "comments": 0,
+        "discussion": "https://news.ycombinator.com/item?id=50389967"
+      }
+    },
+    "relevant": false,
+    "thread": "none",
+    "score": 0,
+    "summary": "A BBC article about the computer game Worms and its rise from classroom use to a classic game.",
+    "why": "",
+    "question": "",
+    "attempts": 1
+  },
+  {
+    "item": {
+      "id": "hn:50389498",
+      "source": "hn",
+      "title": "Living Maps: Bay Area tech since 1960s",
+      "url": "https://tomorrowasusual.com/living-maps/bay-area-tech/",
+      "published": "2026-11-06T08:08:19Z",
+      "summary": "",
+      "authors": [
+        "tudell"
+      ],
+      "extra": {
+        "points": 9,
+        "comments": 7,
+        "discussion": "https://news.ycombinator.com/item?id=50389498"
+      }
+    },
+    "relevant": false,
+    "thread": "none",
+    "score": 0,
+    "summary": "It is a living maps project about the history of Bay Area technology since the 1960s.",
+    "why": "",
+    "question": "",
+    "attempts": 1
+  },
+  {
+    "item": {
+      "id": "hn:50391883",
+      "source": "hn",
+      "title": "A high school science teacher stumbled upon the first known T. Rex trackway",
+      "url": "https://www.cbc.ca/radio/asithappens/t-rex-trackway-9.7406432?cmp=rss",
+      "published": "2026-11-06T13:07:55Z",
+      "summary": "",
+      "authors": [
+        "speckx"
+      ],
+      "extra": {
+        "points": 8,
+        "comments": 0,
+        "discussion": "https://news.ycombinator.com/item?id=50391883"
+      }
+    },
+    "relevant": false,
+    "thread": "none",
+    "score": 0,
+    "summary": "A high school science teacher reportedly found the first known T. Rex trackway. The story is about a paleontology discovery, not AI security.",
+    "why": "",
+    "question": "",
+    "attempts": 1
+  },
+  {
+    "item": {
+      "id": "hn:50385157",
+      "source": "hn",
+      "title": "Ask HN: How do AI agents help you in your daily life?",
+      "url": "https://news.ycombinator.com/item?id=50385157",
+      "published": "2026-11-05T22:05:49Z",
+      "summary": "",
+      "authors": [
+        "gonzar79"
+      ],
+      "extra": {
+        "points": 5,
+        "comments": 9,
+        "discussion": "https://news.ycombinator.com/item?id=50385157"
+      }
+    },
+    "relevant": false,
+    "thread": "none",
+    "score": 0,
+    "summary": "A Hacker News discussion asking how people use AI agents in their daily lives. The title suggests general user experiences rather than a security-focused result.",
+    "why": "",
+    "question": "",
+    "attempts": 1
+  }
+]
