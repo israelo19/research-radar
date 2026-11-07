@@ -1,0 +1,277 @@
+[
+  {
+    "item": {
+      "id": "hn:50395866",
+      "source": "hn",
+      "title": "Perplexity launches AI agents for work",
+      "url": "https://www.perplexity.ai/en-GB/hub/blog/teammates-are-agents-for-complex-ongoing-work",
+      "published": "2026-11-06T17:59:41Z",
+      "summary": "",
+      "authors": [
+        "cybermango"
+      ],
+      "extra": {
+        "points": 61,
+        "comments": 54,
+        "discussion": "https://news.ycombinator.com/item?id=50395866"
+      }
+    },
+    "relevant": false,
+    "thread": "none",
+    "score": 2,
+    "summary": "Perplexity is launching AI agents intended for complex, ongoing work tasks. The available title does not describe security, evaluation, or agent privilege details.",
+    "why": "",
+    "question": "",
+    "attempts": 1
+  },
+  {
+    "item": {
+      "id": "hn:50397325",
+      "source": "hn",
+      "title": "Show HN: Agents infer Lego mechanisms from sources, then animate them",
+      "url": "https://github.com/anteloc/ldraw-mecha/tree/v0.5.0",
+      "published": "2026-11-06T19:41:20Z",
+      "summary": "",
+      "authors": [
+        "antelocnova"
+      ],
+      "extra": {
+        "points": 30,
+        "comments": 1,
+        "discussion": "https://news.ycombinator.com/item?id=50397325"
+      }
+    },
+    "relevant": false,
+    "thread": "none",
+    "score": 0,
+    "summary": "A Show HN project in which agents infer Lego mechanisms from sources and then animate them.",
+    "why": "",
+    "question": "",
+    "attempts": 1
+  },
+  {
+    "item": {
+      "id": "hn:50398485",
+      "source": "hn",
+      "title": "AI-supported woodworking: Building an up-and-over tool chest with a clever hinge",
+      "url": "https://portalworkers.com/blog/up-and-over-tool-chest/",
+      "published": "2026-11-06T21:02:26Z",
+      "summary": "",
+      "authors": [
+        "mpalme"
+      ],
+      "extra": {
+        "points": 8,
+        "comments": 0,
+        "discussion": "https://news.ycombinator.com/item?id=50398485"
+      }
+    },
+    "relevant": false,
+    "thread": "none",
+    "score": 0,
+    "summary": "A blog post about using AI support to build an up-and-over tool chest with a clever hinge.",
+    "why": "",
+    "question": "",
+    "attempts": 1
+  },
+  {
+    "item": {
+      "id": "hn:50405789",
+      "source": "hn",
+      "title": "How Long Can Life Wait?",
+      "url": "https://mceglowski.substack.com/p/how-long-can-life-wait",
+      "published": "2026-11-07T16:22:59Z",
+      "summary": "",
+      "authors": [
+        "Ariarule"
+      ],
+      "extra": {
+        "points": 6,
+        "comments": 1,
+        "discussion": "https://news.ycombinator.com/item?id=50405789"
+      }
+    },
+    "relevant": false,
+    "thread": "none",
+    "score": 0,
+    "summary": "A Substack post titled 'How Long Can Life Wait?'; no further details are available.",
+    "why": "",
+    "question": "",
+    "attempts": 1
+  },
+  {
+    "item": {
+      "id": "hn:50402632",
+      "source": "hn",
+      "title": "Every processor die anyone has photographed",
+      "url": "https://sheets.works/data-viz/cpu-dies",
+      "published": "2026-11-07T08:07:48Z",
+      "summary": "",
+      "authors": [
+        "masterbubbles"
+      ],
+      "extra": {
+        "points": 6,
+        "comments": 1,
+        "discussion": "https://news.ycombinator.com/item?id=50402632"
+      }
+    },
+    "relevant": false,
+    "thread": "none",
+    "score": 0,
+    "summary": "A data visualization collection of photographs of processor dies. It appears to catalog CPU die images.",
+    "why": "",
+    "question": "",
+    "attempts": 1
+  },
+  {
+    "item": {
+      "id": "hn:50397561",
+      "source": "hn",
+      "title": "Show HN: Tell the Sky – message lanterns drift on winds from live weather data",
+      "url": "https://tellthesky.com",
+      "published": "2026-11-06T19:59:25Z",
+      "summary": "",
+      "authors": [
+        "andycodeman"
+      ],
+      "extra": {
+        "points": 6,
+        "comments": 0,
+        "discussion": "https://news.ycombinator.com/item?id=50397561"
+      }
+    },
+    "relevant": false,
+    "thread": "none",
+    "score": 0,
+    "summary": "A Show HN project called Tell the Sky. It appears to let message lanterns drift on winds using live weather data.",
+    "why": "",
+    "question": "",
+    "attempts": 1
+  },
+  {
+    "item": {
+      "id": "hn:50397013",
+      "source": "hn",
+      "title": "Map of Bay Area tech since the 1960s",
+      "url": "https://tomorrowasusual.substack.com/p/living-maps-bay-area-tech-since-the",
+      "published": "2026-11-06T19:19:18Z",
+      "summary": "",
+      "authors": [
+        "tusmaaa"
+      ],
+      "extra": {
+        "points": 6,
+        "comments": 1,
+        "discussion": "https://news.ycombinator.com/item?id=50397013"
+      }
+    },
+    "relevant": false,
+    "thread": "none",
+    "score": 0,
+    "summary": "It is a map or post about the history of Bay Area technology since the 1960s. The title does not indicate a focus on AI security, agents, MCP, or evaluation awareness.",
+    "why": "",
+    "question": "",
+    "attempts": 1
+  },
+  {
+    "item": {
+      "id": "hn:50404494",
+      "source": "hn",
+      "title": "Show HN: I made a guardrail against AI outreach slop (API/MCP)",
+      "url": "https://maildignity.com/",
+      "published": "2026-11-07T13:48:09Z",
+      "summary": "",
+      "authors": [
+        "harryden"
+      ],
+      "extra": {
+        "points": 5,
+        "comments": 0,
+        "discussion": "https://news.ycombinator.com/item?id=50404494"
+      }
+    },
+    "relevant": true,
+    "thread": "mcp-security",
+    "score": 3,
+    "summary": "A Show HN post for a guardrail product aimed at filtering AI-generated outreach spam, offered via API and MCP.",
+    "why": "It mentions MCP, so it may be an MCP-based tool or server, but the title does not indicate a security focus.",
+    "question": "Does it operate as an MCP server or tool, and what access or permissions does it need to inspect outreach messages?",
+    "attempts": 1
+  },
+  {
+    "item": {
+      "id": "hn:50399637",
+      "source": "hn",
+      "title": "Show HN: I asked HN about AI agentic setups, here are 750 of the comments mapped",
+      "url": "https://news.ycombinator.com/item?id=50399637",
+      "published": "2026-11-06T22:58:34Z",
+      "summary": "",
+      "authors": [
+        "eggbrain"
+      ],
+      "extra": {
+        "points": 5,
+        "comments": 0,
+        "discussion": "https://news.ycombinator.com/item?id=50399637"
+      }
+    },
+    "relevant": false,
+    "thread": "none",
+    "score": 2,
+    "summary": "A Show HN post mapping 750 Hacker News comments about AI agentic setups.",
+    "why": "",
+    "question": "",
+    "attempts": 1
+  },
+  {
+    "item": {
+      "id": "hn:50403687",
+      "source": "hn",
+      "title": "Is Programming That Easy?",
+      "url": "https://news.ycombinator.com/item?id=50403687",
+      "published": "2026-11-07T11:42:33Z",
+      "summary": "",
+      "authors": [
+        "ghassenfaidi"
+      ],
+      "extra": {
+        "points": 5,
+        "comments": 7,
+        "discussion": "https://news.ycombinator.com/item?id=50403687"
+      }
+    },
+    "relevant": false,
+    "thread": "none",
+    "score": 0,
+    "summary": "A Hacker News story titled 'Is Programming That Easy?' with no available details beyond the title.",
+    "why": "",
+    "question": "",
+    "attempts": 1
+  },
+  {
+    "item": {
+      "id": "hn:50398561",
+      "source": "hn",
+      "title": "Leeroy: Making AI agents play World of Warcraft",
+      "url": "https://pthm.dev/leeroy-making-ai-agents-play-world-of-warcraft/",
+      "published": "2026-11-06T21:07:44Z",
+      "summary": "",
+      "authors": [
+        "speckx"
+      ],
+      "extra": {
+        "points": 5,
+        "comments": 0,
+        "discussion": "https://news.ycombinator.com/item?id=50398561"
+      }
+    },
+    "relevant": false,
+    "thread": "none",
+    "score": 2,
+    "summary": "A post about making AI agents play World of Warcraft.",
+    "why": "",
+    "question": "",
+    "attempts": 1
+  }
+]
