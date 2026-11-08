@@ -1,0 +1,127 @@
+[
+  {
+    "item": {
+      "id": "hn:50405782",
+      "source": "hn",
+      "title": "Every processor die anyone has photographed and given away",
+      "url": "https://sheets.works/data-viz/cpu-dies",
+      "published": "2026-11-07T16:21:36Z",
+      "summary": "",
+      "authors": [
+        "user_7832"
+      ],
+      "extra": {
+        "points": 141,
+        "comments": 30,
+        "discussion": "https://news.ycombinator.com/item?id=50405782"
+      }
+    },
+    "relevant": false,
+    "thread": "none",
+    "score": 0,
+    "summary": "A data visualization or collection of photographed processor die images that people have shared. It appears to be about CPU hardware imagery rather than AI security.",
+    "why": "",
+    "question": "",
+    "attempts": 1
+  },
+  {
+    "item": {
+      "id": "hn:50408350",
+      "source": "hn",
+      "title": "Show HN: An offline desktop companion to help maintain a healthy blink rhythm",
+      "url": "https://eyesrhythm.com/",
+      "published": "2026-11-07T21:47:47Z",
+      "summary": "",
+      "authors": [
+        "prnysoni"
+      ],
+      "extra": {
+        "points": 36,
+        "comments": 21,
+        "discussion": "https://news.ycombinator.com/item?id=50408350"
+      }
+    },
+    "relevant": false,
+    "thread": "none",
+    "score": 0,
+    "summary": "An offline desktop companion for maintaining a healthy blink rhythm. The available text does not indicate any connection to AI security or agent security.",
+    "why": "",
+    "question": "",
+    "attempts": 1
+  },
+  {
+    "item": {
+      "id": "hn:50410253",
+      "source": "hn",
+      "title": "Show HN: Maple – Sub-2-BPW Moe Pruning to Run Gemma 4 26B at 45 TPS on a 6GB GPU",
+      "url": "https://github.com/AmSach/maple",
+      "published": "2026-11-08T03:48:04Z",
+      "summary": "",
+      "authors": [
+        "AmSach"
+      ],
+      "extra": {
+        "points": 18,
+        "comments": 5,
+        "discussion": "https://news.ycombinator.com/item?id=50410253"
+      }
+    },
+    "relevant": false,
+    "thread": "none",
+    "score": 0,
+    "summary": "A Show HN project for sub-2-BPW MoE pruning that claims to run Gemma 4 26B at 45 TPS on a 6GB GPU.",
+    "why": "",
+    "question": "",
+    "attempts": 1
+  },
+  {
+    "item": {
+      "id": "hn:50411638",
+      "source": "hn",
+      "title": "ThinkStream – AI generates the work. We still need to understand it",
+      "url": "https://thinkstream.app/",
+      "published": "2026-11-08T09:20:04Z",
+      "summary": "",
+      "authors": [
+        "aginext"
+      ],
+      "extra": {
+        "points": 10,
+        "comments": 0,
+        "discussion": "https://news.ycombinator.com/item?id=50411638"
+      }
+    },
+    "relevant": false,
+    "thread": "none",
+    "score": 0,
+    "summary": "A Hacker News story for ThinkStream, described only by the title as saying AI can generate work but humans still need to understand it.",
+    "why": "",
+    "question": "",
+    "attempts": 1
+  },
+  {
+    "item": {
+      "id": "hn:50406105",
+      "source": "hn",
+      "title": "Tell HN: Hanzo AI Is Spamming From GitHub Contributions",
+      "url": "https://news.ycombinator.com/item?id=50406105",
+      "published": "2026-11-07T17:06:04Z",
+      "summary": "",
+      "authors": [
+        "toomuchtodo"
+      ],
+      "extra": {
+        "points": 5,
+        "comments": 3,
+        "discussion": "https://news.ycombinator.com/item?id=50406105"
+      }
+    },
+    "relevant": false,
+    "thread": "none",
+    "score": 2,
+    "summary": "A Hacker News post reports that Hanzo AI is spamming through GitHub contributions. The available title does not explain the mechanism or security impact.",
+    "why": "",
+    "question": "",
+    "attempts": 1
+  }
+]
