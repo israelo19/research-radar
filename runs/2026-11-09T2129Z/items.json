@@ -1,0 +1,127 @@
+[
+  {
+    "item": {
+      "id": "hn:50421899",
+      "source": "hn",
+      "title": "WindyMaps – Free offline maps, 1h/1km weather and route trip planner",
+      "url": "https://windymapy.com",
+      "published": "2026-11-09T06:40:44Z",
+      "summary": "",
+      "authors": [
+        "alesmikes"
+      ],
+      "extra": {
+        "points": 10,
+        "comments": 3,
+        "discussion": "https://news.ycombinator.com/item?id=50421899"
+      }
+    },
+    "relevant": false,
+    "thread": "none",
+    "score": 0,
+    "summary": "It is a website offering free offline maps, high-resolution weather, and route trip planning.",
+    "why": "",
+    "question": "",
+    "attempts": 1
+  },
+  {
+    "item": {
+      "id": "hn:50426990",
+      "source": "hn",
+      "title": "Show HN: One TUI to Manage MCP Servers for Claude Code and Codex",
+      "url": "https://toolshed.run",
+      "published": "2026-11-09T15:31:03Z",
+      "summary": "",
+      "authors": [
+        "bartdegoede"
+      ],
+      "extra": {
+        "points": 7,
+        "comments": 0,
+        "discussion": "https://news.ycombinator.com/item?id=50426990"
+      }
+    },
+    "relevant": true,
+    "thread": "mcp-security",
+    "score": 3,
+    "summary": "A terminal UI for managing MCP servers used with Claude Code and Codex. The title does not state what management features it provides.",
+    "why": "It touches MCP server management, which can be relevant to auditing or controlling MCP servers, but no security details are stated.",
+    "question": "Does it expose server permissions, descriptions, or audit logs that would help detect over-privileged or malicious MCP servers?",
+    "attempts": 1
+  },
+  {
+    "item": {
+      "id": "hn:50424580",
+      "source": "hn",
+      "title": "Show HN: Harness Resource Bench – CPU, memory and disk of coding agents",
+      "url": "https://leonardcser.github.io/harness-resource-bench",
+      "published": "2026-11-09T12:18:30Z",
+      "summary": "",
+      "authors": [
+        "leonardcser"
+      ],
+      "extra": {
+        "points": 6,
+        "comments": 0,
+        "discussion": "https://news.ycombinator.com/item?id=50424580"
+      }
+    },
+    "relevant": false,
+    "thread": "agent-escalation",
+    "score": 3,
+    "summary": "A Show HN post for a benchmark harness that measures CPU, memory, and disk usage of coding agents.",
+    "why": "Resource usage data can be adjacent to sandboxing and runtime limits for coding agents, but the title does not indicate a security focus.",
+    "question": "Does the benchmark include constrained or sandboxed execution settings, or only unconstrained resource measurements?",
+    "attempts": 1
+  },
+  {
+    "item": {
+      "id": "hn:50430181",
+      "source": "hn",
+      "title": "Palantir lobbied minister for NHS GP records",
+      "url": "https://www.theguardian.com/technology/2026/nov/09/revealed-palantir-lobbied-minister-to-stretch-ai-tools-reach-to-nhs-gp-records",
+      "published": "2026-11-09T19:12:30Z",
+      "summary": "",
+      "authors": [
+        "worik"
+      ],
+      "extra": {
+        "points": 6,
+        "comments": 1,
+        "discussion": "https://news.ycombinator.com/item?id=50430181"
+      }
+    },
+    "relevant": false,
+    "thread": "none",
+    "score": 1,
+    "summary": "A Guardian report says Palantir lobbied a minister to extend AI tools' access to NHS GP records.",
+    "why": "",
+    "question": "",
+    "attempts": 1
+  },
+  {
+    "item": {
+      "id": "hn:50417974",
+      "source": "hn",
+      "title": "Show HN: Remedy – Prompt stuff out of your feeds",
+      "url": "https://getremedyapp.com",
+      "published": "2026-11-08T22:16:21Z",
+      "summary": "",
+      "authors": [
+        "armatav"
+      ],
+      "extra": {
+        "points": 5,
+        "comments": 0,
+        "discussion": "https://news.ycombinator.com/item?id=50417974"
+      }
+    },
+    "relevant": false,
+    "thread": "none",
+    "score": 1,
+    "summary": "A Show HN post for Remedy, whose title says it can \"Prompt stuff out of your feeds.\"",
+    "why": "",
+    "question": "",
+    "attempts": 1
+  }
+]
