@@ -1,5 +1,27 @@
 [
   {
+    "run_id": "2026-11-10T1843Z",
+    "started": "2026-11-10T18:43:10.590+00:00",
+    "dry_run": false,
+    "status": "ok",
+    "keys": {
+      "bitdeer": "key set (BITDEER_API_KEY)"
+    },
+    "fetched": 20,
+    "screened": 20,
+    "relevant": 7,
+    "failed": 0,
+    "top_score": 9,
+    "duration_ms": 92948.4,
+    "providers": [
+      "bitdeer"
+    ],
+    "models": [
+      "Qwen/Qwen3.8-27B"
+    ],
+    "run_url": "https://github.com/israelo19/research-radar/actions/runs/42878006381"
+  },
+  {
     "run_id": "2026-11-09T2129Z",
     "started": "2026-11-09T21:29:59.123+00:00",
     "dry_run": false,

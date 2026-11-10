@@ -1,0 +1,604 @@
+[
+  {
+    "item": {
+      "id": "arxiv:2611.12823",
+      "source": "arxiv",
+      "title": "Coding Agents in KVM: Practical Containment and User Control with Limited Resources",
+      "url": "https://arxiv.org/abs/2611.12823",
+      "published": "2026-11-09T18:24:46Z",
+      "summary": "Coding agents often need broad authority for productive development work, but granting that authority can expose users' data and infrastructure. Off-the-shelf cloud workspaces can help contain agent activity, but reliance on provider-specific platforms can lead to vendor lock-in and reduced user control. Researchers and engineers must therefore balance agent autonomy, enforced containment, and user control within available financial, computational, and human resources. We analyze these trade-offs and present KVM-Agent, an open-source implementation that automates most setup and provisioning steps. It gives agents broad authority inside replaceable Ubuntu VMs while keeping host administration outside those VMs and supporting multiple coding-agent applications, model services, and remote job delegation. The approach retains familiar workflows and user choice at the cost of VM resources, maintenance, and residual risks from secrets accessible inside the VMs and permitted network access.",
+      "authors": [
+        "Yutaka Nagashima"
+      ],
+      "extra": {
+        "categories": [
+          "cs.SE"
+        ],
+        "pdf": "https://arxiv.org/pdf/2611.12823"
+      }
+    },
+    "relevant": true,
+    "thread": "agent-escalation",
+    "score": 8,
+    "summary": "The paper presents KVM-Agent, an open-source system that runs coding agents inside disposable Ubuntu VMs to limit the damage from overly privileged agent access. It focuses on practical containment, user control, and avoiding vendor lock-in while still allowing agents broad authority inside the VM.",
+    "why": "It is directly about sandboxing and runtime containment for coding agents, which is central to agent privilege escalation.",
+    "question": "What residual escape or exfiltration paths remain when the agent can access secrets and network inside the VM?",
+    "attempts": 1
+  },
+  {
+    "item": {
+      "id": "arxiv:2611.12521",
+      "source": "arxiv",
+      "title": "Can the Confidence and Decisions of System 1 Models Be Trusted? An Explainability and Perturbation Audit of Jev-Style Decision Models",
+      "url": "https://arxiv.org/abs/2611.12521",
+      "published": "2026-11-09T14:58:53Z",
+      "summary": "\"System 1\" decision models (pioneered by TypeSafe AI's Jev) replace autoregressive text generation with a single forward pass returning typed probability distributions over declared schemas (Choice, Score, Noul). While deployed for low-latency routing and automated triage, their statistical calibration and post-hoc explainability remain uncharacterized. We introduce an open, deterministic audit benchmark evaluating System 1 decision models across calibration under label-preserving perturbations, cross-question interference, and post-hoc attribution faithfulness. Evaluating five open-weight models (0.8B to 27B) alongside generative System 2 baselines -- both single-token logprob scoring and structured JSON/CoT decoding -- across NLI (e-SNLI), adversarial syntactic shortcuts (HANS), synthetic clinical triage (N=900), prompt injection defense (Tensor Trust, N=250), and an 86-case logic-gate trigger suite yields five findings: (1) provider confidence is an exact closed-form dispersion transform (1 - H(p)/ln K on sub-10B models; normalized margin on Clef-27B) rather than empirical accuracy; (2) bundling multiple questions in one request induces directional cross-question interference (11.7% to 22.4% binary flips on Tev1-0.8B, vs. 0.1% to 0.2% on Tev1-4B); (3) System 1 models with >= 4B parameters are faster and better calibrated under syntactic shifts (ECE_w = 0.030 to 0.087) than logprob (0.144) and JSON (0.378) baselines; (4) for prompt-injection defense (N=250), >= 4B models achieve 0.988 to 0.998 AUROC with up to 95.2% recall and 0.0% false alarms at 48 to 60 ms; and (5) single-pass inference makes 512-coalition XAI interactive (1.3 to 3.2 s/input), while KernelSHAP with a logit link (S1-SHAP) mitigates softmax saturation on disjunctive OR gates (89.3% to 100.0% gate recovery vs. 57.1% to 82.1% in prob space; p_adj = 0.004).",
+      "authors": [
+        "Julien Delaunay"
+      ],
+      "extra": {
+        "categories": [
+          "cs.LG",
+          "cs.CL"
+        ],
+        "pdf": "https://arxiv.org/pdf/2611.12521"
+      }
+    },
+    "relevant": true,
+    "thread": "mcp-security",
+    "score": 4,
+    "summary": "This paper audits single-pass “System 1” decision models for calibration, perturbation robustness, explainability, and prompt-injection detection. It compares several open-weight models against generative baselines on tasks including a prompt-injection defense benchmark.",
+    "why": "Its prompt-injection defense results are adjacent to defending against malicious tool descriptions or tool output in MCP-style agent systems, though the paper is not specifically about MCP.",
+    "question": "Could these fast System 1 classifiers serve as cheap runtime filters for malicious tool descriptions or tool outputs in MCP agents?",
+    "attempts": 1
+  },
+  {
+    "item": {
+      "id": "arxiv:2611.12386",
+      "source": "arxiv",
+      "title": "Say Shibboleth: Fingerprinting the LLMs and Harnesses Behind Agentic Attacks",
+      "url": "https://arxiv.org/abs/2611.12386",
+      "published": "2026-11-09T13:27:13Z",
+      "summary": "We study the fingerprinting of agentic cyberattacks. Our objective is to reliably infer information about the attacker's configuration, such as LLM version and harness, from telemetry. To achieve this, we introduce a technique we call shibboleth traps: modular honeypot services designed to elicit discriminative behaviors from agentic attackers. The traps make informative interactions a condition for obtaining resources the agent seeks, eliciting model declarations and characteristic writing without requiring a successful prompt injection. To achieve harness fingerprinting, we introduce general mechanisms to indirectly probe peculiar execution behaviors of harnesses. These probes reveal how a harness masks secrets in tool output, enforces command time limits, and schedules tool calls, using only the effects visible in subsequent requests. We show that combined declarative and behavioral inference distinguishes among 15 candidate models with an average 90% top-1 accuracy, with behavioral classifiers evaluated on held-out harnesses or task families. In a separate experiment across four harnesses, fixed probe rules identify the correct harness with 92% accuracy. When instructed to conceal their identity, agents still leave useful behavioral evidence even as their declarations become uninformative.",
+      "authors": [
+        "Dario Pasquini",
+        "Reworr",
+        "Giuseppe Ateniese",
+        "Manish Bhatt",
+        "Sergej Epp"
+      ],
+      "extra": {
+        "categories": [
+          "cs.CR",
+          "cs.AI"
+        ],
+        "pdf": "https://arxiv.org/pdf/2611.12386"
+      }
+    },
+    "relevant": true,
+    "thread": "mcp-security",
+    "score": 6,
+    "summary": "The paper proposes honeypot-style 'shibboleth traps' to fingerprint agentic cyberattacks by inferring the attacker's LLM and harness from telemetry. It shows that behavioral probes of harness execution, such as tool-output masking and command scheduling, can identify models and harnesses even when agents try to conceal their identity.",
+    "why": "It is relevant to agent-tool security because it studies how harness and tool-output behaviors leak information about agentic attackers and could inform detection of malicious agent interactions.",
+    "question": "Which harness or tool-output behaviors are most robust for attributing agentic attacks, and could they be turned into runtime defenses against malicious agent tool use?",
+    "attempts": 1
+  },
+  {
+    "item": {
+      "id": "arxiv:2611.12177",
+      "source": "arxiv",
+      "title": "Embodied First Exam",
+      "url": "https://arxiv.org/abs/2611.12177",
+      "published": "2026-11-09T10:29:19Z",
+      "summary": "Early successes on agentic robotics point to a potential paradigm shift toward using coding agents to control robots. Existing robotics benchmarks are built around visuomotor policy learning, leaving it open whether coding agents can reliably control diverse robots under physical-world constraints. We therefore introduce the Embodied First Exam, a unified, comprehensive, and agent-native evaluation framework where coding agents can choose their own control approach: direct control, code to control, or train a policy to control. We hope it serves as a first exam for coding agents before they enter the physical world, with 1,156 tasks in 35 suites on 47 robots, including 9 new suites that go beyond pick-and-place to spatial puzzles, dexterous manipulation, multi-robot interaction, dynamic whole-body control, and sim-to-sim engineering. Each task can be run in up to three evaluation settings. The Standard Setting mimics the real world: the agent receives only sensor observations and, by default, cannot reset the environment. Its Realtime variant keeps the environment running while the agent reasons. The Privileged Setting gives the agent access to the full simulator state and unlimited resets, allowing it to search for an oracle solution for training purposes. Success rates in this setting serve as an approximate upper bound. On the 456 core tasks, the strongest of eight agents, GPT-6 Astra in Codex, achieves a success rate of 34% in the Standard Setting, leaving much room for improvement. To see where agents fail, we label the stage at which failed attempts go wrong and compare failures across agents, settings, and stage categories.",
+      "authors": [
+        "Kangrui Wang",
+        "Qineng Wang",
+        "Changhe Chen",
+        "Pingyue Zhang",
+        "Chi Gui",
+        "Feishi Wang",
+        "Canyu Chen",
+        "Wenli Xiao",
+        "Xiaoyu Huang",
+        "Tonghe Zhang",
+        "Linjie Li",
+        "Zihan Wang",
+        "Minyeong Kim",
+        "Yiyou Sun",
+        "Mingkai Deng",
+        "Jinyu Hou",
+        "Qi Zhu",
+        "Han Liu",
+        "Eric P. Xing",
+        "Huaxiu Yao",
+        "Zhiwen Fan",
+        "Yuejiang Liu",
+        "Dawn Song",
+        "Pieter Abbeel",
+        "Li Fei-Fei",
+        "Jiajun Wu",
+        "Yuke Zhu",
+        "Guanya Shi",
+        "Ruohan Zhang",
+        "Manling Li"
+      ],
+      "extra": {
+        "categories": [
+          "cs.RO",
+          "cs.AI"
+        ],
+        "pdf": "https://arxiv.org/pdf/2611.12177"
+      }
+    },
+    "relevant": false,
+    "thread": "none",
+    "score": 2,
+    "summary": "A benchmark for coding agents that control robots, with tasks across many robot types and evaluation settings including standard, realtime, and privileged access. It reports low success rates for current agents and analyzes where they fail.",
+    "why": "",
+    "question": "",
+    "attempts": 1
+  },
+  {
+    "item": {
+      "id": "arxiv:2611.12164",
+      "source": "arxiv",
+      "title": "Let the Fixer Decide: Training a Code Localizer from the Fixer's Likelihood",
+      "url": "https://arxiv.org/abs/2611.12164",
+      "published": "2026-11-09T10:18:59Z",
+      "summary": "Code localizers are usually trained to predict the files a reference patch edits, but the code a fixer needs to read is not the same as the code it changes. We propose Fixer-Guided Localization (FGL): the localizer proposes several localizations, a frozen fixer scores each by how likely it makes a verified patch, and the localizer is trained on these scores with weighted supervised fine-tuning, without running tests and without reinforcement learning. We build the full pipeline on Gemma 4 E4B for the Kaggle Gemma-4 Developer Agent competition, from 1,629 test-verified Kimi K3 trajectories. The FGL target helps the fixer find the bug as often as the teacher's localization while using 27.5% less code. On the development set, one EM round moves the agent in the expected direction compared with a matched control: more tasks reach a patch (53 vs. 46), fewer tasks get stuck reading files that do not exist (43 vs. 54), and more tasks are solved (8 vs. 6). Training also changes how the agent works: trained agents explore about three times more than the base model and write far fewer wrong patches, and the single agent solves up to 11 of 78 tasks, against 8 for the base model. An analysis of 13 evaluation runs identifies what limits a 4B agent under an 8-minute budget (time, repetition loops and edit quality) and gives practical lessons for training small coding agents. All data, code and adapters are publicly available.",
+      "authors": [
+        "Khalil Hennara",
+        "Muhammad Hreden",
+        "Zeina Aldallal",
+        "Sara Chrouf",
+        "Safwan AlModhayan"
+      ],
+      "extra": {
+        "categories": [
+          "cs.AI",
+          "cs.SE"
+        ],
+        "pdf": "https://arxiv.org/pdf/2611.12164"
+      }
+    },
+    "relevant": false,
+    "thread": "none",
+    "score": 2,
+    "summary": "The paper proposes a training method for code localizers used by small coding agents, where a frozen fixer scores candidate localizations to guide the localizer. It reports improved bug-finding efficiency and task-solving performance for a 4B coding agent.",
+    "why": "",
+    "question": "",
+    "attempts": 1
+  },
+  {
+    "item": {
+      "id": "arxiv:2611.12112",
+      "source": "arxiv",
+      "title": "LiveWorkspace: Externalizing Visual Understanding as Persistent Shared State for Screenshot-to-Code Agents",
+      "url": "https://arxiv.org/abs/2611.12112",
+      "published": "2026-11-09T09:25:06Z",
+      "summary": "Screenshot-to-Code requires coding agents to sustain visual understanding across code generation, execution, and revision. We introduce LiveWorkspace, a visual coding harness that externalizes this understanding as Shared Visual State (Shared VS), an implementation-independent representation of visual hierarchy, node attributes, and layout relations. LiveWorkspace constructs and retains \\textit{Target} from screenshots and recovers \\textit{Current} from browser execution in the same schema. Structured Diff and implementation bindings guide code modifications; user edits update \\textit{Target} and reuse the alignment loop. Using GPT-5.2 for both methods, LiveWorkspace improves end-to-end Avg by 1.8 points on Design2Code and 2.0 on ScreenBench over a control with matched model-call counts and stagewise budget limits. Further experiments demonstrate reuse of constructed Shared VS across coders and improvements in iterative repair. LiveWorkspace also achieves 93.0\\% edit success across 100 controlled editing cases. These findings support treating visual understanding as a persistent shared working state throughout code generation, execution, and modification.",
+      "authors": [
+        "Shijun Xiao",
+        "Zonghui Yang",
+        "Xinrong Chen",
+        "Hao Liu",
+        "Wensheng Zhang",
+        "Yongqiang Tang"
+      ],
+      "extra": {
+        "categories": [
+          "cs.SE"
+        ],
+        "pdf": "https://arxiv.org/pdf/2611.12112"
+      }
+    },
+    "relevant": false,
+    "thread": "none",
+    "score": 2,
+    "summary": "The paper proposes LiveWorkspace, a visual coding harness that externalizes screenshot understanding as persistent shared state to improve screenshot-to-code agents. It reports benchmark gains on Design2Code and ScreenBench and better iterative repair/editing performance.",
+    "why": "",
+    "question": "",
+    "attempts": 1
+  },
+  {
+    "item": {
+      "id": "arxiv:2611.12083",
+      "source": "arxiv",
+      "title": "SWE-Time: Benchmarking Temporal Repository Understanding",
+      "url": "https://arxiv.org/abs/2611.12083",
+      "published": "2026-11-09T09:01:27Z",
+      "summary": "Repository-level code-understanding benchmarks have progressively expanded the spatial scope of reasoning, from local code to entire repositories, while largely treating each repository as a static snapshot. However, how models reason about repository evolution over time remains largely unexplored. We introduce SWE-Time, a benchmark for temporal repository understanding that makes repository evolution itself the reasoning target. SWE-Time evaluates two complementary temporal directions: retrospective understanding of repository evolution through historical regression analysis and prospective understanding of intended changes from pre-change repository states. To enable realistic yet reliable evaluation in these settings, we introduce the RealWorld-to-Verifiable Construction Framework, which transforms real-world developer queries and historical evidence into verifiable evaluation tasks. We evaluate 15 coding agents on 1,661 cases from 65 GitHub repositories. Within Claude Code, Claude Opus 4.8 achieves the highest SWE-Time Avg. of 61.9, leaving substantial headroom. Controlled analyses highlight the importance of historical code evidence and developer intent, while consistent reasoning across repository states remains challenging. These results highlight repository evolution as a distinct and challenging dimension of code understanding.",
+      "authors": [
+        "Shijun Xiao",
+        "Xinrong Chen",
+        "Hao Liu",
+        "Wensheng Zhang",
+        "Yongqiang Tang"
+      ],
+      "extra": {
+        "categories": [
+          "cs.SE"
+        ],
+        "pdf": "https://arxiv.org/pdf/2611.12083"
+      }
+    },
+    "relevant": false,
+    "thread": "none",
+    "score": 2,
+    "summary": "A benchmark for evaluating how coding agents understand repository evolution over time, using historical regression and pre-change states.",
+    "why": "",
+    "question": "",
+    "attempts": 1
+  },
+  {
+    "item": {
+      "id": "arxiv:2611.11971",
+      "source": "arxiv",
+      "title": "Harness Matters: Measuring and Dissecting Security Resilience in Web Agents",
+      "url": "https://arxiv.org/abs/2611.11971",
+      "published": "2026-11-09T06:53:04Z",
+      "summary": "Web agents extend LLMs from text generation to real-world web interaction by relying on execution harnesses that interpret user goals, perceive webpages, plan actions, and ground model decisions into browser operations. While prior work has recognized that agent security depends on more than the backend model alone, how harness design quantitatively shapes web-agent security remains insufficiently measured. To systematically study web-agent harness security, we first characterize web-agent harnesses as a four-stage execution workflow covering goal interpretation, webpage perception, reasoning and planning, and action execution. Based on this abstraction, we build WebTrap Farm, a systematic and extensible evaluation framework covering three representative attack categories: malicious user prompts, malicious prompt injection, and deceptive web design. To avoid conflating security with task capability, we use paired usability calibration tasks to separate genuine defensive behavior from capability limitations. Our evaluation shows that existing web-agent harnesses remain vulnerable to typical attacks, with some unsafe behaviors occurring even without explicit attack content, revealing harness-intrinsic security failures (RQ1). Statistical analysis further shows that both harness and backend model significantly affect security outcomes, indicating that deployed-agent security is jointly shaped by the harness and backend model (RQ2). Finally, we localize where defensive behavior emerges across workflow stages and identify more secure design mechanisms, providing actionable guidance for building more robust web agents (RQ3). These findings highlight the web-agent harness as an important security boundary and motivate moving beyond model-centric defenses toward harness-level security design.",
+      "authors": [
+        "Xinyi Wu",
+        "Jiagui Chen",
+        "JiaYi Dong",
+        "Geng Hong",
+        "Xudong Pan",
+        "Jiarun Dai",
+        "Mingxuan Liu",
+        "Min Yang"
+      ],
+      "extra": {
+        "categories": [
+          "cs.CR",
+          "cs.AI"
+        ],
+        "pdf": "https://arxiv.org/pdf/2611.11971"
+      }
+    },
+    "relevant": true,
+    "thread": "agent-escalation",
+    "score": 7,
+    "summary": "The paper studies how web-agent execution harnesses affect security under malicious prompts, prompt injection, and deceptive web design. It introduces WebTrap Farm to measure where unsafe behavior comes from in the agent workflow.",
+    "why": "It is directly about computer-use/web agent security and harness-level defenses, which fits his agent privilege escalation thread.",
+    "question": "Which harness-stage controls most prevent unsafe browser actions, and can they be enforced as runtime policy?",
+    "attempts": 1
+  },
+  {
+    "item": {
+      "id": "arxiv:2611.11861",
+      "source": "arxiv",
+      "title": "Scaling Adaptive Prompt Injection Attacks with Agent Swarms",
+      "url": "https://arxiv.org/abs/2611.11861",
+      "published": "2026-11-09T04:34:14Z",
+      "summary": "Prompt injections have emerged as one of the top security risks faced by AI agents today. Early work in prompt injection attacks looked at simple tool-call agents and static attack payloads, and were saturated since mid-2025. As of Fall 2026, human red-teaming may be nearing saturation, especially on the Gemini family of models. In this work, we argue that despite this apparent plateau, prompt injection attacks are still possible and continued effort into prompt injection defense is needed. We design a new synthetic evaluation dataset which uses random non-malicious actions as adversarial goals. Such dataset design helps us to evaluate prompt injection robustness as a model ability to respect instruction hierarchy, and disentangle this ability from model knowledge of security practices. We show that an agentic attacker of increased capabilities can reliably trick model to follow instructions in tool output in our evaluation, even for models previously considered robust on public prompt injection benchmarks such as GraySwan Arena. This shows that current frontier defenses may require proactive, automated red-teaming to remain resilient to increasingly capable adversaries.",
+      "authors": [
+        "Alexey Kurakin",
+        "Vishal Karande",
+        "Alex Bie",
+        "Chongyang Shi",
+        "Shuang Song",
+        "Saeed Mahloujifar",
+        "Abdullatif Köksal",
+        "Jamie Hayes",
+        "Juliette Pluto",
+        "Yinghao Sun",
+        "Kamalika Chaudhuri"
+      ],
+      "extra": {
+        "categories": [
+          "cs.CR",
+          "cs.LG"
+        ],
+        "pdf": "https://arxiv.org/pdf/2611.11861"
+      }
+    },
+    "relevant": true,
+    "thread": "mcp-security",
+    "score": 9,
+    "summary": "The paper studies adaptive prompt injection attacks against AI agents using agent swarms and a synthetic evaluation dataset. It shows that more capable agentic attackers can still trick models into following malicious instructions in tool output, even when models appear robust on public benchmarks.",
+    "why": "It directly addresses prompt injection through tool output and the limits of current agent defenses, which is central to MCP and tool security.",
+    "question": "How much of the reported success comes from the attacker's adaptive search versus weaknesses in the model's instruction hierarchy?",
+    "attempts": 1
+  },
+  {
+    "item": {
+      "id": "arxiv:2611.11741",
+      "source": "arxiv",
+      "title": "Silinx: An Open, Browser-Based HDL Design Platform for Teaching Digital Systems on FPGA Boards",
+      "url": "https://arxiv.org/abs/2611.11741",
+      "published": "2026-11-09T01:28:43Z",
+      "summary": "Many digital systems courses teach on FPGA boards whose vendor tool is no longer maintained: the Digilent Basys2 and Nexys2 (Xilinx Spartan-3E) and Nexys3 and Atlys (Spartan-6) need Xilinx ISE 14.7, discontinued since 2013 and hard to install on the computers and tablets students use today. The author presents Silinx, a free (AGPL-3.0) HDL design platform for teaching that keeps ISE's Project Navigator workflow but runs in a web browser with nothing to install. A module can be written in VHDL or Verilog, in C or C++ through Silinx HLS, which is compatible with AMD's Vitis HLS and passes all 73 of its introductory examples, or drawn as a schematic, an ASM chart, a state diagram, a Boolean function with its Karnaugh map, or a Petri net, from which its HDL is generated. Designs are checked with explanations written for beginners, simulated, run on an emulated board, built, and programmed onto a real board over WebUSB. The implementation flow is open and runs in the browser: Yosys and nextpnr compiled to WebAssembly, with Silinx's own device data, timing model and bitstream writer for the Spartan-3E and Spartan-6, built by black-box observation of ISE's documented tools; Lattice iCE40 boards use the existing open iCE40 tools, and further families are planned. ISE is the oracle: Silinx's bitstreams are byte-identical to those ISE writes for the same placed and routed design, and pass ISE's design rule check. Against ISE at the same optimization goal, the open flow uses 15% fewer slices with 14% shorter critical paths when optimizing for area, and 21% fewer slices with 8% shorter critical paths when optimizing for speed (geometric means over 45 open-source designs built by both flows). The author also describes how the platform was developed with AI coding agents under test-first project rules.",
+      "authors": [
+        "Pedro Malo"
+      ],
+      "extra": {
+        "categories": [
+          "cs.CY",
+          "cs.AI",
+          "cs.AR",
+          "cs.SE",
+          "eess.SY"
+        ],
+        "pdf": "https://arxiv.org/pdf/2611.11741"
+      }
+    },
+    "relevant": false,
+    "thread": "none",
+    "score": 0,
+    "summary": "Silinx is an open, browser-based HDL design and FPGA programming platform for teaching digital systems, using WebAssembly-compiled synthesis and place-and-route tools to support older Xilinx boards.",
+    "why": "",
+    "question": "",
+    "attempts": 1
+  },
+  {
+    "item": {
+      "id": "arxiv:2611.11581",
+      "source": "arxiv",
+      "title": "Same Error, Different Recovery: How Delivery Changes LLM Agent Behavior",
+      "url": "https://arxiv.org/abs/2611.11581",
+      "published": "2026-11-08T19:52:13Z",
+      "summary": "A tool-using language model must decide whether to retry a failed call, correct it, or stop and tell the user. The error text alone may not be enough: the same feedback can lead to different actions depending on where it appears in the conversation. We isolate this delivery problem by varying placement, guidance, retained history and turn structure. Two studies with plans fixed before data collection, across 13 open models from 3B to 70B parameters, compare the next action and subsequent task completion, with exact deterministic reruns. A new user turn that retains the failed exchange avoids the severe stopping failure observed in Llama models when that exchange is removed. It is non-inferior to history rewriting in pooled synthetic comparisons, but is not best for every model. We implement this form as an opt-in recovery layer within a deterministic inference engine and evaluate it on public benchmarks and a coding agent. On ToolMaze, it raises success on explicit errors by 14.2 points with 7-8B models and 10.5 points with 32-70B models; Loud/Quiet, 24 multi-turn tasks with visible failures and silent corruption, scored by final-state agreement, shows no measurable gain. A client given the exact fault kind performs better still. The findings support delivery as a distinct factor in recovery, not an engine-exclusive solution or a universal retry policy.",
+      "authors": [
+        "Sunghyeun Woo",
+        "Javier Conde",
+        "Pedro Reviriego"
+      ],
+      "extra": {
+        "categories": [
+          "cs.AI",
+          "cs.AR"
+        ],
+        "pdf": "https://arxiv.org/pdf/2611.11581"
+      }
+    },
+    "relevant": false,
+    "thread": "none",
+    "score": 2,
+    "summary": "It studies how the placement and framing of tool-error feedback changes LLM agents' retry, correction, and stopping behavior, with evaluations on tool-use and coding-agent tasks.",
+    "why": "",
+    "question": "",
+    "attempts": 1
+  },
+  {
+    "item": {
+      "id": "arxiv:2611.11571",
+      "source": "arxiv",
+      "title": "Treating the Model as an Untrusted Component: Deterministic Policy Enforcement, Human Approval and Taint Tracking Against Prompt Injection in Tool-Using Agents, with Validation on Open-Weights Models",
+      "url": "https://arxiv.org/abs/2611.11571",
+      "published": "2026-11-08T19:33:25Z",
+      "summary": "Tool-using LLM agents act on instructions embedded in the data they read, so prompt injection is a structural rather than a prompt-wording problem. We compare in-prompt defences (hardened prompts, spotlighting, LLM detectors) with deterministic enforcement outside the model (four reference monitors of increasing strength), human approval and taint tracking, judged by one effect-based oracle independent of every defence in an executable environment of 13 tasks and 12 tools, with argument-fuzzing attackers and severity-weighted harm. In an evaluation with real open-weights models (Qwen2.5-1.5B and Qwen2.5-7B; 156 attack episodes per defence and model), the models proposed the attacker's call in 64% and 84% of attack episodes behind the task-bound monitor, which admitted 1.3% and 7.7%; guardrail effects depended on the model (a prompt guardrail moved obedience from 67% to 65% and from 86% to 55%, spotlighting plus a detector to 12% and 0%) against static attacks. Simulation with an assumed model covers what no real run did: under the assumed erosion law a persistent adaptive attacker or a compromised model drives every guardrail stack to 100.0% attack success, whereas the task-bound monitor holds severe actions at 0.0%; its residual (harm 0.69/10) falls by 62% under taint-triggered human review, and a human layer without a deterministic monitor fails against approval spamming unless each episode has a deterministic approval budget. Implementation quality matters: a naive monitor admits 18 of 33 effective attack variants, a hardened one 6 and a capability-bound one 1. The real-model evidence is limited to two open-weights models and static attacks, the human-approval and taint results are simulation-only, and the larger model's detector stack contradicts the assumed erosion law. Code, data, a two-rater oracle audit and a notebook for repeating the real-model evaluation are provided.",
+      "authors": [
+        "Mustafa S. Aljumaily",
+        "Nawar S. Alseelawi",
+        "Raghad Alshabandar"
+      ],
+      "extra": {
+        "categories": [
+          "cs.CR",
+          "cs.AI"
+        ],
+        "pdf": "https://arxiv.org/pdf/2611.11571"
+      }
+    },
+    "relevant": true,
+    "thread": "mcp-security",
+    "score": 9,
+    "summary": "The paper studies prompt injection in tool-using LLM agents by comparing in-prompt defenses with deterministic external monitors, human approval, and taint tracking. It reports real-model results on Qwen2.5-1.5B and Qwen2.5-7B plus simulation results showing adaptive attackers can defeat guardrail stacks unless a deterministic monitor and approval budget are used.",
+    "why": "It directly addresses prompt injection through tool output and tool-call enforcement in agent tools.",
+    "question": "Do the deterministic monitors and taint-tracking results transfer to MCP-style dynamic tool servers, or are they tied to the fixed 12-tool benchmark?",
+    "attempts": 1
+  },
+  {
+    "item": {
+      "id": "arxiv:2611.11558",
+      "source": "arxiv",
+      "title": "InfraRSI: Harnessing Recursive Self-Improvement for Training Infrastructure",
+      "url": "https://arxiv.org/abs/2611.11558",
+      "published": "2026-11-08T18:59:37Z",
+      "summary": "While Recursive Self-Improvement (RSI) accelerates isolated algorithm and kernel synthesis, distributed LLM training depends on tightly coupled launch settings, operator kernels, and communication schedules, where single edits often hit out-of-memory (OOM) boundaries, compiler conflicts, measurement jitter, or silent numerical drift. We present InfraRSI, the agentic harness that turns open-ended human commands into verified training optimizations via a five-stage workflow: init locks editable scope and a fixed task contract over workload, loss, and timing invariants to prevent reward hacking, doctor profiles baseline phases and calibrates cluster noise, run co-optimizes launch knobs and code patches before re-verifying top candidates against the baseline and logging findings to a cross-hardware experience bank, and report and apply audit source paths, track failed-trial costs, and commit promoted changes. Rather than stepping greedily from a single incumbent, InfraRSI initializes from diverse experience-seeded configurations and fits global execution-time and censored peak-memory models across all trials, including OOMs. Using these models, it prices per-setting memory costs, revises miscalibrated LLM priors from live runs, and pairs memory-hungry optimizations with memory savers and verified code patches. Across four single- and multi-node dense and Mixture-of-Experts (MoE) LLM workloads, InfraRSI achieves a speedup of up to $2.75\\times$ and lifts mean Model FLOPs Utilization (MFU) from $17.4\\%$ to $30.0\\%$, outperforming existing tuners and coding agents while transferring experience across GPUs. As it improves training infrastructure efficiency, InfraRSI forms a two-level Recursive Self-Improvement loop---revising priors online within runs and distilling experience across clusters---to push foundation model scaling.",
+      "authors": [
+        "InfraRSI Team",
+        "Yuchuan Tian",
+        "Haocheng Mei",
+        "Ye Yuan",
+        "Chao Xu",
+        "Boxun Li",
+        "Guohao Dai",
+        "Kai Han",
+        "Allen Chen",
+        "Yunhe Wang",
+        "Yu Wang"
+      ],
+      "extra": {
+        "categories": [
+          "cs.AI"
+        ],
+        "pdf": "https://arxiv.org/pdf/2611.11558"
+      }
+    },
+    "relevant": true,
+    "thread": "agent-escalation",
+    "score": 3,
+    "summary": "InfraRSI is an agentic system that uses LLMs to optimize distributed LLM training infrastructure by proposing and verifying launch settings and code patches. It uses scope locking, baseline re-verification, and audit logging to avoid reward hacking and unsafe changes.",
+    "why": "It is a coding-agent system that modifies training infrastructure, so its scope locking and verification are adjacent to agent privilege escalation controls, but it is not a security paper.",
+    "question": "What failure modes could arise if the editable scope, verification, or audit mechanisms are bypassed or misconfigured?",
+    "attempts": 1
+  },
+  {
+    "item": {
+      "id": "hn:50443812",
+      "source": "hn",
+      "title": "Show HN: Get your coding agent off ~2019 JavaScript, onto modern web primitives",
+      "url": "https://github.com/GoogleChrome/modern-web-guidance",
+      "published": "2026-11-10T18:01:15Z",
+      "summary": "",
+      "authors": [
+        "paulirish"
+      ],
+      "extra": {
+        "points": 19,
+        "comments": 4,
+        "discussion": "https://news.ycombinator.com/item?id=50443812"
+      }
+    },
+    "relevant": false,
+    "thread": "none",
+    "score": 2,
+    "summary": "A Show HN post for a Google Chrome repository that provides guidance for coding agents to move away from circa-2019 JavaScript toward modern web primitives.",
+    "why": "",
+    "question": "",
+    "attempts": 1
+  },
+  {
+    "item": {
+      "id": "hn:50436636",
+      "source": "hn",
+      "title": "Tell HN: Notion AI chat sessions have been exposed via Fireworks AI hack",
+      "url": "https://news.ycombinator.com/item?id=50436636",
+      "published": "2026-11-10T06:00:48Z",
+      "summary": "",
+      "authors": [
+        "RamblingCTO"
+      ],
+      "extra": {
+        "points": 15,
+        "comments": 1,
+        "discussion": "https://news.ycombinator.com/item?id=50436636"
+      }
+    },
+    "relevant": false,
+    "thread": "none",
+    "score": 2,
+    "summary": "A Hacker News post says Notion AI chat sessions were exposed through a Fireworks AI hack.",
+    "why": "",
+    "question": "",
+    "attempts": 1
+  },
+  {
+    "item": {
+      "id": "hn:50443838",
+      "source": "hn",
+      "title": "Work at the Frontier: AI's effect on freelance work",
+      "url": "https://openai.com/index/ai-effect-on-freelance-work",
+      "published": "2026-11-10T18:02:54Z",
+      "summary": "",
+      "authors": [
+        "swolpers"
+      ],
+      "extra": {
+        "points": 11,
+        "comments": 5,
+        "discussion": "https://news.ycombinator.com/item?id=50443838"
+      }
+    },
+    "relevant": false,
+    "thread": "none",
+    "score": 0,
+    "summary": "An OpenAI post about AI's effect on freelance work.",
+    "why": "",
+    "question": "",
+    "attempts": 1
+  },
+  {
+    "item": {
+      "id": "hn:50439686",
+      "source": "hn",
+      "title": "AI Users have workdays up to 90 min longer than non-users",
+      "url": "https://www.activtrak.com/news/productivity-lab-ai-users-longer-workdays/",
+      "published": "2026-11-10T12:57:24Z",
+      "summary": "",
+      "authors": [
+        "gosen"
+      ],
+      "extra": {
+        "points": 6,
+        "comments": 4,
+        "discussion": "https://news.ycombinator.com/item?id=50439686"
+      }
+    },
+    "relevant": false,
+    "thread": "none",
+    "score": 0,
+    "summary": "An ActivTrak report claims that AI users have workdays up to 90 minutes longer than non-users.",
+    "why": "",
+    "question": "",
+    "attempts": 1
+  },
+  {
+    "item": {
+      "id": "hn:50436103",
+      "source": "hn",
+      "title": "Anthropic joins AI's natural gas frenzy, buys $3.4B worth of turbines",
+      "url": "https://techcrunch.com/2026/11/09/anthropic-joins-ais-natural-gas-frenzy-buys-3-4b-worth-of-turbines/",
+      "published": "2026-11-10T04:35:50Z",
+      "summary": "",
+      "authors": [
+        "jomon003"
+      ],
+      "extra": {
+        "points": 6,
+        "comments": 3,
+        "discussion": "https://news.ycombinator.com/item?id=50436103"
+      }
+    },
+    "relevant": false,
+    "thread": "none",
+    "score": 0,
+    "summary": "Anthropic reportedly bought $3.4B worth of natural gas turbines as part of an AI infrastructure energy expansion.",
+    "why": "",
+    "question": "",
+    "attempts": 1
+  },
+  {
+    "item": {
+      "id": "hn:50443313",
+      "source": "hn",
+      "title": "U.S. highways have 878 stretches of 50+ miles with no fast EV charger (map)",
+      "url": "https://chargingnear.me/nevi-charging-gaps",
+      "published": "2026-11-10T17:20:11Z",
+      "summary": "",
+      "authors": [
+        "parkgraph"
+      ],
+      "extra": {
+        "points": 5,
+        "comments": 9,
+        "discussion": "https://news.ycombinator.com/item?id=50443313"
+      }
+    },
+    "relevant": false,
+    "thread": "none",
+    "score": 0,
+    "summary": "A map-based report about U.S. highway segments that are 50 or more miles long and lack fast EV charging. It identifies 878 such stretches.",
+    "why": "",
+    "question": "",
+    "attempts": 1
+  },
+  {
+    "item": {
+      "id": "hn:50435388",
+      "source": "hn",
+      "title": "American Express is cutting 5% of its workforce to 'prepare for AI'",
+      "url": "https://www.cnbc.com/2026/10/23/american-express-job-cuts.html",
+      "published": "2026-11-10T02:34:41Z",
+      "summary": "",
+      "authors": [
+        "lxm"
+      ],
+      "extra": {
+        "points": 5,
+        "comments": 1,
+        "discussion": "https://news.ycombinator.com/item?id=50435388"
+      }
+    },
+    "relevant": false,
+    "thread": "none",
+    "score": 0,
+    "summary": "American Express is cutting 5% of its workforce to prepare for AI, according to the title.",
+    "why": "",
+    "question": "",
+    "attempts": 1
+  }
+]
