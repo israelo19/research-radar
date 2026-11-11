@@ -1,0 +1,622 @@
+[
+  {
+    "item": {
+      "id": "arxiv:2611.14432",
+      "source": "arxiv",
+      "title": "One Policy for 100 Household Tasks: Our Solution for the 2026 BEHAVIOR Challenge",
+      "url": "https://arxiv.org/abs/2611.14432",
+      "published": "2026-11-10T18:06:16Z",
+      "summary": "We describe our solution for the 2026 BEHAVIOR Challenge: 100 long-horizon household tasks in the OmniGibson simulator. We placed 9th on the final leaderboard, the only independent team in the top 10. The core of the solution is a single vision-language-action (VLA) model, one checkpoint for all 100 tasks, built on our 1st-place 2025 solution, which is based on $π_{0.5}$. On the 50 tasks shared with 2025, its Q rises from 0.260 to 0.371; across all 100 tasks it scores 0.392. Our main conclusion from 2025 was that the model was undertrained, so most of the 2026 work went into training the model for longer, optimizing some training parameters, making each training step slightly faster and reducing the gradient noise: a migration from 50 to 100 tasks (semantic stages built from the demonstrations' skill annotations, task and stage embeddings of new tasks warm-started from similar old ones, and a 21-dimensional action space matching the teleoperation controls); variance-reduced multi-sample flow matching with a simple noise-vs-compute model that picks the number of action-expert samples per observation without ablations; and a 200k-step training run, about one pass over the 211M frames of the demonstrations. A cloud evaluation infrastructure keeps a shared record with provenance, episode diagnostics and restorable simulator states, and runs six simulators on one GPU together faster than real time. On top of the learned policy, 14 tasks are routed to a GPT-6 Astra coding agent that controls the robot through observation and motion tools, starting every episode from a frozen copy of its own practice session on training instances. Across these 14 tasks, Astra's mean Q is 0.639, against 0.108 for the learned policy. The public submission included only part of the Astra results and scored 0.446 Q with 27.3% full-task success.",
+      "authors": [
+        "Ilia Larchenko",
+        "Gleb Zarin",
+        "Atindra Nair",
+        "Keerti Manney",
+        "Vitaly Kleban",
+        "Mirko Kiefer",
+        "Anjana Yodaiken"
+      ],
+      "extra": {
+        "categories": [
+          "cs.RO",
+          "cs.AI",
+          "cs.CV",
+          "cs.LG"
+        ],
+        "pdf": "https://arxiv.org/pdf/2611.14432"
+      }
+    },
+    "relevant": false,
+    "thread": "none",
+    "score": 0,
+    "summary": "A robotics benchmark solution for the 2026 BEHAVIOR Challenge using a single vision-language-action model for 100 household tasks, with some tasks routed to a coding agent that controls the robot through observation and motion tools.",
+    "why": "",
+    "question": "",
+    "attempts": 1
+  },
+  {
+    "item": {
+      "id": "arxiv:2611.14356",
+      "source": "arxiv",
+      "title": "EngineAgent: Agentizing On-Device LLM Inference Engines with Inference Stack Hierarchy Awareness and Hardware Abilities",
+      "url": "https://arxiv.org/abs/2611.14356",
+      "published": "2026-11-10T17:16:47Z",
+      "summary": "Rapidly evolving LLM architectures and heterogeneous mobile hardware make supporting new models in on-device inference engines a recurring and costly system challenge. Each model may require coordinated changes across conversion, graph construction, operators, and hardware backends. Existing coding agents often miss these cross-layer dependencies and struggle to diagnose failures across host--device execution paths. We present EngineAgent, an agentic system for automating on-device LLM model enablement. Its key insight is to separate reusable engine and hardware knowledge from model-specific implementation. Before enablement, EngineAgent constructs a hierarchy-aware engine index that captures engine abstraction layers and cross-layer dependencies, and pre-validates backend-specific build, execution, and debugging workflows using already supported models. For each new model, a builder uses this knowledge to coordinate cross-layer changes, while an auditor checks implementation completeness and drives iterative debugging through device-side validation. Across 12 tasks spanning three mobile LLMs and four engine--backend pairs on CPUs, GPUs, and NPUs, EngineAgent achieves 75% end-to-end success with either of two underlying LLMs, versus 33.3% for the strongest coding-agent baseline. Success requires compilation, on-device execution, and output-logit agreement with reference implementations. EngineAgent also reduces average per-task time and model-API cost relative to baselines using the same underlying LLMs.",
+      "authors": [
+        "Zhengxiang Huang",
+        "Yujie Sun",
+        "Shengheng Chen",
+        "Zhaode Wang",
+        "Chaoyue Niu",
+        "Zeyu Zhao",
+        "Chengfei Lv",
+        "Fan Wu",
+        "Guihai Chen"
+      ],
+      "extra": {
+        "categories": [
+          "cs.OS",
+          "cs.AI",
+          "cs.CL",
+          "cs.SE"
+        ],
+        "pdf": "https://arxiv.org/pdf/2611.14356"
+      }
+    },
+    "relevant": false,
+    "thread": "none",
+    "score": 2,
+    "summary": "EngineAgent is an agentic system for automating on-device LLM model enablement across mobile inference engines and hardware backends. It uses hierarchy-aware engine knowledge, a builder, and an auditor to coordinate cross-layer changes and validate on-device execution.",
+    "why": "",
+    "question": "",
+    "attempts": 1
+  },
+  {
+    "item": {
+      "id": "arxiv:2611.14106",
+      "source": "arxiv",
+      "title": "ProofCoder: Continuous Reasoning for Automated Software Verification",
+      "url": "https://arxiv.org/abs/2611.14106",
+      "published": "2026-11-10T13:59:49Z",
+      "summary": "Formal verification using proof assistants provides strong correctness guarantees for software, but constructing proofs remains labor-intensive and requires significant expertise. Recent approaches based on large language models (LLMs) have shown promise in automating proof synthesis. However, these approaches typically constrain the model to a rigid tactic-generation loop, in which the surrounding system controls premise retrieval, proof-state management, and backtracking. We introduce ProofCoder, an agentic proof-synthesis system for Rocq that approaches theorem proving from a coding-agent perspective. Rather than generating tactics within a fixed loop, ProofCoder reasons continuously throughout proof search and uses proof-assistant feedback to decide when to gather additional information, inspect proof states, revise previously generated proof fragments, or backtrack to an earlier point in the proof. This allows it to iteratively construct, repair, and refine proofs, at either tactic-level or whole-proof granularity. We evaluate ProofCoder on 280 challenging verification tasks from the AutoRocq Benchmark. On the best-performing configurations, ProofCoder increases proof success from 47% to 60% over the state-of-theart AutoRocq system, corresponding to a 27.7% relative improvement at approximately half the cost. Our ablations identify continuous reasoning as a key design choice: without it, the agent solves fewer lemmas at substantially higher cost, backtracks four to six times more often, and more frequently discards its own revisions. Whole-proof and tactic-level generation achieve similar success rates but follow distinct search and repair strategies. These results suggest that effective automated software verification requires more than improved tactic selection: continuous reasoning and feedback-guided proof revision are critical ingredients for robust proof synthesis.",
+      "authors": [
+        "Martim Afonso",
+        "Inês Lynce",
+        "Maurizio Morisio",
+        "João F. Ferreira"
+      ],
+      "extra": {
+        "categories": [
+          "cs.SE",
+          "cs.AI"
+        ],
+        "pdf": "https://arxiv.org/pdf/2611.14106"
+      }
+    },
+    "relevant": false,
+    "thread": "none",
+    "score": 2,
+    "summary": "ProofCoder is an agentic LLM system for automated formal proof synthesis in Rocq. It uses continuous reasoning and proof-assistant feedback to search, repair, and refine proofs.",
+    "why": "",
+    "question": "",
+    "attempts": 1
+  },
+  {
+    "item": {
+      "id": "arxiv:2611.14009",
+      "source": "arxiv",
+      "title": "Coding Agent Memory Post-Training II: Unlocking the Memory Potential of Pre-trained File Operations for Long-Horizon Tasks via On-Policy Distillation",
+      "url": "https://arxiv.org/abs/2611.14009",
+      "published": "2026-11-10T12:49:24Z",
+      "summary": "Language-model agents increasingly tackle long-horizon tasks whose interaction histories exceed the model's active context. They must therefore decide what to write down and what to read back, and when to do either. Recent work has begun to use on-policy distillation (OPD) to make memory control part of the policy, relying on memory tools and compaction protocols that lie outside either model's pre-training. However, this weakens the distillation on both sides: the teacher cannot give useful guidance on an interface it has never used, and the student samples too few meaningful memory actions for that guidance to take effect. To study this problem, we introduce Coding Agent Memory Gym II (CAMG-II), a suite of long-horizon agentic-RL environments spanning Shop, Coding, AutoResearch, General, and Visual. Alongside each environment's native task interface, CAMG-II provides ordinary Bash access and an episode-persistent workspace, enabling the policy to create, revise, search, and reuse files as memory across context replacements. We also introduce Coding Agent Memory Post-Training II (CAMP-II), which trains a single policy jointly across all five environments with fully asynchronous OPD to learn this file-based memory behavior directly from a frozen teacher with a prior for file operations. On CAMG-II, CAMP-II obtains 2.97 times the gain of the strongest OPD baseline. The memory behavior CAMP-II learns generalizes to two external benchmarks, Terminal-Bench 2.1 and SWE-Bench Pro V2, with improved success rates.",
+      "authors": [
+        "Lirui Luo",
+        "Kelong Mao",
+        "Xinwei Yang",
+        "Rongqing Li",
+        "Luyu Chen",
+        "Kieran Wong",
+        "Yudong Guo",
+        "Xinrui Wang",
+        "Jiayin Zhu",
+        "Gu Simiu",
+        "Sulong Xu",
+        "Cong Fang"
+      ],
+      "extra": {
+        "categories": [
+          "cs.LG",
+          "cs.AI",
+          "cs.CL"
+        ],
+        "pdf": "https://arxiv.org/pdf/2611.14009"
+      }
+    },
+    "relevant": true,
+    "thread": "agent-escalation",
+    "score": 3,
+    "summary": "The paper introduces CAMG-II, a suite of long-horizon coding-agent environments, and CAMP-II, a training method that teaches agents to use ordinary Bash file operations as persistent memory across context limits.",
+    "why": "It is adjacent to agent-escalation because it studies coding agents with Bash access and persistent workspaces, but it focuses on memory and task performance rather than privilege escalation or sandboxing.",
+    "question": "What assumptions about Bash access and persistent file workspaces would need to change for this setup to become a security or privilege-escalation concern?",
+    "attempts": 1
+  },
+  {
+    "item": {
+      "id": "arxiv:2611.13994",
+      "source": "arxiv",
+      "title": "BioXArena-Pro: a research-grade benchmark for autonomous biomedical machine learning agents",
+      "url": "https://arxiv.org/abs/2611.13994",
+      "published": "2026-11-10T12:39:35Z",
+      "summary": "Coding agents are increasingly proposed as autonomous builders of biomedical models, but existing benchmarks are small, near saturation or open to leaked information. We present BioXArena-Pro, 64 research-level modelling tasks from eight biomedical domains, each rebuilt from a published study; most hold out whole biological units such as species or cohorts. Across 22 agent configurations, the best scores 55.1 of 100, and the scaffold matters almost as much as the model. We re-ran a published method for every task: where the published recipe applies unchanged, the best agent and the methods tie; on rebuilt tasks the methods trail by 8.2 points, suggesting that agents gain by adapting to new data. Pretrained models (including biological foundation models) matter where the strongest agent uses them: forbidding them decreases its score on those tasks by 9 points. Every task was audited in several AI-assisted rounds and a final human review.",
+      "authors": [
+        "Loka Li",
+        "Duzhen Zhang",
+        "Xingbo Du",
+        "Leonard Song",
+        "Kun Zhang",
+        "Le Song"
+      ],
+      "extra": {
+        "categories": [
+          "cs.LG"
+        ],
+        "pdf": "https://arxiv.org/pdf/2611.13994"
+      }
+    },
+    "relevant": true,
+    "thread": "agent-escalation",
+    "score": 3,
+    "summary": "A new benchmark of 64 research-level biomedical modeling tasks for autonomous coding/ML agents, showing that agent scaffolds and pretrained biological models strongly affect performance.",
+    "why": "It benchmarks autonomous coding agents, but focuses on biomedical modeling capability rather than permission escalation, sandboxing, or tool security.",
+    "question": "Do the agent configurations include any security constraints or permission boundaries, or is this purely a capability benchmark?",
+    "attempts": 1
+  },
+  {
+    "item": {
+      "id": "arxiv:2611.13709",
+      "source": "arxiv",
+      "title": "Do They Do as They Are Told? Investigating Coding Agents' Adherence to Explicit Instructions in Context Files",
+      "url": "https://arxiv.org/abs/2611.13709",
+      "published": "2026-11-10T08:01:51Z",
+      "summary": "Developers increasingly rely on agent context files (ACFs), persistent, project-scoped artifacts such as AGENTS.md, to steer the behavior of autonomous coding agents without renegotiating expectations at every interaction. Yet this governance mechanism rests on an untested assumption: that instructions written into an ACF are actually carried out, rather than ignored or loosely followed. Existing studies describe what ACFs contain, but not whether individual instructions are followed, leaving open which guidance can be trusted. We address this gap through an empirical study of real-world ACF snapshots and their linked agent-generated commits: characterizing the explicit, actionable instructions ACFs encode, operationalizing them into executable measurement scripts, and using these scripts to assess instruction-level compliance. We find that most observable instructions can be operationalized and that agents follow ACF guidance more often than not, but adherence splits sharply between instructions followed consistently and those never respected, with differences across instruction categories and coding agents. This split shows where ACF guidance works and where it does not, pointing to instruction types that may need rewriting and to agents that may need enforcement beyond the ACF. These findings lay the groundwork for systematic approaches to specifying, verifying, and enforcing project-specific instructions in autonomous software development.",
+      "authors": [
+        "Gianmario Voria",
+        "Yutaro Kashiwa",
+        "Gemma Catolino",
+        "Fabio Palomba"
+      ],
+      "extra": {
+        "categories": [
+          "cs.SE"
+        ],
+        "pdf": "https://arxiv.org/pdf/2611.13709"
+      }
+    },
+    "relevant": true,
+    "thread": "agent-escalation",
+    "score": 4,
+    "summary": "An empirical study of real-world agent context files such as AGENTS.md and linked agent commits, measuring whether explicit project-level instructions are actually followed by coding agents.",
+    "why": "It touches agent-escalation by showing where context-file governance fails to constrain coding-agent behavior and where stronger enforcement may be needed.",
+    "question": "Which instruction categories or agent behaviors suggest that context files alone are insufficient to prevent unintended or unauthorized actions?",
+    "attempts": 1
+  },
+  {
+    "item": {
+      "id": "arxiv:2611.13613",
+      "source": "arxiv",
+      "title": "Megrez: A Knowledge-Guided Agent for Formal Mathematics over MK Set Theory",
+      "url": "https://arxiv.org/abs/2611.13613",
+      "published": "2026-11-10T05:42:16Z",
+      "summary": "General-purpose coding agents equipped with proof-assistant tools have shown strong performance on standalone competition problems, yet cumulative textbook formalization inside a low-resource mathematical library still faces three obstacles: aligning textbook concepts with library declarations, keeping long-horizon search synchronized with live proof states, and integrating locally verified proofs reliably into a growing codebase. We present Megrez, a knowledge-guided formalization agent for Rocq libraries built on Morse--Kelley (MK) set theory. Megrez coordinates a general coding agent through three mechanisms: (1) a source-rebuildable knowledge graph merging formal declarations, compiler references, and curated metadata to support retrieval via Chinese aliases, concept clusters, proof dependencies, and multi-lane full-text ranking; (2) a feedback-driven 1--5 tactic short-burst proving loop paired with a goal-local branch ledger and exponential-interval structured reflection; and (3) a three-check acceptance pipeline (statement fidelity, axiom auditing, and full builds) coupled with a multi-corpus Provider stack and a candidate-bound recoverable batch state machine. Deployment and evaluation on a point-set topology corpus demonstrate effective cross-chapter formalization and scalable premise retrieval.",
+      "authors": [
+        "Tiancheng Xu",
+        "Wensheng Yu"
+      ],
+      "extra": {
+        "categories": [
+          "cs.AI"
+        ],
+        "pdf": "https://arxiv.org/pdf/2611.13613"
+      }
+    },
+    "relevant": false,
+    "thread": "none",
+    "score": 0,
+    "summary": "A knowledge-guided agent for formalizing mathematics in Rocq over Morse-Kelley set theory, using a knowledge graph, proving loop, and acceptance pipeline.",
+    "why": "",
+    "question": "",
+    "attempts": 1
+  },
+  {
+    "item": {
+      "id": "arxiv:2611.13396",
+      "source": "arxiv",
+      "title": "The AI Era's Lines of Code? A Case Study on What an Engineer's Token Spend Measures",
+      "url": "https://arxiv.org/abs/2611.13396",
+      "published": "2026-11-10T00:17:26Z",
+      "summary": "Organizations use engineers' token spend to monitor AI adoption, set budgets, and measure productivity, but the metric's relationship with engineering output is unclear. We link five weeks of token usage in coding agents to the commits of 404 engineers at JetBrains, and analyze a company survey of 412 employees. We find that token spend varied mostly between engineers, and which engineers spent the most stayed largely the same over the five weeks. Among weeks with similar commit counts, the 90th percentile of spend was 39 to 240 times the 10th. Within an engineer, doubling spend was associated with about 10% more commits. Available work metrics explained 38% of the variation in spend between engineers and 13% of the week-to-week variation within an engineer. In the survey, respondents in technical roles reported in nearly nine of ten agent evaluations using agents for tasks beyond coding, such as analysis, research, and planning. Token spend therefore measures how much engineers use agents across many kinds of work and not the outcome and value of that work. We recommend using token spend at most for resource accounting, and evaluating agent-assisted work with evidence about tasks and outcomes.",
+      "authors": [
+        "Shyam Agarwal",
+        "Olga Lvova",
+        "Agnia Sergeyuk",
+        "Anastasiia Serova",
+        "Timofey Bryksin",
+        "Thomas Zimmermann",
+        "Bogdan Vasilescu"
+      ],
+      "extra": {
+        "categories": [
+          "cs.SE",
+          "cs.AI"
+        ],
+        "pdf": "https://arxiv.org/pdf/2611.13396"
+      }
+    },
+    "relevant": false,
+    "thread": "none",
+    "score": 1,
+    "summary": "This paper studies how engineers' token spend in coding agents relates to engineering output. It finds token spend is a weak proxy for productivity and mostly reflects how much engineers use agents across varied tasks.",
+    "why": "",
+    "question": "",
+    "attempts": 1
+  },
+  {
+    "item": {
+      "id": "arxiv:2611.13329",
+      "source": "arxiv",
+      "title": "Agent-Guided Discovery of Exchange-Correlation Functionals with Physics-based Validation",
+      "url": "https://arxiv.org/abs/2611.13329",
+      "published": "2026-11-09T22:56:02Z",
+      "summary": "Accurate, compact exchange--correlation functionals are central to predictive density functional theory. Symbolic search and language-model agents can propose new functional forms, but it remains unclear whether their gains survive self-consistency and external evaluation, whether the new terms carry physical content, whether agents outperform evolutionary search, and how language-model backbones compare. We connect frontier LLM agents to a GPU evaluator through the Model Context Protocol, with training-only fitting, persistent memory, and self-consistent and external evaluation. Opus-5.5 agents passed the screening gate with about 40-fold fewer tokens than Codex (GPT-6-Astra) agents and found a candidate with lower validation and held-out errors; only this candidate advanced to self-consistent evaluation. The resulting 13-parameter functional, O159, multiplies same-spin correlation by a smooth density window. Refitted controls favor a window that scales the entire same-spin factor, reducing it by 15--30\\% at its peak, and that acts on reaction energies mainly in near-iso-orbital regions; against a refitted no-window control, it lowers heavy-atom total-energy errors on GSCDB137 by 29\\%. With about 400 fits each, SyFES evolution did not improve on its GAS22 seed, whereas the agents found forms 0.10--0.13 \\kcal\\ lower in validation error by adding an explicit density scale. Self-consistent O159 lowers the held-out MGCDB84 test error of $ω$B97M-V by 11.7\\%, and its mean normalized error ratio on 36 GSCDB137 datasets (1.139) is comparable to $ω$B97M-V (1.144) and below GAS22 (1.190). Frontier-LLM agents thus produced O159, a compact functional whose improvement over $ω$B97M-V survives self-consistent, physics-based validation.",
+      "authors": [
+        "Achuth Chandrasekhar",
+        "Amir Barati Farimani"
+      ],
+      "extra": {
+        "categories": [
+          "cs.AI"
+        ],
+        "pdf": "https://arxiv.org/pdf/2611.13329"
+      }
+    },
+    "relevant": true,
+    "thread": "mcp-security",
+    "score": 3,
+    "summary": "The paper uses LLM agents connected to a GPU evaluator via MCP to discover and validate a compact DFT exchange-correlation functional. It reports that one agent-proposed functional improves held-out and self-consistent performance.",
+    "why": "It is an applied MCP agent-tool setup, but it does not study MCP security, tool poisoning, or agent privilege escalation.",
+    "question": "What MCP tools, permissions, and evaluator interfaces does the agent receive, and how much trust does the agent place in returned evaluation results?",
+    "attempts": 1
+  },
+  {
+    "item": {
+      "id": "arxiv:2611.13309",
+      "source": "arxiv",
+      "title": "PegasusAI Studio: Legible Cyberinfrastructure and Accountable AI Agents for Scientific Workflows",
+      "url": "https://arxiv.org/abs/2611.13309",
+      "published": "2026-11-09T22:22:25Z",
+      "summary": "AI coding agents can now construct scientific workflows, but operating them on shared cyberinfrastructure (CI) raises problems that code generation does not solve. Agents need current knowledge of the workflow system and its execution sites and access to the runtime state of distributed executions, while facilities need to attribute every agent action to a user and bound it by that user's privileges. We present PegasusAI Studio, an AI-assisted science gateway built on the Pegasus and HTCondor stack. Studio makes CI legible to agents by projecting one facility-curated knowledge base into the native configuration of several coding agents, by introspecting workflow interfaces and execution sites, and by grounding diagnosis in workflow and scheduler telemetry. Agent actions operate within a trust envelope that combines federated authentication, per-user execution environments and scheduler credentials, provider-neutral model access, observability, and approval controls for state-changing actions. The same application runs as a JupyterHub-based gateway on a research cloud and as an Open OnDemand application on HPC systems. We evaluate Studio through case studies of legacy CASA weather workflow modernization, a gravitational-wave reanalysis, an EEG analysis built with an open-weight model, and an Event Horizon Telescope (EHT) M87 image reconstruction that recovered from two failed runs to a zero-failure execution. The evaluation establishes that these mechanisms operate as designed.",
+      "authors": [
+        "Komal Thareja",
+        "Mats Rynge",
+        "Berent Aldikacti",
+        "Angelina Ju",
+        "Ian Lumsden",
+        "Anirban Mandal",
+        "Rajiv Mayani",
+        "Kin Wai Ng",
+        "Hamza Safri",
+        "Michael Stealey",
+        "Sai Swaminathan",
+        "Michela Taufer",
+        "Karan Vahi",
+        "Michael Zink",
+        "Ewa Deelman"
+      ],
+      "extra": {
+        "categories": [
+          "cs.DC",
+          "cs.AI",
+          "cs.SE"
+        ],
+        "pdf": "https://arxiv.org/pdf/2611.13309"
+      }
+    },
+    "relevant": true,
+    "thread": "agent-escalation",
+    "score": 6,
+    "summary": "PegasusAI Studio is an AI-assisted science gateway that makes scientific cyberinfrastructure usable by coding agents while constraining their actions with authentication, per-user execution environments, observability, and approval controls.",
+    "why": "It connects to agent-escalation by showing how runtime policy, privilege bounding, and approval controls can limit what coding agents can do on shared infrastructure.",
+    "question": "How do the approval controls and per-user execution environments prevent an agent from exceeding the invoking user's privileges or moving laterally across execution sites?",
+    "attempts": 1
+  },
+  {
+    "item": {
+      "id": "arxiv:2611.13287",
+      "source": "arxiv",
+      "title": "Project Progress Desk: Know Where All Your Claude Code and Codex Projects Stand at a Glance",
+      "url": "https://arxiv.org/abs/2611.13287",
+      "published": "2026-11-09T21:53:26Z",
+      "summary": "Codex and Claude Code let developers work on many projects in parallel, but keeping track of them still means switching between chats, terminal sessions and providers. We present Project Progress Desk, a local desktop interface that brings overall progress, blockers and pending decisions into one view. Users can see which projects need attention, inspect what remains, and compare earlier approaches before choosing how to continue. Agent receipts link reported outcomes to each project's weighted acceptance checklist; the overview distinguishes receipt-supported progress from dated estimates. We describe daily use across 36 projects, including a choice between two implementations based on their recorded outcomes. At the demo, attendees will explore 30 simulated projects, trace completed work to overall progress, and watch a coding agent's new result update the overview.",
+      "authors": [
+        "Wanghao Ye",
+        "Yiting Wang",
+        "Shwai He",
+        "Guoheng Sun",
+        "Ziyao Wang",
+        "Yexiao He",
+        "Zheyu Shen",
+        "Zhaoyi Liu",
+        "Bowei Tian",
+        "Daeun Jung",
+        "Aditya Sarkar",
+        "Parastoo Pilevar",
+        "Xiaochuan Gong",
+        "Yancheng Zhu",
+        "Yingying Fan",
+        "Qiong Wang",
+        "Yuning Zhang",
+        "Meng Feng",
+        "Siyuan Peng",
+        "Zhenle Duan",
+        "Sihan Chen",
+        "Ziyi Wang",
+        "Yifei Dong",
+        "Yilong Dai",
+        "Ang Li"
+      ],
+      "extra": {
+        "categories": [
+          "cs.HC",
+          "cs.SE"
+        ],
+        "pdf": "https://arxiv.org/pdf/2611.13287"
+      }
+    },
+    "relevant": false,
+    "thread": "none",
+    "score": 2,
+    "summary": "A local desktop dashboard for tracking many Claude Code and Codex projects at once, using agent receipts and acceptance checklists to show progress, blockers, and pending decisions.",
+    "why": "",
+    "question": "",
+    "attempts": 1
+  },
+  {
+    "item": {
+      "id": "arxiv:2611.13246",
+      "source": "arxiv",
+      "title": "ExpertCrowd-SWE: Measuring Frontier Coding Agents on Expert-Authored Engineering Tasks in Unfamiliar Codebases",
+      "url": "https://arxiv.org/abs/2611.13246",
+      "published": "2026-11-09T21:20:57Z",
+      "summary": "ExpertCrowd-SWE (EC-SWE) is a benchmark of 100 expert-authored, multi-file software engineering tasks for evaluating autonomous coding agents in large, unfamiliar codebases. Each task is a change request written by a practising engineer against a pinned commit of a real repository, paired with a sealed reference solution and a task-specific grader whose weighted, mostly executable criteria award partial credit; must-pass blockers and pass/fail gates encode what a maintainer would refuse to merge. The tasks span 87 open-source projects and 11 languages. The median ticket is 148 words, while the median reference solution changes 471 lines. Every task image is calibrated before release so that the reference solution scores 1.0 and both the untouched repository and an inert change score 0; nearly half of the tasks also ship alternative, lazy and adversarial control patches that the grader must classify correctly. The final 100 tasks were selected for difficulty against current frontier models. We evaluate seven frontier models, five runs each (3,495 scored runs), in a single platform harness that gives each model its provider-native tool interface. Claude Opus 5.5 (67.3%) and GPT-6 Astra (63.7%) lead without a statistically significant gap, followed by Claude Fable 5.1 (46.5%), Gemini 3.8 Flash (40.0%), and a statistically indistinguishable group of Qwen 3.8 Max, DeepSeek V4.1 Flash and Grok 4.6 (32-34%). No task is fully solved by every model, and on 80 tasks no model earns full credit on all five runs. Scores span 35 points. Depending on the model, agents take a median of 33 to 166 steps per run, with little relation to score. We release 24 tasks with their environments, graders and results, and hold out 76 to limit contamination.",
+      "authors": [
+        "Josip Vrdoljak",
+        "Akash Singh",
+        "Bas Steunebrink",
+        "Alex Yarotsky",
+        "John Lorenzo",
+        "Achille Nicoletti",
+        "Sam Pigott"
+      ],
+      "extra": {
+        "categories": [
+          "cs.AI",
+          "cs.SE"
+        ],
+        "pdf": "https://arxiv.org/pdf/2611.13246"
+      }
+    },
+    "relevant": true,
+    "thread": "agent-escalation",
+    "score": 3,
+    "summary": "ExpertCrowd-SWE is a 100-task benchmark for autonomous coding agents on expert-authored, multi-file changes in unfamiliar real repositories, with executable graders and partial credit. It evaluates seven frontier models and releases 24 tasks while holding out 76 to limit contamination.",
+    "why": "It measures the same class of coding agents that could be used for privilege escalation, but it does not study security, permissions, or sandbox escapes.",
+    "question": "Could its task environments and graders be adapted to detect out-of-scope changes, tool misuse, or attempts to exploit the agent harness?",
+    "attempts": 1
+  },
+  {
+    "item": {
+      "id": "arxiv:2611.13241",
+      "source": "arxiv",
+      "title": "FlowPlan: Reducing the Token Cost of Coding Agents with Abstraction-Guided Planning and Verification",
+      "url": "https://arxiv.org/abs/2611.13241",
+      "published": "2026-11-09T21:11:29Z",
+      "summary": "LLM-based coding agents such as Claude Code can resolve real-world repository issues, but their iterative interaction loop can be expensive. Existing approaches reduce this cost primarily by limiting, compressing, or selectively avoiding information and actions within the repair process. We investigate a complementary question: Can an agent reason about a repair at an abstract program level, rather than repeatedly operating over raw source code, to reduce both the exploration needed to identify a repair and the repeated checking needed to verify it afterward? We present FlowPlan, an abstraction-guided repair approach that structures localization, planning, and verification around per-function control-flow or data-flow graphs. The agent first localizes the candidate fault location on the program abstraction and expresses the intended repair as explicit graph deltas before modifying the concrete source. After the edit, FlowPlan reconstructs the same abstraction and compares the observed structural change with the planned one. Then, a verification checks the complete repair before termination. Across all six benchmark-model settings, FlowPlan does not significantly change resolution rate relative to the vanilla agent while reducing token consumption in every setting, significantly in five of six settings. With Claude Haiku 4.5, it uses only 0.46-0.47x the baseline tokens on SWE-bench Pro, 0.32-0.35x on SWE-bench Verified, and 0.68-0.74x on SecBench; with Sonnet 5, it uses 0.72-0.76x, 0.73-0.74x, and 0.92-0.94x, respectively. Overall, FlowPlan achieves the largest token reduction among the compared methods in three of the six settings and ties the strongest compared method in a fourth. Trajectory analysis shows that FlowPlan saves tokens by replacing much of the costly post-edit re-reading and testing with explicit verification and reducing per-call context.",
+      "authors": [
+        "Melika Sepidband",
+        "Jiho Shin",
+        "Song Wang",
+        "Hadi Hemmati"
+      ],
+      "extra": {
+        "categories": [
+          "cs.SE"
+        ],
+        "pdf": "https://arxiv.org/pdf/2611.13241"
+      }
+    },
+    "relevant": false,
+    "thread": "none",
+    "score": 2,
+    "summary": "FlowPlan is a method for LLM coding agents to plan and verify repairs using function-level control-flow or data-flow graphs, reducing token use on SWE-bench and SecBench.",
+    "why": "",
+    "question": "",
+    "attempts": 1
+  },
+  {
+    "item": {
+      "id": "arxiv:2611.13143",
+      "source": "arxiv",
+      "title": "Autonomous Optimization of Numerical Algorithms by an AI Agent: Application to Atomistic Simulation",
+      "url": "https://arxiv.org/abs/2611.13143",
+      "published": "2026-11-09T19:23:39Z",
+      "summary": "Coding agents built on large language models, run in automated improvement loops, can discover more efficient algorithms. We present AIOA, a framework that brings this approach to the numerical algorithms of atomistic simulation: an agent improves an algorithm against a pre-specified metric in a loop guarded by verifiers it cannot alter. Applied to ASE, a widely used atomistic simulation library, AIOA targets two facets of an algorithm: its implementation, rewritten to run faster with unchanged results, and the method itself, redesigned to converge with fewer force evaluations. Agents made six kernels 22-24 times faster on average in Python with NumPy and SciPy. On unseen problems, optimizers from the best configuration needed 3.1-3.4 times fewer force evaluations than L-BFGS for structure relaxation and 4.6-17 times fewer than standard climbing-image nudged elastic band calculations for reaction paths. The agents' optimizers also contain two algorithmic components we did not find in the literature.",
+      "authors": [
+        "Jeheon Woo"
+      ],
+      "extra": {
+        "categories": [
+          "physics.chem-ph",
+          "cs.AI"
+        ],
+        "pdf": "https://arxiv.org/pdf/2611.13143"
+      }
+    },
+    "relevant": true,
+    "thread": "agent-escalation",
+    "score": 3,
+    "summary": "AIOA uses LLM-based coding agents in automated loops to optimize numerical algorithms for atomistic simulation, with the agent improving code and methods against a metric while verifiers it cannot alter guard the process.",
+    "why": "It is a coding-agent autonomy case with immutable verifiers, which is adjacent to agent-escalation concerns about constraining what agents can change in their own environment.",
+    "question": "What would happen if the agent could alter, bypass, or game the verifier or metric it is being evaluated against?",
+    "attempts": 1
+  },
+  {
+    "item": {
+      "id": "hn:50447036",
+      "source": "hn",
+      "title": "$30M Raised to Redo the CPU",
+      "url": "https://tendrils.co/blog/2026-11-10/30m-raised",
+      "published": "2026-11-10T22:14:03Z",
+      "summary": "",
+      "authors": [
+        "shioyama"
+      ],
+      "extra": {
+        "points": 110,
+        "comments": 113,
+        "discussion": "https://news.ycombinator.com/item?id=50447036"
+      }
+    },
+    "relevant": false,
+    "thread": "none",
+    "score": 0,
+    "summary": "A project raised $30M to redo a CPU, based on the title.",
+    "why": "",
+    "question": "",
+    "attempts": 1
+  },
+  {
+    "item": {
+      "id": "hn:50441350",
+      "source": "hn",
+      "title": "Show HN: Aircad – Professional drafting and 3D modeling in the browser",
+      "url": "https://aircad.com",
+      "published": "2026-11-10T15:01:19Z",
+      "summary": "",
+      "authors": [
+        "peetle"
+      ],
+      "extra": {
+        "points": 37,
+        "comments": 16,
+        "discussion": "https://news.ycombinator.com/item?id=50441350"
+      }
+    },
+    "relevant": false,
+    "thread": "none",
+    "score": 0,
+    "summary": "Aircad is a browser-based professional drafting and 3D modeling tool.",
+    "why": "",
+    "question": "",
+    "attempts": 1
+  },
+  {
+    "item": {
+      "id": "hn:50449891",
+      "source": "hn",
+      "title": "Show HN: Black Ops II statically recompiled to native ARM64 macOS",
+      "url": "https://github.com/adrbn/bo2-mac",
+      "published": "2026-11-11T04:56:47Z",
+      "summary": "",
+      "authors": [
+        "adrbn"
+      ],
+      "extra": {
+        "points": 31,
+        "comments": 2,
+        "discussion": "https://news.ycombinator.com/item?id=50449891"
+      }
+    },
+    "relevant": false,
+    "thread": "none",
+    "score": 0,
+    "summary": "A Hacker News post about a project that statically recompiled Black Ops II to run natively on ARM64 macOS. The title and link indicate it is a porting or recompilation project for a game.",
+    "why": "",
+    "question": "",
+    "attempts": 1
+  },
+  {
+    "item": {
+      "id": "hn:50444380",
+      "source": "hn",
+      "title": "How do you keep up quality when you vibe-code?",
+      "url": "https://news.ycombinator.com/item?id=50444380",
+      "published": "2026-11-10T18:41:15Z",
+      "summary": "",
+      "authors": [
+        "nkcodes"
+      ],
+      "extra": {
+        "points": 31,
+        "comments": 27,
+        "discussion": "https://news.ycombinator.com/item?id=50444380"
+      }
+    },
+    "relevant": false,
+    "thread": "none",
+    "score": 2,
+    "summary": "A Hacker News discussion asking how people maintain code quality when using AI-assisted or 'vibe' coding.",
+    "why": "",
+    "question": "",
+    "attempts": 1
+  },
+  {
+    "item": {
+      "id": "hn:50444276",
+      "source": "hn",
+      "title": "Show HN: TheoremSmith: Mass-Producing Hard Proof Problems to Train LLMs",
+      "url": "https://charleshuang.me/2026/09/27/theoremsmith/",
+      "published": "2026-11-10T18:33:17Z",
+      "summary": "",
+      "authors": [
+        "charles6huang"
+      ],
+      "extra": {
+        "points": 10,
+        "comments": 0,
+        "discussion": "https://news.ycombinator.com/item?id=50444276"
+      }
+    },
+    "relevant": false,
+    "thread": "none",
+    "score": 0,
+    "summary": "A Show HN post about TheoremSmith, described as mass-producing hard proof problems to train LLMs.",
+    "why": "",
+    "question": "",
+    "attempts": 1
+  },
+  {
+    "item": {
+      "id": "hn:50448283",
+      "source": "hn",
+      "title": "Show HN: Mimzie, an agent-neutral alternative to the Claude Suite/Claude Cowork",
+      "url": "https://mimzie.com/",
+      "published": "2026-11-11T00:29:45Z",
+      "summary": "",
+      "authors": [
+        "kyleandruczk"
+      ],
+      "extra": {
+        "points": 6,
+        "comments": 0,
+        "discussion": "https://news.ycombinator.com/item?id=50448283"
+      }
+    },
+    "relevant": false,
+    "thread": "none",
+    "score": 2,
+    "summary": "A Show HN post for Mimzie, described as an agent-neutral alternative to the Claude Suite/Claude Cowork.",
+    "why": "",
+    "question": "",
+    "attempts": 1
+  }
+]
