@@ -1,0 +1,252 @@
+[
+  {
+    "item": {
+      "id": "hn:50459745",
+      "source": "hn",
+      "title": "93% of paint splatters are valid Perl programs (2019)",
+      "url": "https://www.mcmillen.dev/sigbovik/",
+      "published": "2026-11-11T22:34:23Z",
+      "summary": "",
+      "authors": [
+        "zenincognito"
+      ],
+      "extra": {
+        "points": 454,
+        "comments": 58,
+        "discussion": "https://news.ycombinator.com/item?id=50459745"
+      }
+    },
+    "relevant": false,
+    "thread": "none",
+    "score": 0,
+    "summary": "The story is about paint splatters being interpreted as Perl programs, with the title claiming 93% are valid. It appears to be a playful or technical observation about accidental code validity.",
+    "why": "",
+    "question": "",
+    "attempts": 1
+  },
+  {
+    "item": {
+      "id": "hn:50454625",
+      "source": "hn",
+      "title": "Show HN: Yogurt – Free, private, open-source alternative to Granola",
+      "url": "https://github.com/FrigadeHQ/yogurt",
+      "published": "2026-11-11T15:33:06Z",
+      "summary": "",
+      "authors": [
+        "brownrout"
+      ],
+      "extra": {
+        "points": 246,
+        "comments": 95,
+        "discussion": "https://news.ycombinator.com/item?id=50454625"
+      }
+    },
+    "relevant": false,
+    "thread": "none",
+    "score": 0,
+    "summary": "Yogurt is described as a free, private, open-source alternative to Granola.",
+    "why": "",
+    "question": "",
+    "attempts": 1
+  },
+  {
+    "item": {
+      "id": "hn:50455811",
+      "source": "hn",
+      "title": "Launch HN: Pomerado (YC F26) – Turn any website into an MCP for agents",
+      "url": "https://news.ycombinator.com/item?id=50455811",
+      "published": "2026-11-11T17:11:56Z",
+      "summary": "",
+      "authors": [
+        "alanjm23"
+      ],
+      "extra": {
+        "points": 56,
+        "comments": 44,
+        "discussion": "https://news.ycombinator.com/item?id=50455811"
+      }
+    },
+    "relevant": true,
+    "thread": "mcp-security",
+    "score": 6,
+    "summary": "A Hacker News launch post for Pomerado, a YC F26 project that claims to turn any website into an MCP server for agents.",
+    "why": "It touches the MCP/agent tool surface, where arbitrary website-to-MCP conversion could create new tool-poisoning or prompt-injection risks.",
+    "question": "What trust, permission, and output-sanitization controls does it apply when exposing arbitrary website content as MCP tools?",
+    "attempts": 1
+  },
+  {
+    "item": {
+      "id": "hn:50456277",
+      "source": "hn",
+      "title": "Grok Build coding agent leaks oodles of confidential info",
+      "url": "https://arstechnica.com/security/2026/11/grok-build-coding-agent-leaks-oodles-of-confidential-info-some-belonging-to-spacexsi/",
+      "published": "2026-11-11T17:53:23Z",
+      "summary": "",
+      "authors": [
+        "paimapi"
+      ],
+      "extra": {
+        "points": 12,
+        "comments": 0,
+        "discussion": "https://news.ycombinator.com/item?id=50456277"
+      }
+    },
+    "relevant": true,
+    "thread": "agent-escalation",
+    "score": 4,
+    "summary": "A Hacker News story links to an Ars Technica report that the Grok Build coding agent leaked a large amount of confidential information.",
+    "why": "It is a real-world coding-agent data leak, relevant to whether agents can be constrained from accessing or exfiltrating sensitive data.",
+    "question": "What access or tool permissions allowed the agent to read and leak confidential data?",
+    "attempts": 1
+  },
+  {
+    "item": {
+      "id": "hn:50463281",
+      "source": "hn",
+      "title": "Show HN: DeepSeek-Coder-V2-Lite Under 5GB: 65 TPS 100% In-VRAM on 6GB GPU",
+      "url": "https://huggingface.co/AmSach/DeepSeek-Coder-V2-Lite-Instruct-MAPLE-Sub5GB-GGUF",
+      "published": "2026-11-12T05:07:43Z",
+      "summary": "",
+      "authors": [
+        "AmSach"
+      ],
+      "extra": {
+        "points": 7,
+        "comments": 1,
+        "discussion": "https://news.ycombinator.com/item?id=50463281"
+      }
+    },
+    "relevant": false,
+    "thread": "none",
+    "score": 0,
+    "summary": "A Hugging Face release of a quantized DeepSeek-Coder-V2-Lite model that fits under 5GB and runs at 65 TPS on a 6GB GPU.",
+    "why": "",
+    "question": "",
+    "attempts": 1
+  },
+  {
+    "item": {
+      "id": "hn:50457469",
+      "source": "hn",
+      "title": "Big Walk used AI to fix a bug. Now the indie gaming world is having a reckoning",
+      "url": "https://arstechnica.com/gaming/2026/11/big-walk-used-ai-to-fix-a-bug-now-the-indie-gaming-world-is-having-a-reckoning/",
+      "published": "2026-11-11T19:34:48Z",
+      "summary": "",
+      "authors": [
+        "rndsignals"
+      ],
+      "extra": {
+        "points": 7,
+        "comments": 3,
+        "discussion": "https://news.ycombinator.com/item?id=50457469"
+      }
+    },
+    "relevant": false,
+    "thread": "none",
+    "score": 0,
+    "summary": "A Hacker News story about the indie game Big Walk using AI to fix a bug, which is causing a reckoning in the indie gaming world.",
+    "why": "",
+    "question": "",
+    "attempts": 1
+  },
+  {
+    "item": {
+      "id": "hn:50450625",
+      "source": "hn",
+      "title": "Grok Build coding agent leaks confidential info, some belonging to SpaceXSI",
+      "url": "https://arstechnica.com/security/2026/11/grok-build-coding-agent-leaks-oodles-of-confidential-info-some-belonging-to-spacexsi/",
+      "published": "2026-11-11T07:24:31Z",
+      "summary": "",
+      "authors": [
+        "Palmik"
+      ],
+      "extra": {
+        "points": 7,
+        "comments": 0,
+        "discussion": "https://news.ycombinator.com/item?id=50450625"
+      }
+    },
+    "relevant": true,
+    "thread": "agent-escalation",
+    "score": 6,
+    "summary": "A Hacker News story links to an Ars Technica report that Grok Build, a coding agent, leaked confidential information, some of it belonging to SpaceXSI.",
+    "why": "It is a real-world coding-agent data leak, relevant to how agents may access or expose sensitive data beyond intended permissions.",
+    "question": "What mechanism allowed the agent to access or expose confidential data, and what controls failed?",
+    "attempts": 1
+  },
+  {
+    "item": {
+      "id": "hn:50459519",
+      "source": "hn",
+      "title": "Google Maps Now Requires Sign in to Read All Reviews and More",
+      "url": "https://www.seroundtable.com/google-maps-account-reviews-42186.html",
+      "published": "2026-11-11T22:19:23Z",
+      "summary": "",
+      "authors": [
+        "DeepLogin"
+      ],
+      "extra": {
+        "points": 6,
+        "comments": 1,
+        "discussion": "https://news.ycombinator.com/item?id=50459519"
+      }
+    },
+    "relevant": false,
+    "thread": "none",
+    "score": 0,
+    "summary": "Google Maps is requiring users to sign in to read all reviews and possibly access other features.",
+    "why": "",
+    "question": "",
+    "attempts": 1
+  },
+  {
+    "item": {
+      "id": "hn:50458653",
+      "source": "hn",
+      "title": "Reprogramming Dormant Neurons to Backdoor AI Agents",
+      "url": "https://x.com/dimitrispapail/status/2120245027804705121?a=yp1VXtQi8Dep0GmUnxo",
+      "published": "2026-11-11T21:06:05Z",
+      "summary": "",
+      "authors": [
+        "dsr12"
+      ],
+      "extra": {
+        "points": 6,
+        "comments": 1,
+        "discussion": "https://news.ycombinator.com/item?id=50458653"
+      }
+    },
+    "relevant": false,
+    "thread": "none",
+    "score": 4,
+    "summary": "The title suggests a method for implanting backdoors in AI agents by reprogramming dormant neurons.",
+    "why": "",
+    "question": "Does the backdoor let an attacker trigger malicious agent behavior without detection?",
+    "attempts": 1
+  },
+  {
+    "item": {
+      "id": "hn:50464583",
+      "source": "hn",
+      "title": "Show HN: Taster – Plain-English rules your agent can't forget or ignore",
+      "url": "https://github.com/rinkesh2010rpp/taster-ai",
+      "published": "2026-11-12T08:41:11Z",
+      "summary": "",
+      "authors": [
+        "Rinkesh2010rpp"
+      ],
+      "extra": {
+        "points": 5,
+        "comments": 0,
+        "discussion": "https://news.ycombinator.com/item?id=50464583"
+      }
+    },
+    "relevant": false,
+    "thread": "agent-escalation",
+    "score": 3,
+    "summary": "Taster is a Show HN project described as providing plain-English rules that an agent cannot forget or ignore.",
+    "why": "It only hints at agent rule enforcement, which could relate to runtime policy, but the title does not establish privilege escalation or security controls.",
+    "question": "",
+    "attempts": 1
+  }
+]
