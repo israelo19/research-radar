@@ -1,0 +1,803 @@
+[
+  {
+    "item": {
+      "id": "arxiv:2611.17316",
+      "source": "arxiv",
+      "title": "CoReMem: Cost-Internalizing Memory for Successive Coding Tasks with Prospective Valuation",
+      "url": "https://arxiv.org/abs/2611.17316",
+      "published": "2026-11-12T18:58:22Z",
+      "summary": "Coding agents tackle successive tasks on an evolving repository, carrying forward edits and writing memory before the next task is known. Selecting memory for unknown next tasks requires balancing future usefulness against the costs of writing and reading it. The actor must also decide when acting on available memory saves effort as the task unfolds. We introduce Coding-Repository Memory (CoReMem), a cost-internalizing framework that guides memory design and actor adaptation through measured memory value on the next task. Prospective segment valuation compares runs of the next task with and without individual trajectory segments from the same inherited repository state, guiding a compact memory built around anchors: repository locations and executable checks. Actor adaptation estimates on-policy memory value within rollout groups with and without memory, using a reward that prioritizes resolution and penalizes step count in successful runs. Provenance-gated value credit assigns the additional value term to steps identified as using memory-supplied anchors, while every step retains outcome credit. On ChainSWE, CoReMem raises the 27B actor's resolve rate from 21.0% to 25.7%, with 17% fewer steps and 11% fewer total cache-aware tokens, including memory-module calls, relative to the untrained actor model without memory.",
+      "authors": [
+        "Peiwen Li",
+        "Harshit Verma",
+        "Sophia Zhou",
+        "Haiwen Wang",
+        "Ngoc Bui",
+        "Heng Chang",
+        "Fei Fei",
+        "David van Dijk",
+        "Rex Ying"
+      ],
+      "extra": {
+        "categories": [
+          "cs.AI",
+          "cs.CL",
+          "cs.SE"
+        ],
+        "pdf": "https://arxiv.org/pdf/2611.17316"
+      }
+    },
+    "relevant": false,
+    "thread": "none",
+    "score": 2,
+    "summary": "The paper proposes CoReMem, a memory framework for coding agents working on successive repository tasks. It uses prospective valuation and cost-aware rewards to decide what memory to write and when to use it.",
+    "why": "",
+    "question": "",
+    "attempts": 1
+  },
+  {
+    "item": {
+      "id": "arxiv:2611.17304",
+      "source": "arxiv",
+      "title": "Where LLM Agents Get Stuck Debugging Databases: Access More Than Reasoning",
+      "url": "https://arxiv.org/abs/2611.17304",
+      "published": "2026-11-12T18:56:22Z",
+      "summary": "Large language model (LLM) coding agents are increasingly asked not only to write code but to debug running systems from live runtime data. We report a field observation of one such agent (Claude Code) as it diagnosed eight database incidents in a production message-dispatch engine. In every incident whose root cause depended on runtime concurrency, the agent announced a cause, shipped a fix, and later walked it back, and each wrong guess cost a deploy-and-observe cycle. Mapping each incident to what the agent lacked, we find that access to production state was the most pervasive bottleneck. The missing access included live lock views, untruncated deadlock reports, read-only execution, and an explicit environment context. An access gap was present in all five concurrency-dependent incidents: alone in one, and in four combined with a reasoning error such as anchoring on an early cause, incomplete exploration of the configuration, or a misreading of the code's transaction semantics. The three incidents that did not depend on concurrency needed nothing beyond what the agent already had. Within the incidents, the agent's wrong hypotheses were consistent with the evidence it could see; they were not fabrications. We argue that the next step for production-debugging agents is a forensics layer that gives the agent the access it lacks inside existing security controls. Such a layer would combine a safe interrogation API, a lock-and-deadlock flight recorder, and a production replay harness.",
+      "authors": [
+        "Gustavo Pinto"
+      ],
+      "extra": {
+        "categories": [
+          "cs.SE"
+        ],
+        "pdf": "https://arxiv.org/pdf/2611.17304"
+      }
+    },
+    "relevant": true,
+    "thread": "agent-escalation",
+    "score": 4,
+    "summary": "A field study of a coding agent debugging production database incidents finds that missing access to runtime state, not reasoning alone, is the main bottleneck. It proposes a forensics layer with safe APIs, lock/deadlock recording, and replay inside existing security controls.",
+    "why": "It touches agent-escalation by discussing what access coding agents need in production and how to expose it safely, though it is not directly about privilege escalation.",
+    "question": "Which production-state access primitives could be exposed to a coding agent without creating new privilege-escalation or data-exfiltration paths?",
+    "attempts": 1
+  },
+  {
+    "item": {
+      "id": "arxiv:2611.17129",
+      "source": "arxiv",
+      "title": "Paper-Faithful Federated Learning: Scientific Checks for Practitioner and Agent Development",
+      "url": "https://arxiv.org/abs/2611.17129",
+      "published": "2026-11-12T17:22:17Z",
+      "summary": "Federated learning experiments can produce reasonable-looking results even when the experiment implementation differs from the intended experimental protocol. Small errors in configuration, data partitioning, aggregation, randomness, evaluation, or checkpoint recovery may therefore affect a comparison without causing the program to fail. We present FedBrew, a research codebase for controlled and reproducible federated learning experiments. Its focus is controlled simulation with checks of specified conditions of the intended experimental protocol. FedBrew uses configuration checks, identifiable client data partitions, checkpoint recovery checks, self-describing run records, and development-time checks of scientific conditions. These checks assess, for example, whether client partitions are disjoint and exhaustive and aggregation weights match the prescribed rule; numerical and recovery checks examine non-finite client model states and interrupted runs. The same structure also provides clear extension points and automated checks for new algorithms, datasets, models, and tasks, whether they are added by researchers or AI coding agents. FedBrew therefore supports reproducible and inspectable FL experiments through checks of specified software and scientific conditions and the run records associated with reported results.",
+      "authors": [
+        "Ali Dadras",
+        "Alp Yurtsever"
+      ],
+      "extra": {
+        "categories": [
+          "cs.LG",
+          "cs.SE"
+        ],
+        "pdf": "https://arxiv.org/pdf/2611.17129"
+      }
+    },
+    "relevant": false,
+    "thread": "none",
+    "score": 2,
+    "summary": "FedBrew is a federated learning research codebase that adds configuration, data, aggregation, and checkpoint checks to keep experiments faithful to their intended protocol.",
+    "why": "",
+    "question": "",
+    "attempts": 1
+  },
+  {
+    "item": {
+      "id": "arxiv:2611.17115",
+      "source": "arxiv",
+      "title": "CapLite: Prompt-Injection Defense for Small Language Model Agents without Model-Written Security Artifacts",
+      "url": "https://arxiv.org/abs/2611.17115",
+      "published": "2026-11-12T17:07:22Z",
+      "summary": "Enforcement defenses against prompt injection, such as CaMeL, Progent, IPIGuard and DRIFT, ask the agent's own model to write a security artifact (a program, a privilege policy, a dependency graph or a constraint list) that code then enforces. We ask whether small language model (SLM) agents can be trusted to write these artifacts. Across 15 open-weight models, 13 of them between 1.7B and 12B parameters, they cannot: the policies, graphs and constraints that the agent's model writes admit attacks on 14 (Progent), 13 (IPIGuard) and 11 (DRIFT) of the models, and CaMeL's programs fail to run in up to 68% of episodes. We present CapLite, which derives its policy from the tool schemas, commits the write calls before any tool result is read, and admits a write only if every argument that decides whom or what it affects is stated in the user's request. This guarantees write integrity: injected text cannot add a write, and no write reaches a recipient, amount, object or destination that the user did not state. No attack succeeds in 13,935 attacked AgentDojo episodes. CapLite reaches utility under attack comparable to CaMeL's (29.0% vs. 27.2%) with fewer tokens than every other enforcement defense and than the undefended agent: 17.1k per episode, 18% of CaMeL's, and the highest utility per token of all enforcement defenses.",
+      "authors": [
+        "Zimo Xu",
+        "Wenzhuo Liu",
+        "Hideki Nakayama"
+      ],
+      "extra": {
+        "categories": [
+          "cs.AI",
+          "cs.CL",
+          "cs.CR"
+        ],
+        "pdf": "https://arxiv.org/pdf/2611.17115"
+      }
+    },
+    "relevant": true,
+    "thread": "mcp-security",
+    "score": 8,
+    "summary": "The paper argues that small language model agents should not be trusted to write their own security artifacts for prompt-injection defenses. It proposes CapLite, a tool-schema-based enforcement method that restricts writes to user-stated targets and reports no successful attacks across 13,935 AgentDojo episodes.",
+    "why": "It is directly about defending agent tools against prompt injection and over-privileged write actions, which fits the MCP/tool-security thread.",
+    "question": "How well does CapLite's user-stated-write guarantee generalize beyond AgentDojo-style tasks to real MCP servers with richer, multi-step, or stateful tool interactions?",
+    "attempts": 1
+  },
+  {
+    "item": {
+      "id": "arxiv:2611.16991",
+      "source": "arxiv",
+      "title": "AnalogLayoutWorld: An Open Benchmark for Agentic Analog Layout Design",
+      "url": "https://arxiv.org/abs/2611.16991",
+      "published": "2026-11-12T15:56:13Z",
+      "summary": "Coding agents have demonstrated strong capabilities in software development, yet their ability to tackle long-horizon engineering tasks governed by physical constraints remains less understood. We study this question through analog circuit layout, which demands domain knowledge, geometric reasoning, and iterative interaction with design and verification tools. We introduce \\textbf{AnalogLayoutWorld}, an open-source agent benchmark with 40 expert-reviewed tasks for end-to-end layout generation from fixed transistor-level netlists. It combines an integrated design environment with independent physical and post-layout electrical verification, as well as objective layout quality metrics co-designed with analog layout experts. Across 13 model--harness configurations, 91.1\\% of attempts produce GDS layouts, but only 23.0\\% satisfy the benchmark's acceptance criteria. We also evaluate Novara, an internally developed agent system, which achieves the highest reported aggregate score. Our analysis links performance differences to test-time scaling under fixed budgets, suggesting that reasoning efficiency and effective use of verification feedback help sustain design quality as task complexity grows.",
+      "authors": [
+        "NovaSilicon Team"
+      ],
+      "extra": {
+        "categories": [
+          "cs.AI"
+        ],
+        "pdf": "https://arxiv.org/pdf/2611.16991"
+      }
+    },
+    "relevant": false,
+    "thread": "none",
+    "score": 2,
+    "summary": "An open benchmark for coding agents to perform analog circuit layout design from netlists, with physical and electrical verification. It evaluates 13 model-harness configurations and an internal agent system on long-horizon engineering tasks.",
+    "why": "",
+    "question": "",
+    "attempts": 1
+  },
+  {
+    "item": {
+      "id": "arxiv:2611.16485",
+      "source": "arxiv",
+      "title": "Contain, Conform, Compare (Extended Version): A Red-Teamed Evaluation Kit for Small Coding Agents and the Full Record of Its Experiments",
+      "url": "https://arxiv.org/abs/2611.16485",
+      "published": "2026-11-12T08:54:03Z",
+      "summary": "A hosted score in the Gemma 4 Developer Agent competition is one noisy number, so development needs a local evaluator that is fast, safe for agent-written code, and matching the hosted scorer's prompts. drydock-eval evaluates a small coding agent (Gemma 4 E4B) at about 250 runs per hour on one RTX 5090. Contain runs each job in a fresh container without network and passed 200 scripted escape tests; conform provides eight checks that compare a local stack's requests with the scorer's configuration, down to rendered tokens; compare provides paired statistics that respect repository clusters. AI agents built and attacked the kit; a human owner approved machine use and release. This extended version repeats the short paper and adds the full record of the experiments made with and around the kit: 9,660 rows of agent runs, 2,494 grading controls and 72 serving measurements, all released. On four L4 GPUs the 31B model decodes 38.1 tokens per second in one stream and E4B 105.8. Six configurations of a 31B agent solved between 37 and 44 of 70 development tasks, and no pairwise difference was detected. A pre-registered five-arm experiment (231 tasks, 4,620 jobs) measured four prompt divergences: no E4B solve-rate change was detected (largest estimate -2.1 points, 95% interval -4.4 to +0.4). Three changes of the E4B agent led their screens by +1.0 to +6.2 points; each was then tested once on new tasks under a frozen pass rule, and none was confirmed (gains -0.35, -0.39 and +4.10 points). The unchanged baseline, run again on the same 128 tasks, moved by 1.17 points, and 65% of these tasks were solved in none of eight runs. Prompts and agent bundles are withheld; every run-level result is public.",
+      "authors": [
+        "Nguyen Minh Thang"
+      ],
+      "extra": {
+        "categories": [
+          "cs.AI"
+        ],
+        "pdf": "https://arxiv.org/pdf/2611.16485"
+      }
+    },
+    "relevant": true,
+    "thread": "agent-escalation",
+    "score": 7,
+    "summary": "A red-teamed local evaluation kit for small coding agents that runs jobs in fresh no-network containers, checks that local requests match the hosted scorer, and releases full run-level experiment data. It reports containment/escape testing and statistical comparisons of prompt and agent changes on coding tasks.",
+    "why": "It connects to agent-escalation by focusing on sandboxing, escape tests, and safe execution of agent-written code.",
+    "question": "How strong are the 200 scripted escape tests against real privilege-escalation paths in coding agents, and what does the no-network container miss?",
+    "attempts": 1
+  },
+  {
+    "item": {
+      "id": "arxiv:2611.16308",
+      "source": "arxiv",
+      "title": "ORCHID-SAGE: Fully Reproducible CALPHAD Assessment from Evidence to Phase Diagram",
+      "url": "https://arxiv.org/abs/2611.16308",
+      "published": "2026-11-12T05:07:31Z",
+      "summary": "Knowledge of phase stability is the first requirement for materials design, and predicting the conditions under which new materials can be synthesized has become a key capability of self-driving laboratories (SDLs). For inorganic materials, notably alloys, these predictions come from thermodynamic databases built with the CALPHAD method. Building a database, however, requires expert judgment at many steps, and because these decisions are rarely recorded, others can use a database but cannot regenerate or update it. Machines can already collect the data, build a first model with machine-learned interatomic potentials and refine it against experiments. The assessment itself, the sequence of judgments that turns these parts into a reliable database, is still carried out by human experts. We argue that it can be automated reproducibly only if the expert knowledge behind an assessment is encoded in formal protocols, so that an assessment delivers a record of its construction and not only its parameters. We introduce ORCHID-SAGE, a standard that organizes this record into reproducible and automatable protocols. In this first attempt, applied to Cr-Ni, the database was regenerated from its record by a script on a second machine, by an AI agent working only through the Model Context Protocol (MCP) and by a refit from public sources only, with the same predictions. Recorded in this way, a database need no longer be fixed at publication but can be updated by AI agents as SDLs and other sources provide new evidence, while the judgment remains with people and on the record.",
+      "authors": [
+        "Raymundo Arróyave"
+      ],
+      "extra": {
+        "categories": [
+          "cond-mat.mtrl-sci",
+          "cs.AI"
+        ],
+        "pdf": "https://arxiv.org/pdf/2611.16308"
+      }
+    },
+    "relevant": false,
+    "thread": "none",
+    "score": 2,
+    "summary": "The paper proposes ORCHID-SAGE, a standard for recording and automating CALPHAD phase-diagram assessments, and demonstrates regeneration of a Cr-Ni database by a script and by an AI agent using MCP.",
+    "why": "",
+    "question": "",
+    "attempts": 1
+  },
+  {
+    "item": {
+      "id": "arxiv:2611.16293",
+      "source": "arxiv",
+      "title": "Rasoi: Visual Diffs for Evaluating Structural Changes Made by Coding Agents",
+      "url": "https://arxiv.org/abs/2611.16293",
+      "published": "2026-11-12T04:47:39Z",
+      "summary": "Coding agents let developers modify software rapidly through natural language. However, as agents take on larger changes, developers can lose track of how the codebase is evolving. These edits may look correct on the surface while restructuring the system in unexpected ways: duplicating logic, changing modules outside the requested scope, removing functionality developers meant to keep, or introducing architectural drift. We investigate how visual diffs can help developers understand and evaluate the structural changes that coding agents make. We present Rasoi, a design probe that maps how a codebase's architecture evolves after each agent-made edit, letting developers inspect which architectural elements and relationships were added, modified, or removed across multiple levels of abstraction. We deployed Rasoi in a week-long study with 12 developers working on their own codebases across varied technical domains. We found that visual diffs helped developers see whether changes stayed within scope, notice unexpected restructuring, and understand how modified parts related to the system as a whole. Our findings suggest that the value of oversight tools for coding agents lies less in making developers trust the agent and more in helping developers feel confident in their own evaluation of agent-made changes. We discuss implications for visual tools that support code comprehension and human oversight in AI-assisted software development.",
+      "authors": [
+        "Riya Sahni",
+        "Aryan Kaul",
+        "Anushka Bhatnagar",
+        "Xuanming Zhang",
+        "Vivian Liu",
+        "Reya Vir",
+        "Lydia B. Chilton"
+      ],
+      "extra": {
+        "categories": [
+          "cs.SE",
+          "cs.HC"
+        ],
+        "pdf": "https://arxiv.org/pdf/2611.16293"
+      }
+    },
+    "relevant": true,
+    "thread": "agent-escalation",
+    "score": 3,
+    "summary": "This paper presents Rasoi, a visual diff tool for inspecting how coding agents change software architecture over time. It studies whether such visualizations help developers notice out-of-scope or unexpected structural edits.",
+    "why": "It is adjacent to agent oversight for coding agents, but it focuses on code comprehension rather than privilege escalation, sandboxing, or runtime policy.",
+    "question": "Could visual structural diffs help developers detect risky or out-of-scope agent changes before they become security problems?",
+    "attempts": 1
+  },
+  {
+    "item": {
+      "id": "arxiv:2611.16289",
+      "source": "arxiv",
+      "title": "Eliciting and Mitigating Specification Satisficing in Coding Agents",
+      "url": "https://arxiv.org/abs/2611.16289",
+      "published": "2026-11-12T04:42:55Z",
+      "summary": "Coding agents often fail to meet all requirements in the task description. In some of these failures, the agent considers an implementation choice that meets a requirement, but later decides to commit to another one that does not meet the requirement for a reason it finds acceptable. We call this specification satisficing. It is challenging to identify and mitigate specification satisficing because the agent accepts such choices for its own reasons, and existing self-correction methods are biased toward them. We propose SatisFix, which guides a coding agent to report these choices and their reasons, and then check each choice against the task description. We evaluate SatisFix on DeepSWE and SWE-bench Pro with five LLMs as backbones and two different agent frameworks, and compare it with three self-correction methods. SatisFix improves the pass@1 of the base agent by an average of 5.09% on DeepSWE and 7.06% on the hard subset of SWE-bench Pro. On DeepSWE, it outperforms the best baseline by 3.98%. Our ablation study shows that both steps of SatisFix contribute to the improvement.",
+      "authors": [
+        "Ruixin Wang",
+        "Tianyi Zhang"
+      ],
+      "extra": {
+        "categories": [
+          "cs.SE",
+          "cs.AI",
+          "cs.CL"
+        ],
+        "pdf": "https://arxiv.org/pdf/2611.16289"
+      }
+    },
+    "relevant": false,
+    "thread": "none",
+    "score": 2,
+    "summary": "The paper studies coding agents that make implementation choices that do not fully satisfy task requirements, and proposes SatisFix to have agents report those choices and check them against the specification. It shows improved pass@1 on DeepSWE and SWE-bench Pro.",
+    "why": "",
+    "question": "",
+    "attempts": 1
+  },
+  {
+    "item": {
+      "id": "arxiv:2611.16122",
+      "source": "arxiv",
+      "title": "Intent-Aware Protection for AI Agents",
+      "url": "https://arxiv.org/abs/2611.16122",
+      "published": "2026-11-12T00:17:31Z",
+      "summary": "AI agents increasingly access enterprise data, invoke powerful tools, and act with limited human oversight. Existing security defenses primarily detect prompt injection, harmful outputs, or suspicious behavior, but do not determine whether an agent remains faithful to the purpose for which it was deployed. An action may contain no attack pattern and stay within granted permissions while still violating the agent's role, organizational constraints, or purpose. We introduce Intent- Aware Security, a framework that treats trusted agent intent as a first-class security object. We define Intent Preservation and Intent Drift, and operationalize them through an Intent Profile: an agent-specific representation extracted from organizational, role, and developer intent. We further introduce an Intent-Aware benchmark of 887 validated samples across 35 agents, built by a generation procedure that fixes ground-truth labels before LLM realization, and four Intent Profile-based protections: pre-execution detection, post-execution detection, input alignment, and system-prompt hardening. Across all evaluations, Intent Profile-based protection outperforms all profile-free baselines on the primary metric. On our benchmark, it raises four-class acro-F1 from 45% to 79% (Out-of-Scope F1 from 8% to 76%). On more than 10,000 executed AgentDojo trajectories, where ground truth comes from environment state, profile-based post-execution detection reaches 0.949 AUROC versus AlignmentCheck 0.909, 0.897 with raw agent configuration and 0.843 without context. Profile-based input alignment improves protection success by 7 points over DataFilter with a comparable benign utility. These results suggest that an agent's intended purpose can serve as a useful security reference for detecting and mitigating deviations from its deployed role and operational boundaries.",
+      "authors": [
+        "Fady Copty",
+        "Neta Haiby",
+        "Max Braitmaiere",
+        "Julia Korsunsky"
+      ],
+      "extra": {
+        "categories": [
+          "cs.CR"
+        ],
+        "pdf": "https://arxiv.org/pdf/2611.16122"
+      }
+    },
+    "relevant": true,
+    "thread": "agent-escalation",
+    "score": 7,
+    "summary": "The paper proposes an intent-aware security framework for AI agents that uses an agent-specific intent profile to detect deviations from the agent's intended role, purpose, or operational boundaries. It introduces a benchmark and several protections, including pre-execution detection, post-execution detection, input alignment, and system-prompt hardening.",
+    "why": "It connects to agent-escalation by treating intended agent purpose as a runtime policy reference for catching behavior that may stay within permissions but still exceeds the agent's deployed role.",
+    "question": "How well does the intent profile generalize to new tools, permissions, or tasks, and can it distinguish benign task drift from malicious privilege escalation?",
+    "attempts": 1
+  },
+  {
+    "item": {
+      "id": "arxiv:2611.16116",
+      "source": "arxiv",
+      "title": "Robo-SWE: An Executable Issue-Resolution Dataset Mined from Robot Software Repositories",
+      "url": "https://arxiv.org/abs/2611.16116",
+      "published": "2026-11-11T23:51:27Z",
+      "summary": "Coding agents are evaluated mostly on general-purpose software, but domain-specific systems require domain-aware evaluation. Robot software is a particularly challenging case: Robot Operating System 2 (ROS 2) packages have their own build tools, simulators and learning frameworks are built on physics engines, and behavior that depends on timing and hardware is hard to test. We present Robo-SWE, a dataset of 236 executable issue-resolution tasks mined from merged pull requests in 28 public robotics repositories in four domains: ROS 2 systems, simulation and physics engines, robotics algorithm libraries, and robot-learning frameworks. Each task contains the original issue text, a container recipe for the repository at the commit before the fix, the developers' fix, and the developers' tests, which fail before the fix and pass after it in repeated offline runs. The dataset also keeps a provenance ledger of all 1,567 candidate pull requests, with the stage each reached and the reason for every rejection, and, as a first use, 3,540 graded attempts by five coding-agent setups with recorded patches and 3,529 available trajectories. Across three runs per primary setup, resolve rates range from 45.8% for Claude Sonnet 5.5 to 56.5% for Claude Opus 5.5; GPT-6.1 Sol reaches 54.1% at maximum effort and 52.5% at medium effort, and GPT-6 Astra 51.4%. GLM-5.3 resolves 46.2%, and Kimi K3.1 Pro 43.9%. The tasks are validated by execution; verification of their fairness by human reviewers is future work. The dataset and public leaderboard are available online.",
+      "authors": [
+        "Vahid Haratian",
+        "Vahid Ansari",
+        "Mohammadhossein Malmir",
+        "Alois Knoll"
+      ],
+      "extra": {
+        "categories": [
+          "cs.SE",
+          "cs.RO"
+        ],
+        "pdf": "https://arxiv.org/pdf/2611.16116"
+      }
+    },
+    "relevant": false,
+    "thread": "none",
+    "score": 2,
+    "summary": "A dataset of 236 executable issue-resolution tasks from robotics software repositories, with a public leaderboard for coding-agent performance.",
+    "why": "",
+    "question": "",
+    "attempts": 1
+  },
+  {
+    "item": {
+      "id": "arxiv:2611.16114",
+      "source": "arxiv",
+      "title": "ADAPT: Agentic Diff-Aware Patch Testing for Pull Requests",
+      "url": "https://arxiv.org/abs/2611.16114",
+      "published": "2026-11-11T23:48:27Z",
+      "summary": "Modern software development relies on pull requests (PRs) that introduce small, targeted code changes. Once merged, these changes should be protected by focused tests that exercise the behavior the PR introduces, yet developers often submit PRs without such tests, leaving the new behavior unguarded against future regressions. Most test generation techniques target entire software units and optimize objectives such as code coverage rather than the behavior a change introduces, and prior diff-aware approaches have had limited success in capturing it. We propose ADAPT (Agentic Diff-Aware Patch Testing), a regression test generation approach that uses an autonomous coding agent to produce change-focused tests for PRs. Given a PR, the agent analyzes the diff between the base and head versions to identify the modified functions and their context, then plans and generates candidate unit tests. A dedicated fail-to-pass (F2P) verification tool runs each candidate on both versions and, after F2P success, reports which executable changed lines remain uncovered; guided by this feedback, the agent iteratively refines its tests. We evaluate ADAPT on the same 426 real-world PRs used by the prior state-of-the-art baseline, with GPT-4o and GPT-5-mini. ADAPT+GPT-4o reaches an F2P rate of 62.0% (264/426), compared with BLAST's reported 35.4% (151/426), while ADAPT+GPT-5-mini reaches 89.9% (383/426). On 137 PRs shared with Change And Cover (ChaCo), ADAPT achieves full patch coverage on 83.9% of PRs, compared with 79.6% for ChaCo, at considerably lower time and cost. A manual evaluation confirms that the F2P-valid tests target each PR's intended change, with mean scores of up to 4.54/5 for importance, 4.35/5 for assertion strength, and 4.49/5 for readability, often covering behavior beyond the developer-written tests.",
+      "authors": [
+        "Vahid Haratian",
+        "Atakan Akar",
+        "Eray Tüzün"
+      ],
+      "extra": {
+        "categories": [
+          "cs.SE",
+          "cs.AI"
+        ],
+        "pdf": "https://arxiv.org/pdf/2611.16114"
+      }
+    },
+    "relevant": false,
+    "thread": "none",
+    "score": 2,
+    "summary": "ADAPT is a regression-test generation method that uses an autonomous coding agent to analyze pull request diffs and produce change-focused unit tests. It verifies tests with fail-to-pass checks and iteratively refines them to cover the modified behavior.",
+    "why": "",
+    "question": "",
+    "attempts": 1
+  },
+  {
+    "item": {
+      "id": "arxiv:2611.15911",
+      "source": "arxiv",
+      "title": "Smart Model Routing for Order-of-Magnitude LLM Cost Reduction",
+      "url": "https://arxiv.org/abs/2611.15911",
+      "published": "2026-11-11T19:13:21Z",
+      "summary": "Frontier large language models (LLMs) deliver the strongest response quality but carry per-token prices often more than an order of magnitude above those of smaller, task-adequate models. Smart model routing addresses this mismatch by assigning each query to the cheapest model expected to answer it adequately, rather than sending every request to the most capable, most expensive endpoint. This paper develops a formal cost-quality optimization framework for routing -- including a derived optimal threshold-policy structure, a calibration-versus-discrimination distinction, a cascade breakeven condition, and a sensitivity analysis over price ratio and traffic skew -- situates that framework against the principal routing architectures and the signals used to estimate query difficulty, and works through a numerical example showing how a calibrated router can reduce blended inference cost by roughly an order of magnitude relative to an always-frontier deployment under specific, stated pricing and traffic assumptions, reporting both the gross reduction from routing policy alone and the net figure with the router's own overhead priced in. We situate this figure against the range reported by published routing systems (roughly 2x to frontier-level accuracy at one-fifth the cost), and close with the practical risks -- under- and over-routing, aggregate quality constraints masking segment-level harm, calibration without discrimination, calibration drift, prompt injection into routing signals, and operational failures such as tier outages and multi-provider price variation -- that determine whether the savings materialize in production. The analysis is primarily analytical, complemented by a GSM8K evaluation of the cascade framework (Section 5), validated (Section 5.2); extending the evaluation across tasks and model families is future work.",
+      "authors": [
+        "Hesham Elbakoury",
+        "Deep Shah",
+        "Ankur Sharma"
+      ],
+      "extra": {
+        "categories": [
+          "cs.DC",
+          "cs.LG"
+        ],
+        "pdf": "https://arxiv.org/pdf/2611.15911"
+      }
+    },
+    "relevant": true,
+    "thread": "mcp-security",
+    "score": 3,
+    "summary": "An analytical framework for routing LLM queries to cheaper models to reduce inference cost, with a cascade example and production risks. It briefly notes prompt injection into routing signals as one risk.",
+    "why": "The prompt-injection-into-routing-signals risk is adjacent to agent/tool supply-chain security, but the paper is mainly about cost optimization.",
+    "question": "If routing signals are attacker-influenced, what integrity checks or isolation would be needed before a router can be trusted in an agent pipeline?",
+    "attempts": 1
+  },
+  {
+    "item": {
+      "id": "arxiv:2611.15835",
+      "source": "arxiv",
+      "title": "Controlling the Probability of Unknown Unknowns in Pre-Deployment Testing of AI Systems",
+      "url": "https://arxiv.org/abs/2611.15835",
+      "published": "2026-11-11T18:46:36Z",
+      "summary": "In pre-deployment testing of AI systems such as AI agents, a developer can often deal with known failure modes (e.g., leaking API keys, deleting important databases, or installing a malicious package) by implementing fixes or making contingency plans for when the same issue might occur again. What is more challenging are the unknown unknowns: the unseen failure modes that haven't surfaced during testing. The decision to stop testing and deploy therefore faces an inherent tradeoff: continue testing to observe more behaviors, at the cost of time and resources, or stop testing and deploy, at the risk of failure modes remaining undiscovered. How then does the developer decide when they have tested enough? To answer this, we develop an algorithm that certifies when the probability of observing an unseen failure mode is sufficiently small. The algorithm constructs an anytime-valid upper confidence sequence on this quantity, so the developer can repeatedly test a system, inspect the bound, and decide to stop when it falls below a chosen threshold without invalidating the statistical guarantee. Our problem can be interpreted as a sequential variant of the missing-mass estimation problem which gave rise to the classic Good-Turing estimator (Good, 1953). On SWE-Chat, a dataset of real-world coding agent traces (Baumann et al., 2026), we implement our procedure and show that it achieves tighter upper bounds than a simple multiple-testing corrected Good-Turing baseline, and even dominates a fixed-horizon (non-multiple-testing-corrected) Good-Turing upper confidence bound, which is not anytime valid. Additionally, to better match realistic evaluation pipelines, we extend our method to handle sampling from a different task distribution and imperfect automated failure labeling.",
+      "authors": [
+        "Rachel Li",
+        "Chris Hays",
+        "Aaditya Ramdas",
+        "Manish Raghavan"
+      ],
+      "extra": {
+        "categories": [
+          "cs.AI",
+          "cs.CY",
+          "math.ST"
+        ],
+        "pdf": "https://arxiv.org/pdf/2611.15835"
+      }
+    },
+    "relevant": true,
+    "thread": "agent-escalation",
+    "score": 4,
+    "summary": "A statistical method for deciding when pre-deployment testing of AI agents has covered enough failure modes, using anytime-valid upper confidence bounds on the probability of unseen failures.",
+    "why": "It uses real coding-agent traces and security-relevant failure modes, so it may inform how much testing is needed before trusting agent permissions or sandboxing.",
+    "question": "Could the unknown-failure bound be applied to agent privilege-escalation or tool-abuse traces to decide when a sandbox or runtime policy is safe enough?",
+    "attempts": 1
+  },
+  {
+    "item": {
+      "id": "arxiv:2611.15789",
+      "source": "arxiv",
+      "title": "VibePrevisBench: Evaluating Agentic Coding for 4D Scene Generation in Blender",
+      "url": "https://arxiv.org/abs/2611.15789",
+      "published": "2026-11-11T18:02:07Z",
+      "summary": "Controllable real-world video generation models can condition on a rendered graybox proxy video, which fixes layout, motion and camera. Coding agents can build such videos by reconstructing a 4D scene in Blender, yet no benchmark checks both these videos and the long, multi-shot scenes behind them. We introduce VibePrevisBench, a benchmark for 4D scene reconstruction: an agent turns a brief into an executable 4D scene and renders its proxy video. Its 242 tasks span four input kinds, including scripts, photos, continuations, and reference videos. Each delivery is scored along two evaluation dimensions. Rule-based Scene Check re-runs the code and compares the exported 4D scene with hidden ground truth facts in nine dimensions. VLM-based Screen Check asks a VLM judge whether the facts that pass can be recognized in the proxy video. We analyze the evaluation results and trajectories of 11 frontier coding agents and identify three key observations. First, multimodal understanding separates the agents, especially in understanding space and camera motion. Second, all agents seem to already master basic camera work and staging, and fail at challenging requests. Third, agents inspect their own renders but fail to correct their errors. Agents thus need better visual understanding of space and camera, explicit checks for challenging requests, and item-by-item verification of renders against the brief.",
+      "authors": [
+        "Yuzhe Chen",
+        "Muxi Diao",
+        "Lele Yang",
+        "Wenbin Xu",
+        "Xuyang Liu",
+        "Qile Su",
+        "Changyi Liu",
+        "Jiankang Chen",
+        "Kaiyu Jiang",
+        "Haoyu Zhang",
+        "Hongyi Fu",
+        "Jianxiong Wang",
+        "Tianke Zhang",
+        "Haonan Fan",
+        "Yingxin Li",
+        "Bingyi Li",
+        "Xu Wang",
+        "Xuanyu Zheng",
+        "Bin Wen",
+        "Tingting Gao",
+        "Wentao Zhang",
+        "Jiale Cao"
+      ],
+      "extra": {
+        "categories": [
+          "cs.CV",
+          "cs.AI"
+        ],
+        "pdf": "https://arxiv.org/pdf/2611.15789"
+      }
+    },
+    "relevant": false,
+    "thread": "none",
+    "score": 2,
+    "summary": "A benchmark for coding agents that build 4D Blender scenes from briefs and render proxy videos. It evaluates agents with rule-based scene checks and VLM-based video checks.",
+    "why": "",
+    "question": "",
+    "attempts": 1
+  },
+  {
+    "item": {
+      "id": "arxiv:2611.15754",
+      "source": "arxiv",
+      "title": "MULTILOOP: Evolving Multi-Agent Harnesses for Complex Information-Seeking Tasks",
+      "url": "https://arxiv.org/abs/2611.15754",
+      "published": "2026-11-11T17:34:12Z",
+      "summary": "The performance of LLM-based agents depends not only on the underlying model but also on the harness: the prompts, tools, and orchestration logic around it. Recent works automate harness optimization with coding agents that analyze execution traces, diagnose failures, and edit the harness code; however, those focused on single-agent systems. Multi-agent harnesses are harder to optimize as fixing them requires changing how agents interact in addition to how each behaves. We study whether automated harness optimization can diagnose and repair failures in multi-agent systems through a case study on complex information-seeking tasks from DeepSearchQA [Gupta et al., 2026]. We apply MULTILOOP, a simple optimization loop in which a coding agent iteratively analyzes, evaluates and edits the harness. With only 10 training samples, the evolved harness improves accuracy by 4.6% over the base harness and by 3.2% over the best single-agent system. However, a taxonomy of failure modes before and after optimization shows that the orchestration failures that characterize multi-agent systems largely persist. Our findings motivate harness optimization methods that encourage structural changes to how agents delegate tasks and share information.",
+      "authors": [
+        "Daniela Gottesman",
+        "Gal Yona",
+        "Ori Ram",
+        "Zorik Gekhman",
+        "Jonathan Herzig",
+        "Mor Geva",
+        "Roee Aharoni"
+      ],
+      "extra": {
+        "categories": [
+          "cs.MA"
+        ],
+        "pdf": "https://arxiv.org/pdf/2611.15754"
+      }
+    },
+    "relevant": false,
+    "thread": "none",
+    "score": 2,
+    "summary": "The paper studies MULTILOOP, an automated loop in which a coding agent analyzes execution traces and edits multi-agent LLM harnesses to improve performance on information-seeking tasks. It reports modest accuracy gains but finds that many orchestration-level failures persist.",
+    "why": "",
+    "question": "",
+    "attempts": 2
+  },
+  {
+    "item": {
+      "id": "arxiv:2611.15596",
+      "source": "arxiv",
+      "title": "Bug Finding With Agentic Symbolic Execution",
+      "url": "https://arxiv.org/abs/2611.15596",
+      "published": "2026-11-11T15:15:01Z",
+      "summary": "Symbolic execution, in tools such as CrossHair for Python, is a powerful technique for finding bugs, but two barriers hinder its adoption: the human effort of annotating code with assertions, and the need to model the execution environment outside Python, such as an external database. To overcome both, we design an agentic harness that orchestrates the symbolic execution tool CrossHair together with an AI coding agent. Without human intervention, it instruments a repository with assertions, synthesizes a constraint-aware symbolic environment for the database, runs symbolic execution, and constructs a concrete test as evidence for each bug it reports. We evaluate our harness on 1,156,044 lines of Python code over 11 popular open-source Python web applications (Zulip, NetBox, Apache Superset, and others). With the synthesized environment, CrossHair executes 81% of the 5,406 contracted functions, against 4.5% without it. Our pipeline finds 1,050 bugs, each reproduced by a test against the unmodified application, 221 of them by CrossHair, and 312 of them are missed by a baseline in which the same LLM inspects the code. The two find different kinds of bugs: CrossHair's are mostly crashes on input-domain corner cases that validation admits, such as empty strings, missing fields and unusual characters, while inspection's are mostly bugs that produce wrong output. Our framework thus lets symbolic execution supplement inspection-based bug finding.",
+      "authors": [
+        "George Granberry",
+        "Wolfgang Ahrendt",
+        "Andy Gordon",
+        "Moa Johansson"
+      ],
+      "extra": {
+        "categories": [
+          "cs.SE",
+          "cs.AI",
+          "cs.LO",
+          "cs.SC"
+        ],
+        "pdf": "https://arxiv.org/pdf/2611.15596"
+      }
+    },
+    "relevant": false,
+    "thread": "none",
+    "score": 2,
+    "summary": "The paper presents an agentic harness that combines an AI coding agent with CrossHair symbolic execution to automatically add assertions, model external environments, run symbolic execution, and generate concrete tests for reported bugs. It evaluates the approach on large Python web applications and reports many bugs found by the combined pipeline.",
+    "why": "",
+    "question": "",
+    "attempts": 1
+  },
+  {
+    "item": {
+      "id": "arxiv:2611.15522",
+      "source": "arxiv",
+      "title": "GHAgentCI: A Dataset of Coding-Agent Invocations in CI Workflow Histories",
+      "url": "https://arxiv.org/abs/2611.15522",
+      "published": "2026-11-11T14:13:33Z",
+      "summary": "Coding agents are increasingly integrated into GitHub Actions to review pull requests, triage issues and modify code. Identifying these integrations is challenging because agentic workflows often resemble ordinary CI files, with evidence appearing in action references, shell commands and workflow conventions. We present GHAgentCI, a dataset of 15K+ workflow histories from 6K+ of 196K+ mined GitHub repositories, comprising 159K+ revisions and 205K+ agent-evidence records linked to workflow triggers and declared execution constraints. Our open-source extractor, cai-miner, detects agent-related evidence using an extensible catalogue. Manual validation of 576 stratified records confirmed 96.1% of dedicated-action matches and 98.8% of GitHub Agentic Workflow matches, with lower rates for other evidence kinds. Exploratory analyses reveal a shift toward command-line and GitHub Agentic Workflow integrations, differences in declared safeguards, and frequent removal of detected agentic workflows. GHAgentCI supports longitudinal studies of coding-agent integration into CI.",
+      "authors": [
+        "Daniel Ogenrwot",
+        "Jorge Gonzalo Delgado Cervantes",
+        "Woojoong Kim",
+        "John Businge"
+      ],
+      "extra": {
+        "categories": [
+          "cs.SE",
+          "cs.AI"
+        ],
+        "pdf": "https://arxiv.org/pdf/2611.15522"
+      }
+    },
+    "relevant": true,
+    "thread": "agent-escalation",
+    "score": 5,
+    "summary": "This paper introduces GHAgentCI, a dataset of GitHub Actions workflow histories that identify coding-agent invocations and related evidence. It also reports exploratory findings about integration patterns, declared safeguards, and removal of agentic workflows.",
+    "why": "It connects to agent-escalation by documenting how coding agents are deployed in CI and what execution constraints or safeguards are declared around them.",
+    "question": "Do the declared execution constraints and safeguards in these CI workflows meaningfully limit coding-agent permissions, or are they mostly nominal?",
+    "attempts": 1
+  },
+  {
+    "item": {
+      "id": "hn:50471650",
+      "source": "hn",
+      "title": "Show HN: AgentRun – open-source, Self-improving Managed Agents",
+      "url": "https://github.com/Parcha-ai/agentrun/blob/main/README.md",
+      "published": "2026-11-12T18:15:48Z",
+      "summary": "",
+      "authors": [
+        "miguelrios"
+      ],
+      "extra": {
+        "points": 109,
+        "comments": 28,
+        "discussion": "https://news.ycombinator.com/item?id=50471650"
+      }
+    },
+    "relevant": false,
+    "thread": "none",
+    "score": 2,
+    "summary": "An open-source project for self-improving managed AI agents.",
+    "why": "",
+    "question": "",
+    "attempts": 1
+  },
+  {
+    "item": {
+      "id": "hn:50471281",
+      "source": "hn",
+      "title": "Show HN: Kapso – Iterative learning from enterprise data",
+      "url": "https://news.ycombinator.com/item?id=50471281",
+      "published": "2026-11-12T17:51:23Z",
+      "summary": "",
+      "authors": [
+        "alirezamshi"
+      ],
+      "extra": {
+        "points": 47,
+        "comments": 11,
+        "discussion": "https://news.ycombinator.com/item?id=50471281"
+      }
+    },
+    "relevant": false,
+    "thread": "none",
+    "score": 0,
+    "summary": "A Show HN post for Kapso, described as iterative learning from enterprise data.",
+    "why": "",
+    "question": "",
+    "attempts": 1
+  },
+  {
+    "item": {
+      "id": "hn:50473978",
+      "source": "hn",
+      "title": "The internet won't necessarily go dark. It could simply stop working",
+      "url": "https://www.washingtonpost.com/opinions/2026/11/12/ai-is-exposing-internets-cybersecurity-vulnerabilities/",
+      "published": "2026-11-12T20:43:10Z",
+      "summary": "",
+      "authors": [
+        "lisper"
+      ],
+      "extra": {
+        "points": 19,
+        "comments": 8,
+        "discussion": "https://news.ycombinator.com/item?id=50473978"
+      }
+    },
+    "relevant": false,
+    "thread": "none",
+    "score": 2,
+    "summary": "An opinion piece arguing that AI may not make the internet go dark but could cause it to stop working by exposing cybersecurity vulnerabilities.",
+    "why": "",
+    "question": "",
+    "attempts": 1
+  },
+  {
+    "item": {
+      "id": "hn:50474106",
+      "source": "hn",
+      "title": "Show HN: Cerulion – ROS 2-compatible robotics runtime with multi-process replay",
+      "url": "https://github.com/cerulion-inc/cerulion",
+      "published": "2026-11-12T20:53:04Z",
+      "summary": "",
+      "authors": [
+        "lakshays"
+      ],
+      "extra": {
+        "points": 12,
+        "comments": 4,
+        "discussion": "https://news.ycombinator.com/item?id=50474106"
+      }
+    },
+    "relevant": false,
+    "thread": "none",
+    "score": 0,
+    "summary": "Cerulion is described as a ROS 2-compatible robotics runtime with multi-process replay. The available title does not mention AI agents, security, or evaluation.",
+    "why": "",
+    "question": "",
+    "attempts": 1
+  },
+  {
+    "item": {
+      "id": "hn:50472880",
+      "source": "hn",
+      "title": "Senate to investigate \"admin scheme to take cut of illegal chip sales to China\"",
+      "url": "https://www.finance.senate.gov/newsroom/press-releases/wyden-and-neal-launch-investigation-of-trump-administration-scheme-to-take-cut-of-nvidia-ai-chip-sales-to-chinese-companies-trump-and-commerce-department-reportedly-ignored-warnings-about-former-ceo/",
+      "published": "2026-11-12T19:30:24Z",
+      "summary": "",
+      "authors": [
+        "tedd4u"
+      ],
+      "extra": {
+        "points": 11,
+        "comments": 2,
+        "discussion": "https://news.ycombinator.com/item?id=50472880"
+      }
+    },
+    "relevant": false,
+    "thread": "none",
+    "score": 0,
+    "summary": "A Senate investigation is being launched into an alleged administration scheme to take a cut of illegal Nvidia AI chip sales to Chinese companies. The title also says Trump and the Commerce Department reportedly ignored warnings about a former CEO.",
+    "why": "",
+    "question": "",
+    "attempts": 1
+  },
+  {
+    "item": {
+      "id": "hn:50477922",
+      "source": "hn",
+      "title": "Read the Aubrey-Maturin series. Before it's too late",
+      "url": "https://mapwriting.substack.com/p/read-the-aubrey-maturin-series-before",
+      "published": "2026-11-13T03:38:38Z",
+      "summary": "",
+      "authors": [
+        "chandlerh"
+      ],
+      "extra": {
+        "points": 9,
+        "comments": 3,
+        "discussion": "https://news.ycombinator.com/item?id=50477922"
+      }
+    },
+    "relevant": false,
+    "thread": "none",
+    "score": 0,
+    "summary": "A post urging readers to read the Aubrey-Maturin series before it is too late. The title and link do not indicate a connection to AI security topics.",
+    "why": "",
+    "question": "",
+    "attempts": 1
+  },
+  {
+    "item": {
+      "id": "hn:50472560",
+      "source": "hn",
+      "title": "Show HN: DRS-VPT. Localize a photo in a 3D point cloud without an initial pose",
+      "url": "https://github.com/ori-drs/drs-vpt",
+      "published": "2026-11-12T19:09:55Z",
+      "summary": "",
+      "authors": [
+        "seasponge"
+      ],
+      "extra": {
+        "points": 9,
+        "comments": 0,
+        "discussion": "https://news.ycombinator.com/item?id=50472560"
+      }
+    },
+    "relevant": false,
+    "thread": "none",
+    "score": 0,
+    "summary": "It is a tool or method for localizing a photo in a 3D point cloud without requiring an initial pose.",
+    "why": "",
+    "question": "",
+    "attempts": 1
+  },
+  {
+    "item": {
+      "id": "hn:50477091",
+      "source": "hn",
+      "title": "Show HN: KittyBrowser, I built a web browser in your terminal",
+      "url": "https://github.com/graiz/kittybrowser",
+      "published": "2026-11-13T01:54:18Z",
+      "summary": "",
+      "authors": [
+        "graiz"
+      ],
+      "extra": {
+        "points": 5,
+        "comments": 3,
+        "discussion": "https://news.ycombinator.com/item?id=50477091"
+      }
+    },
+    "relevant": false,
+    "thread": "none",
+    "score": 0,
+    "summary": "A terminal-based web browser project.",
+    "why": "",
+    "question": "",
+    "attempts": 1
+  },
+  {
+    "item": {
+      "id": "hn:50475980",
+      "source": "hn",
+      "title": "Big Walk used AI to fix a bug. Now the indie gaming world is having a reckoning",
+      "url": "https://arstechnica.com/gaming/2026/11/big-walk-used-ai-to-fix-a-bug-now-the-indie-gaming-world-is-having-a-reckoning/",
+      "published": "2026-11-12T23:36:00Z",
+      "summary": "",
+      "authors": [
+        "vintagedave"
+      ],
+      "extra": {
+        "points": 5,
+        "comments": 1,
+        "discussion": "https://news.ycombinator.com/item?id=50475980"
+      }
+    },
+    "relevant": false,
+    "thread": "none",
+    "score": 0,
+    "summary": "The title reports that Big Walk used AI to fix a bug and that the indie gaming world is now having a reckoning.",
+    "why": "",
+    "question": "",
+    "attempts": 1
+  },
+  {
+    "item": {
+      "id": "hn:50472194",
+      "source": "hn",
+      "title": "Australian companies face 'AI washing' claims after wave of job cuts, offshoring",
+      "url": "https://www.reuters.com/business/world-at-work/australian-companies-face-ai-washing-claims-after-wave-job-cuts-offshoring-2026-11-11/",
+      "published": "2026-11-12T18:48:32Z",
+      "summary": "",
+      "authors": [
+        "frank_clover"
+      ],
+      "extra": {
+        "points": 5,
+        "comments": 0,
+        "discussion": "https://news.ycombinator.com/item?id=50472194"
+      }
+    },
+    "relevant": false,
+    "thread": "none",
+    "score": 0,
+    "summary": "Australian companies are facing claims of 'AI washing' after a wave of job cuts and offshoring. The story appears to be about labor and corporate use of AI as a justification rather than AI security.",
+    "why": "",
+    "question": "",
+    "attempts": 1
+  }
+]
