@@ -1,0 +1,302 @@
+[
+  {
+    "item": {
+      "id": "hn:50487228",
+      "source": "hn",
+      "title": "Show HN: Isometric SF – A pixel-art map of the SF Bay Area",
+      "url": "https://isometricsf.com/",
+      "published": "2026-11-13T17:58:37Z",
+      "summary": "",
+      "authors": [
+        "juscha1"
+      ],
+      "extra": {
+        "points": 216,
+        "comments": 70,
+        "discussion": "https://news.ycombinator.com/item?id=50487228"
+      }
+    },
+    "relevant": false,
+    "thread": "none",
+    "score": 0,
+    "summary": "It is a Show HN post for a pixel-art isometric map of the SF Bay Area. The available title and link do not indicate a security or AI research focus.",
+    "why": "",
+    "question": "",
+    "attempts": 1
+  },
+  {
+    "item": {
+      "id": "hn:50491545",
+      "source": "hn",
+      "title": "Show HN: Live map of U.S. flights during tonight's FAA nationwide ground stop",
+      "url": "https://grounds.top/",
+      "published": "2026-11-13T23:17:39Z",
+      "summary": "",
+      "authors": [
+        "gvsi"
+      ],
+      "extra": {
+        "points": 153,
+        "comments": 21,
+        "discussion": "https://news.ycombinator.com/item?id=50491545"
+      }
+    },
+    "relevant": false,
+    "thread": "none",
+    "score": 0,
+    "summary": "A live map showing U.S. flights during an FAA nationwide ground stop.",
+    "why": "",
+    "question": "",
+    "attempts": 1
+  },
+  {
+    "item": {
+      "id": "hn:50492141",
+      "source": "hn",
+      "title": "Anthropic upgrades Claude Code Projects to run parallel AI workers",
+      "url": "https://claude.com/resources/articles/projects-redesigned",
+      "published": "2026-11-14T00:28:11Z",
+      "summary": "",
+      "authors": [
+        "toppa33"
+      ],
+      "extra": {
+        "points": 89,
+        "comments": 85,
+        "discussion": "https://news.ycombinator.com/item?id=50492141"
+      }
+    },
+    "relevant": true,
+    "thread": "agent-escalation",
+    "score": 3,
+    "summary": "Anthropic is upgrading Claude Code Projects to support parallel AI workers. The title indicates a coding-agent orchestration feature, with no security details provided.",
+    "why": "Parallel coding-agent workers may affect permissions, isolation, and escalation risk, but the title does not state any security implications.",
+    "question": "Do parallel Claude Code workers require broader permissions or weaker sandboxing than single-worker execution?",
+    "attempts": 1
+  },
+  {
+    "item": {
+      "id": "hn:50492877",
+      "source": "hn",
+      "title": "Llama.cpp hits v1.0 with a native app for macOS",
+      "url": "https://huggingface.co/blog/ggml-org/llama-cpp-v1",
+      "published": "2026-11-14T02:05:37Z",
+      "summary": "",
+      "authors": [
+        "shubham0204"
+      ],
+      "extra": {
+        "points": 21,
+        "comments": 3,
+        "discussion": "https://news.ycombinator.com/item?id=50492877"
+      }
+    },
+    "relevant": false,
+    "thread": "none",
+    "score": 0,
+    "summary": "Llama.cpp reaches v1.0 and includes a native macOS app.",
+    "why": "",
+    "question": "",
+    "attempts": 1
+  },
+  {
+    "item": {
+      "id": "hn:50484682",
+      "source": "hn",
+      "title": "Show HN: Langfuse AI Gateway, open source rust gateway to trace every LLM call",
+      "url": "https://github.com/langfuse/langfuse/tree/main/ai-gateway",
+      "published": "2026-11-13T15:10:20Z",
+      "summary": "",
+      "authors": [
+        "clemo_ra"
+      ],
+      "extra": {
+        "points": 9,
+        "comments": 1,
+        "discussion": "https://news.ycombinator.com/item?id=50484682"
+      }
+    },
+    "relevant": false,
+    "thread": "none",
+    "score": 2,
+    "summary": "An open-source Rust AI gateway from Langfuse that traces every LLM call.",
+    "why": "",
+    "question": "",
+    "attempts": 1
+  },
+  {
+    "item": {
+      "id": "hn:50486999",
+      "source": "hn",
+      "title": "Beating benchmarks by weight-space optimizing decision models with DSPy",
+      "url": "https://www.cmpnd.ai/blog/weight-space-programming-dspy.html",
+      "published": "2026-11-13T17:43:26Z",
+      "summary": "",
+      "authors": [
+        "dbreunig"
+      ],
+      "extra": {
+        "points": 8,
+        "comments": 0,
+        "discussion": "https://news.ycombinator.com/item?id=50486999"
+      }
+    },
+    "relevant": true,
+    "thread": "eval-awareness",
+    "score": 3,
+    "summary": "A blog post claims to beat benchmarks by optimizing decision models in weight space using DSPy.",
+    "why": "It touches benchmark performance, but the title does not indicate evaluation awareness or benchmark contamination.",
+    "question": "Is the benchmark improvement due to genuine capability gains or benchmark-specific optimization?",
+    "attempts": 1
+  },
+  {
+    "item": {
+      "id": "hn:50481227",
+      "source": "hn",
+      "title": "Ask HN: Do you see a human written book more valuable than an AI written one?",
+      "url": "https://news.ycombinator.com/item?id=50481227",
+      "published": "2026-11-13T10:20:59Z",
+      "summary": "",
+      "authors": [
+        "znano"
+      ],
+      "extra": {
+        "points": 8,
+        "comments": 19,
+        "discussion": "https://news.ycombinator.com/item?id=50481227"
+      }
+    },
+    "relevant": false,
+    "thread": "none",
+    "score": 0,
+    "summary": "A Hacker News discussion asking whether people consider human-written books more valuable than AI-written books.",
+    "why": "",
+    "question": "",
+    "attempts": 1
+  },
+  {
+    "item": {
+      "id": "hn:50491021",
+      "source": "hn",
+      "title": "Show HN: NETWAR – hacker MMO with 15-second card duels on a shared hex map",
+      "url": "https://play-netwar.com/?from=hn",
+      "published": "2026-11-13T22:33:26Z",
+      "summary": "",
+      "authors": [
+        "Fivekoto"
+      ],
+      "extra": {
+        "points": 7,
+        "comments": 0,
+        "discussion": "https://news.ycombinator.com/item?id=50491021"
+      }
+    },
+    "relevant": false,
+    "thread": "none",
+    "score": 0,
+    "summary": "NETWAR is a hacker-themed MMO featuring 15-second card duels played on a shared hex map.",
+    "why": "",
+    "question": "",
+    "attempts": 1
+  },
+  {
+    "item": {
+      "id": "hn:50491753",
+      "source": "hn",
+      "title": "Doc-foundry – AI writes Security detection rules, then proves they work",
+      "url": "https://github.com/mjha-arya/DOC-foundry",
+      "published": "2026-11-13T23:40:12Z",
+      "summary": "",
+      "authors": [
+        "manish121"
+      ],
+      "extra": {
+        "points": 7,
+        "comments": 0,
+        "discussion": "https://news.ycombinator.com/item?id=50491753"
+      }
+    },
+    "relevant": false,
+    "thread": "none",
+    "score": 2,
+    "summary": "A GitHub project described as using AI to write security detection rules and then prove that they work.",
+    "why": "",
+    "question": "",
+    "attempts": 1
+  },
+  {
+    "item": {
+      "id": "hn:50495073",
+      "source": "hn",
+      "title": "Show HN: Gamma PDF – AI-native PDF reader, self-hosted",
+      "url": "https://gammapdf.com/",
+      "published": "2026-11-14T08:08:11Z",
+      "summary": "",
+      "authors": [
+        "tim4431"
+      ],
+      "extra": {
+        "points": 6,
+        "comments": 1,
+        "discussion": "https://news.ycombinator.com/item?id=50495073"
+      }
+    },
+    "relevant": false,
+    "thread": "none",
+    "score": 0,
+    "summary": "A Show HN post for Gamma PDF, described as an AI-native, self-hosted PDF reader.",
+    "why": "",
+    "question": "",
+    "attempts": 1
+  },
+  {
+    "item": {
+      "id": "hn:50492532",
+      "source": "hn",
+      "title": "Show HN: RemoteKu – Desktop Roku remote and live ECP keyboard deck for Mac/PC",
+      "url": "https://github.com/KevinOBytes/remoteku",
+      "published": "2026-11-14T01:21:23Z",
+      "summary": "",
+      "authors": [
+        "KevinBytes"
+      ],
+      "extra": {
+        "points": 5,
+        "comments": 1,
+        "discussion": "https://news.ycombinator.com/item?id=50492532"
+      }
+    },
+    "relevant": false,
+    "thread": "none",
+    "score": 0,
+    "summary": "RemoteKu is a desktop Roku remote and live ECP keyboard deck for Mac/PC. It appears to be a consumer remote-control tool rather than a security research item.",
+    "why": "",
+    "question": "",
+    "attempts": 1
+  },
+  {
+    "item": {
+      "id": "hn:50487982",
+      "source": "hn",
+      "title": "China builds 800-megawatt off grid data center",
+      "url": "https://www.tomshardware.com/tech-industry/data-centers/china-builds-massive-800-megawatt-ai-data-center-campus-to-rival-us-stargate-project-galaxy-campus-delivers-first-120-megawatts-in-a-year-at-one-fifth-the-cost",
+      "published": "2026-11-13T18:49:56Z",
+      "summary": "",
+      "authors": [
+        "worik"
+      ],
+      "extra": {
+        "points": 5,
+        "comments": 1,
+        "discussion": "https://news.ycombinator.com/item?id=50487982"
+      }
+    },
+    "relevant": false,
+    "thread": "none",
+    "score": 0,
+    "summary": "A Hacker News story about China building an 800-megawatt off-grid data center.",
+    "why": "",
+    "question": "",
+    "attempts": 1
+  }
+]
