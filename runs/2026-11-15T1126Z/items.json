@@ -1,0 +1,377 @@
+[
+  {
+    "item": {
+      "id": "hn:50497132",
+      "source": "hn",
+      "title": "Show HN: A terminal-native idle factory game, written in Rust with ratatui",
+      "url": "https://gitlab.com/snipedbywifi/terminactory",
+      "published": "2026-11-14T14:05:54Z",
+      "summary": "",
+      "authors": [
+        "snipedbywifi"
+      ],
+      "extra": {
+        "points": 157,
+        "comments": 39,
+        "discussion": "https://news.ycombinator.com/item?id=50497132"
+      }
+    },
+    "relevant": false,
+    "thread": "none",
+    "score": 0,
+    "summary": "A terminal-native idle factory game written in Rust using ratatui. The available information only identifies it as a Show HN project hosted on GitLab.",
+    "why": "",
+    "question": "",
+    "attempts": 1
+  },
+  {
+    "item": {
+      "id": "hn:50497137",
+      "source": "hn",
+      "title": "Show HN: Fursoy – Out-of-order RV64IMAFDV core in SystemVerilog (Linux 6.6)",
+      "url": "https://github.com/FURSOY/fursoy-cpu",
+      "published": "2026-11-14T14:06:34Z",
+      "summary": "",
+      "authors": [
+        "fursoy"
+      ],
+      "extra": {
+        "points": 79,
+        "comments": 26,
+        "discussion": "https://news.ycombinator.com/item?id=50497137"
+      }
+    },
+    "relevant": false,
+    "thread": "none",
+    "score": 0,
+    "summary": "A Hacker News Show HN post for Fursoy, an out-of-order RV64IMAFDV RISC-V CPU core written in SystemVerilog that runs Linux 6.6.",
+    "why": "",
+    "question": "",
+    "attempts": 1
+  },
+  {
+    "item": {
+      "id": "hn:50503930",
+      "source": "hn",
+      "title": "Show HN: Turbo-Browser-MCP – Batch forms, DOM deltas and submit guards for MCP",
+      "url": "https://github.com/Tthanh2k6/turbo-browser-mcp",
+      "published": "2026-11-15T04:09:11Z",
+      "summary": "",
+      "authors": [
+        "tthanh2k6"
+      ],
+      "extra": {
+        "points": 36,
+        "comments": 7,
+        "discussion": "https://news.ycombinator.com/item?id=50503930"
+      }
+    },
+    "relevant": true,
+    "thread": "mcp-security",
+    "score": 3,
+    "summary": "A Show HN post for Turbo-Browser-MCP, an MCP tool that batches form interactions, tracks DOM deltas, and adds submit guards.",
+    "why": "It is an MCP browser tool, so it sits in the MCP/agent tool surface he tracks, but the title gives no security-specific results.",
+    "question": "What permissions or browser capabilities does the MCP server expose, and could its form/DOM actions be abused for prompt injection or over-privileged agent behavior?",
+    "attempts": 1
+  },
+  {
+    "item": {
+      "id": "hn:50496159",
+      "source": "hn",
+      "title": "Light Pollution Map",
+      "url": "https://lightpollutionmap.app/",
+      "published": "2026-11-14T11:30:43Z",
+      "summary": "",
+      "authors": [
+        "joebig"
+      ],
+      "extra": {
+        "points": 36,
+        "comments": 7,
+        "discussion": "https://news.ycombinator.com/item?id=50496159"
+      }
+    },
+    "relevant": false,
+    "thread": "none",
+    "score": 0,
+    "summary": "A light pollution map application.",
+    "why": "",
+    "question": "",
+    "attempts": 1
+  },
+  {
+    "item": {
+      "id": "hn:50496525",
+      "source": "hn",
+      "title": "Why platform teams fail (and AI makes it worse)",
+      "url": "https://willdady.com/why-platform-teams-fail",
+      "published": "2026-11-14T12:32:36Z",
+      "summary": "",
+      "authors": [
+        "Groady"
+      ],
+      "extra": {
+        "points": 19,
+        "comments": 6,
+        "discussion": "https://news.ycombinator.com/item?id=50496525"
+      }
+    },
+    "relevant": false,
+    "thread": "none",
+    "score": 0,
+    "summary": "A post arguing that platform teams fail and that AI makes the problem worse.",
+    "why": "",
+    "question": "",
+    "attempts": 1
+  },
+  {
+    "item": {
+      "id": "hn:50501697",
+      "source": "hn",
+      "title": "The Chinese spy allegation that toppled Nvidia's CEO is starting to look shaky",
+      "url": "https://www.businessinsider.com/intelligence-jensen-huang-downfall-shaky-nvidia-china-spy-gpus-2026-11",
+      "published": "2026-11-14T22:33:58Z",
+      "summary": "",
+      "authors": [
+        "cpncrunch"
+      ],
+      "extra": {
+        "points": 13,
+        "comments": 2,
+        "discussion": "https://news.ycombinator.com/item?id=50501697"
+      }
+    },
+    "relevant": false,
+    "thread": "none",
+    "score": 0,
+    "summary": "A Business Insider article suggests that the Chinese spy allegation tied to Nvidia's CEO's downfall may be weak.",
+    "why": "",
+    "question": "",
+    "attempts": 1
+  },
+  {
+    "item": {
+      "id": "hn:50496383",
+      "source": "hn",
+      "title": "Do what must be done",
+      "url": "https://news.ycombinator.com/item?id=50496383",
+      "published": "2026-11-14T12:08:42Z",
+      "summary": "",
+      "authors": [
+        "alexhr"
+      ],
+      "extra": {
+        "points": 8,
+        "comments": 1,
+        "discussion": "https://news.ycombinator.com/item?id=50496383"
+      }
+    },
+    "relevant": false,
+    "thread": "none",
+    "score": 0,
+    "summary": "A Hacker News story titled 'Do what must be done'; no further details are provided.",
+    "why": "",
+    "question": "",
+    "attempts": 1
+  },
+  {
+    "item": {
+      "id": "hn:50496631",
+      "source": "hn",
+      "title": "Show HN: Timon, an open-source AI workstation for coordinating agents",
+      "url": "https://github.com/ai-timon/timon",
+      "published": "2026-11-14T12:52:01Z",
+      "summary": "",
+      "authors": [
+        "Saucisse_dev"
+      ],
+      "extra": {
+        "points": 7,
+        "comments": 0,
+        "discussion": "https://news.ycombinator.com/item?id=50496631"
+      }
+    },
+    "relevant": false,
+    "thread": "none",
+    "score": 2,
+    "summary": "An open-source AI workstation for coordinating agents.",
+    "why": "",
+    "question": "",
+    "attempts": 1
+  },
+  {
+    "item": {
+      "id": "hn:50499095",
+      "source": "hn",
+      "title": "FAA blames ground stop on equipment issue during telecoms network upgrade",
+      "url": "https://www.npr.org/2026/11/14/nx-s1-6040952/faa-ground-stop-airplane-travel",
+      "published": "2026-11-14T17:49:24Z",
+      "summary": "",
+      "authors": [
+        "cpncrunch"
+      ],
+      "extra": {
+        "points": 6,
+        "comments": 3,
+        "discussion": "https://news.ycombinator.com/item?id=50499095"
+      }
+    },
+    "relevant": false,
+    "thread": "none",
+    "score": 0,
+    "summary": "The FAA says a ground stop was caused by an equipment issue during a telecoms network upgrade. The story is about aviation operations and network infrastructure, not AI security.",
+    "why": "",
+    "question": "",
+    "attempts": 1
+  },
+  {
+    "item": {
+      "id": "hn:50503511",
+      "source": "hn",
+      "title": "ChatMate: Remote Prompt Execution on AI Assistants Through Sandbox Escaping [video]",
+      "url": "https://www.youtube.com/watch?v=MspRSCAb6uI",
+      "published": "2026-11-15T02:49:18Z",
+      "summary": "",
+      "authors": [
+        "vbCrLf"
+      ],
+      "extra": {
+        "points": 5,
+        "comments": 1,
+        "discussion": "https://news.ycombinator.com/item?id=50503511"
+      }
+    },
+    "relevant": true,
+    "thread": "agent-escalation",
+    "score": 8,
+    "summary": "A video titled ChatMate describes remote prompt execution on AI assistants through sandbox escaping.",
+    "why": "It connects to agent-escalation because it involves AI assistants escaping sandbox boundaries to execute prompts remotely.",
+    "question": "What sandbox primitive is being escaped, and what runtime policy would stop it?",
+    "attempts": 1
+  },
+  {
+    "item": {
+      "id": "hn:50502059",
+      "source": "hn",
+      "title": "Sword Coast Map 3D (Rust to WebGL, Mobile Friendly)",
+      "url": "https://swordcoastmap.com/?cam=5053,1505,12450,-1.0,50.0&t=12.90&weather=clear",
+      "published": "2026-11-14T23:14:03Z",
+      "summary": "",
+      "authors": [
+        "elliotbnvl"
+      ],
+      "extra": {
+        "points": 5,
+        "comments": 0,
+        "discussion": "https://news.ycombinator.com/item?id=50502059"
+      }
+    },
+    "relevant": false,
+    "thread": "none",
+    "score": 0,
+    "summary": "A 3D Sword Coast map built with Rust and WebGL. It is described as mobile friendly.",
+    "why": "",
+    "question": "",
+    "attempts": 1
+  },
+  {
+    "item": {
+      "id": "hn:50499368",
+      "source": "hn",
+      "title": "Taboos and Self-Censorship Among U.S. Psychology Professors (2025)",
+      "url": "https://journals.sagepub.com/doi/10.1177/17456916241252085",
+      "published": "2026-11-14T18:19:37Z",
+      "summary": "",
+      "authors": [
+        "mpweiher"
+      ],
+      "extra": {
+        "points": 5,
+        "comments": 0,
+        "discussion": "https://news.ycombinator.com/item?id=50499368"
+      }
+    },
+    "relevant": false,
+    "thread": "none",
+    "score": 0,
+    "summary": "It is a 2025 article about taboos and self-censorship among U.S. psychology professors.",
+    "why": "",
+    "question": "",
+    "attempts": 1
+  },
+  {
+    "item": {
+      "id": "hn:50496391",
+      "source": "hn",
+      "title": "Amazon's plan to own the product data and fight AI shopping agents",
+      "url": "https://www.reuters.com/business/media-telecom/amazons-plan-own-worlds-product-data-fight-ai-shopping-agents-2026-11-13/",
+      "published": "2026-11-14T12:09:29Z",
+      "summary": "",
+      "authors": [
+        "martey"
+      ],
+      "extra": {
+        "points": 5,
+        "comments": 0,
+        "discussion": "https://news.ycombinator.com/item?id=50496391"
+      }
+    },
+    "relevant": false,
+    "thread": "none",
+    "score": 2,
+    "summary": "A Reuters article about Amazon planning to own product data and fight AI shopping agents.",
+    "why": "",
+    "question": "",
+    "attempts": 1
+  },
+  {
+    "item": {
+      "id": "hn:50495982",
+      "source": "hn",
+      "title": "Ask HN: My product makes money, AI does the coding, and I feel useless",
+      "url": "https://news.ycombinator.com/item?id=50495982",
+      "published": "2026-11-14T10:58:14Z",
+      "summary": "",
+      "authors": [
+        "hellohiki"
+      ],
+      "extra": {
+        "points": 5,
+        "comments": 8,
+        "discussion": "https://news.ycombinator.com/item?id=50495982"
+      }
+    },
+    "relevant": false,
+    "thread": "none",
+    "score": 0,
+    "summary": "A Hacker News ask post from someone whose product earns money while AI handles the coding, leaving them feeling useless.",
+    "why": "",
+    "question": "",
+    "attempts": 1
+  },
+  {
+    "item": {
+      "id": "hn:50495820",
+      "source": "hn",
+      "title": "Behind the Nvidia Affair Sits a Vast Chinese Spying Machine",
+      "url": "https://www.wsj.com/world/nvidia-china-espionage-spy-hacking-ai-174c366b",
+      "published": "2026-11-14T10:28:28Z",
+      "summary": "",
+      "authors": [
+        "pretext"
+      ],
+      "extra": {
+        "points": 5,
+        "comments": 1,
+        "discussion": "https://news.ycombinator.com/item?id=50495820"
+      }
+    },
+    "relevant": false,
+    "thread": "none",
+    "score": 0,
+    "summary": "A WSJ report, as indicated by the title, claims a large Chinese espionage operation is behind the Nvidia affair.",
+    "why": "",
+    "question": "",
+    "attempts": 1
+  }
+]
