@@ -1,0 +1,227 @@
+[
+  {
+    "item": {
+      "id": "hn:50509837",
+      "source": "hn",
+      "title": "Protomaps: Self-hosting map tiles has gotten cheap and easy",
+      "url": "https://bruceroettgers.eu/blog/protomaps/",
+      "published": "2026-11-15T19:26:22Z",
+      "summary": "",
+      "authors": [
+        "bcye"
+      ],
+      "extra": {
+        "points": 359,
+        "comments": 60,
+        "discussion": "https://news.ycombinator.com/item?id=50509837"
+      }
+    },
+    "relevant": false,
+    "thread": "none",
+    "score": 0,
+    "summary": "It is a post about using Protomaps to self-host map tiles cheaply and easily.",
+    "why": "",
+    "question": "",
+    "attempts": 1
+  },
+  {
+    "item": {
+      "id": "hn:50514224",
+      "source": "hn",
+      "title": "Google AI Ultra Subscription Not Worth It",
+      "url": "https://www.reddit.com/r/google_antigravity/comments/1xx9nl3/google_ai_ultra_subscription_not_worth_it/",
+      "published": "2026-11-16T04:59:22Z",
+      "summary": "",
+      "authors": [
+        "behnamoh"
+      ],
+      "extra": {
+        "points": 11,
+        "comments": 1,
+        "discussion": "https://news.ycombinator.com/item?id=50514224"
+      }
+    },
+    "relevant": false,
+    "thread": "none",
+    "score": 0,
+    "summary": "A Hacker News story linking to a Reddit post titled 'Google AI Ultra Subscription Not Worth It.' It appears to be a consumer opinion about the value of a Google AI subscription.",
+    "why": "",
+    "question": "",
+    "attempts": 1
+  },
+  {
+    "item": {
+      "id": "hn:50512682",
+      "source": "hn",
+      "title": "'It's like the Wild West': how AI has rocked the literary world",
+      "url": "https://www.theguardian.com/books/ng-interactive/2026/nov/14/its-like-the-wild-west-how-ai-has-rocked-the-literary-world",
+      "published": "2026-11-16T00:52:00Z",
+      "summary": "",
+      "authors": [
+        "Archelaos"
+      ],
+      "extra": {
+        "points": 10,
+        "comments": 4,
+        "discussion": "https://news.ycombinator.com/item?id=50512682"
+      }
+    },
+    "relevant": false,
+    "thread": "none",
+    "score": 0,
+    "summary": "A Guardian article about AI disrupting the literary world. It appears to focus on AI-generated writing and its impact on books and publishing.",
+    "why": "",
+    "question": "",
+    "attempts": 1
+  },
+  {
+    "item": {
+      "id": "hn:50507331",
+      "source": "hn",
+      "title": "Top scorer on South Korean tax exam confesses to cheating with AI",
+      "url": "https://www.reuters.com/world/asia-pacific/top-scorer-south-korean-tax-exam-confesses-cheating-with-ai-2026-11-15/",
+      "published": "2026-11-15T14:51:10Z",
+      "summary": "",
+      "authors": [
+        "bookofjoe"
+      ],
+      "extra": {
+        "points": 9,
+        "comments": 5,
+        "discussion": "https://news.ycombinator.com/item?id=50507331"
+      }
+    },
+    "relevant": false,
+    "thread": "none",
+    "score": 1,
+    "summary": "A top scorer on a South Korean tax exam reportedly confessed to cheating with AI.",
+    "why": "",
+    "question": "",
+    "attempts": 1
+  },
+  {
+    "item": {
+      "id": "hn:50510540",
+      "source": "hn",
+      "title": "Ask HN: What do coding interviews look like in the age of AI?",
+      "url": "https://news.ycombinator.com/item?id=50510540",
+      "published": "2026-11-15T20:45:34Z",
+      "summary": "",
+      "authors": [
+        "frankhorrigan"
+      ],
+      "extra": {
+        "points": 8,
+        "comments": 4,
+        "discussion": "https://news.ycombinator.com/item?id=50510540"
+      }
+    },
+    "relevant": false,
+    "thread": "none",
+    "score": 1,
+    "summary": "A Hacker News discussion asking how coding interviews are changing in the age of AI.",
+    "why": "",
+    "question": "",
+    "attempts": 1
+  },
+  {
+    "item": {
+      "id": "hn:50507084",
+      "source": "hn",
+      "title": "LeCun: If you're interested in human-level AI, don't work on LLMs",
+      "url": "https://www.reddit.com/r/TheMachineLearning/comments/1xwp0kp/dont_work_on_llms_ylecun_at_corl/",
+      "published": "2026-11-15T14:14:23Z",
+      "summary": "",
+      "authors": [
+        "theanonymousone"
+      ],
+      "extra": {
+        "points": 7,
+        "comments": 2,
+        "discussion": "https://news.ycombinator.com/item?id=50507084"
+      }
+    },
+    "relevant": false,
+    "thread": "none",
+    "score": 0,
+    "summary": "A Hacker News story linking to a Reddit post about LeCun saying people interested in human-level AI should not work on LLMs.",
+    "why": "",
+    "question": "",
+    "attempts": 1
+  },
+  {
+    "item": {
+      "id": "hn:50506957",
+      "source": "hn",
+      "title": "In a Sloppified A.I. World, Only Humans Can Build 'Ecosystems'",
+      "url": "https://www.nytimes.com/2026/11/15/business/tech-jobs-ai-ecosystem.html",
+      "published": "2026-11-15T13:54:04Z",
+      "summary": "",
+      "authors": [
+        "saikatsg"
+      ],
+      "extra": {
+        "points": 6,
+        "comments": 2,
+        "discussion": "https://news.ycombinator.com/item?id=50506957"
+      }
+    },
+    "relevant": false,
+    "thread": "none",
+    "score": 1,
+    "summary": "A New York Times business article arguing that, in an AI-saturated world, humans are still needed to build ecosystems.",
+    "why": "",
+    "question": "",
+    "attempts": 1
+  },
+  {
+    "item": {
+      "id": "hn:50507971",
+      "source": "hn",
+      "title": "Show HN: Pizza – An event-driven AI agent, no while true",
+      "url": "https://pizza.hertzbeat.com/",
+      "published": "2026-11-15T16:04:32Z",
+      "summary": "",
+      "authors": [
+        "tomsun28"
+      ],
+      "extra": {
+        "points": 5,
+        "comments": 1,
+        "discussion": "https://news.ycombinator.com/item?id=50507971"
+      }
+    },
+    "relevant": false,
+    "thread": "none",
+    "score": 0,
+    "summary": "Pizza is presented as an event-driven AI agent that avoids a continuous while-true loop.",
+    "why": "",
+    "question": "",
+    "attempts": 1
+  },
+  {
+    "item": {
+      "id": "hn:50512675",
+      "source": "hn",
+      "title": "Amazon MadPot: Honeypot for AI Agents",
+      "url": "https://aws.amazon.com/blogs/security/amazon-threat-intelligence-observes-threat-actors-running-cybercrime-campaigns-with-artex-ai-agents/",
+      "published": "2026-11-16T00:50:59Z",
+      "summary": "",
+      "authors": [
+        "dnw"
+      ],
+      "extra": {
+        "points": 5,
+        "comments": 1,
+        "discussion": "https://news.ycombinator.com/item?id=50512675"
+      }
+    },
+    "relevant": true,
+    "thread": "ai-worms",
+    "score": 4,
+    "summary": "An AWS security blog post about Amazon MadPot, a honeypot for AI agents, and threat actors using AI agents in cybercrime campaigns.",
+    "why": "It touches detection of malicious AI-agent behavior, though the title does not say it targets self-propagating agent attacks.",
+    "question": "Does MadPot detect autonomous or self-propagating agent behavior, or is it mainly a honeypot for AI-assisted human campaigns?",
+    "attempts": 1
+  }
+]
