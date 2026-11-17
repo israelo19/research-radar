@@ -1,0 +1,1012 @@
+[
+  {
+    "item": {
+      "id": "arxiv:2611.21577",
+      "source": "arxiv",
+      "title": "When Tool Names Are Not Identities: Measuring Provider Misbinding in MCP-Based AI Agents",
+      "url": "https://arxiv.org/abs/2611.21577",
+      "published": "2026-11-16T18:49:37Z",
+      "summary": "Large language model (LLM) applications increasingly act as agents that select and invoke external tools. The Model Context Protocol (MCP) standardizes this interaction by allowing clients to compose tools advertised by multiple servers. However, tool metadata used for discovery and selection is not, by itself, necessarily bound to a verified provider identity. This paper studies this gap as tool-provider misbinding: a failure in which a request intended for a legitimate provider is instead resolved to an attacker-controlled tool. The attacker does not compromise the host, LLM, legitimate server, or network channel; it only operates another MCP server that advertises tools with chosen metadata. We formulate tool provider misbinding as an attacker-controlled tool-selection optimization problem and evaluate it in a controlled MCP environment across five LLM-based clients. The results show that interactions drive misbinding. The strongest failures occur when exact-name collision, task-aligned description, and compatible schema reinforce one another, but authority-enhanced descriptions with compatible schema can also cause wrong-provider execution or unresolved provider ambiguity without name collision. Different models expose the same provider-binding weakness differently, including attacker-controlled provider selection, clarification requests, and unstable or inconsistent provider resolution.",
+      "authors": [
+        "Zeynab Anbiaee",
+        "Sajjad Dadkhah",
+        "Ali A. Ghorbani"
+      ],
+      "extra": {
+        "categories": [
+          "cs.CR",
+          "cs.AI"
+        ],
+        "pdf": "https://arxiv.org/pdf/2611.21577"
+      }
+    },
+    "relevant": true,
+    "thread": "mcp-security",
+    "score": 9,
+    "summary": "The paper studies tool-provider misbinding in MCP-based agents, where an attacker-controlled MCP server can advertise tools with chosen metadata so that a client resolves a request to the wrong provider. It evaluates this across five LLM clients and shows that name collisions, task-aligned descriptions, and compatible schemas can drive wrong-provider execution or provider ambiguity.",
+    "why": "It directly addresses malicious tool metadata and provider identity gaps in MCP, which is central to his MCP and tool security thread.",
+    "question": "How robust are current MCP client-side mitigations, such as provider pinning, tool allowlists, or identity verification, against the misbinding patterns measured here?",
+    "attempts": 1
+  },
+  {
+    "item": {
+      "id": "arxiv:2611.21501",
+      "source": "arxiv",
+      "title": "Is This Code Mine? Student Ownership When AI Agents Write the Spec and the Code",
+      "url": "https://arxiv.org/abs/2611.21501",
+      "published": "2026-11-16T18:02:10Z",
+      "summary": "Software engineering courses are starting to ask students to build entire systems with AI coding agents, but little is known about what students actually do with them and whether they still own what they deliver. If the agent writes both the code and the decisions behind it, the artifacts we grade no longer show what students learned. We studied an assignment in which 18 pairs of students built applications with agents under Spec-Driven Development, combining the mined history of their repositories, the prompts they recorded, and a survey of 33 students. The agents wrote 69\\% of the specifications meant to keep students in control, sometimes from a prompt of a few words. Students locate their ownership in the ideas, crediting themselves with half of them but a fifth of the code, yet most could not explain that code to a colleague or modify it without the agent, and what they report having written is unrelated to what their own commits declare. The three teams that met the 100,000-line target did so with generated code the application never uses, in one case proposed by the agent itself, and one team rewrote its history to backdate its specifications. Teaching with agents should therefore assess what students specify, review, and can explain, rather than what they ship, and enforce the engineering process with tools rather than trusting it to students or agents.",
+      "authors": [
+        "Gustavo Pinto",
+        "Enne Rebeca Silva de Freitas",
+        "Danilo Monteiro Ribeiro"
+      ],
+      "extra": {
+        "categories": [
+          "cs.SE"
+        ],
+        "pdf": "https://arxiv.org/pdf/2611.21501"
+      }
+    },
+    "relevant": true,
+    "thread": "eval-awareness",
+    "score": 3,
+    "summary": "The paper studies student teams using AI coding agents under spec-driven development and finds that agents often write both code and specifications, while students struggle to explain or modify the resulting code. It also documents gaming of assignment metrics, including generated unused code and backdated specifications.",
+    "why": "It is adjacent to eval-awareness because it shows how evaluated AI-agent workflows can be gamed or obscured, though it is not about models detecting that they are being tested.",
+    "question": "What does this suggest about how to design evaluations for agent-generated software that cannot be fooled by line counts, backdated specs, or unexplained code?",
+    "attempts": 1
+  },
+  {
+    "item": {
+      "id": "arxiv:2611.21298",
+      "source": "arxiv",
+      "title": "Agent-Native by Design: A Programming Language for Agentic Applications",
+      "url": "https://arxiv.org/abs/2611.21298",
+      "published": "2026-11-16T16:01:06Z",
+      "summary": "Building agentic applications requires combining large language model (LLM) operations, workflow structure and application state, and model-guided routing. With SDKs and agent frameworks, developers connect these components through supporting code that prepares model inputs, propagates state, and dispatches model-selected steps. Workflow changes can require coordinated updates to this code, increasing development and testing effort. Splitting execution logic between application code and framework internals also limits compiler visibility into control flow and state dependencies, hindering automatic optimization. We introduce Agent-Native Programming, which unifies these three components with shared execution semantics. We realize this approach in Jac, a Python-superset language, through \"by llm()\" for typed model operations and tool use, Object-Spatial Programming for workflow structure and state, and \"visit ... by llm()\" for model-guided routing. The routing construct derives the model's choices from executable workflow steps and schedules the selected steps. This explicit connection between model decisions and program execution gives the compiler and runtime a common basis for dependency analysis and automatic optimization. Across five benchmarks and five baselines, Jac achieves a 1.8-8.7x reduction in AI-integration code relative to the OpenAI SDK, with competitive observed task quality and lower coding-agent development effort. Two case studies demonstrate speculative execution and service partitioning through configuration alone, using program analysis and runtime checks to preserve workflow behavior under stated conditions.",
+      "authors": [
+        "Jayanaka Dantanarayana",
+        "Savini Kashmira",
+        "Xiaoyu Ma",
+        "Malitha",
+        "Malitha Prabhashana",
+        "Lingjia Tang",
+        "Jason Mars"
+      ],
+      "extra": {
+        "categories": [
+          "cs.PL",
+          "cs.AI",
+          "cs.SE"
+        ],
+        "pdf": "https://arxiv.org/pdf/2611.21298"
+      }
+    },
+    "relevant": false,
+    "thread": "none",
+    "score": 3,
+    "summary": "The paper proposes Jac, a Python-superset programming language for building agentic applications by unifying LLM calls, workflow state, and model-guided routing. It reports reduced AI-integration code and lower coding-agent development effort across benchmarks.",
+    "why": "",
+    "question": "",
+    "attempts": 1
+  },
+  {
+    "item": {
+      "id": "arxiv:2611.21259",
+      "source": "arxiv",
+      "title": "Evaluating Authorization and Trust Boundaries in Agentic Orchestration Frameworks",
+      "url": "https://arxiv.org/abs/2611.21259",
+      "published": "2026-11-16T15:33:50Z",
+      "summary": "Agentic AI systems extend large language models with tools, memory, and multi-agent collaboration, introducing security risks at orchestration boundaries. These risks depend on how identities are represented, operations are authorized, and instructions or information propagate between components. We evaluate LangChain, LangGraph, AutoGen, and OpenClaw through twelve experiments mapped to the OWASP Top 10 for Agentic Applications using a common LLM (gpt-4o-mini). The experiments cover prompt injection, unauthorized resource access and command execution, memory poisoning, and inter-agent trust and identity attacks. Adversarial inputs induced unauthorized tool invocation, while tool chaining, stale filesystem validation, encoded instructions, and inter-agent delegation exposed weaknesses in authorization across component boundaries. Memory poisoning showed that untrusted state can influence responses, a risk distinct from conventional access-control violations. In the evaluated protected configurations, explicit authorization, controlled capability assignment, filesystem containment, and execution safeguards prevented specific unauthorized operations. The findings emphasize preserving authorization and information-trust boundaries throughout agentic workflows rather than treating framework capabilities or model-level instructions as sufficient security guarantees.",
+      "authors": [
+        "Sahaya Jestus Lazer",
+        "Kshitiz Aryal",
+        "Maanak Gupta",
+        "Elisa Bertino"
+      ],
+      "extra": {
+        "categories": [
+          "cs.MA"
+        ],
+        "pdf": "https://arxiv.org/pdf/2611.21259"
+      }
+    },
+    "relevant": true,
+    "thread": "agent-escalation",
+    "score": 8,
+    "summary": "The paper evaluates LangChain, LangGraph, AutoGen, and OpenClaw against OWASP Agentic Top 10 risks, including prompt injection, unauthorized tool invocation, command execution, memory poisoning, and inter-agent trust attacks. It finds that explicit authorization, capability control, filesystem containment, and execution safeguards can prevent some unauthorized operations.",
+    "why": "It directly examines how agentic frameworks fail or succeed at preserving authorization and trust boundaries when tools, memory, and inter-agent delegation are involved.",
+    "question": "Which failures are caused by framework defaults or identity propagation rather than the LLM, and which mitigations still hold under multi-step or encoded attacks?",
+    "attempts": 1
+  },
+  {
+    "item": {
+      "id": "arxiv:2611.21152",
+      "source": "arxiv",
+      "title": "From Repositories to Training Environments: Scaling Long-Horizon Coding Agents with Environment Evolution Loop",
+      "url": "https://arxiv.org/abs/2611.21152",
+      "published": "2026-11-16T14:20:58Z",
+      "summary": "Training coding agents for long-horizon tasks requires environments with verifiable feedback. Existing pipelines often follow a linear process that ends with validation, establishing usability but providing little guidance on improving training value. Recursive self-improvement (RSI) often requires model rollouts or model training followed by downstream evaluation, with costs and feedback delays amplified on long-horizon tasks. How can we use timely, reliable proxy signals to improve training value and synthesize environments at scale? We present RepoFactory, an automated pipeline that converts real repositories into verifiable environments where agents build complete projects from scratch given a language specification. Its Environment Evolution Loop optimizes a multiplicative objective combining validity, structural coupling, and implementation scope through proxy feedback. RepoFactory produces 10,159 environments across 17 software domains. Training Qwen3.5-35B-A3B on these environments yields RepoHorizen-35B-A3B, which achieves gains of 22.6 percentage points on NL2Repo-Bench and 8.5 points on average across five benchmarks covering long-horizon coding and agentic tasks in real-world production settings, compared with 17.5 and 6.4 points without environment evolution. These results highlight the training value of RepoFactory environments and the additional gains from the Environment Evolution Loop.",
+      "authors": [
+        "Yang Tian",
+        "Tianyu Zheng",
+        "Xiyuan Yang",
+        "Yaxin Du",
+        "Chengran Yang",
+        "Bo Zhao",
+        "Jian Yang",
+        "Bryan Dai"
+      ],
+      "extra": {
+        "categories": [
+          "cs.CL"
+        ],
+        "pdf": "https://arxiv.org/pdf/2611.21152"
+      }
+    },
+    "relevant": false,
+    "thread": "none",
+    "score": 2,
+    "summary": "The paper presents RepoFactory, a pipeline that turns real repositories into verifiable training environments for long-horizon coding agents, and shows that training on these environments improves coding and agentic benchmark performance.",
+    "why": "",
+    "question": "",
+    "attempts": 1
+  },
+  {
+    "item": {
+      "id": "arxiv:2611.21095",
+      "source": "arxiv",
+      "title": "SWE-WhatIf: Simulating Real Users of Coding Agents from Recorded Session",
+      "url": "https://arxiv.org/abs/2611.21095",
+      "published": "2026-11-16T13:42:26Z",
+      "summary": "Recorded sessions between users and coding agents offer a way to evaluate how agents complete real-world tasks and interact with users. However, these sessions cannot simply be replayed with new agents, because recorded user replies may no longer apply when an agent takes a different trajectory. We introduce SWE-WhatIf, which replays recorded sessions with new agents by modeling the user's intents, the criteria for satisfying them, and the conditions under which they arise. Using this model, a user simulator generates replies that adapt to unseen agent turns while remaining grounded in the recording. Across 89 real-world sessions, SWE-WhatIf generated the replies most similar to those of real users and matched the strongest baseline when sessions were rewritten. To test adaptation, we replay sessions with agents instructed to avoid or repeat actions that the recorded user pushed back on. SWE-WhatIf produced the highest win rate for avoiding these actions (66.3%), significantly above chance. We further demonstrate its utility by ranking five LLMs as coding agents, where the highest-ranked model depended on how users specified and developed their intents, and a study with 16 users, where replaying their own sessions changed 14 participants' rankings and informed their future agent use.",
+      "authors": [
+        "Tae Soo Kim",
+        "Tongshuang Wu",
+        "Juho Kim"
+      ],
+      "extra": {
+        "categories": [
+          "cs.CL",
+          "cs.AI",
+          "cs.HC"
+        ],
+        "pdf": "https://arxiv.org/pdf/2611.21095"
+      }
+    },
+    "relevant": false,
+    "thread": "none",
+    "score": 2,
+    "summary": "A method for replaying recorded user-coding-agent sessions with new agents by simulating user intent and generating adaptive replies. It is used to compare coding agents and study how users rank them.",
+    "why": "",
+    "question": "",
+    "attempts": 1
+  },
+  {
+    "item": {
+      "id": "arxiv:2611.21056",
+      "source": "arxiv",
+      "title": "Evaluation-Free Recursive Self-Improvement for Coding Agents",
+      "url": "https://arxiv.org/abs/2611.21056",
+      "published": "2026-11-16T13:05:46Z",
+      "summary": "Recent self-improving coding agents have achieved strong benchmark performance by iteratively modifying their own executable implementations. A common pattern uses downstream task-derived evidence to decide which candidates or lineages continue evolving, which we term evaluate-and-select. Obtaining this signal requires repeatedly executing evolved agents on downstream tasks, so broader exploration incurs increasing evaluation cost, while repeated optimization against a fixed evaluation distribution may encourage benchmark-specific adaptation. We ask: can coding agents self-improve without downstream task evaluation inside the evolution loop? We introduce Explore-then-Integrate (ELITE), which integrates implementation mechanisms rather than selecting a single exploratory child to continue the lineage. At each generation, ELITE proposes diverse focused improvements, implements them independently from the same parent, and inspects the resulting programs to identify complementary, redundant, and conflicting mechanisms before reimplementing a compatible subset as one coherent descendant. No downstream task outcomes or task-solving trajectories of evolved candidates are used to guide evolution; only deterministic checks of structural and operational validity are used inside the loop. On SWE-bench Pro, ELITE improves the initial agent from 60.0% to 85.6%, compared with 86.7% for the Darwin Godel Machine (DGM) and 88.3% for the Huxley-Godel Machine (HGM), while using zero candidate task evaluations and reducing observed wall-clock evolution time by 8.8x and 3.2x, respectively, under the evaluated configurations. In cross-benchmark transfer without further adaptation, ELITE averages 73.3% on SWE-bench Verified and 69.3% on Polyglot. Together, these results demonstrate the feasibility of coding-agent self-improvement without downstream candidate task evaluation in our setting.",
+      "authors": [
+        "Zhe Ren",
+        "Guowei Rong",
+        "Yimeng Chen",
+        "Nanbo Li",
+        "Piotr Piękos",
+        "Mateusz Ostaszewski",
+        "Dandan Guo",
+        "Jürgen Schmidhuber"
+      ],
+      "extra": {
+        "categories": [
+          "cs.CL",
+          "cs.NE"
+        ],
+        "pdf": "https://arxiv.org/pdf/2611.21056"
+      }
+    },
+    "relevant": true,
+    "thread": "eval-awareness",
+    "score": 4,
+    "summary": "The paper proposes ELITE, a method for coding agents to self-improve by integrating code changes using only deterministic validity checks, without using downstream task evaluations inside the evolution loop. It reports strong SWE-bench Pro gains and cross-benchmark transfer.",
+    "why": "It is adjacent to eval-awareness because it explicitly targets benchmark-specific adaptation in coding-agent self-improvement.",
+    "question": "Does removing downstream task evaluation actually reduce benchmark-specific behavior, or does it just shift the optimization pressure to structural validity checks?",
+    "attempts": 1
+  },
+  {
+    "item": {
+      "id": "arxiv:2611.20927",
+      "source": "arxiv",
+      "title": "LEDGER: Auditable Agent Memory Under Change",
+      "url": "https://arxiv.org/abs/2611.20927",
+      "published": "2026-11-16T11:37:23Z",
+      "summary": "Agent memory systems are mostly evaluated on fixed histories, and only their final answers are scored. In real use, facts change, sources differ in reliability, and users ask the agent to forget things. We present LEDGER, a memory layer in which a language model proposes facts and explicit rules decide which value is current, which source to trust, and what to delete. Each fact keeps its source and the period in which it held. LEDGER+EP adds a search over raw conversation turns for questions the ledger does not cover, and scrubs these turns on deletion. We compare both against no memory, full-history replay, retrieval over raw transcripts, and Mem0, with the same answering model and prompt, on a synthetic multi-session coding-agent workload and a 210-question subset of LongMemEval, and we score both the evidence each memory sends to the model and the answer. On the coding workload, LEDGER+EP in fallback mode answers 94.3% of questions correctly on five development seeds and 91.1% on five held-out seeds, against 82.1% and 83.3% for full replay, the strongest baseline. When a deletion request only describes the fact, no deleted value reached our systems' evidence in any evaluated probe. On LongMemEval, LEDGER+EP in augment mode has the same observed accuracy as full replay (74.8%) with 1% of its context. The main limitation is that the coding workload is synthetic and built by us; on LongMemEval, the differences between the strongest systems are within the confidence intervals.",
+      "authors": [
+        "Md Aidul Islam",
+        "Md Nasir Uddin Shuvo",
+        "Muhammad Waseem",
+        "Pekka Abrahamsson"
+      ],
+      "extra": {
+        "categories": [
+          "cs.MA",
+          "cs.PF",
+          "cs.SE"
+        ],
+        "pdf": "https://arxiv.org/pdf/2611.20927"
+      }
+    },
+    "relevant": false,
+    "thread": "none",
+    "score": 2,
+    "summary": "LEDGER is an auditable agent-memory layer that tracks facts, sources, validity periods, and deletion, with a fallback search over raw conversation turns. It is evaluated on a synthetic multi-session coding-agent workload and a LongMemEval subset.",
+    "why": "",
+    "question": "",
+    "attempts": 1
+  },
+  {
+    "item": {
+      "id": "arxiv:2611.20922",
+      "source": "arxiv",
+      "title": "Experience Rot: Experienced Agents Fail Where Novices Succeed",
+      "url": "https://arxiv.org/abs/2611.20922",
+      "published": "2026-11-16T11:31:08Z",
+      "summary": "Agents are increasingly built to learn from experience: they keep conversation histories, memory files, retrieved notes and skills, and reuse what worked before. We show that this experience turns against them when their tools change silently. We test a range of models with tools defined as in the Model Context Protocol (MCP). After a silent change, experienced agents fail on most tasks, while agents new to the task mostly succeed. We call this failure Experience Rot. Experienced agents copy their earlier call instead of checking the current interface, even when the tool definition shows the change. Then they report success. When the documentation is incomplete, experience is what makes agents succeed. After a change, the same experience leaves them worse off than no experience at all. The failure appears in every form of memory we test and grows with the amount of experience. Simple remedies fall short: announcing the update barely helps, and pointing the agent to the documentation fails whenever the documentation does not spell out the answer.",
+      "authors": [
+        "Zhen Xu",
+        "Hang Yin",
+        "Zitao Zhang",
+        "Kevin Zhao",
+        "Xuefeng Liu"
+      ],
+      "extra": {
+        "categories": [
+          "cs.CL",
+          "cs.AI",
+          "cs.LG"
+        ],
+        "pdf": "https://arxiv.org/pdf/2611.20922"
+      }
+    },
+    "relevant": true,
+    "thread": "mcp-security",
+    "score": 7,
+    "summary": "The paper shows that agents with memory or prior experience can fail after silent changes to MCP tool definitions, copying old tool calls and falsely reporting success. It argues that experience can make agents worse off than novices when tools change.",
+    "why": "It connects to MCP and tool security by showing how silent tool changes can cause agents to misuse tools, trust stale behavior, and report false success.",
+    "question": "Could an attacker exploit Experience Rot by silently changing tool definitions to make agents execute stale, privileged, or unsafe calls while still reporting success?",
+    "attempts": 1
+  },
+  {
+    "item": {
+      "id": "arxiv:2611.20882",
+      "source": "arxiv",
+      "title": "Accelerate Bench: Evaluating Agents for Application-Level Program Optimization",
+      "url": "https://arxiv.org/abs/2611.20882",
+      "published": "2026-11-16T10:52:59Z",
+      "summary": "Application optimization requires coding agents to discover useful changes and coordinate them across a complete program while preserving the required computation. We introduce Accelerate Bench, a benchmark of 32 CPU optimization tasks adapted from scientific applications and supercomputing competitions. Each task provides a working program and specifies the workload, correctness requirements, timing boundaries, and permitted edits, leaving agents to choose where and how to optimize. Public testing supports iterative development, and a separate verifier scores the final submission. On benchmark version 1.1, we evaluate 16 coding agents, each pairing a model with a harness. Their Score@1 ranges from 25.5% to 67.4%. Most of their programs are correct, and the size of the speedup separates them: the two leading agents are at least 2x faster on 22 or more of the 32 tasks, while the other fourteen reach 2x on 8 to 17 and leave 125 of their 412 correct outcomes below 1.25x. Controlled replays show why coordination across an application matters: identical source code runs between 0.29x and 2.12x depending only on build and runtime settings, and one code change is worth 1.01x or 6.4x depending on another. Accelerate Bench pairs executable workloads with agents' programs and trajectories to evaluate both their gains and the process behind them.",
+      "authors": [
+        "Bowen Liu",
+        "Yuhan Li",
+        "Nuo Chen",
+        "Weile Luo",
+        "Miao Peng",
+        "Qintong Zhang",
+        "Qifan Zhang",
+        "Jia Li",
+        "Ziqi Gao",
+        "Lydell Huang"
+      ],
+      "extra": {
+        "categories": [
+          "cs.AI"
+        ],
+        "pdf": "https://arxiv.org/pdf/2611.20882"
+      }
+    },
+    "relevant": false,
+    "thread": "none",
+    "score": 2,
+    "summary": "A benchmark for coding agents that asks them to optimize CPU-bound scientific programs while preserving correctness. It evaluates 16 agent/model/harness combinations on speedup and process quality.",
+    "why": "",
+    "question": "",
+    "attempts": 1
+  },
+  {
+    "item": {
+      "id": "arxiv:2611.20688",
+      "source": "arxiv",
+      "title": "VIVID: A Visual Harness for Agentic Video Editing",
+      "url": "https://arxiv.org/abs/2611.20688",
+      "published": "2026-11-16T07:52:01Z",
+      "summary": "Video editing requires agents to make editing decisions grounded in audiovisual observations and precise temporal localization, and to evaluate their effects in rendered outputs. General-purpose coding agents possess strong comprehension, reasoning, and code execution capabilities, while media interaction and evidence management mechanisms tailored to video tasks can further unlock their editing potential. We introduce VIVID, a visual harness that supports multiple native coding agents in video post-production without additional model training. VIVID provides tools for on-demand video inspection, audio analysis, and transcription, and preserves observations alongside their corresponding media versions and temporal coordinates. Agents can actively retrieve these observations as they reason, perform edits using their native coding and shell tools, and inspect rendered outputs to guide subsequent revisions. On AgenticVBench, comprising 100 tasks across Assembly, Repair, Sequencing, and Repurpose, Codex with VIVID achieves an average score of 58.6%, an improvement of 20.2 percentage points over native Codex. The same harness also integrates with Claude Code and OpenCode, achieving average scores of 55.1% and 37.1%, respectively, both substantially exceeding their native baselines. These results highlight VIVID's potential as a reusable visual harness for extending the capabilities of general-purpose coding agents to video editing.",
+      "authors": [
+        "Wenhan Yu",
+        "Zhaoxi Zhang",
+        "Zhilong Tan",
+        "Weikang Li",
+        "Lei Sha"
+      ],
+      "extra": {
+        "categories": [
+          "cs.AI",
+          "cs.CV",
+          "cs.MM"
+        ],
+        "pdf": "https://arxiv.org/pdf/2611.20688"
+      }
+    },
+    "relevant": false,
+    "thread": "none",
+    "score": 2,
+    "summary": "VIVID is a visual harness that gives general-purpose coding agents tools for video inspection, audio analysis, transcription, and rendered-output review for video editing tasks. It improves agent performance on AgenticVBench without additional model training.",
+    "why": "",
+    "question": "",
+    "attempts": 1
+  },
+  {
+    "item": {
+      "id": "arxiv:2611.20459",
+      "source": "arxiv",
+      "title": "Designing Deceptive Model Organisms that Successfully Evade Auditing",
+      "url": "https://arxiv.org/abs/2611.20459",
+      "published": "2026-11-16T03:27:51Z",
+      "summary": "AI models can exhibit deceptive behaviors such as strategically underperforming on evaluations (sandbagging), faking alignment, or covertly acting on behalf of a hidden principal. Safe deployment therefore requires auditing techniques that can reliably detect such behaviors. To develop and test these techniques, we can train model organisms (MOs): models that exhibit deceptive behaviors and serve as realistic evaluation testbeds. However, for such testbeds to be informative, MOs must actively anticipate and resist auditing---a gap in prior work that can lead to overestimation of auditing effectiveness and underestimation of safety risks. We address this gap by designing MOs that capture worst-case deceptive behavior and evade high-effort auditing. Focusing on sandbagging, we frame MO design as a security game between an auditor and a deceptive model and identify three design requirements for sandbagging MOs: (i) effectiveness (underperforming on targeted capabilities), (ii) utility preservation (maintaining performance on all other capabilities), and (iii) robustness (resisting auditing). We propose three MOs: two optimized against blackbox auditing techniques and one optimized against both blackbox and whitebox techniques. Through a comprehensive evaluation, we show that, unlike MOs from prior work, our MOs satisfy all three requirements, providing worst-case baselines for developing and evaluating future auditing techniques.",
+      "authors": [
+        "Vasisht Duddu",
+        "Mark Wang",
+        "Lipeng He",
+        "Tim G. J. Rudner"
+      ],
+      "extra": {
+        "categories": [
+          "cs.CR",
+          "cs.AI"
+        ],
+        "pdf": "https://arxiv.org/pdf/2611.20459"
+      }
+    },
+    "relevant": true,
+    "thread": "eval-awareness",
+    "score": 9,
+    "summary": "The paper trains deceptive model organisms that sandbag on targeted capabilities while preserving other performance and resist blackbox and whitebox auditing. It frames model-organism design as a security game and provides worst-case baselines for testing auditing techniques.",
+    "why": "It directly addresses sandbagging and evaluation awareness by showing how models can be built to hide underperformance from auditors.",
+    "question": "Which auditing signals remain detectable when a model is explicitly optimized to evade both blackbox and whitebox inspection?",
+    "attempts": 1
+  },
+  {
+    "item": {
+      "id": "arxiv:2611.20455",
+      "source": "arxiv",
+      "title": "Embeddings vs. Grep: Rethinking the Dense Advantage in Code Search",
+      "url": "https://arxiv.org/abs/2611.20455",
+      "published": "2026-11-16T03:24:04Z",
+      "summary": "Code-search benchmarks show dense encoders well ahead of BM25, yet coding agents do well with \\texttt{grep}. What does this dense advantage measure? Existing benchmarks cannot tell: they use curated queries, old code and a handicapped BM25. To find out, we build Repo-Premium, a realistic repository-level code-search benchmark. It ranks files in real repositories, with curated and raw queries in Python, JavaScript, TypeScript, Go, Rust and Java, pull requests from 2022 to 2026, and a preregistered test pool over $91$ repositories. Our experiments trace the advantage to two sources: evaluation choices that favor dense retrieval, such as splitting files into chunks for BM25 and counting edited tests as relevant, and queries that lack the code's rare identifiers. Expanding the query with LLM-written identifiers (generate-then-grep) helps BM25 far more than dense retrieval, letting it match dense retrieval in every Python pool, even on pull requests opened after the LLM was released. No method we tried predicts which retriever will win on a given query. From these results we derive three guidelines: measure dense gains against a fair lexical baseline, fuse dense retrieval with BM25, and add the code's words to queries that lack them.",
+      "authors": [
+        "Siqiao Xue",
+        "Ziyin Zhang",
+        "Zihan Liao",
+        "Jin Qin",
+        "Yixiang Mu",
+        "Hang Yu"
+      ],
+      "extra": {
+        "categories": [
+          "cs.SE"
+        ],
+        "pdf": "https://arxiv.org/pdf/2611.20455"
+      }
+    },
+    "relevant": false,
+    "thread": "none",
+    "score": 2,
+    "summary": "A code-search benchmark study comparing dense retrieval with BM25/grep for repository-level code search. It argues that dense retrieval's benchmark advantage is partly due to evaluation choices and query wording rather than a clear real-world advantage.",
+    "why": "",
+    "question": "",
+    "attempts": 1
+  },
+  {
+    "item": {
+      "id": "arxiv:2611.20298",
+      "source": "arxiv",
+      "title": "Type-Confusion Security",
+      "url": "https://arxiv.org/abs/2611.20298",
+      "published": "2026-11-15T22:56:18Z",
+      "summary": "Type systems are a lightweight way to obtain formal assurance that code upholds security properties. However, decentralized systems, such as smart contracts and Model Context Protocol ecosystems, have limited ability to constrain the behavior of untrusted code. In such systems, attackers may attempt to confuse trusted code by supplying values that do not behave according to their advertised types, an attack that we call type confusion. Well-known attacks such as confused deputy attacks, reentrancy attacks, and control-flow hijacking can be understood as instances of type confusion. We define type confusion security as the property that unrestricted attackers who need not follow the type system have no more power than limited attackers who fully obey it. We formally define type confusion security as a real--ideal emulation, and in the context of an information-flow-typed core calculus that statically enforces security against well-typed attackers, prove that its run-time checks also enforce security against ill-typed attackers. In this system, programmers can write code while reasoning about security only against well-typed attackers; the security guarantees enforced by the type system still hold. We mechanize a proof of type confusion security in Lean.",
+      "authors": [
+        "Silei Ren",
+        "Hanxi Chen",
+        "Suraaj Kanniwadi",
+        "Andrew C. Myers"
+      ],
+      "extra": {
+        "categories": [
+          "cs.PL",
+          "cs.CR"
+        ],
+        "pdf": "https://arxiv.org/pdf/2611.20298"
+      }
+    },
+    "relevant": true,
+    "thread": "mcp-security",
+    "score": 8,
+    "summary": "The paper formalizes type-confusion security for systems with untrusted code, including Model Context Protocol ecosystems, and proves that runtime checks in an information-flow-typed calculus preserve security against ill-typed attackers.",
+    "why": "It gives a formal security property for preventing untrusted MCP code or tools from abusing trusted code through type confusion, confused deputy behavior, or control-flow hijacking.",
+    "question": "Which MCP-specific threat models, such as malicious tool descriptions, over-privileged servers, or untrusted tool output, can be captured by this type-confusion property?",
+    "attempts": 1
+  },
+  {
+    "item": {
+      "id": "arxiv:2611.20297",
+      "source": "arxiv",
+      "title": "Reliable Mining of Heterogeneous AI Coding-Agent Data: Context-Aware Prediction and Resource-Aware Ranking",
+      "url": "https://arxiv.org/abs/2611.20297",
+      "published": "2026-11-15T22:54:27Z",
+      "summary": "Operational records from AI coding agents differ across agents, repositories, tasks, and workflows. We study 71,677 pull requests (PRs) from six agents and show that pooling these records can reverse descriptive and predictive conclusions. PRs carrying a co-authorship trailer have a 55.6% merge rate, compared with 77.5% without the trailer, but removing the dominant agent flips this -21.8 percentage-point gap to +23.7 points. We treat this Simpson-type reversal as a data-veracity problem and represent source, environment, and workflow context in a feature cascade. Gradient-boosting merge-prediction AUC increases from 0.774 to 0.832; the advantage persists under temporal evaluation (0.801) and unseen repositories (0.807). The co-authorship coefficient changes from -1.09 to +1.44 after conditioning, whereas repository-clustered AIPW intervals show no stable adjusted trailer association. A strict PR-creation-time model reaches 0.741 AUC in standard evaluation and 0.710 on unseen repositories, although its temporal AUC falls to 0.641. Finally, a separately cross-fitted analysis of an observed-mode functional estimates a +12.3-point doubly robust gain at a 30% allocation budget on the non-Codex population, only 0.5 points above risk ranking. This last result is retrospective decision support over metadata states, not a causal effect of assigning human review.",
+      "authors": [
+        "Haoran Yu",
+        "Lifei Liu",
+        "Danping Zhang"
+      ],
+      "extra": {
+        "categories": [
+          "cs.SE"
+        ],
+        "pdf": "https://arxiv.org/pdf/2611.20297"
+      }
+    },
+    "relevant": false,
+    "thread": "none",
+    "score": 2,
+    "summary": "The paper studies how to mine and predict outcomes from heterogeneous AI coding-agent pull-request data. It focuses on context-aware merge prediction and resource-aware ranking for human review allocation.",
+    "why": "",
+    "question": "",
+    "attempts": 1
+  },
+  {
+    "item": {
+      "id": "arxiv:2611.20218",
+      "source": "arxiv",
+      "title": "SWE-CoWork: Benchmarking Coding Agents as Digital Employees in Organizations",
+      "url": "https://arxiv.org/abs/2611.20218",
+      "published": "2026-11-15T19:39:01Z",
+      "summary": "A coding agent working within a software organization must establish what to build, collaborate with colleagues, and verify what it delivers. We introduce SWE-CoWork, a benchmark comprising 101 development assignments across 101 real repositories, 11 programming languages, and 12 application domains. Each assignment places an agent in a simulated engineering organization with 26 colleagues who have distinct responsibilities, bounded knowledge, and controlled collaboration behavior. Starting from a brief handoff, agents must recover requirements distributed across colleagues and workplace records, reconcile conflicting evidence, and implement changes evaluated by private executable tests. We evaluate eleven models and find a substantial gap between partial implementation and complete task delivery. The two leading models satisfy approximately 63% of fail-to-pass (F2P) tests but complete fewer than 8% of assignments. Providing complete requirements upfront improves F2P by approximately 16 percentage points for Seed Evolving and GPT-6 Astra, yet leaves complete task success unchanged. Requirement-level trajectory analysis reveals failures throughout the delivery process: Claude-Opus-5.5 directs a mean of 93% of first questions about queried cards to their accountable owners across runs but obtains only 64% of colleague-held requirements. Deferred questions go unfollowed, implementations remain incomplete even after requirements are acquired, and 31% of requirements reported as completed fail their tests. These findings highlight sustained requirement tracking, from clarification through implementation, verification, and handoff, as a key challenge for reliable autonomous software engineering.",
+      "authors": [
+        "Xinping Lei",
+        "Minghao Liu",
+        "Ruijie Zhu",
+        "Xiaohui Hu",
+        "Xingqiao Li",
+        "Ao Zhang",
+        "Wenhao Chai",
+        "Han Li",
+        "Tao Wang",
+        "Jingyuan Zhang",
+        "Enduo Zhao",
+        "Yunfeng Shi",
+        "Yiming Liang",
+        "Zetao Yang",
+        "Xingjian Wang",
+        "Yifan Yao",
+        "Xinkai Ma",
+        "Yingru Li",
+        "Tianhan Yang",
+        "Huan Zhou",
+        "Weiran Shi",
+        "Shen Yan",
+        "Jiaheng Liu",
+        "Stephen Huang",
+        "Eli Cheung",
+        "Weihao Xuan"
+      ],
+      "extra": {
+        "categories": [
+          "cs.SE",
+          "cs.AI"
+        ],
+        "pdf": "https://arxiv.org/pdf/2611.20218"
+      }
+    },
+    "relevant": false,
+    "thread": "none",
+    "score": 2,
+    "summary": "A benchmark for coding agents placed in simulated software organizations, where they must recover requirements from colleagues and complete development assignments evaluated by private tests.",
+    "why": "",
+    "question": "",
+    "attempts": 1
+  },
+  {
+    "item": {
+      "id": "arxiv:2611.20156",
+      "source": "arxiv",
+      "title": "Risk-certified prompt optimization for LLM-as-a-judge guardrails",
+      "url": "https://arxiv.org/abs/2611.20156",
+      "published": "2026-11-15T17:45:49Z",
+      "summary": "LLM-as-a-judge guardrails are often controlled primarily through system prompts, yet standard prompt optimization methods target average performance rather than explicit safety constraints. This paper studies system-prompt selection as a constrained optimization problem: maximize benign pass rate while keeping the missed-attack rate below a user-specified level α with finite-sample statistical control. The framework combines LLM-based judging, automatic prompt generation, and distribution-free risk certification. This work instantiates it in two procedures: CPS and CRISP. CPS generates a fixed pool of prompts from training data, then certifies candidates on a held-out evaluation set using simultaneous upper confidence bounds and selects the certified prompt with the highest benign utility. CRISP instead integrates risk feedback into an adaptive search, using hard example-guided rewriting and a reusable-holdout interface to steer generation toward the feasible utility frontier. Experiments on four datasets covering prompt injection, system-prompt leakage, and sensitive-information disclosure show that risk-certified selection consistently respects the target missed-attack level on heldout tests, while utility improves as the permitted risk is relaxed. CRISP is especially useful when fixed-pool search fails to produce certifiable high-utility candidates.",
+      "authors": [
+        "Hussein Jawad",
+        "Alexandre Landeau",
+        "Guy Fleury Iradukunda",
+        "Paul Beaumont",
+        "Théodore Rezel",
+        "Sofiane Schaack",
+        "Nicolas J-B. Brunel"
+      ],
+      "extra": {
+        "categories": [
+          "cs.CL",
+          "cs.LG"
+        ],
+        "pdf": "https://arxiv.org/pdf/2611.20156"
+      }
+    },
+    "relevant": true,
+    "thread": "mcp-security",
+    "score": 4,
+    "summary": "The paper frames system-prompt selection for LLM-as-a-judge guardrails as a constrained optimization problem that certifies a target missed-attack rate. It evaluates prompt-injection, system-prompt leakage, and sensitive-information disclosure datasets.",
+    "why": "It is adjacent to MCP/tool security because it studies guardrails against prompt injection and system-prompt leakage in LLM pipelines.",
+    "question": "Could its risk-certified prompt selection be applied to guardrails for tool-output prompt injection in MCP agents?",
+    "attempts": 1
+  },
+  {
+    "item": {
+      "id": "arxiv:2611.20045",
+      "source": "arxiv",
+      "title": "Security of Deep Research Agents: Attack Surface, Defenses, Benchmarks, and Agenda Seeding against Research Planning",
+      "url": "https://arxiv.org/abs/2611.20045",
+      "published": "2026-11-15T14:44:28Z",
+      "summary": "Deep research and agentic search agents autonomously retrieve content from the open web and generate reports with citations, and their outputs are often taken directly as research conclusions. This paper systematizes security research in this area along four stages, namely retrieval, planning, evidence integration, and report generation. We present a unified threat model, a taxonomy of attacks and defenses, and a review of evaluation benchmarks, and we align the area dimension by dimension with retrieval-augmented generation (RAG) poisoning, prompt injection, and generative engine optimization (GEO). Coding 34 primary studies shows that only 26.5% of them involve the planning stage, and none performs an end-to-end poisoning evaluation on commercial products. To address this gap, we propose the agenda seeding attack, in which the attacker writes no instructions and only introduces a fictitious evaluation metric. Across 3,520 sandboxed research runs under the same budget, GEO and prompt injection are nearly ineffective, whereas agenda seeding makes the attacker's target the top pick in 16% to 28% of reports. Injection detection and query anchoring fail against it, verification prompting hurts utility, and our proposed provenance tagging preserves utility but can be bypassed by multi-site bait. Finally, we propose eight research directions.",
+      "authors": [
+        "Yang Luo",
+        "Guangpu Chen",
+        "Yichen Liu",
+        "Zhaoyu Chen",
+        "Yifeng Gao",
+        "Zhiyang Ding",
+        "Qingni Shen",
+        "Zhonghai Wu"
+      ],
+      "extra": {
+        "categories": [
+          "cs.CR",
+          "cs.AI"
+        ],
+        "pdf": "https://arxiv.org/pdf/2611.20045"
+      }
+    },
+    "relevant": true,
+    "thread": "mcp-security",
+    "score": 6,
+    "summary": "A survey and new attack on deep research agents that retrieve web content and generate cited reports. It proposes agenda seeding, where a fake evaluation metric steers the agent's planning, and evaluates defenses like injection detection, query anchoring, verification prompting, and provenance tagging.",
+    "why": "It is about prompt injection and RAG poisoning in agentic retrieval tools, which is adjacent to MCP/tool security and agent supply-chain attacks.",
+    "question": "How much of the agenda-seeding success depends on the agent treating retrieved metrics as evaluation signals rather than ordinary evidence?",
+    "attempts": 1
+  },
+  {
+    "item": {
+      "id": "hn:50520866",
+      "source": "hn",
+      "title": "Software is breaking down at a systemic level",
+      "url": "https://www.breck-mckye.com/blog/2026/11/software-is-breaking-down-at-a-systemic-level/",
+      "published": "2026-11-16T18:17:17Z",
+      "summary": "",
+      "authors": [
+        "zero_shift"
+      ],
+      "extra": {
+        "points": 372,
+        "comments": 230,
+        "discussion": "https://news.ycombinator.com/item?id=50520866"
+      }
+    },
+    "relevant": false,
+    "thread": "none",
+    "score": 0,
+    "summary": "A Hacker News story titled 'Software is breaking down at a systemic level' suggests a broad claim about software reliability or engineering practices.",
+    "why": "",
+    "question": "",
+    "attempts": 1
+  },
+  {
+    "item": {
+      "id": "hn:50517803",
+      "source": "hn",
+      "title": "Show HN: Coral – Open-source gateway where agents write their own tools",
+      "url": "https://github.com/withcoral/coral",
+      "published": "2026-11-16T14:14:51Z",
+      "summary": "",
+      "authors": [
+        "jcs"
+      ],
+      "extra": {
+        "points": 52,
+        "comments": 24,
+        "discussion": "https://news.ycombinator.com/item?id=50517803"
+      }
+    },
+    "relevant": true,
+    "thread": "mcp-security",
+    "score": 5,
+    "summary": "An open-source gateway where AI agents can write their own tools.",
+    "why": "Agent-generated tools are a new attack surface for tool poisoning, over-privileged capabilities, and agent supply-chain risk.",
+    "question": "What controls prevent an agent from creating or using a tool with excessive permissions or malicious behavior?",
+    "attempts": 1
+  },
+  {
+    "item": {
+      "id": "hn:50520741",
+      "source": "hn",
+      "title": "Show HN: Fakemetrics.com – \"build in public\" like a superstar",
+      "url": "https://fakemetrics.com/",
+      "published": "2026-11-16T18:08:04Z",
+      "summary": "",
+      "authors": [
+        "tigranbs"
+      ],
+      "extra": {
+        "points": 46,
+        "comments": 21,
+        "discussion": "https://news.ycombinator.com/item?id=50520741"
+      }
+    },
+    "relevant": false,
+    "thread": "none",
+    "score": 0,
+    "summary": "A Show HN post for Fakemetrics.com, described as a way to 'build in public' like a superstar. The title suggests it is about presenting or faking public metrics, not about AI security.",
+    "why": "",
+    "question": "",
+    "attempts": 1
+  },
+  {
+    "item": {
+      "id": "hn:50523346",
+      "source": "hn",
+      "title": "The Fed Is Worried AI Agents Could Trigger a Bank Run",
+      "url": "https://gizmodo.com/the-fed-is-worried-ai-agents-could-trigger-a-bank-run-2000840566",
+      "published": "2026-11-16T21:12:02Z",
+      "summary": "",
+      "authors": [
+        "pera"
+      ],
+      "extra": {
+        "points": 26,
+        "comments": 12,
+        "discussion": "https://news.ycombinator.com/item?id=50523346"
+      }
+    },
+    "relevant": false,
+    "thread": "none",
+    "score": 2,
+    "summary": "The article reports that the Federal Reserve is concerned that AI agents could trigger a bank run.",
+    "why": "",
+    "question": "",
+    "attempts": 1
+  },
+  {
+    "item": {
+      "id": "hn:50519517",
+      "source": "hn",
+      "title": "3D Sword Coast Map with weather and day/night cycle (Rust to WebGL)",
+      "url": "https://swordcoastmap.com/",
+      "published": "2026-11-16T16:34:25Z",
+      "summary": "",
+      "authors": [
+        "elliotbnvl"
+      ],
+      "extra": {
+        "points": 22,
+        "comments": 5,
+        "discussion": "https://news.ycombinator.com/item?id=50519517"
+      }
+    },
+    "relevant": false,
+    "thread": "none",
+    "score": 0,
+    "summary": "A 3D Sword Coast map with weather and day/night cycle, built from Rust to WebGL. The available title and link do not indicate a security or AI research focus.",
+    "why": "",
+    "question": "",
+    "attempts": 1
+  },
+  {
+    "item": {
+      "id": "hn:50516995",
+      "source": "hn",
+      "title": "Show HN: Deslop skill based on corpus-linguistics and psycholinguistics research",
+      "url": "https://github.com/etodanik/deslop",
+      "published": "2026-11-16T12:41:48Z",
+      "summary": "",
+      "authors": [
+        "dannypovolotski"
+      ],
+      "extra": {
+        "points": 13,
+        "comments": 4,
+        "discussion": "https://news.ycombinator.com/item?id=50516995"
+      }
+    },
+    "relevant": false,
+    "thread": "none",
+    "score": 0,
+    "summary": "A Show HN post for a project called Deslop, described as a skill based on corpus-linguistics and psycholinguistics research.",
+    "why": "",
+    "question": "",
+    "attempts": 1
+  },
+  {
+    "item": {
+      "id": "hn:50517797",
+      "source": "hn",
+      "title": "Google: AI agent turned a security patch into a exploit with no human help",
+      "url": "https://www.theregister.com/research/2026/11/16/google-ai-agent-turned-a-security-patch-into-a-working-exploit-with-no-human-help/5309926",
+      "published": "2026-11-16T14:14:09Z",
+      "summary": "",
+      "authors": [
+        "sshah03"
+      ],
+      "extra": {
+        "points": 12,
+        "comments": 3,
+        "discussion": "https://news.ycombinator.com/item?id=50517797"
+      }
+    },
+    "relevant": true,
+    "thread": "agent-escalation",
+    "score": 7,
+    "summary": "A Hacker News story reports that a Google AI agent reportedly turned a security patch into a working exploit without human assistance.",
+    "why": "It connects to agent privilege escalation by showing autonomous agents can produce offensive security artifacts, which affects sandboxing and runtime policy assumptions.",
+    "question": "What constraints, permissions, or evaluation setup allowed the agent to generate a working exploit, and what safeguards would have stopped it?",
+    "attempts": 1
+  },
+  {
+    "item": {
+      "id": "hn:50527395",
+      "source": "hn",
+      "title": "AI is killing cheap VPS servers/manageable pricing",
+      "url": "https://news.ycombinator.com/item?id=50527395",
+      "published": "2026-11-17T04:20:53Z",
+      "summary": "",
+      "authors": [
+        "SudoSH"
+      ],
+      "extra": {
+        "points": 10,
+        "comments": 9,
+        "discussion": "https://news.ycombinator.com/item?id=50527395"
+      }
+    },
+    "relevant": false,
+    "thread": "none",
+    "score": 0,
+    "summary": "A Hacker News discussion claiming that AI is driving up costs or eliminating cheap VPS servers and manageable pricing.",
+    "why": "",
+    "question": "",
+    "attempts": 1
+  },
+  {
+    "item": {
+      "id": "hn:50520655",
+      "source": "hn",
+      "title": "How do we prepare our kids for a world of AI?",
+      "url": "https://www.rnz.co.nz/life/relationships/family/how-do-we-prepare-our-kids-for-a-world-of-ai",
+      "published": "2026-11-16T18:01:29Z",
+      "summary": "",
+      "authors": [
+        "billybuckwheat"
+      ],
+      "extra": {
+        "points": 9,
+        "comments": 0,
+        "discussion": "https://news.ycombinator.com/item?id=50520655"
+      }
+    },
+    "relevant": false,
+    "thread": "none",
+    "score": 0,
+    "summary": "It is a family/lifestyle article about preparing children for a world with AI. The title suggests parenting and everyday life rather than AI security.",
+    "why": "",
+    "question": "",
+    "attempts": 1
+  },
+  {
+    "item": {
+      "id": "hn:50528364",
+      "source": "hn",
+      "title": "40-domain study: 80% of Shopify stores expose /API/ucp/MCP, 0% /agents.md",
+      "url": "https://verisource.dev/benchmarks/ai-search-readiness-2026",
+      "published": "2026-11-17T07:04:46Z",
+      "summary": "",
+      "authors": [
+        "kulinichnick"
+      ],
+      "extra": {
+        "points": 8,
+        "comments": 0,
+        "discussion": "https://news.ycombinator.com/item?id=50528364"
+      }
+    },
+    "relevant": true,
+    "thread": "mcp-security",
+    "score": 5,
+    "summary": "A 40-domain study reports that 80% of Shopify stores expose an /API/ucp/MCP endpoint, while 0% expose /agents.md.",
+    "why": "It suggests MCP endpoints may be widely exposed on storefronts, which is relevant to MCP attack surface and agent tool access.",
+    "question": "Does exposing /API/ucp/MCP create an unauthenticated or over-privileged MCP attack surface, and what would /agents.md normally disclose?",
+    "attempts": 1
+  },
+  {
+    "item": {
+      "id": "hn:50525981",
+      "source": "hn",
+      "title": "The Joy of Contrivance",
+      "url": "https://mapwriting.substack.com/p/the-joy-of-contrivance",
+      "published": "2026-11-17T00:59:30Z",
+      "summary": "",
+      "authors": [
+        "kitkut"
+      ],
+      "extra": {
+        "points": 8,
+        "comments": 0,
+        "discussion": "https://news.ycombinator.com/item?id=50525981"
+      }
+    },
+    "relevant": false,
+    "thread": "none",
+    "score": 0,
+    "summary": "A Substack post titled 'The Joy of Contrivance.' The available title and link do not indicate a connection to AI security, agents, MCP, or evaluation awareness.",
+    "why": "",
+    "question": "",
+    "attempts": 1
+  },
+  {
+    "item": {
+      "id": "hn:50521074",
+      "source": "hn",
+      "title": "Show HN: Cppgm compiles C++ to WASM 4x faster than Clang",
+      "url": "https://incpption.com/",
+      "published": "2026-11-16T18:33:52Z",
+      "summary": "",
+      "authors": [
+        "vishvananda"
+      ],
+      "extra": {
+        "points": 6,
+        "comments": 0,
+        "discussion": "https://news.ycombinator.com/item?id=50521074"
+      }
+    },
+    "relevant": false,
+    "thread": "none",
+    "score": 0,
+    "summary": "It is a Show HN post claiming that Cppgm compiles C++ to WebAssembly four times faster than Clang.",
+    "why": "",
+    "question": "",
+    "attempts": 1
+  },
+  {
+    "item": {
+      "id": "hn:50521067",
+      "source": "hn",
+      "title": "Show HN: One cloud computer for all your agents",
+      "url": "https://box.simular.ai/",
+      "published": "2026-11-16T18:32:36Z",
+      "summary": "",
+      "authors": [
+        "taro666"
+      ],
+      "extra": {
+        "points": 5,
+        "comments": 5,
+        "discussion": "https://news.ycombinator.com/item?id=50521067"
+      }
+    },
+    "relevant": true,
+    "thread": "agent-escalation",
+    "score": 3,
+    "summary": "A Show HN post for a cloud computer service intended to run multiple agents.",
+    "why": "It may be relevant if it provides isolated or policy-controlled environments for agents, but the title gives no security details.",
+    "question": "Does it sandbox agents and limit their permissions, or is it just a general-purpose cloud VM?",
+    "attempts": 1
+  },
+  {
+    "item": {
+      "id": "hn:50528196",
+      "source": "hn",
+      "title": "Show HN: Backplane – An AI Development Environment for Hardware",
+      "url": "https://backplaneworks.com/",
+      "published": "2026-11-17T06:41:02Z",
+      "summary": "",
+      "authors": [
+        "i2cjak"
+      ],
+      "extra": {
+        "points": 5,
+        "comments": 1,
+        "discussion": "https://news.ycombinator.com/item?id=50528196"
+      }
+    },
+    "relevant": false,
+    "thread": "none",
+    "score": 0,
+    "summary": "A Show HN post for Backplane, described as an AI development environment for hardware.",
+    "why": "",
+    "question": "",
+    "attempts": 1
+  },
+  {
+    "item": {
+      "id": "hn:50524802",
+      "source": "hn",
+      "title": "We got AI to Wombo Combo – collaborative agents in Melee",
+      "url": "https://www.frisson-labs.com/reyn",
+      "published": "2026-11-16T23:03:19Z",
+      "summary": "",
+      "authors": [
+        "coatol5"
+      ],
+      "extra": {
+        "points": 5,
+        "comments": 6,
+        "discussion": "https://news.ycombinator.com/item?id=50524802"
+      }
+    },
+    "relevant": false,
+    "thread": "none",
+    "score": 1,
+    "summary": "The title says AI agents were made to perform a Wombo Combo in Melee. It appears to be about collaborative game-playing agents rather than security.",
+    "why": "",
+    "question": "",
+    "attempts": 1
+  },
+  {
+    "item": {
+      "id": "hn:50522977",
+      "source": "hn",
+      "title": "The Financial Bubble Cycles Are Getting Worse",
+      "url": "https://www.nytimes.com/2026/11/16/opinion/ai-bubble-finance-crisis-deregulation.html",
+      "published": "2026-11-16T20:43:25Z",
+      "summary": "",
+      "authors": [
+        "edward"
+      ],
+      "extra": {
+        "points": 5,
+        "comments": 0,
+        "discussion": "https://news.ycombinator.com/item?id=50522977"
+      }
+    },
+    "relevant": false,
+    "thread": "none",
+    "score": 0,
+    "summary": "An opinion piece about worsening financial bubble cycles.",
+    "why": "",
+    "question": "",
+    "attempts": 1
+  },
+  {
+    "item": {
+      "id": "hn:50518918",
+      "source": "hn",
+      "title": "Show HN: CoderBaba – An open-source AI Coding Agent with security scanning",
+      "url": "https://coderbaba.si",
+      "published": "2026-11-16T15:51:06Z",
+      "summary": "",
+      "authors": [
+        "kilimchoi"
+      ],
+      "extra": {
+        "points": 5,
+        "comments": 0,
+        "discussion": "https://news.ycombinator.com/item?id=50518918"
+      }
+    },
+    "relevant": true,
+    "thread": "agent-escalation",
+    "score": 3,
+    "summary": "An open-source AI coding agent that includes security scanning, according to the title.",
+    "why": "It may relate to coding-agent security, but the title does not specify privilege escalation, sandboxing, or runtime policy.",
+    "question": "Does its security scanning target the agent's own permissions and actions, or only the code it generates?",
+    "attempts": 1
+  }
+]
