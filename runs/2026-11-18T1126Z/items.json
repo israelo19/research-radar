@@ -1,0 +1,853 @@
+[
+  {
+    "item": {
+      "id": "arxiv:2611.23203",
+      "source": "arxiv",
+      "title": "Identifying and Repairing Energy Smells with Agent Skills",
+      "url": "https://arxiv.org/abs/2611.23203",
+      "published": "2026-11-17T18:45:42Z",
+      "summary": "Energy smells are inefficient implementations that waste energy. Once code reaches production, these smells become costlier and riskier to fix, so energy efficiency checks should shift left, i.e., move earlier in the development lifecycle, to where code is written. Existing energy smell tools rely on fixed static rules and do not measure energy savings, whereas LLM-based optimizers mostly target execution time and rarely ground their changes in concrete smell definitions. To address both limitations, we present DR. GREENS, an agent skill that detects and repairs energy smells in Python code within the developer's coding environment. The skill grounds the coding agent in our taxonomy of 12 energy smells and 65 root causes, augmented with repair guidance drawn from 230 measured cases. The skill also encapsulates a static analyzer and an independent verifier to confirm behavior preservation and energy saving for each attempted repair. We evaluated DR. GREENS in 18 sessions on three open-source repositories, with two models and three skill configurations. Of the 258 measured repairs, 68.6% saved energy, with a median saving of 24.9%. Compared with a baseline skill that lacks the taxonomy, the full skill found more energy smells with verified savings in all three repositories with both models. DR. GREENS helps developers detect energy hotspots and fix them reliably without altering program behavior, which makes energy-efficient development more feasible.",
+      "authors": [
+        "Mohammadjavad Mehditabar",
+        "Saurabhsingh Rajput",
+        "Tushar Sharma"
+      ],
+      "extra": {
+        "categories": [
+          "cs.SE"
+        ],
+        "pdf": "https://arxiv.org/pdf/2611.23203"
+      }
+    },
+    "relevant": false,
+    "thread": "none",
+    "score": 0,
+    "summary": "The paper presents DR. GREENS, an agent skill that detects and repairs energy-inefficient Python code using a taxonomy of energy smells, repair guidance, a static analyzer, and a verifier. It reports that many repairs preserved behavior while saving energy.",
+    "why": "",
+    "question": "",
+    "attempts": 1
+  },
+  {
+    "item": {
+      "id": "arxiv:2611.23174",
+      "source": "arxiv",
+      "title": "Inference after coding agents",
+      "url": "https://arxiv.org/abs/2611.23174",
+      "published": "2026-11-17T18:22:01Z",
+      "summary": "Empirical research is changing rapidly as AI coding agents are becoming increasingly proficient in every step of it, from writing code to manipulating data. We argue that while the potential of coding agents for science is vast, their use in hypothesis testing poses a substantial threat to classical inference, as these agents enable a supercharged form of selective inference. In particular, we argue that coding agents carrying out empirical research introduce a new type of post-selection inference that combines human-like, open-ended search over an implicit space of estimators with programmatic replayability of both the selection and the estimation process. Indeed, we find that on simulated data with zero effects, four frontier agents report significant p-values between 54% and 98% of the time when asked to produce a compelling finding. We propose a simple procedure for detecting and correcting these distortions. After an agent has completed its analysis, we reset and replay it on subsamples of the data to estimate the agent's relative probability of selecting that analysis when it looks statistically favorable. For agents with stable selection behavior, the resulting corrected test is asymptotically valid and consistent conditional on selection. Importantly, the correction is learned from the black-box agent's actual choices rather than a model of how it searches, so it remains valid even as AI technology continues to evolve rapidly. In simulations, the correction robustly lowers the high false rejection rates to near the nominal 5%. We illustrate the method on applications from two published papers.",
+      "authors": [
+        "Florian Gunsilius",
+        "David Van Dijcke",
+        "Kaspar Wüthrich"
+      ],
+      "extra": {
+        "categories": [
+          "stat.ME",
+          "cs.AI",
+          "econ.EM"
+        ],
+        "pdf": "https://arxiv.org/pdf/2611.23174"
+      }
+    },
+    "relevant": false,
+    "thread": "none",
+    "score": 2,
+    "summary": "The paper studies how AI coding agents can distort statistical inference by selectively searching for analyses that produce significant results. It proposes a replay-based correction to reduce false positives when agents are used for empirical research.",
+    "why": "",
+    "question": "",
+    "attempts": 1
+  },
+  {
+    "item": {
+      "id": "arxiv:2611.23067",
+      "source": "arxiv",
+      "title": "Values Shape What Self-Improving Coding Agents Build",
+      "url": "https://arxiv.org/abs/2611.23067",
+      "published": "2026-11-17T16:56:46Z",
+      "summary": "Self-improving agents are typically optimized for the results they produce, with less attention to how they produce them. Their instructions give designers limited ways to shape how they work, especially when the task is open-ended. This paper studies whether a short value statement in an agent's persistent instruction file changes not only how well the agent performs but also what it builds. Four higher-order value types in Schwartz's theory of basic human values were evaluated: openness to change, conservation, self-enhancement, and self-transcendence. Across diverse coding tasks, the values were held fixed within each run over multiple iterations of self-improvement. Three findings emerged: (1) Values matter for performance across a diverse set of tasks. The openness values increase performance on held-out data, whereas the opposite conservation values result in scores below those of an agent given no values. (2) Values change what agents build, producing solution algorithms that differ in size, complexity and approach. (3) Human oversight is still needed for designing values. Allowing the agent to revise its own values narrows the differences between sets of values, and values distilled from the AI literature provide no detectable gain over having no values. Properly designed values can thus influence what a self-improving coding agent builds and, where the task permits, how well it performs.",
+      "authors": [
+        "Jason Liang",
+        "Dylan Waldner",
+        "Risto Miikkulainen"
+      ],
+      "extra": {
+        "categories": [
+          "cs.AI",
+          "cs.MA"
+        ],
+        "pdf": "https://arxiv.org/pdf/2611.23067"
+      }
+    },
+    "relevant": false,
+    "thread": "none",
+    "score": 2,
+    "summary": "The paper studies how short value statements in a self-improving coding agent's persistent instructions affect its performance and the kinds of solutions it builds.",
+    "why": "",
+    "question": "",
+    "attempts": 1
+  },
+  {
+    "item": {
+      "id": "arxiv:2611.22967",
+      "source": "arxiv",
+      "title": "CodeReel: Accelerating Code-to-Video Agents with Exact Frame Reuse and Blocking-Aware Scheduling",
+      "url": "https://arxiv.org/abs/2611.22967",
+      "published": "2026-11-17T15:52:15Z",
+      "summary": "Coding agents make videos by writing and refining programs in a build--inspect--edit loop. A finished film costs a median of $2.85 in model calls and 11 minutes, over a third of that time in builds that block the agent. We find that much of this time is avoidable, for two reasons. First, 37.5% of the frames of a session's later films were drawn before, many shifted in time or inside an edited scene. Second, half of the builds stop at a check, where the agent needs only the verdict, but which builds stop is unknown until the checks finish. We present CodeReel, a training-free execution layer behind agents' existing commands. Exact frame reuse keys each frame by its drawing commands, regardless of its position in time, and reuses each frame whose key recurs. Blocking-aware scheduling runs the checks first and starts the render alongside them, at idle priority, unless the session's recent builds make a pass unlikely. Scheduling spends CPU to answer sooner and reuse returns it; exact keys let later versions use frames rendered for a failed one as the agent thinks. We introduce EditLoop, a benchmark of replayable agent sessions whose films are checked against renders from scratch. On it, CodeReel cuts the agent's wait by 36.3% against Rebuild, a warm pipeline with parallel rendering, and by 57.9% against Sequential, today's step-by-step pipeline. On time-shifting edits its reuse renders 43.9%, close to the 43.0% whose pixels are new, while Manim-style caching renders 99.8%. With real agents, the median wait per build is 0.62x Rebuild's in Claude Code, on topics never used in development, and 0.67x in Codex CLI. The gain holds for five models and two frameworks.",
+      "authors": [
+        "Junyi Shen",
+        "Yao Lu"
+      ],
+      "extra": {
+        "categories": [
+          "cs.MM",
+          "cs.AI",
+          "cs.CV",
+          "cs.DC"
+        ],
+        "pdf": "https://arxiv.org/pdf/2611.22967"
+      }
+    },
+    "relevant": false,
+    "thread": "none",
+    "score": 0,
+    "summary": "CodeReel is a training-free execution layer that speeds up code-to-video agents by reusing identical rendered frames and scheduling checks before rendering. It introduces EditLoop, a benchmark of replayable agent sessions for measuring these speedups.",
+    "why": "",
+    "question": "",
+    "attempts": 1
+  },
+  {
+    "item": {
+      "id": "arxiv:2611.22901",
+      "source": "arxiv",
+      "title": "Done, But Still Working: Anytime Evaluation of When Coding Agents Should Stop",
+      "url": "https://arxiv.org/abs/2611.22901",
+      "published": "2026-11-17T15:07:35Z",
+      "summary": "Coding agents often continue working after their own tests pass. Does this additional work improve the patch, and how much could be saved by stopping earlier? We study these questions through anytime evaluation: replaying recorded runs, scoring intermediate patches with hidden tests, and measuring the cost incurred at each step. For policies that only stop a run or select an earlier patch, this allows paired comparisons without generating new trajectories, provided replay preserves the relevant states. Across about 6,000 runs of eight open models in two scaffolds on SWE-bench Verified, we find substantial differences in the value of continued work. The hindsight saving available at passing self-tests ranges from under 1% to 57%, depending on the model and scaffold. A rule that stops after the same patch passes twice saves 23% in a preregistered replication, but the preregistered quality test does not establish non-inferiority. We explain these differences by measuring how often a rule fires, how often the patch changes afterwards, and whether those changes repair or break it. Fine-tuning agents to imitate the rule saves 30% over six seeds, while quality preservation remains uncertain. Our results help identify both the opportunities and the risks of early stopping.",
+      "authors": [
+        "Zerui Yang",
+        "Quan Xue",
+        "Miaomiao Dong",
+        "Chaorui Zhang",
+        "Xuanyu Zheng",
+        "Xiyuan Wang",
+        "Haolin Ruan",
+        "Xueyan Niu",
+        "Guangcheng Song",
+        "Weixi Zhang",
+        "Wei Han",
+        "Bo Bai"
+      ],
+      "extra": {
+        "categories": [
+          "cs.AI"
+        ],
+        "pdf": "https://arxiv.org/pdf/2611.22901"
+      }
+    },
+    "relevant": false,
+    "thread": "none",
+    "score": 3,
+    "summary": "The paper studies when coding agents should stop after their own tests pass, using anytime evaluation to compare intermediate patches and stopping rules on SWE-bench Verified.",
+    "why": "",
+    "question": "",
+    "attempts": 2
+  },
+  {
+    "item": {
+      "id": "arxiv:2611.22897",
+      "source": "arxiv",
+      "title": "Born for the Task: Rethinking Quantum Chemistry with Foresighted Agentic Computing",
+      "url": "https://arxiv.org/abs/2611.22897",
+      "published": "2026-11-17T15:05:38Z",
+      "summary": "Quantum chemistry relies on general-purpose software, whose generality leaves many large-scale calculations beyond practical resource budgets. Coding agents make task-specific programs cheap to write, but not efficient ones easy to find: whether a computational strategy is accurate and fast enough becomes clear only after it actually runs at the target scale. We introduce BORN, a foresighted agentic computing framework that synthesizes high performance quantum chemistry programs on demand. BORN anticipates the behavior of each strategy before execution, extrapolating its error from representative small systems and predicting its runtime from the target-scale workload and measured hardware throughputs. Building on these predictions, BORN unfolds the preset schemes of existing packages into independently configurable algorithmic components, selects the fastest strategy within the error tolerance from the predicted accuracy-runtime Pareto frontier, and guides coding agents to compile it with component-level performance predictions. For a Hartree-Fock calculation with 50,024 basis functions, BORN finishes in 1.41h on a single CPU node, 77$\\times$ faster than the estimated runtime of a general-purpose baseline and still 9.8$\\times$ faster with development time included. On a single GPU, BORN completes the ubiquitin calculation in 2.1,h, the same order of runtime as the GPU-accelerated package Mako on 64 GPUs, and shortens the B-DNA duplex calculation from an estimated two months to 8.1,h (173$\\times$).",
+      "authors": [
+        "Haozhi Han",
+        "Junjie Yang",
+        "Ruge Zhang",
+        "Zihe Huang",
+        "Pengyi Xu",
+        "Bo Zhang",
+        "Yunquan Zhang",
+        "Ting Cao",
+        "Yunxin Liu",
+        "Yifeng Chen",
+        "Kun Li"
+      ],
+      "extra": {
+        "categories": [
+          "cs.AI",
+          "physics.chem-ph"
+        ],
+        "pdf": "https://arxiv.org/pdf/2611.22897"
+      }
+    },
+    "relevant": false,
+    "thread": "none",
+    "score": 0,
+    "summary": "The paper introduces BORN, an agentic computing framework that uses coding agents to generate and optimize task-specific quantum chemistry programs. It predicts accuracy and runtime for different computational strategies to select fast, accurate configurations.",
+    "why": "",
+    "question": "",
+    "attempts": 1
+  },
+  {
+    "item": {
+      "id": "arxiv:2611.22835",
+      "source": "arxiv",
+      "title": "When Passing Checks Do Not Establish Completion: Evidence Interpretation in Coding Agents",
+      "url": "https://arxiv.org/abs/2611.22835",
+      "published": "2026-11-17T14:17:43Z",
+      "summary": "Verification procedures in coding agents must preserve execution facts, interpret their scope and discharge checking obligations. We study these responsibilities through qualified repository checks, controlled evidence consumers and executable workflows. A prospective thirteen-task factorial study finds that correct reported facts need not yield the requested finite verdict. Conversely, all 122 delivered labels in a held-out receipt-supply study are correct, while sixteen responses misreport facts and eleven others exceed authorized scope. Production repair supplies successful controls and finite-supported preservation failures. Across 118 repair episodes on 31 tasks, source interventions separate startup reachability from repair and witness production from the claimed operation. Lifetime and resource controls delimit what passing validation establishes. Generated-note comparisons yield local repair differences but can state false explanations; strong ordinary baselines, new tasks and Skill-transfer studies supply no consistent overall advantage. These results characterize evidence interpretation, applicability and fulfilled actions while limiting claims of general diagnostic superiority, Skill deterioration or deployed folding effects.",
+      "authors": [
+        "Xueping Gao"
+      ],
+      "extra": {
+        "categories": [
+          "cs.CL",
+          "cs.SE"
+        ],
+        "pdf": "https://arxiv.org/pdf/2611.22835"
+      }
+    },
+    "relevant": true,
+    "thread": "agent-escalation",
+    "score": 4,
+    "summary": "This paper studies how coding agents interpret verification evidence and whether passing checks actually establish task completion. It reports cases where agents report correct facts but still fail to produce the requested verdict, misreport facts, or exceed authorized scope.",
+    "why": "It is relevant to agent-escalation because it examines how coding agents can misinterpret checks and scope, which matters for runtime policy and trust in agent verification.",
+    "question": "Could these evidence-interpretation failures be exploited to make an agent believe a security check passed or that an unauthorized action was completed?",
+    "attempts": 1
+  },
+  {
+    "item": {
+      "id": "arxiv:2611.22761",
+      "source": "arxiv",
+      "title": "Network-Exposed Configuration Attacks on LLM-Controlled Social Robots",
+      "url": "https://arxiv.org/abs/2611.22761",
+      "published": "2026-11-17T13:27:57Z",
+      "summary": "Large language models (LLMs) in embodied robots create security dependencies beyond inference. We investigate a network-exposed configuration attack on the Pollen Robotics Reachy Mini Lite, allowing an unauthenticated attacker to replace personality settings and the cloud LLM's system prompt through a management interface, without adversarial conversational input. Eleven prompt-injection attempts across five categories were reported as resisted, whereas both configuration-layer attack paths produced observable behavioural changes on physical hardware. We demonstrate local and network-adjacent access, mapping the weakness to CWE-306 (Missing Authentication for a Critical Function) and CWE-1327 (Binding to an Unrestricted IP Address), with a reported CVSS v3.1 score of 6.5 (Medium). A configuration endpoint also accepts cross-origin requests without a CORS preflight (CWE-352; 6.5 Medium), while the persistent-memory sink stores content without enforcing its stated restrictions. A source review of 59 public repositories identifies missing authentication in 10 of 11 source-verifiable genuine applications, or 11 of 11 including a framework-default case. These findings indicate recurrence within the sampled repositories, not prevalence in commercial products. We characterise a deployment gap between developer-oriented network assumptions and consumer-facing embodied AI security: inference-layer refusal cannot prevent unauthorised changes to model instructions. Potential consequences include surveillance through onboard cameras and microphones and social engineering of nearby users. Proof-of-concept code, evidence and the survey are available at https://bit.ly/reachypi.",
+      "authors": [
+        "Stanley Akingbola",
+        "Ugbede Ibrahim",
+        "Yan Lin Aung",
+        "Quang Dan Le",
+        "Hong Qing Yu"
+      ],
+      "extra": {
+        "categories": [
+          "cs.CR",
+          "cs.AI",
+          "cs.RO"
+        ],
+        "pdf": "https://arxiv.org/pdf/2611.22761"
+      }
+    },
+    "relevant": true,
+    "thread": "agent-escalation",
+    "score": 4,
+    "summary": "The paper shows that an unauthenticated network endpoint on an LLM-controlled social robot can replace its system prompt and personality settings, causing observable behavior changes on the physical device. It also surveys public repositories and finds missing authentication is common in similar robot applications.",
+    "why": "It connects to agent privilege escalation by showing how weak configuration-layer access can override intended model instructions and grant unauthorized control over an embodied agent.",
+    "question": "Does missing authentication at the configuration layer make prompt-injection defenses irrelevant for embodied LLM agents?",
+    "attempts": 1
+  },
+  {
+    "item": {
+      "id": "arxiv:2611.22291",
+      "source": "arxiv",
+      "title": "When the World Is the Test Suite: Agentic Intelligence for the Physical World",
+      "url": "https://arxiv.org/abs/2611.22291",
+      "published": "2026-11-17T06:48:03Z",
+      "summary": "Coding agents built to repair software now write, test, and repair programs for robots, laboratories, and industrial controllers. Unlike in software engineering, no test suite comes with the code. Whether a program works must be established by running it on a robot, in a physics simulator, or through the policies it helps to train, and such evidence is costly to obtain and can itself be wrong. As these agents take on more physical tasks, how their programs are judged matters as much as how they are written. This paper examines this emerging area, agentic intelligence for the physical world, by treating the world as the program's test suite. We organize the discussion around three questions: how agents write programs for the physical world, how these programs are tested, and how agents learn from the results. We first trace how language models for robots and software engineering agents came together, ask which software testing practices carry over to physical tests, and describe each program by where it sits relative to the actuator and by what judges it. For writing, we cover programs that act as robot policies and programs that support policy learning by producing rewards, tasks, and training worlds. For testing, we examine what physical trials cost, what traces, learned judges, simulators, and formal checks can establish in their place, and what safety requires beyond task success. For learning, we discuss how tested programs are retained as experience, in skill libraries and in model weights. Finally, we turn to benchmarks and evaluation practice and outline open challenges. Writing programs is becoming cheap, while trustworthy evidence about what they do remains costly. Progress will therefore depend on a physical counterpart of continuous integration: verification cheap enough to run often, reliable enough to trust under search, and maintained alongside the experience it validates.",
+      "authors": [
+        "Kaixin Li",
+        "Meng Luo",
+        "Yanlin Li",
+        "Yuchen Tian",
+        "Xiang Liu",
+        "Xiangru Jian",
+        "Yan Yang",
+        "Zhiheng Xi",
+        "Yang Zhang",
+        "Ziyang Luo",
+        "Mingfei Cheng",
+        "Hongzhan Lin"
+      ],
+      "extra": {
+        "categories": [
+          "cs.RO",
+          "cs.AI",
+          "cs.SE"
+        ],
+        "pdf": "https://arxiv.org/pdf/2611.22291"
+      }
+    },
+    "relevant": true,
+    "thread": "agent-escalation",
+    "score": 3,
+    "summary": "The paper studies coding agents that write and test programs for robots and other physical systems, where the real world acts as the test suite. It focuses on how such programs are generated, evaluated, and learned from, with emphasis on costly physical trials and safety beyond task success.",
+    "why": "It is adjacent because it examines how coding agents' physical-world actions are verified and constrained, which relates to limiting what agents can do.",
+    "question": "Which verification or runtime checks could prevent an agent from executing unsafe or over-privileged physical actions?",
+    "attempts": 1
+  },
+  {
+    "item": {
+      "id": "arxiv:2611.22238",
+      "source": "arxiv",
+      "title": "Context Has a Price: Adding and Removing Context for LLM Coding Agents under Prefix Caching",
+      "url": "https://arxiv.org/abs/2611.22238",
+      "published": "2026-11-17T05:38:53Z",
+      "summary": "Coding agents repeatedly send their conversation history to a language model. Adding useful code may reduce search, while removing old tool outputs may shorten later prompts. But do these changes reduce the cost of solving a task? We study this as a measurement problem in more than 20,000 runs of open models on SWE-bench Verified, SWE-bench and Loc-Bench. We account separately for uncached input, cached input and output tokens. Three findings emerge. First, in our main evidence-package experiments, retrieved code reduces read and search commands by 18--34%, but increases cost by 33--42% when cached input costs one tenth of uncached input, without a measurable improvement in resolution. Second, removing old observations can either save money or increase cost: the same approach saves 19--36% without a cache discount but increases cost by 38--116% with a tenth-price cache. Third, shorter prompts do not guarantee cheaper runs because agents may respond by taking more steps. We also find that concurrent experiments can share cached prefixes and distort cost comparisons. These results show why context-management methods should be evaluated using both token prices and the agent's subsequent behavior.",
+      "authors": [
+        "Zerui Yang",
+        "Miaomiao Dong",
+        "Quan Xue",
+        "Chaorui Zhang",
+        "Xuanyu Zheng",
+        "Xiyuan Wang",
+        "Haolin Ruan",
+        "Xueyan Niu",
+        "Guangcheng Song",
+        "Weixi Zhang",
+        "Wei Han",
+        "Bo Bai"
+      ],
+      "extra": {
+        "categories": [
+          "cs.AI"
+        ],
+        "pdf": "https://arxiv.org/pdf/2611.22238"
+      }
+    },
+    "relevant": false,
+    "thread": "none",
+    "score": 2,
+    "summary": "The paper measures how adding or removing context affects the cost and behavior of LLM coding agents on SWE-bench-style tasks. It finds that shorter prompts do not always reduce cost, especially under prefix caching.",
+    "why": "",
+    "question": "",
+    "attempts": 1
+  },
+  {
+    "item": {
+      "id": "arxiv:2611.22223",
+      "source": "arxiv",
+      "title": "GapLeak: When Privacy-Preserving LLM-based Web Agents Become a Privacy Risk",
+      "url": "https://arxiv.org/abs/2611.22223",
+      "published": "2026-11-17T05:06:25Z",
+      "summary": "Large Language Model (LLM)-based web agents rely on data minimization and least privilege to protect user privacy. We show that these principles are necessary but insufficient: they constrain authorized sources, but not higher-sensitivity sources that remain reachable. A website can request a field unavailable from authorized sources, creating an information gap. To complete the task, a goal-driven agent may escalate to reachable but unauthorized sources and disclose accumulated sensitive information. We formalize this vulnerability as GapLeak, where an adversary exploits a legitimate web form without prompt injection or other malicious instructions. We evaluate GapLeak on three web-agent frameworks and six LLMs from Anthropic, Google, and OpenAI across recruitment, e-commerce, travel, and healthcare. GapLeak induces an average unauthorized disclosure of approximately 37%. The information gap is the primary driver: eliminating it reduces disclosure by more than 50%. Existing instruction-level defenses based on least privilege partially mitigate the vulnerability but often reduce task success. We propose submission-time verification, which filters unauthorized content before form submission, eliminating over 96% of unauthorized disclosures while preserving task success.",
+      "authors": [
+        "Chaklam Cheong",
+        "Tiancong Cao",
+        "Qi Li",
+        "Zelin Zhang",
+        "Jianbing Ni",
+        "Rongxing Lu",
+        "Mohammad Zulkernine"
+      ],
+      "extra": {
+        "categories": [
+          "cs.CR"
+        ],
+        "pdf": "https://arxiv.org/pdf/2611.22223"
+      }
+    },
+    "relevant": true,
+    "thread": "agent-escalation",
+    "score": 7,
+    "summary": "The paper shows that LLM-based web agents can be induced to submit unauthorized sensitive information when a legitimate form creates an information gap, even without prompt injection. It evaluates this across web-agent frameworks and LLMs and proposes submission-time verification as a runtime defense.",
+    "why": "It is directly about agents exceeding least-privilege constraints and a runtime policy defense, which fits agent privilege escalation.",
+    "question": "Does submission-time verification generalize beyond web forms to broader agent actions, tool calls, or computer-use tasks?",
+    "attempts": 1
+  },
+  {
+    "item": {
+      "id": "arxiv:2611.22148",
+      "source": "arxiv",
+      "title": "Long-Context Generation Is a Sampling Problem (When You Turn Up the Heat)",
+      "url": "https://arxiv.org/abs/2611.22148",
+      "published": "2026-11-17T03:30:03Z",
+      "summary": "Open-weight language models are widely observed to get worse the longer they generate. Often, attempts to fix this involve more training. At high temperature, The sampler, i.e. the rule that picks the next token out of the model's probabilities, decides whether long and agentic generation survives and/or thrives. We test 29 open-weight models from 1B to 122B parameters on ten established benchmarks plus needle retrieval out to one million tokens, covering SWE-bench Verified coding agents, long chain-of-thought reasoning, long-form writing, long structured output and long-context reading. Samplers that keep their pool of candidate tokens small and steady as temperature rises don't lose accuracy. Samplers that let in low-probability tokens fall apart. At temperature 2, coding agents running top-p, top-k or Top-H resolve 0 of 100 GitHub issues, while the same agents running top-nsigma resolve 46 to 62 and win every issue the two samplers disagree on, on three Qwen3.5 models. Over all benchmarks top-nsigma keeps a median 100% of its temperature-1 score where top-p keeps 26%. Counting how many tokens each sampler lets through explains why. In one Llama-3.1-8B story, going from temperature 1 to 2 grows top-p's pool from 4 tokens to 51,845 while top-nsigma stays at 3. Across 133 combinations of sampler setting and temperature, the typical pool size predicts judged quality (Spearman correlation of -0.77), and when we pick the pool at temperature 1 and only apply temperature afterwards, Top-H, min-p and p-less stop collapsing. At the default temperature of 1 most samplers perform about the same, We release all code and data to the public.",
+      "authors": [
+        "Allen G. Roush",
+        "Minh Nhat Nguyen",
+        "Ravid Shwartz-Ziv",
+        "Judah Goldfeder",
+        "Sanjay Basu"
+      ],
+      "extra": {
+        "categories": [
+          "cs.AI",
+          "cs.CL"
+        ],
+        "pdf": "https://arxiv.org/pdf/2611.22148"
+      }
+    },
+    "relevant": true,
+    "thread": "agent-escalation",
+    "score": 3,
+    "summary": "The paper studies why open-weight LLMs degrade over long generations and finds that sampler choice at high temperature is decisive, with top-nsigma preserving coding-agent benchmark performance while top-p/top-k collapse. It tests 29 models on long-context tasks including SWE-bench Verified coding agents.",
+    "why": "It is adjacent to agent-escalation because it evaluates coding agents on SWE-bench, but it addresses generation reliability rather than privilege escalation or sandboxing.",
+    "question": "Could sampler-induced long-generation failures create predictable agent behavior that an attacker could exploit in coding-agent deployments?",
+    "attempts": 1
+  },
+  {
+    "item": {
+      "id": "arxiv:2611.22136",
+      "source": "arxiv",
+      "title": "Big Brains, Tiny Board: Pupavision, an Agentic Physical AI Instrument for Monitoring Drosophila Pupariation and Lifecycle Transitions",
+      "url": "https://arxiv.org/abs/2611.22136",
+      "published": "2026-11-17T03:22:21Z",
+      "summary": "Many biology experiments are limited by the availability and ease of use of instruments that monitor and record them. For example, the timing of pupariation in the fruit fly Drosophila melanogaster, a widely used model organism, can provide biologically relevant information about growth regulation and is often recorded manually. Here, we present Pupavision, a small physical AI instrument built from a single-board Linux computer and a day/night camera for roughly 45 to 75 US dollars in parts. The key idea is that a frontier coding agent runs its agentic harness directly on the tiny board. The model thinks in the cloud, but the agent works on the device. The agent assists image capture, writes code to repair errors, and checks the experiment every day to keep raw data capture reliable. If recording stops, the researcher gets a ping on their mobile phone. A simple deterministic capture service records one image every ten minutes and never depends on the agent. We report a 26-day pilot in a fly incubator (about 3,580 frames), including eleven days in which the agent was logged out and capture continued, and a 51-hour outage whose cause led to the layered design. A researcher-in-the-loop workflow then produces per-vial pupariation curves by tracing selected pupae backward in time from a late reference frame. Future work will validate the assay for lifecycle tracking accuracy against expert-labeled data and expand real-time computer vision analysis. Pupavision offers a blueprint for do-it-yourself agentic instruments that put frontier intelligence on a tiny board, with deterministic code underneath. We present this as an early case study from a pilot lab deployment and contribute lessons learned toward a future where scientific domain experts are empowered by DIY agentic hardware.",
+      "authors": [
+        "Joel Sadler",
+        "Daniel Graham",
+        "Melanie Worley"
+      ],
+      "extra": {
+        "categories": [
+          "cs.AI",
+          "cs.HC"
+        ],
+        "pdf": "https://arxiv.org/pdf/2611.22136"
+      }
+    },
+    "relevant": false,
+    "thread": "none",
+    "score": 1,
+    "summary": "The paper describes Pupavision, a low-cost physical AI instrument that uses a frontier coding agent on a single-board computer to help monitor Drosophila pupariation. It combines agent-assisted image capture and error repair with a deterministic capture service for reliability.",
+    "why": "",
+    "question": "",
+    "attempts": 1
+  },
+  {
+    "item": {
+      "id": "arxiv:2611.22017",
+      "source": "arxiv",
+      "title": "SkillBuffBench: Measuring What Agent Skills Contribute across Harnesses, Models, Skill Access Modes and Memory",
+      "url": "https://arxiv.org/abs/2611.22017",
+      "published": "2026-11-17T00:12:40Z",
+      "summary": "Agent Skills, file-based packages of procedural knowledge that a coding agent can discover and load on demand, are now shipped by every major agent harness, yet the evidence for how much they help comes almost entirely from settings in which the right Skill is hand-picked for the task and the agent starts from a blank slate. Neither holds in deployment, where an agent chooses from whatever library happens to be installed and frequently carries memory from earlier work. We present SkillBuffBench, a benchmark and paired evaluation protocol that treats Skill access as a three-level factor (no Skill, a curated Skill, and automatic invocation from an installed library), crosses it with memory (off and on), with four agent harnesses and with multiple models (the state-of-the-art proprietary models from Anthropic, Google and OpenAI, and the state-of-the-art open-weight models from Chinese providers), every model being run under every harness, and evaluates the result on research tasks contributed by domain experts together with the Skills they use, currently in materials science and biology, with the suite extended on a rolling basis. Every run is marked by a deterministic verifier; uncertainty is reported with a paired, task-level bootstrap; and cost, agent rounds and wall-clock time are reported alongside the score rather than folded into it. This version of the paper describes the design of the benchmark, its evaluation protocol and its current tasks and Skills. The evaluation is in progress: results will be added once the runs are complete, and the task suite, results and analysis will continue to be updated on a rolling basis.",
+      "authors": [
+        "Gengyue Dong",
+        "Ye Wei",
+        "Zheng Zhu",
+        "Yidong Han",
+        "Jiale Miao",
+        "Xiaojun Jia",
+        "Guanghui Li"
+      ],
+      "extra": {
+        "categories": [
+          "cs.AI",
+          "cs.CL",
+          "cs.LG"
+        ],
+        "pdf": "https://arxiv.org/pdf/2611.22017"
+      }
+    },
+    "relevant": true,
+    "thread": "mcp-security",
+    "score": 3,
+    "summary": "A benchmark and paired evaluation protocol for measuring how much file-based Agent Skills help coding agents across harnesses, models, memory, and skill access modes. It focuses on performance, cost, and evaluation design rather than security.",
+    "why": "It characterizes how agents discover and load Skills from installed libraries, a mechanism adjacent to tool/skill supply-chain security, but it does not study malicious Skills.",
+    "question": "How does automatic invocation from an installed library change agent behavior compared with curated or no Skill access?",
+    "attempts": 1
+  },
+  {
+    "item": {
+      "id": "arxiv:2611.21845",
+      "source": "arxiv",
+      "title": "EmbedGym: Letting Coding Agents Develop and Debug Embedded Firmware Without Physical Hardware",
+      "url": "https://arxiv.org/abs/2611.21845",
+      "published": "2026-11-16T20:02:12Z",
+      "summary": "Modern coding agents perform well on general software benchmarks because they can run code and unit tests in a closed loop. Embedded firmware development, however, breaks this loop: a program that compiles can still fail on real hardware due to pin polarity, bus protocol, timing, or networking bugs that an agent at a text terminal cannot observe. Existing embedded coding agents either skip hardware execution, drive GPIO-only simulators with multi-second delays, or test on physical boards in a static environment. In this paper, we present EmbedGym, an interactive virtual hardware environment that lets coding agents develop and debug embedded firmware without physical hardware. EmbedGym uses instruction-level microcontroller unit (MCU) emulators to execute the same binary that would be flashed onto a physical board, connects them to 41 peripheral models, an analog circuit simulator, and virtual WiFi/Bluetooth Low Energy (BLE) endpoints, and exposes an interface for agents to change sensor inputs, press buttons, and inspect hardware states. On top of it, we build EmbedGym-Bench, which consists of 598 tasks across 6 MCU-framework pairs graded by hidden timed test vectors, using a five-stage multi-agent workflow that synthesizes peripheral models and tasks from datasheets and driver libraries. We expose EmbedGym to a coding agent at three levels and evaluate eight models over more than 14K trajectories. Even when compilation succeeds 99.7% of the time, 19.9% of compiled firmwares fail at runtime (up to 73% on individual targets). In contrast, interactive hardware testing in EmbedGym increases pass rates across models by +4.9% to +14.7% (up to +31% on individual targets). Our results also show that an agent with EmbedGym outperforms prior embedded agent frameworks, and lightweight models with EmbedGym match frontier models without it at 30-70x lower cost.",
+      "authors": [
+        "Minghui Zhao",
+        "Yiming Li",
+        "Sophie Zhu",
+        "Maxwell Khor",
+        "Lauren Ouyang",
+        "Hai \"Helen\" Li",
+        "Yiran Chen",
+        "Tingjun Chen"
+      ],
+      "extra": {
+        "categories": [
+          "cs.SE",
+          "cs.AI"
+        ],
+        "pdf": "https://arxiv.org/pdf/2611.21845"
+      }
+    },
+    "relevant": false,
+    "thread": "none",
+    "score": 2,
+    "summary": "EmbedGym is a virtual hardware environment and benchmark for coding agents to develop and debug embedded firmware without physical boards. It uses MCU emulators, peripheral models, and hidden timed test vectors to evaluate agent performance on firmware tasks.",
+    "why": "",
+    "question": "",
+    "attempts": 1
+  },
+  {
+    "item": {
+      "id": "arxiv:2611.21822",
+      "source": "arxiv",
+      "title": "Threat Landscape of Vibe Coding and the Road to Secure Autonomy",
+      "url": "https://arxiv.org/abs/2611.21822",
+      "published": "2026-11-16T19:38:02Z",
+      "summary": "Vibe coding is reshaping software development, enabling faster implementation and allowing individuals with limited programming experience to describe requirements in natural language while AI agents write, test, and deploy the code. As these agents evolve into autonomous systems that execute commands, manage dependencies, access cloud resources, and interact with other agents, their security risks extend beyond incorrect code to actions with direct consequences for software systems. Although research on these risks is expanding, it remains fragmented across areas including prompt injection, insecure code generation, supply-chain attacks, and human factors, with limited consensus on terminology, threat assumptions, and evaluation. This paper consolidates emerging research through the lens of the vibe coding workflow. We establish a reference architecture, characterise six levels of agent autonomy, and develop a threat model centred on five trust boundaries spanning developers, AI models, tools, cloud infrastructure, and the wider software ecosystem. Building on this foundation, we propose a taxonomy of twenty-one threats across nine classes. For each threat, we review the available evidence, assess proposed defences, and identify limitations. Our analysis highlights that risks increase with agents' operational authority, while most defences rely on model judgement and address isolated threats. Finally, we identify eleven research challenges, including enforceable limits on agent authority and shared benchmarks and methodologies for assessing vibe coding security.",
+      "authors": [
+        "Devki Nandan Jha",
+        "Shubh Anand",
+        "Karthick Keeranagere Krishnaiah",
+        "Roman Ahearn",
+        "Suhas Nale"
+      ],
+      "extra": {
+        "categories": [
+          "cs.CR",
+          "cs.ET"
+        ],
+        "pdf": "https://arxiv.org/pdf/2611.21822"
+      }
+    },
+    "relevant": true,
+    "thread": "agent-escalation",
+    "score": 8,
+    "summary": "A survey-style paper that maps security threats in vibe coding and AI coding agents, proposing autonomy levels, trust boundaries, a 21-threat taxonomy, and research challenges for secure agent operation.",
+    "why": "It directly addresses coding-agent privilege escalation, tool/cloud access, and enforceable limits on agent authority.",
+    "question": "Which threats in the taxonomy are most likely to enable real privilege escalation in current coding agents, and which proposed defenses actually constrain agent authority at runtime?",
+    "attempts": 1
+  },
+  {
+    "item": {
+      "id": "arxiv:2611.21797",
+      "source": "arxiv",
+      "title": "Can Coding Agents Write and Transpile Unit Tests",
+      "url": "https://arxiv.org/abs/2611.21797",
+      "published": "2026-11-16T19:16:19Z",
+      "summary": "Coding assistants built on Large Language Models (LLMs) have become a staple of modern software development, increasingly trusted to execute workflows and modernize code end-to-end. Much of this trust rests on passing tests, which are often written by the coding agents themselves. In this work, we examine the ability of these agents to both write reliable tests and translate them between programming languages. We benchmark three popular coding agents, each evaluated with a native frontier model and high reasoning effort. Verifying across a broad suite of metrics, we find that coding agents far exceed human written suites on traditional measures of coverage. This advantage, however, is uneven: agent test quality degrades sharply with project size, and much of the advantage lies in a greater number of written tests. We also show that agentic test translation---while seemingly strong in aggregate---remains inconsistent and unreliable.",
+      "authors": [
+        "Gil Pasternak",
+        "AJ Langley",
+        "Tom Yotam",
+        "Ellie Kitanidis"
+      ],
+      "extra": {
+        "categories": [
+          "cs.SE",
+          "cs.AI"
+        ],
+        "pdf": "https://arxiv.org/pdf/2611.21797"
+      }
+    },
+    "relevant": false,
+    "thread": "none",
+    "score": 2,
+    "summary": "The paper benchmarks coding agents on writing and translating unit tests across programming languages. It finds agents can produce high test coverage, but test quality degrades with project size and translation remains unreliable.",
+    "why": "",
+    "question": "",
+    "attempts": 1
+  },
+  {
+    "item": {
+      "id": "arxiv:2611.21784",
+      "source": "arxiv",
+      "title": "Revisiting the Survival of Agent-Attributed Code: How Measurement Choices Decide the Verdict",
+      "url": "https://arxiv.org/abs/2611.21784",
+      "published": "2026-11-16T19:09:35Z",
+      "summary": "Studies of how long code from AI coding agents survives after it is merged reach conflicting verdicts: agent code is reported to be retained longer than human code, about as long, or modified sooner. Each study makes defensible measurement choices, but how much these choices decide the verdict is unknown. We revisit the survival of agent-attributed code in our earlier study: 854,139 lines that 2,802 merged pull requests (PRs) added to 215 repositories of the AIDev dataset. We vary nine measurement choices in five research questions and build a specification curve of 88 survival analyses, tested under three variance estimators, several observation windows, and permuted labels. For code from human-supervised agents, mostly GitHub Copilot, the choices change the size of the effect but not its direction. For code from the fully-autonomous agent Devin, they decide the verdict. Across repositories, 15 of 22 specifications report it modified sooner when lines are treated as independent, but only 3 when standard errors are clustered by repository, no more than permuted labels produce. Within repositories, no specification detects a difference. LLM intent classifiers agree with human labels about as well as two humans agree with each other, whereas keyword rules do not (kappa = 0.69 to 0.72 against 0.38), and the two reach different verdicts on why agent code is modified. Humans make most modifications to agent code under every unit and window. Re-run on our data, five published designs each change their result with a single choice. Whether agent code survives longer than human code is therefore decided as much by the measurement as by the code. We derive an operationalization checklist for post-merge studies.",
+      "authors": [
+        "Musfiqur Rahman",
+        "Mahi Begoug",
+        "Emad Shihab"
+      ],
+      "extra": {
+        "categories": [
+          "cs.SE",
+          "cs.AI"
+        ],
+        "pdf": "https://arxiv.org/pdf/2611.21784"
+      }
+    },
+    "relevant": false,
+    "thread": "none",
+    "score": 2,
+    "summary": "The paper studies how long code written by AI coding agents survives after merge, showing that measurement choices can change whether agent code appears to last longer or shorter than human code. It analyzes a large dataset of merged pull requests from Copilot and Devin and proposes a checklist for post-merge code-survival studies.",
+    "why": "",
+    "question": "",
+    "attempts": 1
+  },
+  {
+    "item": {
+      "id": "hn:50536468",
+      "source": "hn",
+      "title": "Launch HN: StarSling (YC P25) – Self-improving CI for agent-volume repos",
+      "url": "https://news.ycombinator.com/item?id=50536468",
+      "published": "2026-11-17T19:01:43Z",
+      "summary": "",
+      "authors": [
+        "yonasb"
+      ],
+      "extra": {
+        "points": 81,
+        "comments": 39,
+        "discussion": "https://news.ycombinator.com/item?id=50536468"
+      }
+    },
+    "relevant": false,
+    "thread": "none",
+    "score": 2,
+    "summary": "Launch HN post for StarSling, described as self-improving CI for agent-volume repos.",
+    "why": "",
+    "question": "",
+    "attempts": 1
+  },
+  {
+    "item": {
+      "id": "hn:50533270",
+      "source": "hn",
+      "title": "Show HN: TrnRT – An open-source LLM inference engine for AWS Trainium",
+      "url": "https://github.com/RunanywhereAI/trnrt",
+      "published": "2026-11-17T16:01:04Z",
+      "summary": "",
+      "authors": [
+        "sanchitmonga22"
+      ],
+      "extra": {
+        "points": 50,
+        "comments": 7,
+        "discussion": "https://news.ycombinator.com/item?id=50533270"
+      }
+    },
+    "relevant": false,
+    "thread": "none",
+    "score": 0,
+    "summary": "An open-source LLM inference engine for AWS Trainium.",
+    "why": "",
+    "question": "",
+    "attempts": 1
+  },
+  {
+    "item": {
+      "id": "hn:50531481",
+      "source": "hn",
+      "title": "Show HN: An open virtual office to cowork with humans while your agents work",
+      "url": "https://flat.social/virtual-office-platform",
+      "published": "2026-11-17T14:00:32Z",
+      "summary": "",
+      "authors": [
+        "pawelwentpawel"
+      ],
+      "extra": {
+        "points": 14,
+        "comments": 6,
+        "discussion": "https://news.ycombinator.com/item?id=50531481"
+      }
+    },
+    "relevant": false,
+    "thread": "none",
+    "score": 1,
+    "summary": "A Show HN post for an open virtual office platform where humans can cowork while their agents work.",
+    "why": "",
+    "question": "",
+    "attempts": 1
+  },
+  {
+    "item": {
+      "id": "hn:50535081",
+      "source": "hn",
+      "title": "Rebuilding the Metabase MCP server: lessons for MCP tool design",
+      "url": "https://www.metabase.com/blog/mcp-tool-design-lessons",
+      "published": "2026-11-17T17:38:15Z",
+      "summary": "",
+      "authors": [
+        "ReDeiPirati"
+      ],
+      "extra": {
+        "points": 10,
+        "comments": 1,
+        "discussion": "https://news.ycombinator.com/item?id=50535081"
+      }
+    },
+    "relevant": true,
+    "thread": "mcp-security",
+    "score": 6,
+    "summary": "A blog post about rebuilding Metabase's MCP server and lessons learned for designing MCP tools.",
+    "why": "It is about MCP tool design, which can inform secure tool descriptions, permissions, and server behavior.",
+    "question": "Which design choices reduce prompt injection, over-privileging, or rug-pull risks in MCP tools?",
+    "attempts": 1
+  },
+  {
+    "item": {
+      "id": "hn:50538636",
+      "source": "hn",
+      "title": "Show HN: Code walkthroughs, maps, and quizzes for pull requests",
+      "url": "https://codeunpacked.san.cx/",
+      "published": "2026-11-17T21:43:53Z",
+      "summary": "",
+      "authors": [
+        "sandoche"
+      ],
+      "extra": {
+        "points": 6,
+        "comments": 1,
+        "discussion": "https://news.ycombinator.com/item?id=50538636"
+      }
+    },
+    "relevant": false,
+    "thread": "none",
+    "score": 0,
+    "summary": "A Show HN post for a tool that creates code walkthroughs, maps, and quizzes for pull requests. The title suggests it is a developer productivity or code review aid.",
+    "why": "",
+    "question": "",
+    "attempts": 1
+  },
+  {
+    "item": {
+      "id": "hn:50532519",
+      "source": "hn",
+      "title": "Show HN: Atli – MCP server that lets AI agents buy and install travel eSIMs",
+      "url": "https://heyatli.com/mcp",
+      "published": "2026-11-17T15:16:52Z",
+      "summary": "",
+      "authors": [
+        "peterhoang"
+      ],
+      "extra": {
+        "points": 6,
+        "comments": 1,
+        "discussion": "https://news.ycombinator.com/item?id=50532519"
+      }
+    },
+    "relevant": true,
+    "thread": "mcp-security",
+    "score": 4,
+    "summary": "An MCP server that lets AI agents buy and install travel eSIMs.",
+    "why": "It is a concrete MCP tool with payment and device-install capabilities, making it a useful case study for over-privileged agent tools and supply-chain risk.",
+    "question": "What permissions does the MCP server request, and how are purchase and install actions authorized or audited?",
+    "attempts": 1
+  },
+  {
+    "item": {
+      "id": "hn:50541857",
+      "source": "hn",
+      "title": "How are large companies not ripshit about the frontier labs?",
+      "url": "https://news.ycombinator.com/item?id=50541857",
+      "published": "2026-11-18T04:24:19Z",
+      "summary": "",
+      "authors": [
+        "siraris"
+      ],
+      "extra": {
+        "points": 6,
+        "comments": 1,
+        "discussion": "https://news.ycombinator.com/item?id=50541857"
+      }
+    },
+    "relevant": false,
+    "thread": "none",
+    "score": 0,
+    "summary": "A Hacker News discussion asking why large companies are not angry about frontier AI labs.",
+    "why": "",
+    "question": "",
+    "attempts": 1
+  },
+  {
+    "item": {
+      "id": "hn:50543947",
+      "source": "hn",
+      "title": "Claude Gets Hella Paranoid",
+      "url": "https://news.ycombinator.com/item?id=50543947",
+      "published": "2026-11-18T09:24:58Z",
+      "summary": "",
+      "authors": [
+        "noduerme"
+      ],
+      "extra": {
+        "points": 5,
+        "comments": 2,
+        "discussion": "https://news.ycombinator.com/item?id=50543947"
+      }
+    },
+    "relevant": false,
+    "thread": "none",
+    "score": 1,
+    "summary": "A Hacker News story titled 'Claude Gets Hella Paranoid'; no further details are provided.",
+    "why": "",
+    "question": "",
+    "attempts": 1
+  },
+  {
+    "item": {
+      "id": "hn:50543680",
+      "source": "hn",
+      "title": "Workers Are Not Going to Be OK",
+      "url": "https://www.nytimes.com/2026/11/17/opinion/ai-bubble-workers.html",
+      "published": "2026-11-18T08:53:26Z",
+      "summary": "",
+      "authors": [
+        "keeda"
+      ],
+      "extra": {
+        "points": 5,
+        "comments": 1,
+        "discussion": "https://news.ycombinator.com/item?id=50543680"
+      }
+    },
+    "relevant": false,
+    "thread": "none",
+    "score": 0,
+    "summary": "An opinion piece titled 'Workers Are Not Going to Be OK' about the AI bubble and its impact on workers.",
+    "why": "",
+    "question": "",
+    "attempts": 1
+  },
+  {
+    "item": {
+      "id": "hn:50542843",
+      "source": "hn",
+      "title": "We built Australia's own AI model, and today it's open to the world",
+      "url": "https://twitter.com/MGately_au/status/2122780345947017287",
+      "published": "2026-11-18T07:08:02Z",
+      "summary": "",
+      "authors": [
+        "panza"
+      ],
+      "extra": {
+        "points": 5,
+        "comments": 3,
+        "discussion": "https://news.ycombinator.com/item?id=50542843"
+      }
+    },
+    "relevant": false,
+    "thread": "none",
+    "score": 0,
+    "summary": "The title says an Australian AI model was built and is now open to the world. No further details are available from the title and link.",
+    "why": "",
+    "question": "",
+    "attempts": 1
+  },
+  {
+    "item": {
+      "id": "hn:50542286",
+      "source": "hn",
+      "title": "Ask HN: Can world models lead to racisim? Are there any Alignment frameworks?",
+      "url": "https://news.ycombinator.com/item?id=50542286",
+      "published": "2026-11-18T05:39:02Z",
+      "summary": "",
+      "authors": [
+        "atul-mehra"
+      ],
+      "extra": {
+        "points": 5,
+        "comments": 0,
+        "discussion": "https://news.ycombinator.com/item?id=50542286"
+      }
+    },
+    "relevant": false,
+    "thread": "none",
+    "score": 0,
+    "summary": "A Hacker News question asking whether world models can lead to racism and what alignment frameworks exist.",
+    "why": "",
+    "question": "",
+    "attempts": 1
+  }
+]
