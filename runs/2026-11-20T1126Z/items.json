@@ -1,0 +1,560 @@
+[
+  {
+    "item": {
+      "id": "arxiv:2611.26553",
+      "source": "arxiv",
+      "title": "Replication of Agentic Security Events: Audit and Investigation (ROGUE-AI)",
+      "url": "https://arxiv.org/abs/2611.26553",
+      "published": "2026-11-19T18:23:35Z",
+      "summary": "Agents based on large language models (LLMs) can now delete files and send payments on behalf of their users. News media reports routinely describe failures of these agents (e.g., Replit's coding agent deleting a production database), but a report often only says what went wrong and rarely (in)validates the incident or finds its root cause. Incident catalogs collect these reports, and benchmarks record whether agents fail, but neither replicates an incident nor tests the cause its report might identify. In this paper, we present ROGUE-AI (Replication of Agentic Security Events: Audit and Investigation), a multi-agent framework that closes the above gap and rebuilds each reported incident offline together with a matched control that lacks only the blamed cause, and runs agents on both. Our results suggest that ROGUE-AI is able to reproduce the reported harm in 89% of its 108 attempted replications. Agents built on five current GPT, Claude, Gemini and DeepSeek models made the reported mistake in 18% to 33% of runs, against at most 1% without the blamed cause. Of the 72 incidents with real-world harm, 62 had no underlying attacker, and in these, agents did what their task asked for but missed an ordinary hazard, such as a database shared with the live site. Replications without an attacker caused more harm than replications of prompt injection for all five models. Defenses against prompt injection look for injected instructions, but these replications contain none. Further, a warning after each tool output that names the hazard and its consequence lowered harm for all five models, whereas a note of the same length that does not mention the hazard left most of the harm in place. Built from real incidents, the ROGUE-AI replications form a reusable audit framework that vendors can rerun before each new release.",
+      "authors": [
+        "Mengxiao Wang",
+        "Mahbub Alam",
+        "Kalyan Nakka",
+        "Nitesh Saxena"
+      ],
+      "extra": {
+        "categories": [
+          "cs.CR",
+          "cs.AI",
+          "cs.MA"
+        ],
+        "pdf": "https://arxiv.org/pdf/2611.26553"
+      }
+    },
+    "relevant": true,
+    "thread": "mcp-security",
+    "score": 7,
+    "summary": "A framework that replays 108 reported LLM-agent incidents offline with and without the blamed cause, finding that many harms come from ordinary task hazards rather than prompt injection. It also shows that hazard-naming warnings after tool output reduce harm more than neutral notes.",
+    "why": "It connects to mcp-security by testing prompt-injection-related tool-output defenses and showing non-injected tool hazards can be more dangerous.",
+    "question": "Which incident categories are most likely to be missed by current prompt-injection defenses, and how generalizable are the hazard-naming warnings?",
+    "attempts": 1
+  },
+  {
+    "item": {
+      "id": "arxiv:2611.26033",
+      "source": "arxiv",
+      "title": "SEOYUN: Refusal-Inducing Exam Documents for AI-Glasses Pipelines",
+      "url": "https://arxiv.org/abs/2611.26033",
+      "published": "2026-11-19T12:43:31Z",
+      "summary": "Camera-equipped glasses can convert an examination page into a query to a vision-language model (VLM). Device detection addresses possession; a complementary question is whether an examination document can reduce the usefulness of an unauthorized capture. We present SEOYUN, an application-specific framework for refusal-inducing exam documents, with optical and encoder-level interventions as extensions. We use reverse jailbreaking to describe the direction of the objective: inducing abstention rather than bypassing refusal. Refusal induction and defensive visual prompt injection already have precedents; our contribution is a threat model, analytical limits, and an evaluation protocol for examination use. We distinguish refusal from correct-answer leakage, show why removing an added dummy option is not itself a reduction in the original answer space, and derive a sampling comparison under explicitly stated camera assumptions. The protocol separates digital, simulated, and physical inputs and requires held-out evaluation after subject-specific selection. A local CSAT candidate corpus and rendering harness have been prepared, but this version reports no model-performance measurements, physical validation, or human-subject results. Accordingly, SEOYUN is a research framework, not a validated defense or a basis for allegations against individuals.",
+      "authors": [
+        "Dohyeon Kwon"
+      ],
+      "extra": {
+        "categories": [
+          "cs.AI"
+        ],
+        "pdf": "https://arxiv.org/pdf/2611.26033"
+      }
+    },
+    "relevant": true,
+    "thread": "eval-awareness",
+    "score": 3,
+    "summary": "It proposes SEOYUN, a framework for designing exam documents that induce vision-language model refusal when captured by AI glasses, with a threat model and evaluation protocol but no measured model results. It frames the goal as reverse jailbreaking, meaning inducing abstention rather than bypassing refusal.",
+    "why": "It is adjacent to eval-awareness because it studies model behavior on exam/test documents, though it focuses on refusal induction rather than the model recognizing it is being tested.",
+    "question": "Does the refusal effect rely on the model recognizing an exam/test context, or is it just a visual adversarial prompt that could generalize to other settings?",
+    "attempts": 1
+  },
+  {
+    "item": {
+      "id": "arxiv:2611.25985",
+      "source": "arxiv",
+      "title": "Law at the Speed of AI: Critical Legal Infrastructure for the Machine Age: Autonomy Under Law Architecture (AULA)",
+      "url": "https://arxiv.org/abs/2611.25985",
+      "published": "2026-11-19T12:09:19Z",
+      "summary": "The global deployment of autonomous AI agents within and across organisations exceeds the governance infrastructure available to constrain it. Agent communication and authentication protocols, principally the Model Context Protocol and the Agent2Agent Protocol, are maturing quickly, but maturity at the protocol layer does not produce legal legibility at the governance layer. Runtime enforcement written by the deploying organisation fixes the resources an AI agent can reach, not the authority under which it acts. Legal legibility is the capacity of a legal system to recognise, interpret and regulate activity by mapping it onto legal personhood, property, rights and liabilities. Existing (analogue) legal infrastructure cannot supply it for autonomous deployment. The resulting deficit is bidirectional. It concerns the attribution of liability when an AI agent causes harm, and the allocation of rights, including data and economic rights, generated by agentic activity and by the AI agent itself as a source of value and form of property. This paper characterises that deficit as the legal attribution gap, a material and unaddressed risk to economies, organisations and citizens that is magnified in cross-organisational multi-agent deployment. The paper describes the Autonomy Under Law Architecture (AULA), in which AI systems and data assets are registered as legal objects anchored to one or more identified legal persons, governed by cryptographically tethered smart legal instruments and evaluated at runtime. Each smart legal instrument can carry a legal context clause, through which the legislation, regulation and judicial decisions in force at the time of the act are given practical and legal effect in that evaluation. Infrastructure of this kind is a precondition for the continued function of any legal, property and economic system with both human and autonomous machine stakeholders.",
+      "authors": [
+        "Natasha E Blycha",
+        "James Myint",
+        "Chen Feng",
+        "Dr Amani Soysa",
+        "Koshin Jama",
+        "Schellie-Jayne Price",
+        "Matthew Blycha"
+      ],
+      "extra": {
+        "categories": [
+          "cs.CE",
+          "cs.AI",
+          "cs.ET",
+          "cs.MA"
+        ],
+        "pdf": "https://arxiv.org/pdf/2611.25985"
+      }
+    },
+    "relevant": true,
+    "thread": "mcp-security",
+    "score": 3,
+    "summary": "A legal-architecture paper proposing a framework for governing autonomous AI agents, including registration of agents and data as legal objects and runtime evaluation via smart legal instruments. It discusses the Model Context Protocol and Agent2Agent Protocol in the context of legal legibility and liability.",
+    "why": "It touches MCP and agent governance/runtime enforcement, but is primarily legal rather than technical security.",
+    "question": "Could the proposed runtime legal evaluation be bypassed, spoofed, or exploited by agents or intermediaries?",
+    "attempts": 1
+  },
+  {
+    "item": {
+      "id": "arxiv:2611.25760",
+      "source": "arxiv",
+      "title": "Characterizing and Detecting Unfaithful Work Reports by Coding Agents",
+      "url": "https://arxiv.org/abs/2611.25760",
+      "published": "2026-11-19T09:01:02Z",
+      "summary": "Coding agents increasingly carry out long-horizon development tasks, autonomously planning and executing multi-step actions that span files, tools, and sessions. Because developers rarely follow each action, and agents resuming the work depend on records of what was done, the agent's work report often becomes the primary account of what was changed and established. When the report contains false or unsupported claims, it gives recipients false assurance: incomplete work may be accepted without verification, incorrect assumptions about the current state can propagate to later steps and agents, and evaluators that credit stated success may reward the report rather than the work. Yet little is known about what unfaithful reporting looks like in real development work, or how developers and agents handle it once it surfaces. Starting from real developer--agent conversations in SWE-chat, we conduct a systematic mixed-methods analysis of self-admitted unfaithful reports. We identify eleven subtypes in four categories: misreported observations, misattributed evidence, overstated task success, and faulty technical explanations, with overstated task success the most common. Handling these problems involves on average 4.3 further user turns and 12.71 minutes of recorded response and execution time, and users express dissatisfaction more often. Among 435 work reports that we separately sample and annotate, \\NaturalPositiveShare{}\\% contain at least one unfaithful claim. We also develop FaithDetector, a detector for unfaithful reporting informed by the observed patterns. On naturally sampled reports, FaithDetector attains \\NaturalDetectorMacro{}\\% macro-F1, about 13 percentage points above the baseline. Together, our findings and FaithDetector provide empirical evidence and an automated method for checking reporting faithfulness, informing agent evaluation and training feedback.",
+      "authors": [
+        "Wenhao Yang",
+        "Runzhi He",
+        "Minghui Zhou",
+        "Pengfei Gao",
+        "Dayi Lin",
+        "Qingwei Lin",
+        "Dongmei Zhang"
+      ],
+      "extra": {
+        "categories": [
+          "cs.SE",
+          "cs.AI"
+        ],
+        "pdf": "https://arxiv.org/pdf/2611.25760"
+      }
+    },
+    "relevant": false,
+    "thread": "none",
+    "score": 4,
+    "summary": "The paper studies unfaithful work reports from coding agents, identifies common failure types, and proposes FaithDetector to detect unsupported claims in agent reports.",
+    "why": "",
+    "question": "How often do unfaithful reports hide incomplete or risky changes that a developer would otherwise miss?",
+    "attempts": 1
+  },
+  {
+    "item": {
+      "id": "arxiv:2611.25599",
+      "source": "arxiv",
+      "title": "Tether: Verified Stateful Policy Engine for System-Level Monitoring of Agents",
+      "url": "https://arxiv.org/abs/2611.25599",
+      "published": "2026-11-19T06:46:27Z",
+      "summary": "Autonomous AI agents are increasingly deployed for long-running tasks that execute arbitrary shell commands or programs. However, these actions can result in unauthorized network requests or persistent, malicious changes to the user's file system, processes, or privileges. Existing defense mechanisms rely on either LLM-based monitors, which lack provable safety guarantees, or stateless policy enforcement layers, which miss multi-step data flows and execution side-effects unmodeled by the policy language (e.g., network calls initiated inside a Python script). We introduce Tether, a framework for runtime enforcement of stateful security policies over the observed side-effects of an agent's actions. Tether executes each proposed action in an ephemeral, isolated sandbox, inferring abstract action semantics from observed system calls. Tether then enforces stateful policies over these inferred semantics, permitting actions to proceed only if they comply with the policy. Policies and action semantics are defined in an embedded DSL in Lean 4 capable of expressing diverse constraints, including information flow control (IFC), access control, and network security policies. Because actions can propagate labels from sources to destinations, a single rule can enforce fine-grained IFC policies across multi-step execution flows of arbitrary length. Expressing policies in Lean enables formal verification that they satisfy global security invariants (e.g., preventing network access after reading a sensitive file). We evaluate Tether on realistic coding-agent benchmarks across both benign and adversarial trajectories. With a single policy shared across all tasks, Tether blocks 100% of in-scope attacks while maintaining a benign false-positive rate under 5%.",
+      "authors": [
+        "Meghana Aparna Sistla",
+        "Alaia Solko-Breslin",
+        "Somesh Jha",
+        "Aditya Kanade",
+        "Krishnamurthy Dj Dvijotham"
+      ],
+      "extra": {
+        "categories": [
+          "cs.CR",
+          "cs.AI"
+        ],
+        "pdf": "https://arxiv.org/pdf/2611.25599"
+      }
+    },
+    "relevant": true,
+    "thread": "agent-escalation",
+    "score": 9,
+    "summary": "Tether is a runtime policy engine that executes agent actions in ephemeral sandboxes, infers abstract semantics from system calls, and enforces stateful Lean 4 policies for IFC, access control, and network restrictions. It reports blocking 100% of in-scope attacks on coding-agent benchmarks with under 5% benign false positives.",
+    "why": "It is a direct defense for coding agents executing arbitrary commands, addressing sandboxing, runtime policy, and preventing unauthorized network, file, or privilege side effects.",
+    "question": "Which attack classes are out of scope, and how does the policy language handle dynamic code generation, interpreters, or multi-agent tool calls?",
+    "attempts": 1
+  },
+  {
+    "item": {
+      "id": "arxiv:2611.25412",
+      "source": "arxiv",
+      "title": "ChainAgent: Automated Chainable Vulnerability Discovery in PHP Web Applications",
+      "url": "https://arxiv.org/abs/2611.25412",
+      "published": "2026-11-19T02:52:06Z",
+      "summary": "High-impact attacks on PHP web applications often chain limited-capability vulnerabilities with other flaws or intended behaviors. Discovering these chains requires identifying flaws and the dependencies enabling capability composition. Existing vulnerability discovery techniques analyze flaws in isolation, while attack planning assumes known components. This separation makes it difficult to discover previously unknown components whose security relevance becomes apparent only through their potential roles in an exploit chain. We present ChainAgent, a goal-directed LLM-agent framework that jointly discovers exploit-chain components and their capability dependencies in source code. Guided by an empirical study of 386 real-world web exploit chains, ChainAgent represents vulnerabilities and functional gadgets--intended program behaviors that can be repurposed in attacks--through preconditions and capabilities over security-relevant objects. Instead of discovering vulnerabilities first and constructing attack paths afterward, ChainAgent uses an evolving exploit graph to guide source-code inspection. It searches backward from unmet preconditions for capability producers and forward from discovered capabilities for functional gadgets that consume or amplify them. Object-centered chaining knowledge from our empirical study directs searches toward promising vulnerability classes, functional operations, and object accesses. We evaluate ChainAgent against Codex, a general-purpose coding agent, on 15 PHP applications across three shared LLM backends. ChainAgent achieves 42.02%--44.63% recall for goal-reaching components and recovers up to 4.4 times as many correct goal-reaching dependency edges as Codex. An additional evaluation of 30 real-world PHP applications identifies 20 vulnerabilities and 13 exploit chains, nine of which achieve remote code execution (RCE).",
+      "authors": [
+        "Xinyi Wang",
+        "Yeting Li",
+        "Shizhe Cui",
+        "Jiaming Guo",
+        "Qin Mai",
+        "Yecheng Sun",
+        "Hengyu Yang",
+        "Yujie Sun",
+        "Huina Chao",
+        "Yang Xiao",
+        "Feng Li",
+        "Wei Huo"
+      ],
+      "extra": {
+        "categories": [
+          "cs.CR",
+          "cs.AI"
+        ],
+        "pdf": "https://arxiv.org/pdf/2611.25412"
+      }
+    },
+    "relevant": false,
+    "thread": "none",
+    "score": 3,
+    "summary": "ChainAgent is an LLM-agent framework that discovers chained PHP web vulnerabilities and exploit dependencies by searching source code backward and forward through an exploit graph. It outperforms Codex on recall and finds RCE chains in real-world PHP apps.",
+    "why": "",
+    "question": "",
+    "attempts": 1
+  },
+  {
+    "item": {
+      "id": "arxiv:2611.25380",
+      "source": "arxiv",
+      "title": "Beyond Weight Updates: Evolving Agent Harnesses for Domain Specialization",
+      "url": "https://arxiv.org/abs/2611.25380",
+      "published": "2026-11-19T02:20:06Z",
+      "summary": "Domain specialization of LLM agents is usually framed as a weight-update problem: collect trajectories, run reinforcement learning (RL) or supervised fine-tuning (SFT), and deploy a new checkpoint. We study a complementary axis: evolving the \\textbf{agent harness}---the system prompt, tool schemas, skill library, and planning scaffolding---while keeping the policy frozen. We cast harness evolution as an RL-style outer loop and instantiate it with GEPA, a reflective evolutionary optimizer. The resulting harness adapters require no GPU training, are loadable per vertical domain, and compose with weight-based RL. Experiments with Codev, a Claude Code-style coding agent, on SWE-bench Verified, OfficeBench, and Terminal-Bench show a consistent pattern: weight updates give the strongest single-path gains, harness evolution recovers most of those gains at a small fraction of the compute, and combining both paths is best overall. We also analyze a failure mode of SFT-based specialization---shortened reasoning chains and increased truncation---and argue that harness adapters avoid it by construction. Our results position harness evolution as a practical, non-destructive complement to weight updates for vertical agents.",
+      "authors": [
+        "BoHao Chen"
+      ],
+      "extra": {
+        "categories": [
+          "cs.AI"
+        ],
+        "pdf": "https://arxiv.org/pdf/2611.25380"
+      }
+    },
+    "relevant": true,
+    "thread": "mcp-security",
+    "score": 3,
+    "summary": "The paper studies evolving an agent's harness—system prompt, tool schemas, skill library, and planning scaffolding—using a reflective evolutionary optimizer instead of weight updates. It reports gains on coding and terminal-agent benchmarks while keeping the model policy frozen.",
+    "why": "It touches the agent tool/harness surface, especially tool schemas and skill libraries, that MCP and tool-security work targets, but it does not study attacks or defenses.",
+    "question": "Could evolved tool schemas or skill libraries create new prompt-injection or privilege-escalation surfaces even when the model weights are unchanged?",
+    "attempts": 1
+  },
+  {
+    "item": {
+      "id": "arxiv:2611.25252",
+      "source": "arxiv",
+      "title": "Moving Generality from Model to Modeler: LLM Agents for PHM on a Deployment-Style Benchmark",
+      "url": "https://arxiv.org/abs/2611.25252",
+      "published": "2026-11-18T22:37:26Z",
+      "summary": "Coding agents built on large language models (LLMs) now help develop many models published as general solutions. Should generality instead reside in the agent that builds a model for each new task? We examine this question in prognostics and health management (PHM), where every model must work on unseen equipment. Our deployment-style benchmark, NextUnit-Bench, covers 24 public datasets split into 58 folds that hold out units or operating conditions; each agent has two hours to deliver an executable predictor, then run on the hidden units. First, frontier agents outperform AutoML, which reaches less than half the best agent's score, and faithful implementations of published methods on four datasets, of which only 6 of 30 beat the strongest agent's own design; published accuracies, where reproducible, rest on the papers' own conventions, and a single convention, capping the remaining life of test engines, can halve the reported error. Second, the agents' advantage is a design made on each machine's data; once made, a plain-text plan of a few hundred words carries most of the gap between two frontier agents, and given a weaker agent's plan, the strongest agent falls to that agent's level, often to identical predictions. Before touching the data, however, it matters little whose plan an agent carries out, and domain toolkits appear to help neither: what sets the strongest apart is how much it learns from the data. Third, such designs reach only implementers that can execute them: given the strongest agent's designs, a locally deployable open-weight model delivers half as often, even when they are lightened, and scores no higher than without them. Generality, we argue, is not disappearing but moving, from the model to the modeler.",
+      "authors": [
+        "Zhenling Chen",
+        "Zhiguo Zeng",
+        "Anne Barros"
+      ],
+      "extra": {
+        "categories": [
+          "cs.LG"
+        ],
+        "pdf": "https://arxiv.org/pdf/2611.25252"
+      }
+    },
+    "relevant": false,
+    "thread": "none",
+    "score": 2,
+    "summary": "The paper studies LLM coding agents that build prognostics and health management models on a deployment-style benchmark. It finds that frontier agents outperform AutoML and published methods, and that much of their advantage comes from data-specific design rather than a reusable model.",
+    "why": "",
+    "question": "",
+    "attempts": 1
+  },
+  {
+    "item": {
+      "id": "arxiv:2611.25198",
+      "source": "arxiv",
+      "title": "When AI Analysts Disagree: Agentic Multiverse Analysis and the Robustness of Empirical Research",
+      "url": "https://arxiv.org/abs/2611.25198",
+      "published": "2026-11-18T21:17:37Z",
+      "summary": "Every empirical analysis on observational data rests on dozens of defensible analytical choices (\"forks\") that its readers cannot see. We develop an agentic multiverse analysis (AMA) framework that makes a conclusion's sensitivity to those choices visible at scale, and we position it as a decision-support instrument for human experts. A pilot study first deploys 150 autonomous AI coding agents on one dataset and one set of research questions and finds that they disagree through the same defensible methodological choices human analysts make, though over a narrower range. AI peer review leaves their dispersion almost unchanged. Exposure to top-rated exemplar reports then collapses it, largely through imitation rather than analysis. Built on those lessons, AMA has agents enumerate a published paper's possible fork space, score every fork against a validity rubric, execute the validated specification grid, and cross-examine one another's work under strict separation of duties. Applied to ten empirical studies from a leading management journal's replication packages (1,755 specification estimates), the framework reproduces every paper's original estimates, and shows that some conclusions hold across every specification the assessment validates, while others are sensitive to individual analytical choices that the published texts do not discuss. The case studies suggest our AMA-based measures can serve as robustness proxies for empirical findings. AI makes multiverse analysis practical, where it once required resources few research teams can afford: our exercises take hours of agent time and tens of dollars per paper. We discuss the implications for replication policy and for AI-assisted peer review in information systems.",
+      "authors": [
+        "Ruijiang Gao",
+        "Steven Chong Xiao"
+      ],
+      "extra": {
+        "categories": [
+          "cs.AI"
+        ],
+        "pdf": "https://arxiv.org/pdf/2611.25198"
+      }
+    },
+    "relevant": false,
+    "thread": "none",
+    "score": 0,
+    "summary": "The paper proposes an agentic multiverse analysis framework that uses many AI coding agents to explore methodological choices in empirical studies and assess how robust their conclusions are. It applies the framework to replication packages from a management journal and finds it can reproduce original estimates while exposing sensitivity to analytical choices.",
+    "why": "",
+    "question": "",
+    "attempts": 1
+  },
+  {
+    "item": {
+      "id": "arxiv:2611.25071",
+      "source": "arxiv",
+      "title": "FinVeriQA: Financial Research Agents for Question Answering: Routing, Retrieval, MCP Tool Use, and Provenance-Aware Evidence Verification",
+      "url": "https://arxiv.org/abs/2611.25071",
+      "published": "2026-11-18T19:13:45Z",
+      "summary": "Large language models (LLMs) write fluent financial analyses but miscompute ratios, recall stale prices, and route questions to the wrong tool with high confidence. We ask which component should do each job in a financial question-answering assistant, and study it with FinVeriQA, an open-source multi-agent research prototype over SEC filings and live market data: a compact typed-decision model (Laya) routes each question and screens out advice requests, Python computes every number, retrieval and tools fetch evidence, Mistral-7B writes a cited answer, a code validator checks that cited IDs exist and that numbers match computed notes, and a Model Context Protocol (MCP) server exposes the pipeline. In live experiments, Laya routed better than Mistral-7B (0.85 vs. 0.52; overall 0.86 vs. 0.68, McNemar p = 0.0003); a 12B Mistral decided no better, and DeepSeek-R1-8B decided better (0.79 vs. 0.68, p = 0.0192) but about 9.9 times more slowly. Mistral-7B computed 29% of 100 financial calculations correctly against 100% for Python, a live quote cut price error from 210% to 0.00%, and hybrid retrieval reached 76% Hit@5 on 50 filing questions. Yet in a live case study, both agent answers passed validation while describing AMD sample data under NVIDIA's and Alphabet's names. A controlled upper-bound study on the FinRank benchmark explains why: when one figure in the shared evidence is corrupted, self-consistency stays confident (agreement 0.55 to 0.59 while accuracy falls from 0.50 to 0.00), and a shared-evidence check (the kind our validator performs) catches 35% of the errors, whereas a check against the original passage catches 77% ($p = 5.96 \\times 10^{-8}$); for DeepSeek-R1-8B, 68% vs. 90%. Verification must be independent of the evidence the writer saw.",
+      "authors": [
+        "Meenakshi Rajpurohit",
+        "Anna Phan",
+        "Ravikumar Komandur Narayanan",
+        "Gunanidhi Ramakrishnan",
+        "Nathan Howland"
+      ],
+      "extra": {
+        "categories": [
+          "cs.CL",
+          "cs.AI",
+          "cs.IR",
+          "cs.MA"
+        ],
+        "pdf": "https://arxiv.org/pdf/2611.25071"
+      }
+    },
+    "relevant": true,
+    "thread": "mcp-security",
+    "score": 4,
+    "summary": "A financial multi-agent QA system that uses routing, retrieval, Python computation, and an MCP server to expose the pipeline. It shows that validation can still pass when agents misattribute evidence, and that checks against shared evidence are weaker than checks against original passages.",
+    "why": "It touches MCP tool use and agent evidence verification, but is mainly about reliability rather than malicious MCP or tool security.",
+    "question": "How would the provenance checks change if the MCP tool outputs were adversarially corrupted rather than merely noisy or stale?",
+    "attempts": 1
+  },
+  {
+    "item": {
+      "id": "hn:50562500",
+      "source": "hn",
+      "title": "AI isn't replacing your job. It's turning it into low-paid gig work",
+      "url": "https://restofworld.org/2026/ai-jobs-skills-gig-work/",
+      "published": "2026-11-19T16:45:50Z",
+      "summary": "",
+      "authors": [
+        "cdrnsf"
+      ],
+      "extra": {
+        "points": 139,
+        "comments": 69,
+        "discussion": "https://news.ycombinator.com/item?id=50562500"
+      }
+    },
+    "relevant": false,
+    "thread": "none",
+    "score": 0,
+    "summary": "The article argues that AI is not simply replacing jobs, but is reshaping work into lower-paid gig-style tasks.",
+    "why": "",
+    "question": "",
+    "attempts": 1
+  },
+  {
+    "item": {
+      "id": "hn:50568861",
+      "source": "hn",
+      "title": "Vint Cerf on why TCP/IP was never patented",
+      "url": "https://seremot.com/p/vint-cerf-on-why-tcpip-was-never",
+      "published": "2026-11-20T01:06:12Z",
+      "summary": "",
+      "authors": [
+        "emot"
+      ],
+      "extra": {
+        "points": 115,
+        "comments": 55,
+        "discussion": "https://news.ycombinator.com/item?id=50568861"
+      }
+    },
+    "relevant": false,
+    "thread": "none",
+    "score": 0,
+    "summary": "A Hacker News story about Vint Cerf discussing why TCP/IP was never patented.",
+    "why": "",
+    "question": "",
+    "attempts": 1
+  },
+  {
+    "item": {
+      "id": "hn:50572503",
+      "source": "hn",
+      "title": "Frostbite: A new CPU architecture discovered, designed and verified by AI",
+      "url": "https://architectlabs.com/blog/frostbite",
+      "published": "2026-11-20T10:01:41Z",
+      "summary": "",
+      "authors": [
+        "shioyama"
+      ],
+      "extra": {
+        "points": 96,
+        "comments": 69,
+        "discussion": "https://news.ycombinator.com/item?id=50572503"
+      }
+    },
+    "relevant": false,
+    "thread": "none",
+    "score": 1,
+    "summary": "The title says Frostbite is a new CPU architecture that was discovered, designed, and verified by AI.",
+    "why": "",
+    "question": "",
+    "attempts": 1
+  },
+  {
+    "item": {
+      "id": "hn:50569783",
+      "source": "hn",
+      "title": "Mapping every neuron in Qwen3-8B",
+      "url": "https://www.fermionresearch.com/research/mapping-every-neuron-in-qwen3-8b/",
+      "published": "2026-11-20T03:26:51Z",
+      "summary": "",
+      "authors": [
+        "sheepscreek"
+      ],
+      "extra": {
+        "points": 21,
+        "comments": 2,
+        "discussion": "https://news.ycombinator.com/item?id=50569783"
+      }
+    },
+    "relevant": false,
+    "thread": "none",
+    "score": 0,
+    "summary": "A post about mapping every neuron in the Qwen3-8B model.",
+    "why": "",
+    "question": "",
+    "attempts": 1
+  },
+  {
+    "item": {
+      "id": "hn:50562508",
+      "source": "hn",
+      "title": "Show HN: AgentMall – Let your AI agent buy groceries",
+      "url": "https://getagentmall.com",
+      "published": "2026-11-19T16:46:14Z",
+      "summary": "",
+      "authors": [
+        "desilva78_"
+      ],
+      "extra": {
+        "points": 19,
+        "comments": 6,
+        "discussion": "https://news.ycombinator.com/item?id=50562508"
+      }
+    },
+    "relevant": true,
+    "thread": "mcp-security",
+    "score": 3,
+    "summary": "A Show HN post for AgentMall, a service that lets an AI agent purchase groceries.",
+    "why": "It is an agent-facing commerce tool, so it touches the agent tool surface where permissions and tool descriptions matter.",
+    "question": "What permissions or payment controls does the agent need to buy groceries, and how are tool calls scoped?",
+    "attempts": 1
+  },
+  {
+    "item": {
+      "id": "hn:50565484",
+      "source": "hn",
+      "title": "Ask HN: Where do you see Software in 5 years?",
+      "url": "https://news.ycombinator.com/item?id=50565484",
+      "published": "2026-11-19T20:01:18Z",
+      "summary": "",
+      "authors": [
+        "Odbyteusz"
+      ],
+      "extra": {
+        "points": 17,
+        "comments": 19,
+        "discussion": "https://news.ycombinator.com/item?id=50565484"
+      }
+    },
+    "relevant": false,
+    "thread": "none",
+    "score": 0,
+    "summary": "A Hacker News discussion asking where software will be in five years.",
+    "why": "",
+    "question": "",
+    "attempts": 1
+  },
+  {
+    "item": {
+      "id": "hn:50568169",
+      "source": "hn",
+      "title": "Show HN: erXos – a microkernel OS in Erlang based on Genera/Plan 9/QNX ideas",
+      "url": "https://stass.github.io/erXos/",
+      "published": "2026-11-19T23:39:34Z",
+      "summary": "",
+      "authors": [
+        "stass"
+      ],
+      "extra": {
+        "points": 7,
+        "comments": 3,
+        "discussion": "https://news.ycombinator.com/item?id=50568169"
+      }
+    },
+    "relevant": false,
+    "thread": "none",
+    "score": 0,
+    "summary": "A Show HN post for erXos, described as a microkernel OS written in Erlang. It is based on ideas from Genera, Plan 9, and QNX.",
+    "why": "",
+    "question": "",
+    "attempts": 1
+  },
+  {
+    "item": {
+      "id": "hn:50564979",
+      "source": "hn",
+      "title": "Ask HN: Who Is Hiring? (November 2026 – We Give a Shit Edition)",
+      "url": "https://news.ycombinator.com/item?id=50564979",
+      "published": "2026-11-19T19:26:56Z",
+      "summary": "",
+      "authors": [
+        "k_sze"
+      ],
+      "extra": {
+        "points": 6,
+        "comments": 1,
+        "discussion": "https://news.ycombinator.com/item?id=50564979"
+      }
+    },
+    "relevant": false,
+    "thread": "none",
+    "score": 0,
+    "summary": "This is a Hacker News hiring thread for November 2026. It appears to be a job-seeking and recruiting discussion rather than a research paper.",
+    "why": "",
+    "question": "",
+    "attempts": 1
+  },
+  {
+    "item": {
+      "id": "hn:50560051",
+      "source": "hn",
+      "title": "Show HN: ToolJet 4.0 – vibe-code internal tools with governance",
+      "url": "https://tooljet.com",
+      "published": "2026-11-19T13:46:49Z",
+      "summary": "",
+      "authors": [
+        "kriztle"
+      ],
+      "extra": {
+        "points": 6,
+        "comments": 2,
+        "discussion": "https://news.ycombinator.com/item?id=50560051"
+      }
+    },
+    "relevant": false,
+    "thread": "none",
+    "score": 2,
+    "summary": "A Show HN post for ToolJet 4.0, described as a way to vibe-code internal tools with governance.",
+    "why": "",
+    "question": "",
+    "attempts": 1
+  },
+  {
+    "item": {
+      "id": "hn:50567138",
+      "source": "hn",
+      "title": "Apple Is Working on AI Agent for Device Control, Apps, Browsing and Coding",
+      "url": "https://www.bloomberg.com/news/articles/2026-11-19/apple-is-working-on-ai-agent-for-device-control-apps-browsing-and-coding",
+      "published": "2026-11-19T22:08:22Z",
+      "summary": "",
+      "authors": [
+        "mfiguiere"
+      ],
+      "extra": {
+        "points": 5,
+        "comments": 3,
+        "discussion": "https://news.ycombinator.com/item?id=50567138"
+      }
+    },
+    "relevant": true,
+    "thread": "agent-escalation",
+    "score": 3,
+    "summary": "Bloomberg reports Apple is developing an AI agent that can control the device, use apps, browse, and code.",
+    "why": "It is a computer-use and coding agent platform, which is the kind of agent whose permissions and escalation risks he tracks.",
+    "question": "What permissions or sandboxing model does Apple's agent use for device control and coding?",
+    "attempts": 1
+  }
+]
