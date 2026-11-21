@@ -1,0 +1,277 @@
+[
+  {
+    "item": {
+      "id": "hn:50577901",
+      "source": "hn",
+      "title": "Google workers tell their employer not to punish schools that don't want AI",
+      "url": "https://www.motherjones.com/politics/2026/11/google-alphabet-union-school-ai-protest-gemini-workers-petition/",
+      "published": "2026-11-20T16:59:27Z",
+      "summary": "",
+      "authors": [
+        "cdrnsf"
+      ],
+      "extra": {
+        "points": 276,
+        "comments": 214,
+        "discussion": "https://news.ycombinator.com/item?id=50577901"
+      }
+    },
+    "relevant": false,
+    "thread": "none",
+    "score": 0,
+    "summary": "Google workers are urging their employer not to punish schools that do not want AI.",
+    "why": "",
+    "question": "",
+    "attempts": 1
+  },
+  {
+    "item": {
+      "id": "hn:50583761",
+      "source": "hn",
+      "title": "Ask HN: I have been unemployed for 2y. 15 years of experience, US. What to do?",
+      "url": "https://news.ycombinator.com/item?id=50583761",
+      "published": "2026-11-20T23:18:32Z",
+      "summary": "",
+      "authors": [
+        "LetThingsBeDiff"
+      ],
+      "extra": {
+        "points": 233,
+        "comments": 183,
+        "discussion": "https://news.ycombinator.com/item?id=50583761"
+      }
+    },
+    "relevant": false,
+    "thread": "none",
+    "score": 0,
+    "summary": "A Hacker News ask for career advice from someone who has been unemployed for two years despite having 15 years of experience in the US.",
+    "why": "",
+    "question": "",
+    "attempts": 1
+  },
+  {
+    "item": {
+      "id": "hn:50581403",
+      "source": "hn",
+      "title": "Show HN: OpenComputer – an open source alternative to Devin",
+      "url": "https://github.com/diggerhq/opencomputer",
+      "published": "2026-11-20T20:19:56Z",
+      "summary": "",
+      "authors": [
+        "iacguy"
+      ],
+      "extra": {
+        "points": 106,
+        "comments": 31,
+        "discussion": "https://news.ycombinator.com/item?id=50581403"
+      }
+    },
+    "relevant": true,
+    "thread": "agent-escalation",
+    "score": 3,
+    "summary": "OpenComputer is presented as an open-source alternative to Devin, an AI coding/computer-use agent. The title does not state its security model or permission controls.",
+    "why": "It may be useful for inspecting how an open-source coding agent handles permissions, sandboxing, and tool access.",
+    "question": "Does it expose or document its permission model, sandbox boundaries, and tool execution controls?",
+    "attempts": 1
+  },
+  {
+    "item": {
+      "id": "hn:50574772",
+      "source": "hn",
+      "title": "Llms.txt and MCP didn't move the needle",
+      "url": "https://backpackforlaravel.com/articles/opinions/llms-txt-and-mcp-didn-t-move-the-needle-for-us-here-s-what-did",
+      "published": "2026-11-20T14:00:23Z",
+      "summary": "",
+      "authors": [
+        "moebrowne"
+      ],
+      "extra": {
+        "points": 31,
+        "comments": 21,
+        "discussion": "https://news.ycombinator.com/item?id=50574772"
+      }
+    },
+    "relevant": true,
+    "thread": "mcp-security",
+    "score": 3,
+    "summary": "A Hacker News story linking to an opinion post titled 'Llms.txt and MCP didn't move the needle.' The title suggests the author argues these technologies did not provide meaningful value.",
+    "why": "It mentions MCP, which is part of his MCP and tool-security thread, but the title does not indicate a security focus.",
+    "question": "Does the post discuss security implications of MCP, or is it mainly about practical usefulness and adoption?",
+    "attempts": 1
+  },
+  {
+    "item": {
+      "id": "hn:50574412",
+      "source": "hn",
+      "title": "Show HN: Drive around my village in 3D",
+      "url": "https://cherwellvalleymotorclub.app",
+      "published": "2026-11-20T13:32:42Z",
+      "summary": "",
+      "authors": [
+        "johnwards"
+      ],
+      "extra": {
+        "points": 11,
+        "comments": 13,
+        "discussion": "https://news.ycombinator.com/item?id=50574412"
+      }
+    },
+    "relevant": false,
+    "thread": "none",
+    "score": 0,
+    "summary": "A Show HN post for a 3D app or site where you can drive around a village. The title and link do not indicate a security or AI research topic.",
+    "why": "",
+    "question": "",
+    "attempts": 1
+  },
+  {
+    "item": {
+      "id": "hn:50580443",
+      "source": "hn",
+      "title": "The place the frostbite CPU came from",
+      "url": "https://twitter.com/EV_Trapper/status/2123631975894302816",
+      "published": "2026-11-20T19:25:08Z",
+      "summary": "",
+      "authors": [
+        "petra"
+      ],
+      "extra": {
+        "points": 8,
+        "comments": 2,
+        "discussion": "https://news.ycombinator.com/item?id=50580443"
+      }
+    },
+    "relevant": false,
+    "thread": "none",
+    "score": 0,
+    "summary": "The title says it is about the place a Frostbite CPU came from. No further details are available.",
+    "why": "",
+    "question": "",
+    "attempts": 1
+  },
+  {
+    "item": {
+      "id": "hn:50580644",
+      "source": "hn",
+      "title": "What happens when a Google data centre comes to town? Southern India finding out",
+      "url": "https://www.cbc.ca/news/world/ai-data-centre-google-india-9.7374345",
+      "published": "2026-11-20T19:36:39Z",
+      "summary": "",
+      "authors": [
+        "Betelbuddy"
+      ],
+      "extra": {
+        "points": 6,
+        "comments": 0,
+        "discussion": "https://news.ycombinator.com/item?id=50580644"
+      }
+    },
+    "relevant": false,
+    "thread": "none",
+    "score": 0,
+    "summary": "The story is about the local impact of a Google data centre in Southern India. It appears to focus on community, infrastructure, or economic effects rather than AI security.",
+    "why": "",
+    "question": "",
+    "attempts": 1
+  },
+  {
+    "item": {
+      "id": "hn:50573966",
+      "source": "hn",
+      "title": "Apple Working on Own AI Agent to Rival OAI and Ant",
+      "url": "https://www.bloomberg.com/news/articles/2026-11-19/apple-is-working-on-ai-agent-for-device-control-apps-browsing-and-coding",
+      "published": "2026-11-20T12:48:39Z",
+      "summary": "",
+      "authors": [
+        "askadityapandey"
+      ],
+      "extra": {
+        "points": 6,
+        "comments": 0,
+        "discussion": "https://news.ycombinator.com/item?id=50573966"
+      }
+    },
+    "relevant": true,
+    "thread": "agent-escalation",
+    "score": 3,
+    "summary": "Bloomberg reports that Apple is working on its own AI agent for device control, apps, browsing, and coding, positioned against OpenAI and Anthropic.",
+    "why": "It is a computer-use and coding agent, so its permissions, sandboxing, and approval flow could matter for agent privilege escalation.",
+    "question": "What permissions, sandboxing, or approval mechanisms will Apple's agent use for device control, browsing, and coding?",
+    "attempts": 1
+  },
+  {
+    "item": {
+      "id": "hn:50572621",
+      "source": "hn",
+      "title": "AI Is Making China's Jobs Slump Worse",
+      "url": "https://www.bloomberg.com/graphics/2026-china-ai-jobs-slump/",
+      "published": "2026-11-20T10:15:28Z",
+      "summary": "",
+      "authors": [
+        "thm"
+      ],
+      "extra": {
+        "points": 6,
+        "comments": 0,
+        "discussion": "https://news.ycombinator.com/item?id=50572621"
+      }
+    },
+    "relevant": false,
+    "thread": "none",
+    "score": 0,
+    "summary": "A Bloomberg graphic about AI worsening China's jobs slump. The available title does not indicate a security or agent-focused topic.",
+    "why": "",
+    "question": "",
+    "attempts": 1
+  },
+  {
+    "item": {
+      "id": "hn:50572295",
+      "source": "hn",
+      "title": "Britain must not rely on foreign AI, says former military intelligence chief",
+      "url": "https://uk.news.yahoo.com/britain-must-not-rely-foreign-180000606.html",
+      "published": "2026-11-20T09:34:40Z",
+      "summary": "",
+      "authors": [
+        "nephihaha"
+      ],
+      "extra": {
+        "points": 6,
+        "comments": 0,
+        "discussion": "https://news.ycombinator.com/item?id=50572295"
+      }
+    },
+    "relevant": false,
+    "thread": "none",
+    "score": 0,
+    "summary": "A former UK military intelligence chief argues that Britain should not depend on foreign AI systems.",
+    "why": "",
+    "question": "",
+    "attempts": 1
+  },
+  {
+    "item": {
+      "id": "hn:50586323",
+      "source": "hn",
+      "title": "Show HN: Musset, open-source Scrivener alternative with an AI that never writes",
+      "url": "https://github.com/Musset-App/musset",
+      "published": "2026-11-21T05:42:49Z",
+      "summary": "",
+      "authors": [
+        "julienmarie"
+      ],
+      "extra": {
+        "points": 5,
+        "comments": 1,
+        "discussion": "https://news.ycombinator.com/item?id=50586323"
+      }
+    },
+    "relevant": false,
+    "thread": "none",
+    "score": 0,
+    "summary": "Musset is an open-source Scrivener alternative for writing. It includes an AI feature described as one that never writes.",
+    "why": "",
+    "question": "",
+    "attempts": 1
+  }
+]
