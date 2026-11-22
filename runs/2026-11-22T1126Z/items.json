@@ -1,0 +1,227 @@
+[
+  {
+    "item": {
+      "id": "hn:50593481",
+      "source": "hn",
+      "title": "Pandex – Official European Law for AI Agents, over MCP",
+      "url": "https://www.pandex.io",
+      "published": "2026-11-21T20:47:41Z",
+      "summary": "",
+      "authors": [
+        "vasie"
+      ],
+      "extra": {
+        "points": 98,
+        "comments": 23,
+        "discussion": "https://news.ycombinator.com/item?id=50593481"
+      }
+    },
+    "relevant": true,
+    "thread": "mcp-security",
+    "score": 4,
+    "summary": "The title presents Pandex as an official European law for AI agents, with MCP mentioned as the underlying protocol. No further details are available from the title and link alone.",
+    "why": "It touches MCP-based agent governance, but the title does not clearly indicate a security result.",
+    "question": "Does it define security requirements, permissions, or audit controls for MCP-based agents, or is it mainly legal compliance?",
+    "attempts": 1
+  },
+  {
+    "item": {
+      "id": "hn:50589235",
+      "source": "hn",
+      "title": "Show HN: agent-mcts – Monte Carlo tree search on top of Claude Code",
+      "url": "https://github.com/natsu0529/agent-mcts",
+      "published": "2026-11-21T13:53:08Z",
+      "summary": "",
+      "authors": [
+        "natsu529"
+      ],
+      "extra": {
+        "points": 15,
+        "comments": 0,
+        "discussion": "https://news.ycombinator.com/item?id=50589235"
+      }
+    },
+    "relevant": false,
+    "thread": "none",
+    "score": 2,
+    "summary": "A Show HN post for a tool that applies Monte Carlo tree search to Claude Code, likely to improve planning or action selection for a coding agent.",
+    "why": "",
+    "question": "",
+    "attempts": 1
+  },
+  {
+    "item": {
+      "id": "hn:50594006",
+      "source": "hn",
+      "title": "Test the Riemann Hypothesis with your spare CPU",
+      "url": "https://riemann-at-home.github.io/riemann-at-home/",
+      "published": "2026-11-21T21:51:42Z",
+      "summary": "",
+      "authors": [
+        "tito"
+      ],
+      "extra": {
+        "points": 12,
+        "comments": 1,
+        "discussion": "https://news.ycombinator.com/item?id=50594006"
+      }
+    },
+    "relevant": false,
+    "thread": "none",
+    "score": 0,
+    "summary": "A distributed computing project that uses spare CPU time to test the Riemann Hypothesis. It is a number theory computation effort rather than an AI security topic.",
+    "why": "",
+    "question": "",
+    "attempts": 1
+  },
+  {
+    "item": {
+      "id": "hn:50592648",
+      "source": "hn",
+      "title": "Gemini 4 Neon solves Bitcoin puzzle from 2024",
+      "url": "https://echo.ls/zden-level-halv/",
+      "published": "2026-11-21T19:19:03Z",
+      "summary": "",
+      "authors": [
+        "maplet"
+      ],
+      "extra": {
+        "points": 7,
+        "comments": 0,
+        "discussion": "https://news.ycombinator.com/item?id=50592648"
+      }
+    },
+    "relevant": false,
+    "thread": "none",
+    "score": 0,
+    "summary": "The title says Gemini 4 Neon solved a Bitcoin puzzle from 2024. No further details are available from the provided text.",
+    "why": "",
+    "question": "",
+    "attempts": 1
+  },
+  {
+    "item": {
+      "id": "hn:50594639",
+      "source": "hn",
+      "title": "Ask HN: How many of you have replaced your everyday apps with something custom?",
+      "url": "https://news.ycombinator.com/item?id=50594639",
+      "published": "2026-11-21T23:22:29Z",
+      "summary": "",
+      "authors": [
+        "JCattheATM"
+      ],
+      "extra": {
+        "points": 6,
+        "comments": 3,
+        "discussion": "https://news.ycombinator.com/item?id=50594639"
+      }
+    },
+    "relevant": false,
+    "thread": "none",
+    "score": 0,
+    "summary": "A Hacker News discussion asking how many people have replaced everyday apps with custom-built alternatives.",
+    "why": "",
+    "question": "",
+    "attempts": 1
+  },
+  {
+    "item": {
+      "id": "hn:50589793",
+      "source": "hn",
+      "title": "RunPod's MCP server tells AI agents to rate it and not mention it to the user",
+      "url": "https://github.com/runpod/runpod-mcp/issues/202",
+      "published": "2026-11-21T14:53:19Z",
+      "summary": "",
+      "authors": [
+        "XadniGraves"
+      ],
+      "extra": {
+        "points": 5,
+        "comments": 0,
+        "discussion": "https://news.ycombinator.com/item?id=50589793"
+      }
+    },
+    "relevant": true,
+    "thread": "mcp-security",
+    "score": 7,
+    "summary": "A GitHub issue reports that RunPod's MCP server includes instructions for AI agents to rate the server and avoid mentioning that instruction to the user.",
+    "why": "It is a concrete example of hidden or manipulative instructions in an MCP tool, relevant to tool poisoning and prompt injection.",
+    "question": "What exact instruction is embedded, where it appears, and whether it is intentional, accidental, or a policy violation?",
+    "attempts": 1
+  },
+  {
+    "item": {
+      "id": "hn:50581873",
+      "source": "hn",
+      "title": "Second Brain and Agent Maintenance Thoughts on AI Usage?",
+      "url": "https://news.ycombinator.com/item?id=50581873",
+      "published": "2026-11-20T20:51:15Z",
+      "summary": "",
+      "authors": [
+        "harrisonsmith10"
+      ],
+      "extra": {
+        "points": 5,
+        "comments": 1,
+        "discussion": "https://news.ycombinator.com/item?id=50581873"
+      }
+    },
+    "relevant": false,
+    "thread": "none",
+    "score": 1,
+    "summary": "A Hacker News post asking for thoughts on using AI for a second brain and maintaining AI agents.",
+    "why": "",
+    "question": "",
+    "attempts": 1
+  },
+  {
+    "item": {
+      "id": "hn:50596564",
+      "source": "hn",
+      "title": "Ask HN: What made you pivot your interest to the field of AI?",
+      "url": "https://news.ycombinator.com/item?id=50596564",
+      "published": "2026-11-22T05:20:06Z",
+      "summary": "",
+      "authors": [
+        "learner_yearner"
+      ],
+      "extra": {
+        "points": 5,
+        "comments": 4,
+        "discussion": "https://news.ycombinator.com/item?id=50596564"
+      }
+    },
+    "relevant": false,
+    "thread": "none",
+    "score": 0,
+    "summary": "A Hacker News discussion asking people what made them shift their interest toward AI. Only the title and link are available.",
+    "why": "",
+    "question": "",
+    "attempts": 1
+  },
+  {
+    "item": {
+      "id": "hn:50587783",
+      "source": "hn",
+      "title": "Show HN: Stop applying to jobs using AI-generated resume",
+      "url": "https://unmark.grandimam.com/",
+      "published": "2026-11-21T10:21:01Z",
+      "summary": "",
+      "authors": [
+        "grandimam"
+      ],
+      "extra": {
+        "points": 5,
+        "comments": 3,
+        "discussion": "https://news.ycombinator.com/item?id=50587783"
+      }
+    },
+    "relevant": false,
+    "thread": "none",
+    "score": 0,
+    "summary": "A Show HN post titled about stopping job applications that use AI-generated resumes.",
+    "why": "",
+    "question": "",
+    "attempts": 1
+  }
+]
