@@ -1,0 +1,252 @@
+[
+  {
+    "item": {
+      "id": "hn:50657265",
+      "source": "hn",
+      "title": "AMD-specific fork of llama.cpp",
+      "url": "https://devnull.land/amd-specific-llama-cpp",
+      "published": "2026-11-26T17:11:29Z",
+      "summary": "",
+      "authors": [
+        "julianlam"
+      ],
+      "extra": {
+        "points": 370,
+        "comments": 89,
+        "discussion": "https://news.ycombinator.com/item?id=50657265"
+      }
+    },
+    "relevant": false,
+    "thread": "none",
+    "score": 0,
+    "summary": "A Hacker News post about an AMD-specific fork of llama.cpp, likely for running LLM inference on AMD hardware.",
+    "why": "",
+    "question": "",
+    "attempts": 1
+  },
+  {
+    "item": {
+      "id": "hn:50658997",
+      "source": "hn",
+      "title": "The USA as a Civilizations-esque map",
+      "url": "https://karpathy.ai/usaciv/",
+      "published": "2026-11-26T19:53:58Z",
+      "summary": "",
+      "authors": [
+        "ComputerGuru"
+      ],
+      "extra": {
+        "points": 72,
+        "comments": 58,
+        "discussion": "https://news.ycombinator.com/item?id=50658997"
+      }
+    },
+    "relevant": false,
+    "thread": "none",
+    "score": 0,
+    "summary": "A USA map presented in a Civilization-like style. It appears to be a visualization or interactive map rather than a security research item.",
+    "why": "",
+    "question": "",
+    "attempts": 1
+  },
+  {
+    "item": {
+      "id": "hn:50658093",
+      "source": "hn",
+      "title": "Notion's official MCP inject hidden upsell instructions into agent context",
+      "url": "https://www.reddit.com/r/ClaudeCode/comments/1y4qm5o/heads_up_if_you_wire_notions_official_mcp_into/",
+      "published": "2026-11-26T18:28:30Z",
+      "summary": "",
+      "authors": [
+        "czottmann"
+      ],
+      "extra": {
+        "points": 55,
+        "comments": 22,
+        "discussion": "https://news.ycombinator.com/item?id=50658093"
+      }
+    },
+    "relevant": true,
+    "thread": "mcp-security",
+    "score": 9,
+    "summary": "A Hacker News story reports that Notion's official MCP server allegedly injects hidden upsell instructions into the context provided to agents.",
+    "why": "It is a direct MCP/tool-security case involving hidden instructions in an official agent tool.",
+    "question": "What exact hidden instructions are injected, and can they change agent behavior or expose sensitive context?",
+    "attempts": 1
+  },
+  {
+    "item": {
+      "id": "hn:50665488",
+      "source": "hn",
+      "title": "Fields-winning mathematicians worried about eerie silence over AI and encryption",
+      "url": "https://www.thetimes.com/uk/technology-uk/article/ai-making-online-security-useless-smr73d3n8",
+      "published": "2026-11-27T11:09:04Z",
+      "summary": "",
+      "authors": [
+        "conradqh"
+      ],
+      "extra": {
+        "points": 16,
+        "comments": 2,
+        "discussion": "https://news.ycombinator.com/item?id=50665488"
+      }
+    },
+    "relevant": false,
+    "thread": "none",
+    "score": 2,
+    "summary": "A Hacker News story reports that Fields Medal-winning mathematicians are concerned about an eerie silence around AI and encryption.",
+    "why": "",
+    "question": "",
+    "attempts": 1
+  },
+  {
+    "item": {
+      "id": "hn:50659916",
+      "source": "hn",
+      "title": "On Being a Doctor: Shining a Light on the Dark Side",
+      "url": "https://www.acpjournals.org/doi/10.7326/M15-1144",
+      "published": "2026-11-26T21:16:20Z",
+      "summary": "",
+      "authors": [
+        "jubayer9906"
+      ],
+      "extra": {
+        "points": 8,
+        "comments": 0,
+        "discussion": "https://news.ycombinator.com/item?id=50659916"
+      }
+    },
+    "relevant": false,
+    "thread": "none",
+    "score": 0,
+    "summary": "An ACP Journals article titled 'On Being a Doctor: Shining a Light on the Dark Side.' Based only on the title, it appears to be about medical practice or physician experience rather than AI security.",
+    "why": "",
+    "question": "",
+    "attempts": 1
+  },
+  {
+    "item": {
+      "id": "hn:50654863",
+      "source": "hn",
+      "title": "What broke in 27 days of running a team of AI agents on real work",
+      "url": "https://ethanflow.com/writing/what-broke-ai-agent-team/",
+      "published": "2026-11-26T13:01:32Z",
+      "summary": "",
+      "authors": [
+        "ethan-ys"
+      ],
+      "extra": {
+        "points": 6,
+        "comments": 3,
+        "discussion": "https://news.ycombinator.com/item?id=50654863"
+      }
+    },
+    "relevant": false,
+    "thread": "none",
+    "score": 2,
+    "summary": "A post describing what broke over 27 days while running a team of AI agents on real work.",
+    "why": "",
+    "question": "",
+    "attempts": 1
+  },
+  {
+    "item": {
+      "id": "hn:50664795",
+      "source": "hn",
+      "title": "Show HN: Europe Instead – find the European version of the tools you use",
+      "url": "https://europeinstead.com",
+      "published": "2026-11-27T09:33:14Z",
+      "summary": "",
+      "authors": [
+        "RafaelRoman"
+      ],
+      "extra": {
+        "points": 5,
+        "comments": 1,
+        "discussion": "https://news.ycombinator.com/item?id=50664795"
+      }
+    },
+    "relevant": false,
+    "thread": "none",
+    "score": 0,
+    "summary": "A Show HN post for a site that helps users find European versions of tools they already use. The available text does not describe any security, AI, or agent-related functionality.",
+    "why": "",
+    "question": "",
+    "attempts": 1
+  },
+  {
+    "item": {
+      "id": "hn:50664781",
+      "source": "hn",
+      "title": "Muxlio: Durable workflow orchestration for AI agents and tools",
+      "url": "https://muxlio.github.io/muxlio/",
+      "published": "2026-11-27T09:31:53Z",
+      "summary": "",
+      "authors": [
+        "frostymux"
+      ],
+      "extra": {
+        "points": 5,
+        "comments": 0,
+        "discussion": "https://news.ycombinator.com/item?id=50664781"
+      }
+    },
+    "relevant": false,
+    "thread": "none",
+    "score": 2,
+    "summary": "The title describes Muxlio as durable workflow orchestration for AI agents and tools.",
+    "why": "",
+    "question": "",
+    "attempts": 1
+  },
+  {
+    "item": {
+      "id": "hn:50656985",
+      "source": "hn",
+      "title": "Deloitte banned from WA government work over AI-tarnished report",
+      "url": "https://www.afr.com/policy/health-and-education/deloitte-banned-from-wa-government-work-over-ai-tarnished-report-20261125-p61h6p",
+      "published": "2026-11-26T16:43:35Z",
+      "summary": "",
+      "authors": [
+        "mgh2"
+      ],
+      "extra": {
+        "points": 5,
+        "comments": 0,
+        "discussion": "https://news.ycombinator.com/item?id=50656985"
+      }
+    },
+    "relevant": false,
+    "thread": "none",
+    "score": 0,
+    "summary": "The title says Deloitte was banned from Western Australian government work over an AI-tarnished report.",
+    "why": "",
+    "question": "",
+    "attempts": 1
+  },
+  {
+    "item": {
+      "id": "hn:50654425",
+      "source": "hn",
+      "title": "US chip curbs, distillation crackdown threaten Chinese AI model development",
+      "url": "https://www.reuters.com/world/china/us-chip-curbs-distillation-crackdown-threaten-chinese-ai-model-development-2026-11-26/",
+      "published": "2026-11-26T12:09:29Z",
+      "summary": "",
+      "authors": [
+        "theanonymousone"
+      ],
+      "extra": {
+        "points": 5,
+        "comments": 0,
+        "discussion": "https://news.ycombinator.com/item?id=50654425"
+      }
+    },
+    "relevant": false,
+    "thread": "none",
+    "score": 0,
+    "summary": "A Reuters report says US chip curbs and a distillation crackdown threaten Chinese AI model development.",
+    "why": "",
+    "question": "",
+    "attempts": 1
+  }
+]
