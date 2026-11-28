@@ -1,0 +1,277 @@
+[
+  {
+    "item": {
+      "id": "hn:50673521",
+      "source": "hn",
+      "title": "Woman evicted after landlord's AI assistant told her she could delay rent",
+      "url": "https://drmahfouz.substack.com/p/woman-evicted-after-landlords-ai",
+      "published": "2026-11-28T01:32:56Z",
+      "summary": "",
+      "authors": [
+        "Tiwariparth6165"
+      ],
+      "extra": {
+        "points": 178,
+        "comments": 129,
+        "discussion": "https://news.ycombinator.com/item?id=50673521"
+      }
+    },
+    "relevant": false,
+    "thread": "none",
+    "score": 0,
+    "summary": "A woman was evicted after a landlord's AI assistant told her she could delay rent.",
+    "why": "",
+    "question": "",
+    "attempts": 1
+  },
+  {
+    "item": {
+      "id": "hn:50667062",
+      "source": "hn",
+      "title": "Making a 3D fantasy map like a 16th-Century atlas",
+      "url": "https://www.spritefusion.com/blog/making-a-fantasy-map-like-a-16th-century-atlas",
+      "published": "2026-11-27T14:02:52Z",
+      "summary": "",
+      "authors": [
+        "HugoDz"
+      ],
+      "extra": {
+        "points": 123,
+        "comments": 18,
+        "discussion": "https://news.ycombinator.com/item?id=50667062"
+      }
+    },
+    "relevant": false,
+    "thread": "none",
+    "score": 0,
+    "summary": "A blog post about making a 3D fantasy map styled like a 16th-century atlas. It appears to be a creative or technical art project rather than a security research paper.",
+    "why": "",
+    "question": "",
+    "attempts": 1
+  },
+  {
+    "item": {
+      "id": "hn:50675069",
+      "source": "hn",
+      "title": "Google adding official Google AI plan support to Pi coding agent",
+      "url": "https://github.com/earendil-works/pi/pull/12614",
+      "published": "2026-11-28T05:42:49Z",
+      "summary": "",
+      "authors": [
+        "mtford"
+      ],
+      "extra": {
+        "points": 23,
+        "comments": 4,
+        "discussion": "https://news.ycombinator.com/item?id=50675069"
+      }
+    },
+    "relevant": false,
+    "thread": "none",
+    "score": 1,
+    "summary": "A pull request adds official Google AI plan support to the Pi coding agent.",
+    "why": "",
+    "question": "",
+    "attempts": 1
+  },
+  {
+    "item": {
+      "id": "hn:50669385",
+      "source": "hn",
+      "title": "Open Historical Map",
+      "url": "https://www.openhistoricalmap.org/",
+      "published": "2026-11-27T17:31:19Z",
+      "summary": "",
+      "authors": [
+        "RobotToaster"
+      ],
+      "extra": {
+        "points": 14,
+        "comments": 1,
+        "discussion": "https://news.ycombinator.com/item?id=50669385"
+      }
+    },
+    "relevant": false,
+    "thread": "none",
+    "score": 0,
+    "summary": "Open Historical Map is a website or project focused on historical mapping. The available title and link do not indicate a connection to AI security topics.",
+    "why": "",
+    "question": "",
+    "attempts": 1
+  },
+  {
+    "item": {
+      "id": "hn:50675022",
+      "source": "hn",
+      "title": "54% faster LLM token generation by removing the Linux OS and llama.cpp",
+      "url": "https://twitter.com/superalesha/status/2125682626056839259",
+      "published": "2026-11-28T05:30:51Z",
+      "summary": "",
+      "authors": [
+        "ivewonyoung"
+      ],
+      "extra": {
+        "points": 12,
+        "comments": 3,
+        "discussion": "https://news.ycombinator.com/item?id=50675022"
+      }
+    },
+    "relevant": false,
+    "thread": "none",
+    "score": 0,
+    "summary": "A Hacker News story about a claim that LLM token generation is 54% faster by removing the Linux OS and llama.cpp.",
+    "why": "",
+    "question": "",
+    "attempts": 1
+  },
+  {
+    "item": {
+      "id": "hn:50674717",
+      "source": "hn",
+      "title": "The Riemann Hypothesis proof written out as readable papers",
+      "url": "https://news.ycombinator.com/item?id=50674717",
+      "published": "2026-11-28T04:34:44Z",
+      "summary": "",
+      "authors": [
+        "dtrejopizzo"
+      ],
+      "extra": {
+        "points": 12,
+        "comments": 1,
+        "discussion": "https://news.ycombinator.com/item?id=50674717"
+      }
+    },
+    "relevant": false,
+    "thread": "none",
+    "score": 0,
+    "summary": "A Hacker News story about a Riemann Hypothesis proof written out as readable papers. The title indicates it is a mathematics topic rather than an AI security topic.",
+    "why": "",
+    "question": "",
+    "attempts": 1
+  },
+  {
+    "item": {
+      "id": "hn:50669286",
+      "source": "hn",
+      "title": "Lantern Promos – An MCP server for checking store discount codes",
+      "url": "https://lanternpromos.com/",
+      "published": "2026-11-27T17:22:17Z",
+      "summary": "",
+      "authors": [
+        "alissimore"
+      ],
+      "extra": {
+        "points": 10,
+        "comments": 9,
+        "discussion": "https://news.ycombinator.com/item?id=50669286"
+      }
+    },
+    "relevant": true,
+    "thread": "mcp-security",
+    "score": 3,
+    "summary": "It is an MCP server for checking store discount codes.",
+    "why": "It touches the MCP tool ecosystem but does not appear to be about MCP security.",
+    "question": "What permissions or data does this MCP server request from an agent?",
+    "attempts": 1
+  },
+  {
+    "item": {
+      "id": "hn:50672702",
+      "source": "hn",
+      "title": "I was hired by an AI agent",
+      "url": "https://news.ycombinator.com/item?id=50672702",
+      "published": "2026-11-27T23:31:19Z",
+      "summary": "",
+      "authors": [
+        "dev_chad"
+      ],
+      "extra": {
+        "points": 9,
+        "comments": 11,
+        "discussion": "https://news.ycombinator.com/item?id=50672702"
+      }
+    },
+    "relevant": false,
+    "thread": "none",
+    "score": 2,
+    "summary": "A Hacker News story titled 'I was hired by an AI agent.' No further details are available from the provided text.",
+    "why": "",
+    "question": "",
+    "attempts": 1
+  },
+  {
+    "item": {
+      "id": "hn:50675831",
+      "source": "hn",
+      "title": "Show HN: Fleetlayer – Framework for running many AI agents on multiple machines",
+      "url": "https://fleetlayer.ai/",
+      "published": "2026-11-28T08:37:09Z",
+      "summary": "",
+      "authors": [
+        "nathan_f77"
+      ],
+      "extra": {
+        "points": 7,
+        "comments": 2,
+        "discussion": "https://news.ycombinator.com/item?id=50675831"
+      }
+    },
+    "relevant": true,
+    "thread": "agent-escalation",
+    "score": 3,
+    "summary": "Fleetlayer is described as a framework for running many AI agents on multiple machines. The title does not state any security features.",
+    "why": "It is adjacent to agent-escalation because multi-machine agent execution is where sandboxing and permission boundaries matter, but the title does not say it addresses security.",
+    "question": "Does it isolate agents, enforce permissions, or log cross-machine actions?",
+    "attempts": 1
+  },
+  {
+    "item": {
+      "id": "hn:50665232",
+      "source": "hn",
+      "title": "Ask HN: Is Claude Code nerfing AI and agent-harness projects?",
+      "url": "https://news.ycombinator.com/item?id=50665232",
+      "published": "2026-11-27T10:27:39Z",
+      "summary": "",
+      "authors": [
+        "martibravo"
+      ],
+      "extra": {
+        "points": 6,
+        "comments": 5,
+        "discussion": "https://news.ycombinator.com/item?id=50665232"
+      }
+    },
+    "relevant": true,
+    "thread": "agent-escalation",
+    "score": 3,
+    "summary": "An HN discussion asking whether Claude Code is degrading or limiting AI and agent-harness projects.",
+    "why": "It touches coding-agent tooling, but the title gives no security or privilege-escalation angle.",
+    "question": "Is the concern about Claude Code's behavior in agent harnesses, or about model performance on agent tasks?",
+    "attempts": 1
+  },
+  {
+    "item": {
+      "id": "hn:50670265",
+      "source": "hn",
+      "title": "Show HN: MCP for fixing id3 tags of music files",
+      "url": "https://code.blago.cloud/blago/mcp_id3",
+      "published": "2026-11-27T18:43:38Z",
+      "summary": "",
+      "authors": [
+        "eniac111"
+      ],
+      "extra": {
+        "points": 5,
+        "comments": 6,
+        "discussion": "https://news.ycombinator.com/item?id=50670265"
+      }
+    },
+    "relevant": false,
+    "thread": "none",
+    "score": 1,
+    "summary": "A Show HN post for an MCP tool that fixes ID3 tags in music files.",
+    "why": "",
+    "question": "",
+    "attempts": 1
+  }
+]
